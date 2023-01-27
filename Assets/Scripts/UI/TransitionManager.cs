@@ -8,8 +8,13 @@ public class TransitionManager : Singleton<TransitionManager>
     [SerializeField] private float fadeTime;
     [SerializeField] private Image fadeScreen;
 
+    private bool _isFading;
+
     public void FadeScene(string sceneName)
     {
+        if(_isFading)
+            return;
+        _isFading = true;
         fadeScreen.DOFade(1f, fadeTime).OnComplete(() =>
         {
             SceneManager.LoadScene(sceneName);
@@ -19,6 +24,6 @@ public class TransitionManager : Singleton<TransitionManager>
 
     private void FadeOut()
     {
-        fadeScreen.DOFade(0f, fadeTime);
+        fadeScreen.DOFade(0f, fadeTime).OnComplete(() => _isFading = false);
     }
 }
