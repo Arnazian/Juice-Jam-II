@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Gameplay.unity
     guid: e6975515bd2544149be9b12cefab926c
+  - enabled: 1
+    path: Assets/Scenes/Imated Scene.unity
+    guid: 00ece4b4e3b54c148a0236b19dc900d6
   m_configObjects: {}

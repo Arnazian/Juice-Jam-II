@@ -26,7 +26,7 @@ public class MainMenu : MonoBehaviour
 
     public void Play()
     {
-        TransitionManager.Instance.FadeScene("Gameplay");
+        TransitionManager.Instance.FadeScene("Imated Scene");
     }
     
     private void UpdateVolume(float newVolume)
