@@ -1,5 +1,6 @@
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -25,5 +26,10 @@ public class TransitionManager : Singleton<TransitionManager>
     private void FadeOut()
     {
         fadeScreen.DOFade(0f, fadeTime).OnComplete(() => _isFading = false);
+    }
+    
+    private void Update()
+    {
+        EventSystem.current.SetSelectedGameObject(null);
     }
 }
