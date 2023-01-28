@@ -26,8 +26,8 @@ public class FB_StageOne : Stage1Base
     [ContextMenu("AttackOne")]
     void AttackOne()
     {
-        rotator.transform.localRotation = Quaternion.Euler(0, 0, 0);
-        rotator.transform.DOLocalRotate(new Vector3(0,0, 359f), fullTurnDuration);
+        // rotator.transform.localRotation = Quaternion.Euler(0, 0, 0);
+        rotator.transform.DOLocalRotate(new Vector3(0,0, rotator.transform.rotation.z - 360), fullTurnDuration);
     }
 
     void AttackTwo()
