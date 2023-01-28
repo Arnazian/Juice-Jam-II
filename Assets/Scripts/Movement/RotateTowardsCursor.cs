@@ -8,9 +8,12 @@ public class RotateTowardsCursor : MonoBehaviour
 
     void Update()
     {
+        if(PauseMenu.Instance.IsPaused)
+            return;
+        
         rotationDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
 
-        float rotationZ = Mathf.Atan2(rotationDirection.y, rotationDirection.x) * Mathf.Rad2Deg-90;
+        float rotationZ = Mathf.Atan2(rotationDirection.y, rotationDirection.x) * Mathf.Rad2Deg - 90;
 
         transform.rotation = Quaternion.Euler(0f, 0f , rotationZ);
     }
