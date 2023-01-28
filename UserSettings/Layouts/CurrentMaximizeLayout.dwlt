@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 76597
+  controlID: 79376
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 76598
+  controlID: 79377
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 76599
+  controlID: 79378
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -186,8 +186,8 @@ MonoBehaviour:
     y: 0
     width: 363
     height: 550
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 6}
   m_Panes:
   - {fileID: 6}
@@ -224,8 +224,8 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
+      m_SelectedIDs: 6423fcff
+      m_LastClickedID: -253084
       m_ExpandedIDs: ce23fcff8462fcffea6ffcffde82fcfff482fcff3e83fcff968cfcffbc92fcffd895fcff5c96fcff8497fcff749bfcffcc0afdff480dfdffd862fdff6863fdffe6a1feffcca2feffeca5feff92a6feff04a7feffb4a7feff7cabfeff76b1feff7ab3feffaec0feff1ed2feff92d3feff54dffeffbee1feffbce3feffd8e9feff2881ffffd6c7ffff58c8ffff18c9ffffe6c9ffff9ccaffff14cbffff86cbffff08ccffff16cdffff42d7ffff36d8ffff4adaffff16edffffcefafffff4ffffffdcbd0000f6bd00005add0000bcdd000016e1000068e200009ae20000cee20000cced000074fb000004fc0000aed7010094210200405b0200805b0200da5b0200
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -269,8 +269,8 @@ MonoBehaviour:
     y: 0
     width: 1102
     height: 550
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 2}
   m_Panes:
   - {fileID: 8}
@@ -778,21 +778,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Shooting
+    - Assets/Scripts/Bosses
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/Shooting
+  - Assets/Scripts/Bosses
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Dev\Github Repos\Juice Jam II
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 8eed0000
-    m_LastClickedID: 60814
+    m_SelectedIDs: 42f00000
+    m_LastClickedID: 61506
     m_ExpandedIDs: 00000000d2740000e4740000ea740000b08900008eb70000b4bb000002c1000004c1000006c100000ac1000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -846,8 +846,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs: 6423fcff
+    m_LastClickedInstanceID: -253084
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
@@ -935,7 +935,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -228620
+  m_LastSelectedObjectID: -253084
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
