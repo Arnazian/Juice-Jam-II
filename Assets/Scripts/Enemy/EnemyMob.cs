@@ -30,6 +30,13 @@ public class EnemyMob : MonoBehaviour
             _isAttacking = false;
             CancelInvoke(nameof(Attack));
         }
+        
+        if(PauseMenu.Instance.IsPaused)
+            return;
+        
+        var rotationDirection = player.position - transform.position;
+        var rotationZ = Mathf.Atan2(rotationDirection.y, rotationDirection.x) * Mathf.Rad2Deg - 90;
+        transform.rotation = Quaternion.Euler(0f, 0f , rotationZ);
     }
 
     private void Attack()
