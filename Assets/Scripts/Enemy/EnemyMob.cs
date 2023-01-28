@@ -23,7 +23,10 @@ public class EnemyMob : MonoBehaviour
         if (_agent.reachedDestination && !_isAttacking)
         {
             _isAttacking = true;
-            InvokeRepeating(nameof(Attack), attackCooldown, attackCooldown);
+            var range = 0.5f;
+            var rand = Random.Range(-range, range);
+            var attackCooldownRand = attackCooldown + rand;
+            InvokeRepeating(nameof(Attack), attackCooldown, attackCooldownRand);
         }
         else if(!_agent.reachedDestination)
         {
