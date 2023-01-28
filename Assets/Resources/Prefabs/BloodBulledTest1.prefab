@@ -4822,7 +4822,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8671832041596786956}
   - component: {fileID: 4969876388238485014}
-  - component: {fileID: 6103764852402932727}
+  - component: {fileID: -9197627354089086988}
   - component: {fileID: 5216370676393376205}
   - component: {fileID: 7220414442000423418}
   - component: {fileID: 2142335711487439899}
@@ -4863,7 +4863,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 100
   toDespawn: 100
---- !u!114 &6103764852402932727
+--- !u!114 &-9197627354089086988
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4872,10 +4872,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7744099146439851529}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf80fb272a672a04ba8a1133c9448eb8, type: 3}
+  m_Script: {fileID: 11500000, guid: 5c2a563b97b18ad4e9d299650d01d848, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 100
   collisionParticle: {fileID: 5276824108466267453, guid: 59467ffc01719c74391c24cc163a56a5, type: 3}
 --- !u!212 &5216370676393376205
 SpriteRenderer:
