@@ -1,16 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class MovePlayer : MonoBehaviour
-{
-    public float speed;
-    public float accelerationTime;
+{   
+    [SerializeField] private float speed;
+    [SerializeField] private float accelerationTime;
 
     private Rigidbody2D rb;
 
+    public InputAction playerInput;
     private float inputH;
     private float inputV;
+
+
+    private void OnEnable()
+    {
+        playerInput.Enable();
+    }
+
+    private void OnDisable()
+    {
+        playerInput.Disable();
+    }
 
 
     void Start()
@@ -20,8 +31,8 @@ public class MovePlayer : MonoBehaviour
 
     void FixedUpdate()
     {
-        inputH = Input.GetAxisRaw("Horizontal");
-        inputV = Input.GetAxisRaw("Vertical");
+        inputH = playerInput.ReadValue<Vector2>().x;
+        inputV = playerInput.ReadValue<Vector2>().y;
 
 
         Vector2 direction = new Vector2(inputH, inputV);

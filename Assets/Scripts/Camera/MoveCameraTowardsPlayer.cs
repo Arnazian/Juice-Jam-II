@@ -24,13 +24,14 @@ public class MoveCameraTowardsPlayer : MonoBehaviour
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = 0;
 
-        targetPosition =  (player.transform.position +
-            ((player.transform.position + 
-            ((player.transform.position + mousePosition) / 2)) / 2)) / 2;
-
-
-        Debug.DrawLine(targetPosition, targetPosition + Vector3.one/5, Color.red, 1000000);
+        targetPosition = 
+            AVGOfTwoVectors(player.transform.position, AVGOfTwoVectors(player.transform.position, AVGOfTwoVectors(player.transform.position, mousePosition)));
 
         transform.position = Vector3.Lerp(transform.position, new Vector3(targetPosition.x, targetPosition.y, -10f), cameraSpeed * screenSizeFloat);
+    }
+
+    Vector3 AVGOfTwoVectors(Vector3 pos1, Vector3 pos2)
+    {
+        return (pos1 + pos2) / 2;
     }
 }
