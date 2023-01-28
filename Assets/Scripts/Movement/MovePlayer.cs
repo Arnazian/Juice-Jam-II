@@ -1,12 +1,8 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class MovePlayer : MonoBehaviour, IDamageable
-{
-    [SerializeField] private float maxHealth = 100;
-    private float _health;
-
-    
+public class MovePlayer : MonoBehaviour
+{   
     [SerializeField] private float speed;
     [SerializeField] private float accelerationTime;
 
@@ -31,7 +27,6 @@ public class MovePlayer : MonoBehaviour, IDamageable
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        _health = maxHealth;
     }
 
     void FixedUpdate()
@@ -52,9 +47,6 @@ public class MovePlayer : MonoBehaviour, IDamageable
             Vector2 Deacceleration = Deaccelerate(rb.velocity, accelerationTime * 1000);
             rb.velocity += Deacceleration;
         }
-        
-        if(_health <= 0)
-            Destroy(gameObject);
     }
 
 
@@ -68,10 +60,5 @@ public class MovePlayer : MonoBehaviour, IDamageable
     {
         Vector3 Deacceleration = (Vector3.zero - velocity) / time;
         return Deacceleration;
-    }
-
-    public void Damage(float amount)
-    {
-        _health -= amount;
     }
 }

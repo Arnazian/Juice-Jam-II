@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 332318632987233901}
+  - component: {fileID: 3105882647621186600}
   - component: {fileID: 6392047925629232734}
   - component: {fileID: 332318632987233903}
   - component: {fileID: 4098626456807953694}
@@ -38,6 +39,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3105882647621186600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332318632987234194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad5ab20c7dff35d45808b07c2c56c947, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
 --- !u!114 &6392047925629232734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,7 +76,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed18787610d456a48ac5908b5893aedc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
   speed: 1.5
   accelerationTime: 5
   playerInput:
@@ -126,7 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c7a0925943d9bd4dac50cc1950598d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileSpeed: 10
+  projectileSpeed: 12
   projectile: {fileID: 7744099146439851529, guid: 31c36ad2529306b4b80bdb58545ade16, type: 3}
   shootCenter: {fileID: 1622231911419275215}
   shootSpawn: {fileID: 8313232032094458876}
