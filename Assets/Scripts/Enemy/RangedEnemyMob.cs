@@ -2,10 +2,14 @@ using Pathfinding;
 using UnityEngine;
 
 [RequireComponent(typeof(EnemyMobHealthManager))]
-public class EnemyMob : MonoBehaviour
+public class RangedEnemyMob : MonoBehaviour
 {
+    [SerializeField] private float projectileSpeed;
+    [SerializeField] private GameObject projectile;
+    [SerializeField] private GameObject shootSpawn;
+    [SerializeField] private float projectileDamage = 10f;
+    
     [SerializeField] private float attackCooldown;
-    [SerializeField] private float attackDamage = 10f;
     [SerializeField] private Transform player;
 
     private IAstarAI _agent;
@@ -46,6 +50,5 @@ public class EnemyMob : MonoBehaviour
     {
         if(!_isAttacking || PauseMenu.Instance.IsPaused)
             return;
-        player.GetComponent<IDamageable>().Damage(attackDamage);
     }
 }
