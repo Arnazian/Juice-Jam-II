@@ -2341,38 +2341,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 952230831261614677, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
-      propertyPath: m_Size.x
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 952230831261614677, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
-      propertyPath: m_Size.y
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 952230831261614677, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 0bc75cf82b1aad142a34cc71591c1fac, type: 3}
-    - target: {fileID: 952230831261614677, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1244558645651075369, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1244558645651075369, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3105882647621186600, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 354114269}
-    - target: {fileID: 4098626456807953694, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
-      propertyPath: projectileDamage
-      value: 34
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
 --- !u!1001 &1528421277
