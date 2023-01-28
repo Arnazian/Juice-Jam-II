@@ -34,8 +34,8 @@ public class ShootBlood : MonoBehaviour
     public void Shoot(Vector3 direction, float speed)
     {
         ScreenShake cameraShakeScript = Camera.main.GetComponent<ScreenShake>();
-        //cameraShakeScript.shakeStrengthModifier = 0.05f;
-        //cameraShakeScript.duration = 1f;
+        cameraShakeScript.shakeStrengthModifier = 0.1f;
+        cameraShakeScript.duration = 0.25f;
         cameraShakeScript.startShake = true;
 
 
