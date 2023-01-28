@@ -1,3 +1,6 @@
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
@@ -27,6 +30,15 @@ public class MainMenu : MonoBehaviour
     public void Play()
     {
         TransitionManager.Instance.FadeScene("Imated Scene");
+    }
+    
+    public void Quit()
+    {
+#if UNITY_EDITOR
+        EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
     }
     
     private void UpdateVolume(float newVolume)
