@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class PlayersHealth : MonoBehaviour, IDamageable
 {
+    [SerializeField] private HealthBar healthBar;
     [SerializeField] private float maxHealth = 100;
-    private float _health;
+    [SerializeField] private float _health;
 
 
     void Start()
     {
         _health = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     void FixedUpdate()
@@ -23,5 +25,6 @@ public class PlayersHealth : MonoBehaviour, IDamageable
     public void Damage(float amount)
     {
         _health -= amount;
+        healthBar.SetHealth(_health);
     }
 }

@@ -33,6 +33,8 @@ public class ShootBlood : MonoBehaviour
 
     public void Shoot(Vector3 direction, float speed)
     {
+        GetComponent<IDamageable>().Damage(5);
+
         ScreenShake cameraShakeScript = Camera.main.GetComponent<ScreenShake>();
         cameraShakeScript.shakeStrengthModifier = 0.1f;
         cameraShakeScript.duration = 0.25f;
