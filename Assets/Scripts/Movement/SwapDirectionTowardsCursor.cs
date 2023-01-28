@@ -15,11 +15,16 @@ public class SwapDirectionTowardsCursor : MonoBehaviour
 
         if (rotationDirection.x < 0)
         {
-            transform.eulerAngles = new Vector3(transform.rotation.x, 0, transform.rotation.z);
+            transform.eulerAngles = RotateY(0);
         }
         else if (rotationDirection.x > 0)
         {
-            transform.eulerAngles = new Vector3(transform.rotation.x, 180, transform.rotation.z);
+            transform.eulerAngles = RotateY(180);
         }
+    }
+
+    Vector3 RotateY(float angle)
+    {
+        return new Vector3(transform.rotation.x, angle, transform.rotation.z);
     }
 }
