@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 public class EnemyMobHealthManager : MonoBehaviour, IDamageable
 {
+    [SerializeField] private ParticleSystem deathParticles;
     [SerializeField] private float maxHealth = 100;
     [SerializeField] private Image healthBarFill;
 
@@ -16,8 +17,12 @@ public class EnemyMobHealthManager : MonoBehaviour, IDamageable
 
     private void Update()
     {
-        if(_health <= 0)
+        if (_health <= 0)
+        {
             Destroy(gameObject);
+            deathParticles.transform.position = transform.position;
+            deathParticles.Play();
+        }
     }
 
     private void UpdateHealthBar()

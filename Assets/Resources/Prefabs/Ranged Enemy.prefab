@@ -525,6 +525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd94be901cd05fb4c9a6d4cff7f5bf4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathParticles: {fileID: 6932388814300370661, guid: c463df0fab34daa4c8d7507f2fd1f56c, type: 3}
   maxHealth: 100
   healthBarFill: {fileID: 292881437675717379}
 --- !u!58 &7584760229879967712

@@ -5,8 +5,9 @@ using UnityEngine.InputSystem;
 
 public class PlayersBulletCollider : MonoBehaviour
 {
+    [HideInInspector] public float damage = 100;
+    
     [SerializeField] private GameObject collisionParticle;
-
 
     void OnCollisionEnter2D(Collision2D other)
     {
@@ -19,6 +20,8 @@ public class PlayersBulletCollider : MonoBehaviour
 
         Instantiate(collisionParticle, point, particleRotation);
 
+        if(other.transform.CompareTag("Enemy"))
+            other.transform.GetComponent<IDamageable>().Damage(damage);
 
         Destroy(gameObject);
     }
