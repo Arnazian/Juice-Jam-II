@@ -28,9 +28,6 @@ public class MoveCameraTowardsPlayer : MonoBehaviour
             ((player.transform.position + 
             ((player.transform.position + mousePosition) / 2)) / 2)) / 2;
 
-
-        Debug.DrawLine(targetPosition, targetPosition + Vector3.one/5, Color.red, 1000000);
-
         transform.position = Vector3.Lerp(transform.position, new Vector3(targetPosition.x, targetPosition.y, -10f), cameraSpeed * screenSizeFloat);
     }
 }
