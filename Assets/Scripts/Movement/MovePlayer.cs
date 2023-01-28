@@ -12,7 +12,7 @@ public class MovePlayer : MonoBehaviour, IDamageable
 
     private Rigidbody2D rb;
 
-    [SerializeField] private InputAction playerInput;
+    public InputAction playerInput;
     private float inputH;
     private float inputV;
 
