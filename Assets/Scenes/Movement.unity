@@ -2194,7 +2194,6 @@ GameObject:
   - component: {fileID: 2119267109}
   - component: {fileID: 2119267112}
   - component: {fileID: 2119267111}
-  - component: {fileID: 2119267110}
   m_Layer: 0
   m_Name: Square (5)
   m_TagString: Untagged
@@ -2217,27 +2216,6 @@ Transform:
   m_Father: {fileID: 980867419}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &2119267110
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2119267108}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 10
-  m_AngularDrag: 10
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 0
 --- !u!61 &2119267111
 BoxCollider2D:
   m_ObjectHideFlags: 0
