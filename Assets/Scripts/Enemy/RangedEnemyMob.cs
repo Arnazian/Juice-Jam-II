@@ -50,5 +50,13 @@ public class RangedEnemyMob : MonoBehaviour
     {
         if(!_isAttacking || PauseMenu.Instance.IsPaused)
             return;
+
+        var projectileRotationZ = Mathf.Atan2(player.position.y, player.position.x) * Mathf.Rad2Deg-90;
+
+        Quaternion projectileRotation =  Quaternion.Euler(0f, 0f, projectileRotationZ);
+
+        GameObject newProjectile = Instantiate(projectile, shootSpawn.transform.position, projectileRotation);
+        newProjectile.GetComponent<ProjectileFlyStraight>().speed = projectileSpeed;
+        newProjectile.GetComponent<EnemyBulletCollider>().damage = projectileDamage;
     }
 }
