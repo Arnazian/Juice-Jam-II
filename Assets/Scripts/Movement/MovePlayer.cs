@@ -1,21 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class MovePlayer : MonoBehaviour
+public class MovePlayer : MonoBehaviour, IDamageable
 {
-    public float speed;
-    public float accelerationTime;
+    [SerializeField] private float maxHealth = 100;
+    
+    [SerializeField] private float speed;
+    [SerializeField] private float accelerationTime;
 
     private Rigidbody2D rb;
 
     private float inputH;
     private float inputV;
 
+    private float _health;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        _health = maxHealth;
     }
 
     void FixedUpdate()
@@ -36,6 +38,9 @@ public class MovePlayer : MonoBehaviour
             Vector2 Deacceleration = Deaccelerate(rb.velocity, accelerationTime * 1000);
             rb.velocity += Deacceleration;
         }
+        
+        if(_health <= 0)
+            Destroy(gameObject);
     }
 
 
@@ -49,5 +54,10 @@ public class MovePlayer : MonoBehaviour
     {
         Vector3 Deacceleration = (Vector3.zero - velocity) / time;
         return Deacceleration;
+    }
+
+    public void Damage(float amount)
+    {
+        _health -= amount;
     }
 }
