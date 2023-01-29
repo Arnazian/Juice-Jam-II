@@ -27,8 +27,7 @@ public class EnemyMob : MonoBehaviour
             var range = 0.5f;
             var rand = Random.Range(-range, range);
             var attackCooldownRand = attackCooldown + rand;
-            Attack();
-            InvokeRepeating(nameof(Attack), attackCooldown, attackCooldownRand);
+            InvokeRepeating(nameof(Attack), attackCooldown / 3, attackCooldownRand);
         }
         else if(!_agent.reachedDestination)
         {
