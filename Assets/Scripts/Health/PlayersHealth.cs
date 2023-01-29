@@ -1,30 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayersHealth : MonoBehaviour, IDamageable
 {
-    [SerializeField] private HealthBar healthBar;
-    [SerializeField] private float maxHealth = 100;
-    [SerializeField] private float _health;
-
+    private HealthBar _healthBar;
 
     void Start()
     {
-        _health = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
+        _healthBar = UIManager.Instance.GetPlayerHealthBar;
     }
 
     void FixedUpdate()
     {
-        if(_health <= 0)
+        if(_healthBar.GetHealth <= 0)
             Destroy(gameObject);
     }
 
 
     public void Damage(float amount)
     {
-        _health -= amount;
-        healthBar.SetHealth(_health);
+        _healthBar.Damage(amount);
     }
 }

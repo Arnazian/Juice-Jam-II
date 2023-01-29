@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -50,6 +51,8 @@ public class WaveManager : Singleton<WaveManager>
 
     private void StartFirstBoss()
     {
+        var bossHealthBar = UIManager.Instance.GetBossHealthBar;
+        bossHealthBar.gameObject.SetActive(true);
         var boss = Instantiate(firstBoss, Vector3.zero, Quaternion.identity);
     }
 
