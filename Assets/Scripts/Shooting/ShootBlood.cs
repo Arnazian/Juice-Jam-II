@@ -10,8 +10,8 @@ public class ShootBlood : MonoBehaviour
     [SerializeField] private GameObject projectile;
     [SerializeField] private GameObject shootSpawn;
     [SerializeField] private float damageToSelf;
-    [SerializeField] private int startShootCooldown = 15;
-    private int shootCooldown;
+    [SerializeField] private float startShootCooldown = 1;
+    private float shootCooldown;
 
 
     void Start()
@@ -21,6 +21,7 @@ public class ShootBlood : MonoBehaviour
 
     void FixedUpdate()
     {
+        Debug.Log(shootCooldown);
         if (Mouse.current.leftButton.isPressed && shootCooldown <= 0)
         {
             Shoot(Camera.main.ScreenToWorldPoint(Input.mousePosition) - shootSpawn.transform.position, projectileSpeed);
@@ -28,7 +29,7 @@ public class ShootBlood : MonoBehaviour
         }
         else
         {
-            shootCooldown--;
+            shootCooldown-=Time.deltaTime;
         }
     }
 
