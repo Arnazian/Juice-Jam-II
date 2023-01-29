@@ -36,7 +36,8 @@ public class MeleeCollider : MonoBehaviour
         foreach(GameObject go in hitEnemies)
         {
             go.GetComponent<IDamageable>().Damage(damageToEnemy);
-            go.GetComponent<IAstarAI>().Move(-transform.up * throwEnemyForce);
+            if (go.GetComponent<Rigidbody2D>() != null)
+                go.GetComponent<Rigidbody2D>().velocity = -transform.up * throwEnemyForce;
         }
 
         hitEnemies.Clear();

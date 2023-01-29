@@ -1706,6 +1706,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1886698391, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
+      propertyPath: throwEnemyForce
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 332318632987233901, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -4099,7 +4103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useScale: 1
-  maxHealth: 100
+  maxHealth: 10000
   healthBarFill: {fileID: 7376678199529963965}
   sliderTextMesh: {fileID: 7376678200320228996}
 --- !u!1 &7376678199529963955
