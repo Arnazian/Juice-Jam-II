@@ -36,10 +36,7 @@ public class ShootBlood : MonoBehaviour
     {
         GetComponent<IDamageable>().Damage(damageToSelf);
 
-        ScreenShake cameraShakeScript = Camera.main.GetComponent<ScreenShake>();
-        cameraShakeScript.shakeStrengthModifier = 0.12f;
-        cameraShakeScript.duration = 0.15f;
-        cameraShakeScript.startShake = true;
+        Camera.main.GetComponent<ScreenShake>().DoScreenShake(0.15f, 0.12f);
 
         var projectileRotationZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg-90;
 

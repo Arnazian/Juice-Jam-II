@@ -58,6 +58,8 @@ public class Dash : MonoBehaviour
 
         MakePlayerImmune();
 
+        Camera.main.GetComponent<ScreenShake>().DoScreenShake(0.25f, 0.05f);
+
         rb.AddForce(rb.velocity.normalized * 10 * force, ForceMode2D.Impulse);
     }
 
