@@ -11,6 +11,7 @@ public class PlayerMelee : MonoBehaviour
     private float recoveryDurationCur;
 
     private bool isAttacking;
+    public bool GetIsAttacking => isAttacking;
     private bool isRecovering;
 
     private RotateTowardsCursor rotateTowardsCursor;
@@ -62,7 +63,13 @@ public class PlayerMelee : MonoBehaviour
     {
         // rotateTowardsCursor.SetCanRotate(false);
         movePlayer.SetCanMove(false);
-        rb.AddForce(transform.up * playerForwardForce, ForceMode2D.Impulse);
+
+        // it's here and in Dash.cs cause player can press attack and then dash or reverse
+        if (!GetComponent<Dash>().IsMeleeAttackingOrDashing())
+            rb.AddForce(transform.up * playerForwardForce, ForceMode2D.Impulse);
+        else
+            rb.AddForce(transform.up * playerForwardForce/2, ForceMode2D.Impulse);
+
         recoveryDurationCur = recoveryDurationMax; 
         isAttacking = true;
         anim.SetBool("IsAttacking", true);

@@ -3,12 +3,9 @@ using UnityEngine;
 public class PlayersHealth : MonoBehaviour, IDamageable
 {
     private HealthBar _healthBar;
-    public bool isDashing;
 
     void Start()
     {
-        isDashing = false;
-
         _healthBar = UIManager.Instance.GetPlayerHealthBar;
     }
 
@@ -21,7 +18,7 @@ public class PlayersHealth : MonoBehaviour, IDamageable
 
     public void Damage(float amount)
     {
-        if (isDashing)
+        if (GetComponent<Dash>().isDashing)
             return;
 
         _healthBar.Damage(amount);

@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 
 public class Dash : MonoBehaviour
 {
+    public bool isDashing;
+
     [SerializeField] private float dashForce;
     [SerializeField] private float dashCooldownStart;
     private float dashCooldown;
@@ -14,6 +16,7 @@ public class Dash : MonoBehaviour
 
     void Start()
     {
+        isDashing = false;
         RestartDashCooldown(dashCooldownStart);
 
         rb = GetComponent<Rigidbody2D>();
@@ -60,17 +63,26 @@ public class Dash : MonoBehaviour
 
         Camera.main.GetComponent<ScreenShake>().DoScreenShake(0.25f, 0.05f);
 
-        rb.AddForce(rb.velocity.normalized * 10 * force, ForceMode2D.Impulse);
+        // it's here and in PlayerMelee.cs cause player can press attack and then dash or reverse
+        if (!IsMeleeAttackingOrDashing())
+            rb.AddForce(rb.velocity.normalized * 10 * force, ForceMode2D.Impulse);
+        else
+            rb.AddForce(rb.velocity.normalized * 10 * force/2, ForceMode2D.Impulse);
+    }
+
+    public bool IsMeleeAttackingOrDashing()
+    {
+        return GetComponent<PlayerMelee>().GetIsAttacking || isDashing;
     }
 
     void MakePlayerImmune()
     {
-        GetComponent<PlayersHealth>().isDashing = true;
+        isDashing = true;
     }
 
     void UnmakePlayerImmune()
     {
-        GetComponent<PlayersHealth>().isDashing = false;
+        isDashing = false;
     }
 
     IEnumerator MakeDashShadow()
