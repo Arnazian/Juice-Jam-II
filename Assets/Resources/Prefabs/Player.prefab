@@ -544,6 +544,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 332318632987233901}
+  - component: {fileID: 1388778450}
   - component: {fileID: 5334592487480752440}
   - component: {fileID: 3105882647621186600}
   - component: {fileID: 7794975990393462036}
@@ -553,7 +554,6 @@ GameObject:
   - component: {fileID: 1217632520}
   - component: {fileID: 1388778451}
   - component: {fileID: 1388778452}
-  - component: {fileID: 1388778450}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -583,6 +583,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1388778450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332318632987234194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 268f38cda17431240bdbc419616bb719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  recoveryDurationMax: 0.2
+  playerForwardForce: 400
+  meleeCollider: {fileID: 1886698391}
 --- !u!114 &5334592487480752440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -595,6 +610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf537eb9946e1bb4193621742a7d62d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDashing: 0
   dashForce: 225
   dashCooldownStart: 0.5
 --- !u!114 &3105882647621186600
@@ -609,7 +625,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad5ab20c7dff35d45808b07c2c56c947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDashing: 0
 --- !u!114 &7794975990393462036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -812,21 +827,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1388778450
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 332318632987234194}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 268f38cda17431240bdbc419616bb719, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  recoveryDurationMax: 0.2
-  playerForwardForce: 400
-  meleeCollider: {fileID: 1886698391}
 --- !u!1 &6569562972473423456
 GameObject:
   m_ObjectHideFlags: 0
