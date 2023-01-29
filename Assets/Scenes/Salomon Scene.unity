@@ -1025,6 +1025,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0.000031471, y: 469.8863}
   m_SizeDelta: {x: 1000, y: 140.2274}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &826525836 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6986773125613343827, guid: 47b61f8f94e59ca4f9745158c3d2d857, type: 3}
+  m_PrefabInstance: {fileID: 9118147202827335644}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1044580576
 GameObject:
   m_ObjectHideFlags: 0
@@ -2288,6 +2293,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1951580201}
   m_CullTransparentMesh: 1
+--- !u!4 &2052821487 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5933459116331191853, guid: 47b61f8f94e59ca4f9745158c3d2d857, type: 3}
+  m_PrefabInstance: {fileID: 9118147202827335644}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6557699443311743060
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2352,6 +2362,42 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2482328996257804578, guid: 47b61f8f94e59ca4f9745158c3d2d857, type: 3}
+      propertyPath: rotator
+      value: 
+      objectReference: {fileID: 826525836}
+    - target: {fileID: 2482328996257804578, guid: 47b61f8f94e59ca4f9745158c3d2d857, type: 3}
+      propertyPath: fullTurnDuration
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2482328996257804578, guid: 47b61f8f94e59ca4f9745158c3d2d857, type: 3}
+      propertyPath: constantShootPoint
+      value: 
+      objectReference: {fileID: 2052821487}
+    - target: {fileID: 2482328996257804578, guid: 47b61f8f94e59ca4f9745158c3d2d857, type: 3}
+      propertyPath: rotatingShootInterval
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2482328996257804578, guid: 47b61f8f94e59ca4f9745158c3d2d857, type: 3}
+      propertyPath: constantShootProjectile
+      value: 
+      objectReference: {fileID: 6557699443393811041, guid: d9a9cbd9836d7bc4aa0e02c1b4f61e5c, type: 3}
+    - target: {fileID: 2482328996257804578, guid: 47b61f8f94e59ca4f9745158c3d2d857, type: 3}
+      propertyPath: constantShootDurationMax
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2482328996257804578, guid: 47b61f8f94e59ca4f9745158c3d2d857, type: 3}
+      propertyPath: constantShootDurationMin
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2482328996257804578, guid: 47b61f8f94e59ca4f9745158c3d2d857, type: 3}
+      propertyPath: constantShootIntervalMax
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2482328996257804578, guid: 47b61f8f94e59ca4f9745158c3d2d857, type: 3}
+      propertyPath: constantShootIntervalMin
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 4381738000340915999, guid: 47b61f8f94e59ca4f9745158c3d2d857, type: 3}
       propertyPath: m_Name
       value: First Boss

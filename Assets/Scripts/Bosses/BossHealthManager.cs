@@ -25,6 +25,13 @@ public class BossHealthManager : MonoBehaviour, IDamageable
         bossCurHealth -= damage;
         bossHealthSlider.value = bossCurHealth;
         bossStateController.CheckStageThreshold();
+
+        if (bossCurHealth <= 0) { Die(); }
+    }
+
+    void Die()
+    {
+        Destroy(gameObject);
     }
 
     public float GetHealth => bossCurHealth;

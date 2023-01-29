@@ -45,6 +45,14 @@ public class BossStateController : MonoBehaviour
             GetComponent<Stage3Base>().StartStageThree();
         }
     }
+    public void StartStageThree()
+    {
+        if (curStage == 3) return;
+        curStage = 3;
+        bossHealthManager.SetHealth(stageThresholds[2]);
+        GetComponent<Stage2Base>().StopStageTwo();
+        GetComponent<Stage3Base>().StartStageThree();
+    }
 
     public List<float> GetStageThresholds() { return stageThresholds; }
 

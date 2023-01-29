@@ -1,21 +1,137 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class FB_StageThree : Stage3Base
 {
     private bool stageActive = false;
 
+    [Header("ROTATING ATTACK Variables")]
+
+    [SerializeField] private float fullTurnDuration;
+    [SerializeField] private GameObject rotator;
+    [SerializeField] private float rotatingShootInterval;
+
+    [Header("CONSTANT SHOOTING Variables")]
+
+    private bool isConstantlyShooting = false;
+    [SerializeField] private GameObject constantShootProjectile;
+    [SerializeField] private Transform constantShootPoint;
+    [SerializeField] private float constantShootDurationMin;
+    [SerializeField] private float constantShootDurationMax;
+
+    [SerializeField] private float constantShootIntervalMin;
+    [SerializeField] private float constantShootIntervalMax;
+    private float constantShootIntervalCur;
+
+    [Header("SPAWN MINIONS Variables")]
+    //
+    //
+    // 
+
+    private ProjectileSpawner projectileSpawner;
+    private FacePlayer facePlayer;
+
+
+    private void Start()
+    {
+        facePlayer = GetComponent<FacePlayer>();
+        projectileSpawner = GetComponent<ProjectileSpawner>();
+    }
+
     void Update()
     {
         if (stageActive)
-            Debug.Log("You're in stage THREE");
+        {
+            DoConstantShoot();
+        }
     }
 
+    void StageLogic()
+    {
+
+    }
+
+    #region Rotatig Attack
+    [ContextMenu("AttackOne")]
+    void RotatingAttack()
+    {
+        if (!stageActive) { return; }
+        projectileSpawner.EnableShooting();
+        facePlayer.DisableFacePlayer();
+        rotator.transform.DOLocalRotate(new Vector3(0, 0, 360), fullTurnDuration, RotateMode.FastBeyond360).SetRelative(true).SetEase(Ease.Linear).OnComplete(() => {
+            rotator.transform.DOLocalRotate(new Vector3(0, 0, 360), fullTurnDuration, RotateMode.FastBeyond360).SetRelative(true).SetEase(Ease.Linear).OnComplete(() => 
+            {
+                rotator.transform.DOLocalRotate(new Vector3(0, 0, 360), fullTurnDuration, RotateMode.FastBeyond360).SetRelative(true).SetEase(Ease.Linear).OnComplete(() =>
+
+                {
+                    projectileSpawner.DisableShooting();
+                    facePlayer.EnableFacePlayer();
+                    StartConstantShooting();
+                }); ;
+            }); ;
+        }); ;
+
+    }
+    #endregion
+
+    #region Constantly Shoot
+    void StartConstantShooting()
+    {
+        if (!stageActive) { return; }
+        isConstantlyShooting = true;
+        StartCoroutine("CoroutineConstantlyShooting");
+    }
+
+    void StopConstantShooting()
+    {
+        isConstantlyShooting = false;
+
+        // change random to 0, 2 after minions exist
+        int i = Random.Range(0, 1);
+        if (i == 0)
+        {
+            RotatingAttack();
+        }
+        else
+        {
+            SpawnMinions();
+        }
+    }
+
+    void DoConstantShoot()
+    {
+        if (!isConstantlyShooting || !stageActive) { return; }
+
+        if (constantShootIntervalCur <= 0)
+        {
+            Instantiate(constantShootProjectile, constantShootPoint.position, constantShootPoint.rotation);
+            float newInterval = Random.Range(constantShootIntervalMin, constantShootIntervalMax);
+            constantShootIntervalCur = newInterval;
+        }
+        constantShootIntervalCur -= Time.deltaTime;
+
+
+    }
+    IEnumerator CoroutineConstantlyShooting()
+    {
+        float duration = Random.Range(constantShootDurationMin, constantShootDurationMax);
+        yield return new WaitForSeconds(duration);
+        StopConstantShooting();
+    }
+    #endregion
+
+    void SpawnMinions()
+    {
+        if (!stageActive) { return; }
+    }
     #region start and stop
     public override void StartStageThree()
     {
         stageActive = true;
+        projectileSpawner.SetShootInterval(rotatingShootInterval);
+        StartConstantShooting();
     }
     public override void StopStageThree()
     {

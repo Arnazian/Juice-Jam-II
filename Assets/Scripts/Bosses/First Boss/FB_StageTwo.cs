@@ -34,6 +34,7 @@ public class FB_StageTwo : Stage2Base
         mainBossSprite.enabled = true;
         mainBossCollider.enabled = true;
         stageActive = false;
+       //  FindObjectOfType<BossStateController>().StartStageThree();
     }
     #endregion
 }
