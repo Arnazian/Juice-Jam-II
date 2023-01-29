@@ -5,10 +5,11 @@ using UnityEngine.InputSystem;
 
 public class ShootBlood : MonoBehaviour
 {
+    [SerializeField] private float projectileDamage = 5f;
     [SerializeField] private float projectileSpeed;
     [SerializeField] private GameObject projectile;
-    [SerializeField] private GameObject shootCenter, shootSpawn;
-
+    [SerializeField] private GameObject shootSpawn;
+    [SerializeField] private float damageToSelf;
     [SerializeField] private int startShootCooldown = 15;
     private int shootCooldown;
 
@@ -33,7 +34,7 @@ public class ShootBlood : MonoBehaviour
 
     public void Shoot(Vector3 direction, float speed)
     {
-        GetComponent<IDamageable>().Damage(5);
+        GetComponent<IDamageable>().Damage(damageToSelf);
 
         ScreenShake cameraShakeScript = Camera.main.GetComponent<ScreenShake>();
         cameraShakeScript.shakeStrengthModifier = 0.12f;
@@ -41,16 +42,16 @@ public class ShootBlood : MonoBehaviour
         cameraShakeScript.startShake = true;
 
 
-        float spread, rand1, rand2;
-        spread = 0.15f;
-        rand1 = Random.Range(-spread, spread);
-        rand2 = Random.Range(-spread, spread);
+        var spread = 0.15f;
+        var rand1 = Random.Range(-spread, spread);
+        var rand2 = Random.Range(-spread, spread);
 
-        float projectileRotationZ = Mathf.Atan2(direction.y+rand1, direction.x+rand2) * Mathf.Rad2Deg-90;
+        var projectileRotationZ = Mathf.Atan2(direction.y+rand1, direction.x+rand2) * Mathf.Rad2Deg-90;
 
-        Quaternion projectileRotation =  Quaternion.Euler(0f, 0f, projectileRotationZ);
+        var projectileRotation =  Quaternion.Euler(0f, 0f, projectileRotationZ);
 
-        GameObject newProjectile = Instantiate(projectile, shootSpawn.transform.position, projectileRotation);
+        var newProjectile = Instantiate(projectile, shootSpawn.transform.position, projectileRotation);
         newProjectile.GetComponent<ProjectileFlyStraight>().speed = speed;
+        newProjectile.GetComponent<BulletCollider>().damage = projectileDamage;
     }
 }

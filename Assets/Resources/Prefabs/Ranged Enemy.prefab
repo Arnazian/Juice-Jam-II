@@ -59,7 +59,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &6674497328742910592
 MonoBehaviour:
@@ -507,12 +507,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f94ccce9a0e8ad34cacf312eaaec605b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileSpeed: 10
-  projectile: {fileID: 7744099146439851529, guid: 31c36ad2529306b4b80bdb58545ade16, type: 3}
+  projectileSpeed: 17
+  projectile: {fileID: 7744099146439851529, guid: 9e4f24ef2305cf5408a4279352b51bb8, type: 3}
   shootSpawn: {fileID: 4358479786519421599}
-  projectileDamage: 10
+  projectileDamage: 6.5
   attackCooldown: 1
-  player: {fileID: 0}
+  player: {fileID: 332318632987233901, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
 --- !u!114 &2591041230669887369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -525,6 +525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd94be901cd05fb4c9a6d4cff7f5bf4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathParticles: {fileID: 6932388814300370661, guid: c463df0fab34daa4c8d7507f2fd1f56c, type: 3}
   maxHealth: 100
   healthBarFill: {fileID: 292881437675717379}
 --- !u!58 &7584760229879967712

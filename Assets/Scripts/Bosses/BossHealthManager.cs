@@ -3,32 +3,40 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BossHealthManager : MonoBehaviour
+public class BossHealthManager : MonoBehaviour, IDamageable
 {
-    [SerializeField] private int bossMaxHealth;
+    [SerializeField] private float bossMaxHealth;
     [SerializeField] private Slider bossHealthSlider;
     
-  
- 
-    private int bossCurHealth;
+    private float bossCurHealth;
 
     private BossStateController bossStateController;
     private void Start()
     {
+        if (bossHealthSlider == null)
+            bossHealthSlider = FindObjectsOfType<Slider>()[1];
         bossStateController = GetComponent<BossStateController>(); 
         bossCurHealth = bossMaxHealth;
         bossHealthSlider.maxValue = bossMaxHealth;
         bossHealthSlider.value = bossCurHealth; 
     }
-    public void TakeDamage(int damage)
+    public void Damage(float damage)
     {
         bossCurHealth -= damage;
         bossHealthSlider.value = bossCurHealth;
         bossStateController.CheckStageThreshold();
+
+        if (bossCurHealth <= 0)
+            Die();
     }
 
-    public int GetHealth => bossCurHealth;
-    public void SetHealth(int newHealth) { bossCurHealth = newHealth; }
+    void Die()
+    {
+        Destroy(gameObject);
+    }
+
+    public float GetHealth => bossCurHealth;
+    public void SetHealth(float newHealth) { bossCurHealth = newHealth; }
 
 
 

@@ -1,24 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FB_StageTwo : Stage2Base
 {
     private bool stageActive = false;
+    [SerializeField] GameObject smallBosses;
 
-    void Update()
+    private SpriteRenderer mainBossSprite;
+    private Collider2D mainBossCollider;
+
+    private void Start()
     {
-        if(stageActive)
-        Debug.Log("You're in stage TWO");
+        mainBossCollider = GetComponent<Collider2D>();
+        mainBossSprite = GetComponent<SpriteRenderer>();
     }
 
-    #region start and stop
+    #region Start and Stop
     public override void StartStageTwo()
     {
         stageActive = true;
+        mainBossSprite.enabled = false;
+        mainBossCollider.enabled = false;
+        Instantiate(smallBosses, Vector3.zero, Quaternion.identity);
     }
     public override void StopStageTwo()
     {
+        mainBossSprite.enabled = true;
+        mainBossCollider.enabled = true;
         stageActive = false;
     }
     #endregion
