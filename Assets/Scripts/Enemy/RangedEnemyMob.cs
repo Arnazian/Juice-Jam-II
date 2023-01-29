@@ -11,7 +11,7 @@ public class RangedEnemyMob : MonoBehaviour
     [SerializeField] private float projectileDamage = 10f;
     
     [SerializeField] private float attackCooldown;
-    [SerializeField] private Transform player;
+    public Transform player;
 
     private IAstarAI _agent;
     private bool _isAttacking;
@@ -19,6 +19,7 @@ public class RangedEnemyMob : MonoBehaviour
     private void Awake()
     {
         _agent = GetComponent<IAstarAI>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     private void Update()

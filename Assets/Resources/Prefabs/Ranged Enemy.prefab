@@ -512,7 +512,7 @@ MonoBehaviour:
   shootSpawn: {fileID: 4358479786519421599}
   projectileDamage: 6.5
   attackCooldown: 1
-  player: {fileID: 0}
+  player: {fileID: 332318632987233901, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
 --- !u!114 &2591041230669887369
 MonoBehaviour:
   m_ObjectHideFlags: 0
