@@ -14,6 +14,8 @@ public class MoveTowardsPlayer : MonoBehaviour
     private Rigidbody2D rb;
     private Transform player;
     
+    public bool IsMoving => isMoving;
+    
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -39,5 +41,4 @@ public class MoveTowardsPlayer : MonoBehaviour
 
         rb.MovePosition(rb.position + ((Vector2)transform.up * moveSpeed * Time.deltaTime));
     }
-
 }

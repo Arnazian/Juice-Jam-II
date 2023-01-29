@@ -8,20 +8,25 @@ public class EnemyMob : MonoBehaviour
     [SerializeField] private float attackDamage = 10f;
     public Transform player;
 
-    private IAstarAI _agent;
+    private MoveTowardsPlayer _movement;
     private bool _isAttacking;
 
     private void Awake()
     {
-        _agent = GetComponent<IAstarAI>();
+        _movement = GetComponent<MoveTowardsPlayer>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     private void Update()
     {
-        _agent.destination = player.position;
-        _agent.canMove = !PauseMenu.Instance.IsPaused;
-        if (_agent.reachedDestination && !_isAttacking)
+        if(PauseMenu.Instance.IsPaused)
+            return;
+        
+        var rotationDirection = player.position - transform.position;
+        var rotationZ = Mathf.Atan2(rotationDirection.y, rotationDirection.x) * Mathf.Rad2Deg - 90;
+        transform.rotation = Quaternion.Euler(0f, 0f , rotationZ);
+        
+        if (!_movement.IsMoving && !_isAttacking)
         {
             _isAttacking = true;
             var range = 0.5f;
@@ -29,18 +34,11 @@ public class EnemyMob : MonoBehaviour
             var attackCooldownRand = attackCooldown + rand;
             InvokeRepeating(nameof(Attack), attackCooldown / 3, attackCooldownRand);
         }
-        else if(!_agent.reachedDestination)
+        else if(_movement.IsMoving)
         {
             _isAttacking = false;
             CancelInvoke(nameof(Attack));
         }
-        
-        if(PauseMenu.Instance.IsPaused)
-            return;
-        
-        var rotationDirection = player.position - transform.position;
-        var rotationZ = Mathf.Atan2(rotationDirection.y, rotationDirection.x) * Mathf.Rad2Deg - 90;
-        transform.rotation = Quaternion.Euler(0f, 0f , rotationZ);
     }
 
     private void Attack()
