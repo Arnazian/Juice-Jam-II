@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Pathfinding;
 using UnityEngine;
 
 public class MeleeCollider : MonoBehaviour
@@ -24,7 +25,8 @@ public class MeleeCollider : MonoBehaviour
         if(collision.CompareTag("Enemy"))
         {
             Debug.Log("Added enemy to hitnemies list");
-            hitEnemies.Add(collision.gameObject);
+            if(!hitEnemies.Contains(collision.gameObject))
+                hitEnemies.Add(collision.gameObject);
             // transform.GetComponent<IDamageable>().Damage(damage);
         }
     }
@@ -35,9 +37,10 @@ public class MeleeCollider : MonoBehaviour
         foreach(GameObject go in hitEnemies)
         {
             go.GetComponent<IDamageable>().Damage(damageToEnemy);
-            if(go.GetComponent<Rigidbody2D>() != null) { go.GetComponent<Rigidbody2D>().AddForce(-transform.up * throwEnemyForce, ForceMode2D.Impulse); }            
+            if (go.GetComponent<Rigidbody2D>() != null)
+                go.GetComponent<Rigidbody2D>().velocity = -transform.up * throwEnemyForce;
         }
-
+        
         hitEnemies.Clear();
     }
 }

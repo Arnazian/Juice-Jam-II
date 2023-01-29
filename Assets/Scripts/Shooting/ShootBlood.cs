@@ -10,8 +10,8 @@ public class ShootBlood : MonoBehaviour
     [SerializeField] private GameObject projectile;
     [SerializeField] private GameObject shootSpawn;
     [SerializeField] private float damageToSelf;
-    [SerializeField] private int startShootCooldown = 15;
-    private int shootCooldown;
+    [SerializeField] private float startShootCooldown = 1;
+    private float shootCooldown;
 
 
     void Start()
@@ -28,7 +28,7 @@ public class ShootBlood : MonoBehaviour
         }
         else
         {
-            shootCooldown--;
+            shootCooldown-=Time.deltaTime;
         }
     }
 
@@ -36,17 +36,9 @@ public class ShootBlood : MonoBehaviour
     {
         GetComponent<IDamageable>().Damage(damageToSelf);
 
-        ScreenShake cameraShakeScript = Camera.main.GetComponent<ScreenShake>();
-        cameraShakeScript.shakeStrengthModifier = 0.12f;
-        cameraShakeScript.duration = 0.15f;
-        cameraShakeScript.startShake = true;
+        Camera.main.GetComponent<ScreenShake>().DoScreenShake(0.15f, 0.12f);
 
-
-        var spread = 0.15f;
-        var rand1 = Random.Range(-spread, spread);
-        var rand2 = Random.Range(-spread, spread);
-
-        var projectileRotationZ = Mathf.Atan2(direction.y+rand1, direction.x+rand2) * Mathf.Rad2Deg-90;
+        var projectileRotationZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg-90;
 
         var projectileRotation =  Quaternion.Euler(0f, 0f, projectileRotationZ);
 

@@ -490,7 +490,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageToEnemy: 20
-  throwEnemyForce: 5000
+  throwEnemyForce: 1
 --- !u!68 &1886698389
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -544,6 +544,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 332318632987233901}
+  - component: {fileID: 5334592487480752440}
   - component: {fileID: 3105882647621186600}
   - component: {fileID: 7794975990393462036}
   - component: {fileID: 332318632987233903}
@@ -582,6 +583,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5334592487480752440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332318632987234194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf537eb9946e1bb4193621742a7d62d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dashForce: 225
+  dashCooldownStart: 0.5
 --- !u!114 &3105882647621186600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -594,6 +609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad5ab20c7dff35d45808b07c2c56c947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDashing: 0
 --- !u!114 &7794975990393462036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -685,8 +701,8 @@ MonoBehaviour:
   projectileSpeed: 12
   projectile: {fileID: 7744099146439851529, guid: 31c36ad2529306b4b80bdb58545ade16, type: 3}
   shootSpawn: {fileID: 8313232032094458876}
-  damageToSelf: 0
-  startShootCooldown: 15
+  damageToSelf: 1
+  startShootCooldown: 0.25
 --- !u!50 &332318632987234192
 Rigidbody2D:
   serializedVersion: 4
