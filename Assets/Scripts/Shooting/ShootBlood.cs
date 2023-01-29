@@ -52,6 +52,6 @@ public class ShootBlood : MonoBehaviour
 
         var newProjectile = Instantiate(projectile, shootSpawn.transform.position, projectileRotation);
         newProjectile.GetComponent<ProjectileFlyStraight>().speed = speed;
-        newProjectile.GetComponent<PlayersBulletCollider>().damage = projectileDamage;
+        newProjectile.GetComponent<BulletCollider>().damage = projectileDamage;
     }
 }

@@ -20,8 +20,8 @@ public class EnemyMobHealthManager : MonoBehaviour, IDamageable
         if (_health <= 0)
         {
             Destroy(gameObject);
-            deathParticles.transform.position = transform.position;
-            deathParticles.Play();
+            var particles = Instantiate(deathParticles, transform.position, Quaternion.identity);
+            particles.Play();
         }
     }
 

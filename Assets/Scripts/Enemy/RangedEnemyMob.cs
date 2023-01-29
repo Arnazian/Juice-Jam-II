@@ -57,6 +57,6 @@ public class RangedEnemyMob : MonoBehaviour
         var newProjectile = Instantiate(projectile, shootSpawn.transform.position, projectileRotation);
         
         newProjectile.GetComponent<ProjectileFlyStraight>().speed = projectileSpeed;
-        newProjectile.GetComponent<EnemyBulletCollider>().damage = projectileDamage;
+        newProjectile.GetComponent<BulletCollider>().damage = projectileDamage;
     }
 }
