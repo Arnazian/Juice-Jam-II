@@ -6,7 +6,7 @@ public class EnemyMob : MonoBehaviour
 {
     [SerializeField] private float attackCooldown;
     [SerializeField] private float attackDamage = 10f;
-    [SerializeField] private Transform player;
+    public Transform player;
 
     private IAstarAI _agent;
     private bool _isAttacking;
@@ -14,6 +14,7 @@ public class EnemyMob : MonoBehaviour
     private void Awake()
     {
         _agent = GetComponent<IAstarAI>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     private void Update()

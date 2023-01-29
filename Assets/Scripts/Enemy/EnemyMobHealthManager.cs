@@ -22,6 +22,7 @@ public class EnemyMobHealthManager : MonoBehaviour, IDamageable
             Destroy(gameObject);
             var particles = Instantiate(deathParticles, transform.position, Quaternion.identity);
             particles.Play();
+            WaveManager.Instance.OnDeath();
         }
     }
 
