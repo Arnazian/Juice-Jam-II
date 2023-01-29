@@ -1760,7 +1760,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4098626456807953694, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
       propertyPath: startShootCooldown
-      value: 0.5
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 5334592487480752440, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
       propertyPath: dashForce
@@ -1768,7 +1768,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5334592487480752440, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
       propertyPath: dashCooldownStart
-      value: 300
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}

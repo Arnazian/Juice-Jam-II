@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class DashShadow : MonoBehaviour
 {
-    static public void CreateDashShadow(Vector2 startPosition, Vector2 endPosition, GameObject spriteGamoObject, Quaternion rotation = default(Quaternion))
+    public static void CreateDashShadow(Vector3 position, GameObject spriteObject, Quaternion rotation, float howLongShouldShadowLast = 1)
     {
-        GameObject dashSprite = spriteGamoObject;
+        GameObject objToSpawn = Instantiate(spriteObject, position, rotation);
 
-        dashSprite.GetComponent<SpriteRenderer>().sortingOrder = -5;
-        dashSprite.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 50);
+        DestroyDashShadow DDSScript = objToSpawn.AddComponent<DestroyDashShadow>();
+        SpriteRenderer spriteRenderer = objToSpawn.GetComponent<SpriteRenderer>();
 
-        Instantiate(dashSprite, startPosition, rotation);
+        DDSScript.howLongShouldShadowLast = howLongShouldShadowLast;
+        spriteRenderer.sortingOrder = -5;
+        spriteRenderer.color = new Color(0.5f, 0.25f, 0.25f, howLongShouldShadowLast);
     }
 }

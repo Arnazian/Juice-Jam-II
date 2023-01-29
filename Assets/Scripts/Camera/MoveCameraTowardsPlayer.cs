@@ -30,7 +30,7 @@ public class MoveCameraTowardsPlayer : MonoBehaviour
         transform.position = Vector3.Lerp(transform.position, new Vector3(targetPosition.x, targetPosition.y, -10f), cameraSpeed * screenSizeFloat);
     }
 
-    Vector3 AVGOfTwoVectors(Vector3 pos1, Vector3 pos2)
+    public static Vector3 AVGOfTwoVectors(Vector3 pos1, Vector3 pos2)
     {
         return (pos1 + pos2) / 2;
     }
