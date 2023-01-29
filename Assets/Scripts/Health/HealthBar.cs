@@ -23,13 +23,13 @@ public class HealthBar : MonoBehaviour
 
 	public void Damage(float amount)
 	{
-		_health -= amount;
+		_health -= Mathf.Round(amount);
 		UpdateHealthBar();
 	}
 	
     public void SetHealth(float health)
     {
-	    _health = health;
+	    _health = Mathf.Round(health);
 	    UpdateHealthBar();
     }
     
