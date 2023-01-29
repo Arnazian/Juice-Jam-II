@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: f68c7a39d2683c844a3012d6e62a9c66
+<<<<<<<< HEAD:Assets/Sprites/level 1 tiles/corner_bottom_left.png.meta
+guid: ee284b5c7126c1c4f858fd0f0b583b74
+========
+guid: 8ab4a0e44b17f684682cf2b6505e6bd1
+>>>>>>>> 27662f8883d66443b91bc4169da8ecaa16a48122:Assets/Sprites/level 1 tiles/corner_bottom_right.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -47,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -70,7 +74,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
