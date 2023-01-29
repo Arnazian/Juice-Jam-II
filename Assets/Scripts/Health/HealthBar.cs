@@ -1,4 +1,5 @@
 using System;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -39,7 +40,7 @@ public class HealthBar : MonoBehaviour
 	    if (!useScale)
 		    healthBarFill.fillAmount = fillAmount;
 	    else
-		    healthBarFill.transform.localScale = new Vector3(fillAmount, 1f, 1f);
+		    healthBarFill.transform.DOScaleX(fillAmount, 0.5f);
 	    _health = Mathf.Clamp(_health, 0, maxHealth);
 	    if(sliderTextMesh)
 		    sliderTextMesh.text = _health + " / " + maxHealth;
