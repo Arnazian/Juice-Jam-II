@@ -45,7 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dontDestroyOnLoad: 0
-  enemySpawnRange: {x: 15, y: 15}
+  firstBoss: {fileID: 4381738000340915999, guid: 47b61f8f94e59ca4f9745158c3d2d857, type: 3}
+  enemySpawnRange: {x: 9, y: 5}
   enemies:
   - list:
     - weight: 25
