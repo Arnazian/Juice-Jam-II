@@ -60,7 +60,7 @@ public class PlayerMelee : MonoBehaviour
 
     void StartAttack()
     {
-        rotateTowardsCursor.SetCanRotate(false);
+        // rotateTowardsCursor.SetCanRotate(false);
         movePlayer.SetCanMove(false);
         rb.AddForce(transform.up * playerForwardForce, ForceMode2D.Impulse);
         recoveryDurationCur = recoveryDurationMax; 
@@ -79,7 +79,7 @@ public class PlayerMelee : MonoBehaviour
         isRecovering = false;
         isAttacking = false;
         recoveryDurationCur = recoveryDurationMax;
-        rotateTowardsCursor.SetCanRotate(true);
+        //rotateTowardsCursor.SetCanRotate(true);
         movePlayer.SetCanMove(true);
         anim.SetBool("IsAttacking", false);
     }
