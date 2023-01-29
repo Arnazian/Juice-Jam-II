@@ -25,7 +25,8 @@ public class MeleeCollider : MonoBehaviour
         if(collision.CompareTag("Enemy"))
         {
             Debug.Log("Added enemy to hitnemies list");
-            hitEnemies.Add(collision.gameObject);
+            if(!hitEnemies.Contains(collision.gameObject))
+                hitEnemies.Add(collision.gameObject);
             // transform.GetComponent<IDamageable>().Damage(damage);
         }
     }
@@ -39,7 +40,7 @@ public class MeleeCollider : MonoBehaviour
             if (go.GetComponent<Rigidbody2D>() != null)
                 go.GetComponent<Rigidbody2D>().velocity = -transform.up * throwEnemyForce;
         }
-
+        
         hitEnemies.Clear();
     }
 }
