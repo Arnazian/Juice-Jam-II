@@ -8,7 +8,8 @@ public class ProjectileSpawner : MonoBehaviour
     [SerializeField] private Transform shootPoint;
     [SerializeField] private GameObject bulletPrefab;
 
-    private float shootIntervalMax;
+    [SerializeField] private float shootIntervalMin = 0;
+    [SerializeField] private float shootIntervalMax;
     private float shootIntervalCur;
     void Start()
     {
@@ -35,7 +36,9 @@ public class ProjectileSpawner : MonoBehaviour
 
         if(shootIntervalCur <= 0)
         {
-            shootIntervalCur = shootIntervalMax;
+            float newShootInterval = Random.Range(shootIntervalMin, shootIntervalMax);
+            if (shootIntervalMin <= 0) { newShootInterval = shootIntervalMax; }
+            shootIntervalCur = newShootInterval;
             DoShoot();
         }
         shootIntervalCur -= Time.deltaTime;

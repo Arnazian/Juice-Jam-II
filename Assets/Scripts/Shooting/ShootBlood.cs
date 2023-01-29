@@ -9,7 +9,7 @@ public class ShootBlood : MonoBehaviour
     [SerializeField] private float projectileSpeed;
     [SerializeField] private GameObject projectile;
     [SerializeField] private GameObject shootSpawn;
-
+    [SerializeField] private float damageToSelf;
     [SerializeField] private int startShootCooldown = 15;
     private int shootCooldown;
 
@@ -34,7 +34,7 @@ public class ShootBlood : MonoBehaviour
 
     public void Shoot(Vector3 direction, float speed)
     {
-        GetComponent<IDamageable>().Damage(5);
+        GetComponent<IDamageable>().Damage(damageToSelf);
 
         ScreenShake cameraShakeScript = Camera.main.GetComponent<ScreenShake>();
         cameraShakeScript.shakeStrengthModifier = 0.12f;

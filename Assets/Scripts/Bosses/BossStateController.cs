@@ -5,7 +5,7 @@ using UnityEngine;
 public class BossStateController : MonoBehaviour
 {
     private int curStage;
-    [SerializeField] private List<int> stageThresholds;
+    [SerializeField] private List<float> stageThresholds;
 
     private BossHealthManager bossHealthManager;
 
@@ -45,6 +45,8 @@ public class BossStateController : MonoBehaviour
             GetComponent<Stage3Base>().StartStageThree();
         }
     }
+
+    public List<float> GetStageThresholds() { return stageThresholds; }
 
 
 }

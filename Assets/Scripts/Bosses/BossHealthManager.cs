@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BossHealthManager : MonoBehaviour
+public class BossHealthManager : MonoBehaviour, IDamageable
 {
-    [SerializeField] private int bossMaxHealth;
+    [SerializeField] private float bossMaxHealth;
     [SerializeField] private Slider bossHealthSlider;
     
   
  
-    private int bossCurHealth;
+    private float bossCurHealth;
 
     private BossStateController bossStateController;
     private void Start()
@@ -20,15 +20,15 @@ public class BossHealthManager : MonoBehaviour
         bossHealthSlider.maxValue = bossMaxHealth;
         bossHealthSlider.value = bossCurHealth; 
     }
-    public void TakeDamage(int damage)
+    public void Damage(float damage)
     {
         bossCurHealth -= damage;
         bossHealthSlider.value = bossCurHealth;
         bossStateController.CheckStageThreshold();
     }
 
-    public int GetHealth => bossCurHealth;
-    public void SetHealth(int newHealth) { bossCurHealth = newHealth; }
+    public float GetHealth => bossCurHealth;
+    public void SetHealth(float newHealth) { bossCurHealth = newHealth; }
 
 
 
