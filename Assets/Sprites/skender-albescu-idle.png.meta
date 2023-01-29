@@ -1,9 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 <<<<<<< HEAD:Assets/Sprites/barrel.png.meta
 guid: d21421f3be7dc2f408946843ffd53a13
 =======
 guid: 0bc75cf82b1aad142a34cc71591c1fac
 >>>>>>> parent of 764dbad (Somee changes ?):Assets/Sprites/skender-albescu-idle.png.meta
+=======
+guid: 0bc75cf82b1aad142a34cc71591c1fac
+>>>>>>> parent of 764dbad (Somee changes ?)
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
