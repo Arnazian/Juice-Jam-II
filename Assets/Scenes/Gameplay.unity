@@ -3746,10 +3746,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wave Manager
       objectReference: {fileID: 0}
-    - target: {fileID: 3916624221039071084, guid: 17887ae7529b27b44a4ee0ec75c4834c, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3916624221039071085, guid: 17887ae7529b27b44a4ee0ec75c4834c, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -3793,18 +3789,6 @@ PrefabInstance:
     - target: {fileID: 3916624221039071085, guid: 17887ae7529b27b44a4ee0ec75c4834c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3916624221039071086, guid: 17887ae7529b27b44a4ee0ec75c4834c, type: 3}
-      propertyPath: firstBoss
-      value: 
-      objectReference: {fileID: 4381738000340915999, guid: 47b61f8f94e59ca4f9745158c3d2d857, type: 3}
-    - target: {fileID: 3916624221039071086, guid: 17887ae7529b27b44a4ee0ec75c4834c, type: 3}
-      propertyPath: enemySpawnRange.x
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 3916624221039071086, guid: 17887ae7529b27b44a4ee0ec75c4834c, type: 3}
-      propertyPath: enemySpawnRange.y
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17887ae7529b27b44a4ee0ec75c4834c, type: 3}
