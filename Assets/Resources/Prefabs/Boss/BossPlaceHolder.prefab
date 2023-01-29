@@ -274,7 +274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27f9f8272a5cee24394ee4e663561180, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smallBosses: {fileID: 0}
+  smallBosses: {fileID: 7931460809362734725, guid: 5f9725c77094ca249882938886e9b103, type: 3}
 --- !u!114 &2482328996257804578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,6 +287,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b14a0c6852e559147865794252d0978c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fullTurnDuration: 1.5
+  rotator: {fileID: 6986773125613343827}
+  rotatingShootInterval: 0.1
+  constantShootProjectile: {fileID: 6557699443393811041, guid: d9a9cbd9836d7bc4aa0e02c1b4f61e5c, type: 3}
+  constantShootPoint: {fileID: 5933459116331191853}
+  constantShootDurationMin: 3
+  constantShootDurationMax: 5
+  constantShootIntervalMin: 0.3
+  constantShootIntervalMax: 0.1
 --- !u!114 &227190027
 MonoBehaviour:
   m_ObjectHideFlags: 0

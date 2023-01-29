@@ -5,6 +5,8 @@ using Random = UnityEngine.Random;
 
 public class WaveManager : Singleton<WaveManager>
 {
+    [SerializeField] private GameObject firstBoss;
+
     [SerializeField] private Vector2 enemySpawnRange;
     [SerializeField] private List<WeightedGameObjectList> enemies;
 
@@ -32,7 +34,7 @@ public class WaveManager : Singleton<WaveManager>
         if (_currentWaveNumber >= enemies.Count)
         {
             onBossStart?.Invoke();
-            print("Started Boss");
+            StartFirstBoss();
             return;
         }
 
@@ -44,6 +46,11 @@ public class WaveManager : Singleton<WaveManager>
                 new Vector3(Random.Range(-enemySpawnRange.x, enemySpawnRange.x),
                     Random.Range(-enemySpawnRange.y, enemySpawnRange.y), 0), Quaternion.identity);
         }
+    }
+
+    private void StartFirstBoss()
+    {
+        var boss = Instantiate(firstBoss, Vector3.zero, Quaternion.identity);
     }
 
     public void OnDeath()

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FB_StageTwo : Stage2Base
@@ -15,26 +13,20 @@ public class FB_StageTwo : Stage2Base
         mainBossCollider = GetComponent<Collider2D>();
         mainBossSprite = GetComponent<SpriteRenderer>();
     }
-    void Update()
-    {
-        if(stageActive)
-        Debug.Log("You're in stage TWO");
-    }
 
-    #region start and stop
+    #region Start and Stop
     public override void StartStageTwo()
     {
         stageActive = true;
         mainBossSprite.enabled = false;
         mainBossCollider.enabled = false;
-        smallBosses.SetActive(true);
+        Instantiate(smallBosses, Vector3.zero, Quaternion.identity);
     }
     public override void StopStageTwo()
     {
         mainBossSprite.enabled = true;
         mainBossCollider.enabled = true;
         stageActive = false;
-       //  FindObjectOfType<BossStateController>().StartStageThree();
     }
     #endregion
 }
