@@ -54,7 +54,10 @@ public class Dash : MonoBehaviour
     void DoDash(float force)
     {
         canPerformADash = false;
-        rb.AddForce(rb.velocity * force, ForceMode2D.Impulse);
+
+        DashShadow.CreateDashShadow(transform.position, transform.position, transform.Find("Sprite").Find("Image").gameObject, transform.rotation);
+
+        rb.AddForce(rb.velocity.normalized * 10 * force, ForceMode2D.Impulse);
     }
 
     void RestartDashCooldown(int startValue)
