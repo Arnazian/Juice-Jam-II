@@ -43,4 +43,9 @@ public class MeleeCollider : MonoBehaviour
         
         hitEnemies.Clear();
     }
+
+    public void Clear()
+    {
+        hitEnemies.Clear();
+    }
 }

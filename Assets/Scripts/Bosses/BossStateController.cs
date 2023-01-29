@@ -25,7 +25,7 @@ public class BossStateController : MonoBehaviour
     {
         if (bossHealthManager.GetHealth <= stageThresholds[0] && bossHealthManager.GetHealth > stageThresholds[1])
         {
-            GetComponent<Stage1Base>().StartStageOne();
+            //GetComponent<Stage1Base>().StartStageOne();
         }
         else if (bossHealthManager.GetHealth <= stageThresholds[1] && bossHealthManager.GetHealth > stageThresholds[2])
         {
