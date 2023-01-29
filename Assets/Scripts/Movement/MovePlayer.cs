@@ -12,6 +12,8 @@ public class MovePlayer : MonoBehaviour
     private float inputH;
     private float inputV;
 
+    private bool canMove = true;
+
 
     private void OnEnable()
     {
@@ -31,6 +33,13 @@ public class MovePlayer : MonoBehaviour
 
     void FixedUpdate()
     {
+        HandleMovement();
+    }
+
+    void HandleMovement()
+    {
+        if (!canMove) { return; }
+
         inputH = playerInput.ReadValue<Vector2>().x;
         inputV = playerInput.ReadValue<Vector2>().y;
 
@@ -60,5 +69,10 @@ public class MovePlayer : MonoBehaviour
     {
         Vector3 Deacceleration = (Vector3.zero - velocity) / time;
         return Deacceleration;
+    }
+
+    public void SetCanMove(bool newCanMove)
+    {
+        canMove = newCanMove;
     }
 }
