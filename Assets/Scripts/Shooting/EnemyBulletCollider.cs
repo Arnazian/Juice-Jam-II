@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayersBulletCollider : MonoBehaviour
+public class EnemyBulletCollider : MonoBehaviour
 {
     [HideInInspector] public float damage = 100;
     
@@ -19,10 +19,10 @@ public class PlayersBulletCollider : MonoBehaviour
         Debug.DrawRay(other.contacts[0].point, other.contacts[0].normal, Color.red, 200000f);
 
         Instantiate(collisionParticle, point, particleRotation);
-
-        if(other.transform.CompareTag("Enemy"))
+        
+        if(other.transform.CompareTag("Player"))
             other.transform.GetComponent<IDamageable>().Damage(damage);
-
+        
         Destroy(gameObject);
     }
 }
