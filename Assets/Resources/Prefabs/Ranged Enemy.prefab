@@ -376,6 +376,8 @@ GameObject:
   - component: {fileID: 2591041230669887369}
   - component: {fileID: 2732398969989874023}
   - component: {fileID: 7710678783632562298}
+  - component: {fileID: 847406056}
+  - component: {fileID: 847406065}
   m_Layer: 0
   m_Name: Ranged Enemy
   m_TagString: Enemy
@@ -447,7 +449,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 5
+  m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -455,7 +457,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &2591041230669887369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -496,7 +498,7 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 249882
+  m_InstanceId: -83402
 --- !u!114 &7710678783632562298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -512,6 +514,35 @@ MonoBehaviour:
   moveSpeed: 3
   distanceFromPlayerToStop: 5
   deaccelerationSpeed: 0
+--- !u!114 &847406056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358599819545767513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa28765f5300c8946a3eea0c49763a5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 3
+  distanceFromPlayerToStop: 5
+  deaccelerationSpeed: 0
+--- !u!114 &847406065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358599819545767513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 127282372449acb40bce097b8486e401, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToFacePlayer: {fileID: 1358599819545767513}
+  rotateSpeed: 5
 --- !u!1 &1358599819730828826
 GameObject:
   m_ObjectHideFlags: 0

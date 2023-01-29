@@ -34,11 +34,12 @@ public class MoveTowardsPlayer : MonoBehaviour
         if(Vector3.Distance(transform.position, player.position) <= distanceFromPlayerToStop)
         {
             isMoving = false;
+            rb.velocity = Vector3.zero; 
             return;
         }
 
         isMoving = true;
-
-        rb.MovePosition(rb.position + ((Vector2)transform.up * moveSpeed * Time.deltaTime));
+        rb.velocity = transform.up * moveSpeed;
+        //rb.MovePosition(rb.position + ((Vector2)transform.up * moveSpeed * Time.deltaTime));
     }
 }
