@@ -237,7 +237,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b9deb89297ec55429514aa84fc4a150, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stageThresholds: e80300009a0200004d010000
+  stageThresholds:
+  - 1000
+  - 666
+  - 333
 --- !u!114 &3405660174025140596
 MonoBehaviour:
   m_ObjectHideFlags: 0

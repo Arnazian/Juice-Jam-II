@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class FB_SmallBossHealth : MonoBehaviour, IDamageable
 {
-    private float myHealth;
+    private float myHealthCur;
+    private float myHealthMax;
+    private BossStateController bossStateController;
     private BossHealthManager bossHealthManager;
     void Start()
     {
         bossHealthManager = FindObjectOfType<BossHealthManager>();
+        bossStateController = FindObjectOfType<BossStateController>();
+        CalculateMyHealth();
     }
 
     
@@ -19,12 +23,16 @@ public class FB_SmallBossHealth : MonoBehaviour, IDamageable
 
     void CalculateMyHealth()
     {
-        float one = bossHealthManager.GetStageThresholds
+        float stageTwoThreshold = bossStateController.GetStageThresholds()[1];
+        float stageThreeThreshold = bossStateController.GetStageThresholds()[2];
+
+        myHealthMax = (stageTwoThreshold - stageThreeThreshold) / 3;
+        myHealthCur = myHealthMax;
     }
     public void Damage(float damage)
     {
-        myHealth -= damage;
-        if(myHealth <= 0)
+        myHealthCur -= damage;
+        if(myHealthCur <= 0)
         {
             Die();
         }
@@ -32,6 +40,7 @@ public class FB_SmallBossHealth : MonoBehaviour, IDamageable
 
     void Die()
     {
+        bossHealthManager.Damage(myHealthMax);
         Destroy(gameObject);
     }
 }
