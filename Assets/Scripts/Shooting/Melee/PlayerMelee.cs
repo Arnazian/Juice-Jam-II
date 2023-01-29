@@ -95,4 +95,9 @@ public class PlayerMelee : MonoBehaviour
     {
         meleeCollider.DamageEnemies();
     }
+
+    public void Clear()
+    {
+        meleeCollider.Clear();
+    }
 }
