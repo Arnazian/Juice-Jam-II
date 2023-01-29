@@ -7,8 +7,8 @@ public class ScreenShake : MonoBehaviour
     private GameObject player;
 
     public bool startShake = false;
-    public float shakeStrengthModifier = 0.1f;
-    public float duration = 0.1f;
+    private float shakeStrengthModifier = 0.1f;
+    private float duration = 0.1f;
 
 
     void Start()
@@ -24,6 +24,12 @@ public class ScreenShake : MonoBehaviour
         }
     }
 
+    public void DoScreenShake(float newDuration, float newShakeStrengthModifier)
+    {
+        duration = newDuration;
+        shakeStrengthModifier = newShakeStrengthModifier;
+        startShake = true;
+    }
 
     IEnumerator Shaking(float strengthModifier)
     {
