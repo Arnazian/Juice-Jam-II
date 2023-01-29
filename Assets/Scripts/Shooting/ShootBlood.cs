@@ -41,12 +41,7 @@ public class ShootBlood : MonoBehaviour
         cameraShakeScript.duration = 0.15f;
         cameraShakeScript.startShake = true;
 
-
-        var spread = 0.15f;
-        var rand1 = Random.Range(-spread, spread);
-        var rand2 = Random.Range(-spread, spread);
-
-        var projectileRotationZ = Mathf.Atan2(direction.y+rand1, direction.x+rand2) * Mathf.Rad2Deg-90;
+        var projectileRotationZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg-90;
 
         var projectileRotation =  Quaternion.Euler(0f, 0f, projectileRotationZ);
 
