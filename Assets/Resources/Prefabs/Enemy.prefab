@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6da6bd85e5ef4947bddebf20402163c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useScale: 0
   maxHealth: 100
   healthBarFill: {fileID: 7877637028656679060}
   sliderTextMesh: {fileID: 0}
@@ -355,6 +356,7 @@ GameObject:
   - component: {fileID: 8906093010384807385}
   - component: {fileID: 5383843876199218206}
   - component: {fileID: 939353207}
+  - component: {fileID: 794120510271714800}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -509,6 +511,33 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.25
+--- !u!114 &794120510271714800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8906093010384807374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 0
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 719c17e7000000000da2b94b
+  m_ShapePath:
+  - {x: -0.25, y: -0.25, z: 0}
+  - {x: -0.25, y: 0.24999999, z: 0}
+  - {x: 0.25, y: 0.24999999, z: 0}
+  - {x: 0.25, y: -0.25, z: 0}
+  m_ShapePathHash: 0
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -488436
 --- !u!1 &8906093010591209550
 GameObject:
   m_ObjectHideFlags: 0
