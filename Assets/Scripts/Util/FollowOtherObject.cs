@@ -13,7 +13,8 @@ public class FollowOtherObject : MonoBehaviour
     void LateUpdate()
     {
         if (objectToFollow == null) { Destroy(gameObject); }
-        transform.position = Vector3.MoveTowards(transform.position, objectToFollow.transform.position, distanceFromObject);
+        else { transform.position = Vector3.MoveTowards(transform.position, objectToFollow.transform.position, distanceFromObject); }
+        
     }
 
     public Slider GetHealthSlider() => slider;

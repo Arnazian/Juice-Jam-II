@@ -12,6 +12,7 @@ public class VampireFinisher : MonoBehaviour
     private float rageAmountCur;
     private Collider2D playerCollision;
 
+    private bool suckingBlood = false;
     private bool enableLaunching = false;
 
 
@@ -48,6 +49,7 @@ public class VampireFinisher : MonoBehaviour
 
     IEnumerator SuckBlood()
     {
+        
         yield return new WaitForSeconds(suckBloodDuration);
         SetRageAmount(0);
         playerCollision.enabled = true;
@@ -55,7 +57,10 @@ public class VampireFinisher : MonoBehaviour
         GetComponent<MovePlayer>().SetCanMove(true);
         playerHealth.SetImmuneStatus(false);
         playerHealth.Heal(healAmount);
-        bloodCheckCollider.GetSelectedEnemy().GetComponent<EnemyMobHealthManager>().RunEnemyDeath();
+
+        GameObject go = bloodCheckCollider.GetSelectedEnemy();
+        go.GetComponent<EnemyMobHealthManager>().Damage(500f);
+        suckingBlood = false;
     }
 
     void MoveToTarget()
@@ -69,6 +74,8 @@ public class VampireFinisher : MonoBehaviour
         }
         else
         {
+            if (suckingBlood) { return; }
+            suckingBlood = true;
             StartCoroutine(SuckBlood());
         }
     }

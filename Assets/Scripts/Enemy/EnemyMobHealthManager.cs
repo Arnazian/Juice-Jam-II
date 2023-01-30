@@ -44,6 +44,7 @@ public class EnemyMobHealthManager : MonoBehaviour, IDamageable
 
     public void RunEnemyDeath()
     {
+        Debug.Log("ONe enemy killed");
         Destroy(gameObject);
         var particles = Instantiate(deathParticles, transform.position, Quaternion.identity);
         particles.Play();

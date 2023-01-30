@@ -35,6 +35,7 @@ public class BloodCheckCollider : MonoBehaviour
 
     static int SortByDistance(GameObject a, GameObject b)
     {
+        
         return Vector3.Distance(player.position, a.transform.position).CompareTo(Vector3.Distance(player.position, b.transform.position));
     }
     private void OnTriggerEnter2D(Collider2D collision)
