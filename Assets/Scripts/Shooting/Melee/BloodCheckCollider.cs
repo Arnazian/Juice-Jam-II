@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class BloodCheckCollider : MonoBehaviour
 {
+    [SerializeField] private Collider2D bloodCheck;
     private List<GameObject> touchedEnemies = new List<GameObject>();
     private static Transform player;
-    [SerializeField] private GameObject deathMarker;
     private GameObject selectedEnemy;
 
     private void Start()
@@ -14,20 +14,19 @@ public class BloodCheckCollider : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    private void Update()
-    {
-        
-    }
+    public GameObject GetSelectedEnemy() { return selectedEnemy; }
+    public void UnselectEnemy() { selectedEnemy = null; }
+    public void SetBloodCheckColliderStatus(bool newStatus) { bloodCheck.enabled = newStatus; }
 
-
+    #region CalculateClosestEnemy
     void SelectEnemyToHighlight()
     {
+        if (selectedEnemy != null) { selectedEnemy.GetComponent<EnemyMobHealthManager>().SetDeathMarker(false); }
+        if (touchedEnemies.Count <= 0) { return; }
         CalculateClosestEnemy();
-        if (touchedEnemies[0].GetComponent<EnemyMob>() == null) { return; }
-
-        selectedEnemy.GetComponent<EnemyMob>().SetDeathMarker(false);
+        if (touchedEnemies[0].GetComponent<EnemyMobHealthManager>() == null) { return; }        
         selectedEnemy = touchedEnemies[0];
-        selectedEnemy.GetComponent<EnemyMob>().SetDeathMarker(true);
+        selectedEnemy.GetComponent<EnemyMobHealthManager>().SetDeathMarker(true);
     }
     void CalculateClosestEnemy()
     {
@@ -58,6 +57,7 @@ public class BloodCheckCollider : MonoBehaviour
         }
         SelectEnemyToHighlight();
     }
+    #endregion
 
 
 

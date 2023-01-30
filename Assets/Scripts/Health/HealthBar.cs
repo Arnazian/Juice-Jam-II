@@ -27,8 +27,13 @@ public class HealthBar : MonoBehaviour
 		_health -= Mathf.Round(amount);
 		UpdateHealthBar();
 	}
-	
-    public void SetHealth(float health)
+
+	public void Heal(float amount)
+	{
+		_health += Mathf.Round(amount);
+		UpdateHealthBar();
+	}
+	public void SetHealth(float health)
     {
 	    _health = Mathf.Round(health);
 	    UpdateHealthBar();

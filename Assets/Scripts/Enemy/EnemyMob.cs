@@ -7,8 +7,6 @@ public class EnemyMob : MonoBehaviour
     [SerializeField] private float attackCooldown;
     [SerializeField] private float attackDamage = 10f;
     public Transform player;
-    [SerializeField] private GameObject deathMarker;
-
     private MoveTowardsPlayer _movement;
     private bool _isAttacking;
 
@@ -49,10 +47,5 @@ public class EnemyMob : MonoBehaviour
         if(!_isAttacking || PauseMenu.Instance.IsPaused)
             return;
         player.GetComponent<IDamageable>().Damage(attackDamage);
-    }
-
-    public void SetDeathMarker(bool newStatus)
-    {
-        deathMarker.SetActive(newStatus);
-    }
+    } 
 }
