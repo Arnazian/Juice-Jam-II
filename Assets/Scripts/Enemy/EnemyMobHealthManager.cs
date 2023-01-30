@@ -13,8 +13,11 @@ public class EnemyMobHealthManager : MonoBehaviour, IDamageable
     [SerializeField] private Slider mobHealthBar;
     [SerializeField] private GameObject myHealthBar;
 
+    private VampireFinisher vampireFinisher;
+
     private void Start()
     {
+        vampireFinisher = FindObjectOfType<VampireFinisher>();
         GameObject newHealthBar = Instantiate(myHealthBar, transform.position, Quaternion.identity);
         newHealthBar.GetComponent<FollowOtherObject>().SetObjectToFollow(gameObject);
         mobHealthBar = newHealthBar.GetComponent<FollowOtherObject>().GetHealthSlider();
@@ -29,6 +32,7 @@ public class EnemyMobHealthManager : MonoBehaviour, IDamageable
     public void Damage(float amount)
     {
         healthValueCur -= amount;
+        vampireFinisher.IncreaseRage(amount);
         UpdateHealth();
     }
     public void Heal(float amount)

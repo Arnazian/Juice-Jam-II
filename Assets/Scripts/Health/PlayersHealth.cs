@@ -48,6 +48,7 @@ public class PlayersHealth : MonoBehaviour, IDamageable
     private void UpdateHealthValue()
     {
         if (playerHealthCur <= 0) { RunPlayerDeath(); }
+        if(playerHealthCur > playerHealthMax) { playerHealthCur = playerHealthMax; }
         playerHealthSlider.value = playerHealthCur;
     }
 

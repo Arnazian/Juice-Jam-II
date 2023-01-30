@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class VampireFinisher : MonoBehaviour
 {
@@ -8,7 +9,8 @@ public class VampireFinisher : MonoBehaviour
     [SerializeField] private float healAmount;
     [SerializeField] private float launchSpeed;
     [SerializeField] private float suckBloodDuration;
-    private float rageAmountMax;
+    private Slider rageMeter;
+    [SerializeField]private float rageAmountMax;
     private float rageAmountCur;
     private Collider2D playerCollision;
 
@@ -19,6 +21,10 @@ public class VampireFinisher : MonoBehaviour
     private PlayersHealth playerHealth;
     void Start()
     {
+        rageMeter = UIManager.Instance.GetRageMeter;
+        rageAmountCur = 0;
+        rageMeter.maxValue = rageAmountMax;
+        rageMeter.value = rageAmountCur;
         playerHealth = GetComponent<PlayersHealth>();
         playerCollision = GetComponent<Collider2D>();
     }
@@ -50,8 +56,7 @@ public class VampireFinisher : MonoBehaviour
     IEnumerator SuckBlood()
     {
         
-        yield return new WaitForSeconds(suckBloodDuration);
-        SetRageAmount(0);
+        yield return new WaitForSeconds(suckBloodDuration);        
         playerCollision.enabled = true;
         enableLaunching = false;
         GetComponent<MovePlayer>().SetCanMove(true);
@@ -59,8 +64,9 @@ public class VampireFinisher : MonoBehaviour
         playerHealth.Heal(healAmount);
 
         GameObject go = bloodCheckCollider.GetSelectedEnemy();
-        go.GetComponent<EnemyMobHealthManager>().Damage(500f);
+        go.GetComponent<EnemyMobHealthManager>().RunEnemyDeath();
         suckingBlood = false;
+        SetRageAmount(0);
     }
 
     void MoveToTarget()
@@ -81,16 +87,19 @@ public class VampireFinisher : MonoBehaviour
     }
     void CheckRageMeter()
     {
+        rageMeter.value = rageAmountCur;
         if(rageAmountCur >= rageAmountMax)
         {
             bloodCheckCollider.SetBloodCheckColliderStatus(true);
         }
         else
         {
-            bloodCheckCollider.SetBloodCheckColliderStatus(true);
-            bloodCheckCollider.UnselectEnemy();
+            bloodCheckCollider.SetBloodCheckColliderStatus(false);
+            bloodCheckCollider.UnselectEnemy(); 
         }
     }
+
+    #region Increase Decrease And Set Rage
     public void IncreaseRage(float amount) 
     { 
         rageAmountCur += amount;
@@ -105,6 +114,8 @@ public class VampireFinisher : MonoBehaviour
     public void SetRageAmount(float amount)
     {
         rageAmountCur = amount;
+        CheckRageMeter();
     }
+    #endregion
 
 }

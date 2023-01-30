@@ -1395,6 +1395,7 @@ MonoBehaviour:
   dontDestroyOnLoad: 0
   bossHealthBar: {fileID: 4066002349044161218}
   playerHealthBar: {fileID: 4066002349558958338}
+  rageMeter: {fileID: 4066002350120465898}
 --- !u!1 &4066002350383873212
 GameObject:
   m_ObjectHideFlags: 0

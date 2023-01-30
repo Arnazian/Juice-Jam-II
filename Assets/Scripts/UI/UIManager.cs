@@ -8,4 +8,7 @@ public class UIManager : Singleton<UIManager>
     
     [SerializeField] private Slider playerHealthBar;
     public Slider GetPlayerHealthBar => playerHealthBar;
+
+    [SerializeField] private Slider rageMeter;
+    public Slider GetRageMeter => rageMeter;
 }

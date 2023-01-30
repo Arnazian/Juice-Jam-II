@@ -6,13 +6,15 @@ using UnityEngine;
 public class MeleeCollider : MonoBehaviour
 {
     [SerializeField] private float damageToEnemy;
+    [SerializeField] private float meleeRageBuildUp;
     [SerializeField] private float throwEnemyForce;
     private List<GameObject> hitEnemies = new List<GameObject>();
+    
     
 
     void Start()
     {
-        
+
     }
 
     void Update()
