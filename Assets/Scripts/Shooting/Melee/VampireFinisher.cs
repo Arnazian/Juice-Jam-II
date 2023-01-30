@@ -1,29 +1,45 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 public class VampireFinisher : MonoBehaviour
 {
+    [SerializeField] private GameObject bloodSuckParticles;
+    [SerializeField] private GameObject bloodExplosionParticles;
     [SerializeField] private BloodCheckCollider bloodCheckCollider;
     [SerializeField] private float healAmount;
     [SerializeField] private float launchSpeed;
     [SerializeField] private float suckBloodDuration;
-    private float rageAmountMax;
-    private float rageAmountCur;
+    [FormerlySerializedAs("rageAmountMax")] [SerializeField] private float MaxRageAmount;
     private Collider2D playerCollision;
 
     private bool suckingBlood = false;
     private bool enableLaunching = false;
-
+    private PlayerActionManager playerActionManager;
 
     private PlayersHealth playerHealth;
+    
+    private Image rageMeterFill;
+    private float currentRage;
     void Start()
     {
+        playerActionManager = GetComponent<PlayerActionManager>();
+        bloodSuckParticles.SetActive(false);
+        rageMeterFill = UIManager.Instance.GetRageMeterFill;
+        UpdateGraphics();
         playerHealth = GetComponent<PlayersHealth>();
         playerCollision = GetComponent<Collider2D>();
     }
 
-   
+    private void UpdateGraphics()
+    {
+        var fillAmount = currentRage / MaxRageAmount;
+        rageMeterFill.fillAmount = fillAmount;
+    }
+
+
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.E))
@@ -35,13 +51,15 @@ public class VampireFinisher : MonoBehaviour
 
     void StartFinisher()
     {
-        if(rageAmountCur < rageAmountMax || bloodCheckCollider.GetSelectedEnemy() == null)
+        if(playerActionManager.CheckIfInAction()) { return; }
+        if(currentRage < MaxRageAmount || bloodCheckCollider.GetSelectedEnemy() == null)
         {
             Debug.Log("Not Enough Rage || Not close enough to enemy");
             return;
         }
 
         GetComponent<MovePlayer>().SetCanMove(false);
+        playerActionManager.SetInAction(true);
         playerHealth.SetImmuneStatus(true);
         playerCollision.enabled = false;
         enableLaunching = true;
@@ -49,9 +67,8 @@ public class VampireFinisher : MonoBehaviour
 
     IEnumerator SuckBlood()
     {
-        
-        yield return new WaitForSeconds(suckBloodDuration);
-        SetRageAmount(0);
+        bloodSuckParticles.SetActive(true);
+        yield return new WaitForSeconds(suckBloodDuration);        
         playerCollision.enabled = true;
         enableLaunching = false;
         GetComponent<MovePlayer>().SetCanMove(true);
@@ -59,8 +76,12 @@ public class VampireFinisher : MonoBehaviour
         playerHealth.Heal(healAmount);
 
         GameObject go = bloodCheckCollider.GetSelectedEnemy();
-        go.GetComponent<EnemyMobHealthManager>().Damage(500f);
+        go.GetComponent<EnemyMobHealthManager>().RunEnemyDeath();
         suckingBlood = false;
+        bloodSuckParticles.SetActive(false);
+        SetRageAmount(0);
+        Instantiate(bloodExplosionParticles, transform.position, Quaternion.identity);
+        playerActionManager.SetInAction(false);
     }
 
     void MoveToTarget()
@@ -81,30 +102,35 @@ public class VampireFinisher : MonoBehaviour
     }
     void CheckRageMeter()
     {
-        if(rageAmountCur >= rageAmountMax)
+        UpdateGraphics();
+        if(currentRage >= MaxRageAmount)
         {
             bloodCheckCollider.SetBloodCheckColliderStatus(true);
         }
         else
         {
-            bloodCheckCollider.SetBloodCheckColliderStatus(true);
-            bloodCheckCollider.UnselectEnemy();
+            bloodCheckCollider.SetBloodCheckColliderStatus(false);
+            bloodCheckCollider.UnselectEnemy(); 
         }
     }
+
+    #region Increase Decrease And Set Rage
     public void IncreaseRage(float amount) 
     { 
-        rageAmountCur += amount;
+        currentRage += amount;
         CheckRageMeter();
     }
     public void DecreaseRage(float amount) 
     { 
-        rageAmountCur -= amount;
+        currentRage -= amount;
         CheckRageMeter();
     }
 
     public void SetRageAmount(float amount)
     {
-        rageAmountCur = amount;
+        currentRage = amount;
+        CheckRageMeter();
     }
+    #endregion
 
 }

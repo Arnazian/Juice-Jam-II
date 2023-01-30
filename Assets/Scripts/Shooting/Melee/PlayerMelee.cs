@@ -18,11 +18,13 @@ public class PlayerMelee : MonoBehaviour
     private MovePlayer movePlayer;
     private Animator anim;
     private Rigidbody2D rb;
+    private PlayerActionManager playerActionManager;
     
 
 
     void Start()
     {
+        playerActionManager = GetComponent<PlayerActionManager>();
         rb = GetComponent<Rigidbody2D>();
         movePlayer = GetComponent<MovePlayer>();
         rotateTowardsCursor = GetComponent<RotateTowardsCursor>();
@@ -48,6 +50,7 @@ public class PlayerMelee : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
+            if (playerActionManager.CheckIfInAction() && !isAttacking) { return; }
             if (!isAttacking) { StartAttack(); }
 
             else if(isRecovering)
@@ -63,6 +66,7 @@ public class PlayerMelee : MonoBehaviour
     {
         // rotateTowardsCursor.SetCanRotate(false);
         movePlayer.SetCanMove(false);
+        playerActionManager.SetInAction(true);
 
         // it's here and in Dash.cs cause player can press attack and then dash or reverse
         if (!GetComponent<Dash>().IsMeleeAttackingOrDashing())
@@ -88,6 +92,7 @@ public class PlayerMelee : MonoBehaviour
         recoveryDurationCur = recoveryDurationMax;
         //rotateTowardsCursor.SetCanRotate(true);
         movePlayer.SetCanMove(true);
+        playerActionManager.SetInAction(false);
         anim.SetBool("IsAttacking", false);
     }
 

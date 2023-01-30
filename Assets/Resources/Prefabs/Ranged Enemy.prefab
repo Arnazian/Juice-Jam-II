@@ -714,7 +714,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 46454d634fac18a4297156138e8672a0, type: 3}
-  m_Color: {r: 0.058823545, g: 0.18278962, b: 0.7176471, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -738,9 +738,8 @@ GameObject:
   - component: {fileID: -1396633936198182626}
   - component: {fileID: 2591041230669887369}
   - component: {fileID: 2732398969989874023}
-  - component: {fileID: 7710678783632562298}
-  - component: {fileID: 847406056}
   - component: {fileID: 847406065}
+  - component: {fileID: 1797532514}
   m_Layer: 0
   m_Name: Ranged Enemy
   m_TagString: Enemy
@@ -779,11 +778,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f94ccce9a0e8ad34cacf312eaaec605b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileSpeed: 17
+  projectileSpeed: 3.8
   projectile: {fileID: 7744099146439851529, guid: 9e4f24ef2305cf5408a4279352b51bb8, type: 3}
   shootSpawn: {fileID: 4358479786519421599}
-  projectileDamage: 6.5
-  attackCooldown: 1
+  projectileDamage: 10
+  attackCoolDownMin: 1.5
+  attackCoolDownMax: 3
   player: {fileID: 332318632987233901, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
 --- !u!58 &7584760229879967712
 CircleCollider2D:
@@ -834,10 +834,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd94be901cd05fb4c9a6d4cff7f5bf4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthBarFill: {fileID: 0}
+  maxHealth: 100
   deathParticles: {fileID: 6932388814300370661, guid: c463df0fab34daa4c8d7507f2fd1f56c, type: 3}
   deathMarker: {fileID: 750730994}
-  healthValueMax: 100
-  mobHealthBar: {fileID: 621191782}
   myHealthBar: {fileID: 2481700521802852413, guid: bf523edf0adf6264fb4c39e400a70639, type: 3}
 --- !u!114 &2732398969989874023
 MonoBehaviour:
@@ -865,37 +865,7 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: -1578
---- !u!114 &7710678783632562298
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1358599819545767513}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa28765f5300c8946a3eea0c49763a5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 3
-  distanceFromPlayerToStop: 5
-  deaccelerationSpeed: 0
---- !u!114 &847406056
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1358599819545767513}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa28765f5300c8946a3eea0c49763a5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 3
-  distanceFromPlayerToStop: 5
-  deaccelerationSpeed: 0
+  m_InstanceId: -69474
 --- !u!114 &847406065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -910,6 +880,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToFacePlayer: {fileID: 1358599819545767513}
   rotateSpeed: 5
+--- !u!114 &1797532514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358599819545767513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5889325c0b67104bac99d361067a188, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 3
+  preferredDistance: 6
+  preferredDistanceBuffer: 2
+  deaccelerationSpeed: 0
 --- !u!1 &1358599819730828826
 GameObject:
   m_ObjectHideFlags: 0
@@ -1069,7 +1055,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4358479786519421599}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.15, y: 0.4, z: 0}
+  m_LocalPosition: {x: -0.063, y: 0.747, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

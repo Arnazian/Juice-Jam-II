@@ -12,10 +12,12 @@ public class Dash : MonoBehaviour
     private float dashCooldown;
     private bool canPerformADash;
     private Rigidbody2D rb;
+    private PlayerActionManager playerActionManager;
 
 
     void Start()
     {
+        playerActionManager = GetComponent<PlayerActionManager>();
         isDashing = false;
         RestartDashCooldown(dashCooldownStart);
 
@@ -32,6 +34,7 @@ public class Dash : MonoBehaviour
 
     void DoDashLogic()
     {
+        
         if(Keyboard.current.spaceKey.wasPressedThisFrame && canPerformADash)
         {
             DoDash(dashForce);
@@ -43,6 +46,7 @@ public class Dash : MonoBehaviour
             if (dashCooldown <= 0)
             {
                 canPerformADash = true;
+                playerActionManager.SetInAction(false);
                 RestartDashCooldown(dashCooldownStart);
             }
         }
@@ -55,6 +59,8 @@ public class Dash : MonoBehaviour
 
     void DoDash(float force)
     {
+        if (playerActionManager.CheckIfInAction()) { return; }
+        playerActionManager.SetInAction(true);
         canPerformADash = false;
 
         StartCoroutine("MakeDashShadow");

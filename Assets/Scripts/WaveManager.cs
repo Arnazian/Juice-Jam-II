@@ -126,7 +126,7 @@ public class WaveManager : Singleton<WaveManager>
     private void StartFirstBoss()
     {
         var bossHealthBar = UIManager.Instance.GetBossHealthBar;
-        bossHealthBar.gameObject.SetActive(true);
+        bossHealthBar.transform.parent.gameObject.SetActive(true);
         var boss = Instantiate(firstBoss, Vector3.zero, Quaternion.identity);
     }
     private void StartSecondBoss()

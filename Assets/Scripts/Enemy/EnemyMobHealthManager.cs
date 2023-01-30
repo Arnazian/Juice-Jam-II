@@ -1,45 +1,27 @@
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
-using DG.Tweening;
 
-public class EnemyMobHealthManager : MonoBehaviour, IDamageable
+public class EnemyMobHealthManager : HealthManager
 {
     [SerializeField] private ParticleSystem deathParticles;
     [SerializeField] private GameObject deathMarker;
-
-    private float healthValueCur;
-    [SerializeField]private float healthValueMax;
-    [SerializeField] private Slider mobHealthBar;
+    
     [SerializeField] private GameObject myHealthBar;
 
-    private void Start()
+    private VampireFinisher vampireFinisher;
+
+    protected override void Awake()
     {
-        GameObject newHealthBar = Instantiate(myHealthBar, transform.position, Quaternion.identity);
+        vampireFinisher = FindObjectOfType<VampireFinisher>();
+        var newHealthBar = Instantiate(myHealthBar, transform.position, Quaternion.identity);
         newHealthBar.GetComponent<FollowOtherObject>().SetObjectToFollow(gameObject);
-        mobHealthBar = newHealthBar.GetComponent<FollowOtherObject>().GetHealthSlider();
-        healthValueCur = healthValueMax;
-        mobHealthBar.maxValue = healthValueCur;
-        mobHealthBar.value = healthValueCur;
+        healthBarFill = newHealthBar.GetComponent<FollowOtherObject>().GetHealthImageFill();
+        base.Awake();
     }
-    private void Update()
+
+    public override void Damage(float amount)
     {
-    }
-    
-    public void Damage(float amount)
-    {
-        healthValueCur -= amount;
-        UpdateHealth();
-    }
-    public void Heal(float amount)
-    {
-        healthValueCur += amount;
-        UpdateHealth();
-    }
-    public void SetHealth(float amount)
-    {
-        healthValueCur = amount;
-        UpdateHealth();
+        base.Damage(amount);
+        vampireFinisher.IncreaseRage(amount);
     }
 
     public void RunEnemyDeath()
@@ -50,15 +32,16 @@ public class EnemyMobHealthManager : MonoBehaviour, IDamageable
         particles.Play();
         WaveManager.Instance.EnemyMobDeath();
     }
+    
     public void SetDeathMarker(bool newStatus)
     {
         deathMarker.SetActive(newStatus);
     }
-
-
-    private void UpdateHealth()
+    
+    protected override void UpdateHealth()
     {
-        if(healthValueCur <= 0 ) { RunEnemyDeath(); }
-        mobHealthBar.value = healthValueCur;
+        base.UpdateHealth();
+        if(currentHealth <= 0 )
+            RunEnemyDeath();
     }
 }
