@@ -12,11 +12,13 @@ public class ShootBlood : MonoBehaviour
     [SerializeField] private float damageToSelf;
     [SerializeField] private float startShootCooldown = 1;
     private float shootCooldown;
+    private PlayerActionManager playerActionManager;
 
     private PlayersHealth playerHealth;
 
     void Start()
     {
+        playerActionManager = GetComponent<PlayerActionManager>();
         shootCooldown = startShootCooldown;
         playerHealth = GetComponent<PlayersHealth>();
     }
@@ -25,6 +27,7 @@ public class ShootBlood : MonoBehaviour
     {
         if (Mouse.current.leftButton.isPressed && shootCooldown <= 0)
         {
+            if(playerActionManager.CheckIfInAction()) { return; }
             Shoot(Camera.main.ScreenToWorldPoint(Input.mousePosition) - shootSpawn.transform.position, projectileSpeed);
             shootCooldown = startShootCooldown;
         }

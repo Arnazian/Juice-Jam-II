@@ -18,11 +18,12 @@ public class VampireFinisher : MonoBehaviour
 
     private bool suckingBlood = false;
     private bool enableLaunching = false;
-
+    private PlayerActionManager playerActionManager;
 
     private PlayersHealth playerHealth;
     void Start()
     {
+        playerActionManager = GetComponent<PlayerActionManager>();
         bloodSuckParticles.SetActive(false);
         rageMeter = UIManager.Instance.GetRageMeter;
         rageAmountCur = 0;
@@ -44,6 +45,7 @@ public class VampireFinisher : MonoBehaviour
 
     void StartFinisher()
     {
+        if(playerActionManager.CheckIfInAction()) { return; }
         if(rageAmountCur < rageAmountMax || bloodCheckCollider.GetSelectedEnemy() == null)
         {
             Debug.Log("Not Enough Rage || Not close enough to enemy");
@@ -51,6 +53,7 @@ public class VampireFinisher : MonoBehaviour
         }
 
         GetComponent<MovePlayer>().SetCanMove(false);
+        playerActionManager.SetInAction(true);
         playerHealth.SetImmuneStatus(true);
         playerCollision.enabled = false;
         enableLaunching = true;
@@ -72,6 +75,7 @@ public class VampireFinisher : MonoBehaviour
         bloodSuckParticles.SetActive(false);
         SetRageAmount(0);
         Instantiate(bloodExplosionParticles, transform.position, Quaternion.identity);
+        playerActionManager.SetInAction(false);
     }
 
     void MoveToTarget()
