@@ -616,6 +616,7 @@ GameObject:
   - component: {fileID: 1217632520}
   - component: {fileID: 1388778451}
   - component: {fileID: 1388778452}
+  - component: {fileID: 1077000749}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -688,6 +689,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad5ab20c7dff35d45808b07c2c56c947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerHealthMax: 200000
 --- !u!114 &7794975990393462036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -890,6 +892,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1077000749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332318632987234194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 016bc93d42a3cd3409ad27cf764e332c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bloodCheckCollider: {fileID: 268472775}
+  healAmount: 0
+  launchSpeed: 10
+  suckBloodDuration: 1.5
 --- !u!1 &6569562972473423456
 GameObject:
   m_ObjectHideFlags: 0

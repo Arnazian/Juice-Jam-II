@@ -7,6 +7,7 @@ using Random = UnityEngine.Random;
 public class WaveManager : Singleton<WaveManager>
 {
     [SerializeField] private GameObject firstBoss;
+    [SerializeField] private GameObject[] spawnPoints;
 
     [SerializeField] private Vector2 enemySpawnRange;
     [SerializeField] private List<WeightedGameObjectList> enemies;
@@ -18,7 +19,7 @@ public class WaveManager : Singleton<WaveManager>
 
     private int _enemiesKilled = 0;
 
-    private int _enemyCount = 5;
+    [SerializeField]private int _enemyCount = 5;
 
     public Action onBossStart;
 
