@@ -14,7 +14,7 @@ public class MoveTowardsPlayer : MonoBehaviour
     private Rigidbody2D rb;
     private Transform player;
     
-    public bool IsMoving => isMoving;
+  
     
     void Start()
     {
@@ -42,4 +42,7 @@ public class MoveTowardsPlayer : MonoBehaviour
         rb.velocity = transform.up * moveSpeed;
         //rb.MovePosition(rb.position + ((Vector2)transform.up * moveSpeed * Time.deltaTime));
     }
+
+    public bool IsMoving => isMoving;
+    public void SetCanMove(bool newValue) { canMove = newValue; }
 }
