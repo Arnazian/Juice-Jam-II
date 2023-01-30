@@ -1,21 +1,27 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayersHealth : MonoBehaviour, IDamageable
 {
-    public float GetMaxHealth => _healthBar.GetMaxHealth;
-    public float GetHealth => _healthBar.GetHealth;
-    private HealthBar _healthBar;
+    
+    [SerializeField]private float playerHealthMax;
+    private float playerHealthCur;
+
+    private Slider playerHealthSlider;
     private bool isImmune = false;
 
     void Start()
     {
-        _healthBar = UIManager.Instance.GetPlayerHealthBar;
+        playerHealthSlider = UIManager.Instance.GetPlayerHealthBar;
+        playerHealthCur = playerHealthMax;
+        playerHealthSlider.maxValue = playerHealthCur;
+        playerHealthSlider.value = playerHealthCur;
+        
     }
 
     void FixedUpdate()
     {
-        if(_healthBar.GetHealth <= 0)
-            Destroy(gameObject);
+        
     }
 
 
@@ -24,18 +30,33 @@ public class PlayersHealth : MonoBehaviour, IDamageable
         if (isImmune) { return; }
         if (GetComponent<Dash>().isDashing) { return; }
 
-        _healthBar.Damage(amount);
+        playerHealthCur -= amount;
+        UpdateHealthValue();
     }
 
     public void Heal(float amount)
     {
-        _healthBar.Heal(amount);
+        playerHealthCur += amount;
+        UpdateHealthValue();
     }
-    public void SetHealth(float hp)
+    public void SetHealth(float newValue)
     {
-        _healthBar.SetHealth(hp);
+        playerHealthCur = newValue;
+        UpdateHealthValue();
     }
 
+    private void UpdateHealthValue()
+    {
+        if (playerHealthCur <= 0) { RunPlayerDeath(); }
+        playerHealthSlider.value = playerHealthCur;
+    }
 
+    private void RunPlayerDeath()
+    {
+        Destroy(gameObject);
+    }
     public void SetImmuneStatus(bool newStatus) { isImmune = newStatus; }
+
+    public float GetMaxHealth() => playerHealthMax;
+    public float GetCurHealth() => playerHealthCur;
 }

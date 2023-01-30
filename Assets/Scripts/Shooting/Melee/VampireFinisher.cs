@@ -55,7 +55,7 @@ public class VampireFinisher : MonoBehaviour
         GetComponent<MovePlayer>().SetCanMove(true);
         playerHealth.SetImmuneStatus(false);
         playerHealth.Heal(healAmount);
-        bloodCheckCollider.GetSelectedEnemy().GetComponent<EnemyMobHealthManager>().DestroyEnemy();
+        bloodCheckCollider.GetSelectedEnemy().GetComponent<EnemyMobHealthManager>().RunEnemyDeath();
     }
 
     void MoveToTarget()

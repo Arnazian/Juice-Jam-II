@@ -13,12 +13,12 @@ public class ShootBlood : MonoBehaviour
     [SerializeField] private float startShootCooldown = 1;
     private float shootCooldown;
 
-    private PlayersHealth _health;
+    private PlayersHealth playerHealth;
 
     void Start()
     {
         shootCooldown = startShootCooldown;
-        _health = GetComponent<PlayersHealth>();
+        playerHealth = GetComponent<PlayersHealth>();
     }
 
     void FixedUpdate()
@@ -46,6 +46,7 @@ public class ShootBlood : MonoBehaviour
 
         var newProjectile = Instantiate(projectile, shootSpawn.transform.position, projectileRotation);
         newProjectile.GetComponent<ProjectileFlyStraight>().speed = speed;
-        newProjectile.GetComponent<BulletCollider>().damage = projectileDamage + _health.GetMaxHealth - _health.GetHealth;
+        newProjectile.GetComponent<BulletCollider>().damage = projectileDamage;
+        // newProjectile.GetComponent<BulletCollider>().damage = projectileDamage + playerHealth.GetMaxHealth() - playerHealth.GetCurHealth();
     }
 }

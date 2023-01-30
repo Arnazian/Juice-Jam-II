@@ -1,30 +1,55 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BossHealthManager : MonoBehaviour, IDamageable
 {
-    private HealthBar _healthBar;
-    private BossStateController _bossStateController;
+    private Slider bossHealthSlider;
+    [SerializeField] private float bossMaxHealth;
+
+    private float bossCurHealth;    
+    private BossStateController bossStateController;
     
     private void Start()
     {
-        _bossStateController = GetComponent<BossStateController>();
-        _healthBar = UIManager.Instance.GetBossHealthBar;
-    }
-    
-    public void Damage(float damage)
-    {
-        _healthBar.Damage(damage);
-        _bossStateController.CheckStageThreshold();
+        bossHealthSlider = UIManager.Instance.GetBossHealthBar;
+        bossCurHealth = bossMaxHealth;
+        bossHealthSlider.maxValue = bossCurHealth;
+        bossHealthSlider.value = bossCurHealth;
 
-        if (_healthBar.GetHealth <= 0)
-            Destroy(gameObject);
+        
+        bossStateController = GetComponent<BossStateController>();
     }
 
-    public float GetHealth => _healthBar.GetHealth;
-
-    public void SetHealth(float newHealth)
+    public float GetHealth => bossCurHealth;
+    public void SetHealth(float newHealthAmount)
     {
-        _healthBar.SetHealth(newHealth);
+        bossCurHealth = newHealthAmount;
+        UpdateHealthValues();
+    }
+    public void Damage(float damageAmount)
+    {
+        bossCurHealth -= damageAmount;
+       bossStateController.CheckStageThreshold();
+        UpdateHealthValues();
+    }
+    public void Heal(float healAmount)
+    {
+        bossCurHealth += healAmount;
+        UpdateHealthValues();
+    }
+
+    void RunBossDeath()
+    {
+        Destroy(gameObject);
+    }
+    void UpdateHealthValues()
+    {
+        if(bossCurHealth <= 0)
+        {
+            RunBossDeath();
+        }
+        bossHealthSlider.value = bossCurHealth;
+
     }
 }
     

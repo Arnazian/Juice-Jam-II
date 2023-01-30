@@ -1,10 +1,11 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : Singleton<UIManager>
 {
-    [SerializeField] private HealthBar bossHealthBar;
-    public HealthBar GetBossHealthBar => bossHealthBar; 
+    [SerializeField] private Slider bossHealthBar;
+    public Slider GetBossHealthBar => bossHealthBar; 
     
-    [SerializeField] private HealthBar playerHealthBar;
-    public HealthBar GetPlayerHealthBar => playerHealthBar;
+    [SerializeField] private Slider playerHealthBar;
+    public Slider GetPlayerHealthBar => playerHealthBar;
 }

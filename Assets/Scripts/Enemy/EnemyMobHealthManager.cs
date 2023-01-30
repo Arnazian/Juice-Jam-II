@@ -1,25 +1,44 @@
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+using DG.Tweening;
 
 public class EnemyMobHealthManager : MonoBehaviour, IDamageable
 {
     [SerializeField] private ParticleSystem deathParticles;
-    [SerializeField] private HealthBar healthBar;
     [SerializeField] private GameObject deathMarker;
 
+    private float healthValueCur;
+    [SerializeField]private float healthValueMax;
+    [SerializeField] private Slider mobHealthBar;
+
+    private void Start()
+    {
+        healthValueCur = healthValueMax;
+        mobHealthBar.maxValue = healthValueCur;
+        mobHealthBar.value = healthValueCur;
+    }
     private void Update()
     {
-        if (healthBar.GetHealth <= 0)
-        {
-            DestroyEnemy();
-        }
     }
     
     public void Damage(float amount)
     {
-        healthBar.Damage(amount);
+        healthValueCur -= amount;
+        UpdateHealth();
+    }
+    public void Heal(float amount)
+    {
+        healthValueCur += amount;
+        UpdateHealth();
+    }
+    public void SetHealth(float amount)
+    {
+        healthValueCur = amount;
+        UpdateHealth();
     }
 
-    public void DestroyEnemy()
+    public void RunEnemyDeath()
     {
         Destroy(gameObject);
         var particles = Instantiate(deathParticles, transform.position, Quaternion.identity);
@@ -29,5 +48,12 @@ public class EnemyMobHealthManager : MonoBehaviour, IDamageable
     public void SetDeathMarker(bool newStatus)
     {
         deathMarker.SetActive(newStatus);
+    }
+
+
+    private void UpdateHealth()
+    {
+        if(healthValueCur <= 0 ) { RunEnemyDeath(); }
+        mobHealthBar.value = healthValueCur;
     }
 }

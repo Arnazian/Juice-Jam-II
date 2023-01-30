@@ -6,22 +6,26 @@ using TMPro;
 
 public class HealthBar : MonoBehaviour
 {
+	/*
 	[SerializeField] private bool useScale = false;
-	[SerializeField] private float maxHealth = 100;
+	[SerializeField] private float healthValueMax = 100;
 	[SerializeField] private Image healthBarFill;
 	[SerializeField] private TextMeshProUGUI sliderTextMesh;
 
+	
 	public float GetHealth => _health;
 	public float GetMaxHealth => maxHealth;
 	
-	private float _health;
+	private float healthValueCur;
+	
 
 	private void Awake()
 	{
-		_health = maxHealth;
+		healthValueCur = healthValueMax;
 		UpdateHealthBar();
 	}
 
+	
 	public void Damage(float amount)
 	{
 		_health -= Mathf.Round(amount);
@@ -39,15 +43,29 @@ public class HealthBar : MonoBehaviour
 	    UpdateHealthBar();
     }
     
+
+	public void ChangeHealthBarValue(float newAmount)
+    {
+		healthValueCur = newAmount;
+		UpdateHealthBar();
+    }
+
+	public void SetMaxHealth(float newAmount) 
+	{ 
+		healthValueMax = newAmount;
+		UpdateHealthBar();
+	}
     private void UpdateHealthBar()
     {
-	    var fillAmount = _health / maxHealth;
+	    var fillAmount = healthValueCur / healthValueMax;
 	    if (!useScale)
 		    healthBarFill.fillAmount = fillAmount;
 	    else
 		    healthBarFill.transform.DOScaleX(fillAmount, 0.5f);
-	    _health = Mathf.Clamp(_health, 0, maxHealth);
+	    healthValueCur = Mathf.Clamp(healthValueCur, 0, healthValueMax);
 	    if(sliderTextMesh)
-		    sliderTextMesh.text = _health + " / " + maxHealth;
-    }
+		    sliderTextMesh.text = healthValueCur + " / " + healthValueMax;
+	}
+	*/
+
 }
