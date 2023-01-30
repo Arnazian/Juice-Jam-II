@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class VampireFinisher : MonoBehaviour
 {
+    [SerializeField] private GameObject bloodSuckParticles;
+    [SerializeField] private GameObject bloodExplosionParticles;
     [SerializeField] private BloodCheckCollider bloodCheckCollider;
     [SerializeField] private float healAmount;
     [SerializeField] private float launchSpeed;
@@ -21,6 +23,7 @@ public class VampireFinisher : MonoBehaviour
     private PlayersHealth playerHealth;
     void Start()
     {
+        bloodSuckParticles.SetActive(false);
         rageMeter = UIManager.Instance.GetRageMeter;
         rageAmountCur = 0;
         rageMeter.maxValue = rageAmountMax;
@@ -55,7 +58,7 @@ public class VampireFinisher : MonoBehaviour
 
     IEnumerator SuckBlood()
     {
-        
+        bloodSuckParticles.SetActive(true);
         yield return new WaitForSeconds(suckBloodDuration);        
         playerCollision.enabled = true;
         enableLaunching = false;
@@ -66,7 +69,9 @@ public class VampireFinisher : MonoBehaviour
         GameObject go = bloodCheckCollider.GetSelectedEnemy();
         go.GetComponent<EnemyMobHealthManager>().RunEnemyDeath();
         suckingBlood = false;
+        bloodSuckParticles.SetActive(false);
         SetRageAmount(0);
+        Instantiate(bloodExplosionParticles, transform.position, Quaternion.identity);
     }
 
     void MoveToTarget()
