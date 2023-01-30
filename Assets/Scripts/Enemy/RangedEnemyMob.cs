@@ -9,8 +9,10 @@ public class RangedEnemyMob : MonoBehaviour
     [SerializeField] private GameObject projectile;
     [SerializeField] private GameObject shootSpawn;
     [SerializeField] private float projectileDamage = 10f;
-    
-    [SerializeField] private float attackCooldown;
+
+    [SerializeField] private float attackCoolDownMin;
+    [SerializeField] private float attackCoolDownMax;
+    private float attackCooldownCur;
     public Transform player;
 
     private MoveTowardsPlayer _movement;
@@ -27,28 +29,49 @@ public class RangedEnemyMob : MonoBehaviour
         if(PauseMenu.Instance.IsPaused)
             return;
         
+
+        HandleShooting();
+        /*
         var rotationDirection = player.position - transform.position;
         var rotationZ = Mathf.Atan2(rotationDirection.y, rotationDirection.x) * Mathf.Rad2Deg - 90;
         transform.rotation = Quaternion.Euler(0f, 0f , rotationZ);
-        
+        */
+        /*
         if (!_movement.IsMoving && !_isAttacking)
         {
             _isAttacking = true;
-            var range = 0.5f;
-            var rand = Random.Range(-range, range);
-            var attackCooldownRand = attackCooldown + rand;
-            InvokeRepeating(nameof(Attack), attackCooldown / 3, attackCooldownRand);
+            //var range = 0.5f;
+            //var rand = Random.Range(-range, range);
+            var attackCooldownRand = Random.Range(attackCoolDownMin, attackCoolDownMax);
+            //InvokeRepeating(nameof(Attack), attackCooldown / 3, attackCooldownRand);
         }
         else if(_movement.IsMoving)
         {
             _isAttacking = false;
-            CancelInvoke(nameof(Attack));
+            // CancelInvoke(nameof(Attack));
         }
+        */
     }
+
+    void HandleShooting()
+    {
+        if(attackCooldownCur <= 0)
+        {
+            // _isAttacking = true;
+            Attack();
+        }
+        else
+        {
+            attackCooldownCur -= Time.deltaTime;
+        }
+
+    }
+
 
     private void Attack()
     {
-        if(!_isAttacking || PauseMenu.Instance.IsPaused)
+        attackCooldownCur = Random.Range(attackCoolDownMin, attackCoolDownMax);
+        if( PauseMenu.Instance.IsPaused)
             return;
         var rotationDirection = player.position - transform.position;
         var projectileRotationZ = Mathf.Atan2(rotationDirection.y, rotationDirection.x) * Mathf.Rad2Deg - 90;

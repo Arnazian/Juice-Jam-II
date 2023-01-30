@@ -4842,7 +4842,7 @@ Transform:
   m_GameObject: {fileID: 7744099146439851529}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.175, y: 0.175, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9114809520321216100}
@@ -4875,8 +4875,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf80fb272a672a04ba8a1133c9448eb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 100
   collisionParticle: {fileID: 5276824108466267453, guid: 59467ffc01719c74391c24cc163a56a5, type: 3}
+  bulletColliderType: 0
+  damage: 100
 --- !u!212 &5216370676393376205
 SpriteRenderer:
   m_ObjectHideFlags: 0

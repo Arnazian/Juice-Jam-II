@@ -291,7 +291,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!43 &123838434
+--- !u!43 &95729148
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6797,11 +6797,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1358599819545767506, guid: 72d111ca147f8904ab0ac8da50518f54, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.0837612
+      value: 1.462
       objectReference: {fileID: 0}
     - target: {fileID: 1358599819545767506, guid: 72d111ca147f8904ab0ac8da50518f54, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.2178192
+      value: -0.706
       objectReference: {fileID: 0}
     - target: {fileID: 1358599819545767506, guid: 72d111ca147f8904ab0ac8da50518f54, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6839,14 +6839,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ranged Enemy
       objectReference: {fileID: 0}
-    - target: {fileID: 1358599819545767513, guid: 72d111ca147f8904ab0ac8da50518f54, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2732398969989874023, guid: 72d111ca147f8904ab0ac8da50518f54, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 123838434}
+      objectReference: {fileID: 95729148}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72d111ca147f8904ab0ac8da50518f54, type: 3}
 --- !u!1 &1848681536
@@ -7285,6 +7281,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wave Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 3916624221039071084, guid: 17887ae7529b27b44a4ee0ec75c4834c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3916624221039071085, guid: 17887ae7529b27b44a4ee0ec75c4834c, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -7334,20 +7334,24 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3916624221039071086, guid: 17887ae7529b27b44a4ee0ec75c4834c, type: 3}
+      propertyPath: amountOfEnemiesPerRound.Array.data[0]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3916624221039071086, guid: 17887ae7529b27b44a4ee0ec75c4834c, type: 3}
       propertyPath: amountOfEnemiesPerRound.Array.data[1]
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3916624221039071086, guid: 17887ae7529b27b44a4ee0ec75c4834c, type: 3}
       propertyPath: amountOfEnemiesPerRound.Array.data[2]
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3916624221039071086, guid: 17887ae7529b27b44a4ee0ec75c4834c, type: 3}
       propertyPath: amountOfEnemiesPerRound.Array.data[3]
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3916624221039071086, guid: 17887ae7529b27b44a4ee0ec75c4834c, type: 3}
       propertyPath: amountOfEnemiesPerRound.Array.data[4]
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3916624221039071086, guid: 17887ae7529b27b44a4ee0ec75c4834c, type: 3}
       propertyPath: amountOfEnemiesPerRound.Array.data[5]
