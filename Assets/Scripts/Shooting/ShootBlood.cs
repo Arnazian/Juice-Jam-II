@@ -25,7 +25,7 @@ public class ShootBlood : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Mouse.current.leftButton.isPressed && shootCooldown <= 0)
+        if (Input.GetKey(KeyCode.Mouse0) && shootCooldown <= 0)
         {
             if(playerActionManager.CheckIfInAction()) { return; }
             Shoot(Camera.main.ScreenToWorldPoint(Input.mousePosition) - shootSpawn.transform.position, projectileSpeed);

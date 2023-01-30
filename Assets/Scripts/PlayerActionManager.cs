@@ -9,19 +9,28 @@ public class PlayerActionManager : MonoBehaviour
     private bool isDashing = false;
     private bool isAttacking = false;
     private bool isFinishing = false;
-    void Start()
+
+
+    private bool canFinish = true;
+    private bool canAttack = true;
+    private bool canDash = true;
+    private bool canMove = true;
+    public void SetIsDashing(bool newValue)
     {
-        
+        isDashing = newValue;
+        isInAction = newValue;
+    }
+    public void SetIsAttacking(bool newValue) 
+    { 
+        isAttacking = newValue; 
+        isInAction = newValue;
+    }
+    public void SetIsFinishing(bool newValue)
+    {
+        isFinishing = newValue;
+        isInAction = newValue;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public bool CheckIfInAction() { return isInAction; }
-    2
-    
+    public bool CheckIfInAction() { return isInAction; }    
     public void SetInAction(bool newValue) { isInAction = newValue; }
 }

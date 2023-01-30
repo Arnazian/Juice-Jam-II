@@ -13,6 +13,7 @@ public class VampireFinisher : MonoBehaviour
     [SerializeField] private float launchSpeed;
     [SerializeField] private float suckBloodDuration;
     [FormerlySerializedAs("rageAmountMax")] [SerializeField] private float MaxRageAmount;
+
     private Collider2D playerCollision;
 
     private bool suckingBlood = false;
@@ -33,11 +34,7 @@ public class VampireFinisher : MonoBehaviour
         playerCollision = GetComponent<Collider2D>();
     }
 
-    private void UpdateGraphics()
-    {
-        var fillAmount = currentRage / MaxRageAmount;
-        rageMeterFill.fillAmount = fillAmount;
-    }
+
 
 
     void Update()
@@ -112,6 +109,12 @@ public class VampireFinisher : MonoBehaviour
             bloodCheckCollider.SetBloodCheckColliderStatus(false);
             bloodCheckCollider.UnselectEnemy(); 
         }
+    }
+
+    private void UpdateGraphics()
+    {
+        var fillAmount = currentRage / MaxRageAmount;
+        rageMeterFill.fillAmount = fillAmount;
     }
 
     #region Increase Decrease And Set Rage
