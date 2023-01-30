@@ -12,6 +12,7 @@ public class BossHealthManager : MonoBehaviour, IDamageable
     private void Start()
     {
         bossHealthSlider = UIManager.Instance.GetBossHealthBar;
+        bossHealthSlider.gameObject.SetActive(true);
         bossCurHealth = bossMaxHealth;
         bossHealthSlider.maxValue = bossCurHealth;
         bossHealthSlider.value = bossCurHealth;

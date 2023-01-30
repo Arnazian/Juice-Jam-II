@@ -11,9 +11,13 @@ public class EnemyMobHealthManager : MonoBehaviour, IDamageable
     private float healthValueCur;
     [SerializeField]private float healthValueMax;
     [SerializeField] private Slider mobHealthBar;
+    [SerializeField] private GameObject myHealthBar;
 
     private void Start()
     {
+        GameObject newHealthBar = Instantiate(myHealthBar, transform.position, Quaternion.identity);
+        newHealthBar.GetComponent<FollowOtherObject>().SetObjectToFollow(gameObject);
+        mobHealthBar = newHealthBar.GetComponent<FollowOtherObject>().GetHealthSlider();
         healthValueCur = healthValueMax;
         mobHealthBar.maxValue = healthValueCur;
         mobHealthBar.value = healthValueCur;
