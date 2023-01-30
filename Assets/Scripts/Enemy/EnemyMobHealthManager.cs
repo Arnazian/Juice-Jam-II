@@ -48,7 +48,7 @@ public class EnemyMobHealthManager : MonoBehaviour, IDamageable
         Destroy(gameObject);
         var particles = Instantiate(deathParticles, transform.position, Quaternion.identity);
         particles.Play();
-        WaveManager.Instance.OnDeath();
+        WaveManager.Instance.EnemyMobDeath();
     }
     public void SetDeathMarker(bool newStatus)
     {
