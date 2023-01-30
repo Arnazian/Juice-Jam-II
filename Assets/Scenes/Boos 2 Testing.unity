@@ -1024,10 +1024,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerAttackRandomTime: {x: 7.5, y: 15}
   healthRemaining: 1
-  damageToStop: 300
+  damageToStop: 250
   chargeTime: 2.5
   teleportRandomTime: {x: 1, y: 2.5}
-  teleportTime: 0.5
+  teleportTime: 1
   teleportSize: {x: 7, y: 3}
 --- !u!1 &358268636
 GameObject:
