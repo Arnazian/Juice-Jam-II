@@ -41,6 +41,7 @@ public class BossHealthManager : MonoBehaviour, IDamageable
 
     void RunBossDeath()
     {
+        bossHealthSlider.transform.parent.gameObject.SetActive(false);
         Destroy(gameObject);
     }
     void UpdateHealthValues()

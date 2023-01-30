@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class FollowOtherObject : MonoBehaviour
 {
     [SerializeField] private GameObject objectToFollow;
-    [SerializeField] private Slider slider;
+    [SerializeField] private Image fill;
 
     [Range(0.0f, 1.0f)]
     public float distanceFromObject;
@@ -17,6 +17,6 @@ public class FollowOtherObject : MonoBehaviour
         
     }
 
-    public Slider GetHealthSlider() => slider;
+    public Image GetHealthImageFill() => fill;
     public void SetObjectToFollow(GameObject newObject) { objectToFollow = newObject; }
 }
