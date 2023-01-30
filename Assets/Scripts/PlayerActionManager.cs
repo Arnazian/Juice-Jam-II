@@ -22,6 +22,6 @@ public class PlayerActionManager : MonoBehaviour
 
     public bool CheckIfInAction() { return isInAction; }
     2
-   
+    
     public void SetInAction(bool newValue) { isInAction = newValue; }
 }
