@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class VampireFinisher : MonoBehaviour
@@ -11,9 +12,7 @@ public class VampireFinisher : MonoBehaviour
     [SerializeField] private float healAmount;
     [SerializeField] private float launchSpeed;
     [SerializeField] private float suckBloodDuration;
-    private Slider rageMeter;
-    [SerializeField]private float rageAmountMax;
-    private float rageAmountCur;
+    [FormerlySerializedAs("rageAmountMax")] [SerializeField] private float MaxRageAmount;
     private Collider2D playerCollision;
 
     private bool suckingBlood = false;
@@ -21,19 +20,26 @@ public class VampireFinisher : MonoBehaviour
     private PlayerActionManager playerActionManager;
 
     private PlayersHealth playerHealth;
+    
+    private Image rageMeterFill;
+    private float currentRage;
     void Start()
     {
         playerActionManager = GetComponent<PlayerActionManager>();
         bloodSuckParticles.SetActive(false);
-        rageMeter = UIManager.Instance.GetRageMeter;
-        rageAmountCur = 0;
-        rageMeter.maxValue = rageAmountMax;
-        rageMeter.value = rageAmountCur;
+        rageMeterFill = UIManager.Instance.GetRageMeterFill;
+        UpdateGraphics();
         playerHealth = GetComponent<PlayersHealth>();
         playerCollision = GetComponent<Collider2D>();
     }
 
-   
+    private void UpdateGraphics()
+    {
+        var fillAmount = currentRage / MaxRageAmount;
+        rageMeterFill.fillAmount = fillAmount;
+    }
+
+
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.E))
@@ -46,7 +52,7 @@ public class VampireFinisher : MonoBehaviour
     void StartFinisher()
     {
         if(playerActionManager.CheckIfInAction()) { return; }
-        if(rageAmountCur < rageAmountMax || bloodCheckCollider.GetSelectedEnemy() == null)
+        if(currentRage < MaxRageAmount || bloodCheckCollider.GetSelectedEnemy() == null)
         {
             Debug.Log("Not Enough Rage || Not close enough to enemy");
             return;
@@ -96,8 +102,8 @@ public class VampireFinisher : MonoBehaviour
     }
     void CheckRageMeter()
     {
-        rageMeter.value = rageAmountCur;
-        if(rageAmountCur >= rageAmountMax)
+        UpdateGraphics();
+        if(currentRage >= MaxRageAmount)
         {
             bloodCheckCollider.SetBloodCheckColliderStatus(true);
         }
@@ -111,18 +117,18 @@ public class VampireFinisher : MonoBehaviour
     #region Increase Decrease And Set Rage
     public void IncreaseRage(float amount) 
     { 
-        rageAmountCur += amount;
+        currentRage += amount;
         CheckRageMeter();
     }
     public void DecreaseRage(float amount) 
     { 
-        rageAmountCur -= amount;
+        currentRage -= amount;
         CheckRageMeter();
     }
 
     public void SetRageAmount(float amount)
     {
-        rageAmountCur = amount;
+        currentRage = amount;
         CheckRageMeter();
     }
     #endregion
