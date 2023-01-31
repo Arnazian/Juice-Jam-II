@@ -1,73 +1,58 @@
-using System;
 using System.Collections.Generic;
-using DG.Tweening;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 public class WaveManager : Singleton<WaveManager>
 {
-
     [SerializeField] private GameObject firstBoss;
     [SerializeField] private SpawnPoint[] spawnPoints;
     [SerializeField] private int bossRoundOne;
     [SerializeField] private int bossRoundTwo;
     [SerializeField] private int bossRoundThree;
-
-    // [SerializeField] private Vector2 enemySpawnRange;
-    [SerializeField] private List<WeightedGameObjectList> enemies;
-
-
-    // cocos
-    private int curRound = 0;
-    private int curRoundEnemyCount = 0;
+    
+    private int _currentRound = 0;
+    private int _currentRoundEnemyCount = 0;
     private List<GameObject> spawnQueue = new List<GameObject>();
     [SerializeField] private List<WeightedGameObjectList> enemiesByRound;
     [SerializeField] private int[] amountOfEnemiesPerRound;
-
-    [Header("Debug, Remove Later")]
-    public bool startOnAwake = true;
     
-    private int _currentWaveNumber = 0;
-
-    // private int _enemiesKilled = 0;
-
-    [SerializeField]private int _enemyCount = 5;
-
-    public Action onBossStart;
+    public bool startOnAwake = true;
 
     protected override void Awake()
     {
         base.Awake();
-        if (startOnAwake) { StartNewWave(); }            
+        if (startOnAwake) 
+            StartNewWave();          
     }
 
     void StartNewWave()
     {
-        curRound++;
-        if (CheckIfBossRound()) { return; }
-        curRoundEnemyCount = amountOfEnemiesPerRound[curRound];
+        _currentRound++;
+        if (CheckIfBossRound()) 
+            return;
+        _currentRoundEnemyCount = amountOfEnemiesPerRound[_currentRound];
         PopulateSpawnQueue();
         DistributeSpawnQueue();
     }
 
     bool CheckIfBossRound()
     {
-        if(curRound == bossRoundOne) 
+        if(_currentRound == bossRoundOne) 
         {
             StartFirstBoss();
             return true;
         }
-        else if (curRound == bossRoundTwo)
+        else if (_currentRound == bossRoundTwo)
         {
             StartSecondBoss();
             return true;
         }
-        else if (curRound == bossRoundThree)
+        else if (_currentRound == bossRoundThree)
         {
             StartThirdBoss();
             return true;
         }
-        else { return false; }
+        else 
+            return false;
     }
     void DistributeSpawnQueue()
     {
@@ -80,46 +65,18 @@ public class WaveManager : Singleton<WaveManager>
     }
     void PopulateSpawnQueue()
     {
-        WeightedGameObjectList curRoundList = enemiesByRound[curRound - 1];
-        for (int i = curRoundEnemyCount; i > 0; i--)
+        WeightedGameObjectList curRoundList = enemiesByRound[_currentRound - 1];
+        for (int i = _currentRoundEnemyCount; i > 0; i--)
         {
             spawnQueue.Add(curRoundList.GetRandomObject());
         }
     }
 
-
-
-
-    /*
-    public void StartNextWave()
-    {
-        // _enemiesKilled = 0;
-        if (_currentWaveNumber >= enemies.Count)
-        {
-            onBossStart?.Invoke();
-            StartFirstBoss();
-            return;
-        }
-
-        _currentWaveNumber++;
-        var weightedList = enemies[_currentWaveNumber - 1];
-        for (int i = 0; i < _enemyCount; i++)
-        {
-            var enemy = Instantiate(weightedList.GetRandomObject(),
-                new Vector3(Random.Range(-enemySpawnRange.x, enemySpawnRange.x),
-                    Random.Range(-enemySpawnRange.y, enemySpawnRange.y), 0), Quaternion.identity);
-        }
-    }
-
-    */
-
     public void EnemyMobDeath()
     {
-        curRoundEnemyCount--;
-        if (curRoundEnemyCount <= 0)
-        {
+        _currentRoundEnemyCount--;
+        if (_currentRoundEnemyCount <= 0)
             StartNewWave();
-        }            
     }
 
     #region BossFights
