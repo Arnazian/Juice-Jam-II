@@ -4876,7 +4876,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collisionParticle: {fileID: 5276824108466267453, guid: 59467ffc01719c74391c24cc163a56a5, type: 3}
-  bulletColliderType: 1
+  ownerOfBulletType: 1
   damage: 100
 --- !u!212 &5216370676393376205
 SpriteRenderer:
