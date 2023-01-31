@@ -11,6 +11,7 @@ public class ShootBlood : MonoBehaviour
     [SerializeField] private GameObject shootSpawn;
     [SerializeField] private float damageToSelf;
     [SerializeField] private float startShootCooldown = 1;
+    [SerializeField] private ParticleSystem handParticles;
     private float shootCooldown;
     private PlayerActionManager playerActionManager;
 
@@ -31,30 +32,51 @@ public class ShootBlood : MonoBehaviour
         playerHealth = GetComponent<PlayersHealth>();
     }
 
-    void FixedUpdate()
+    void Update()
     {
-        if(playerHealth.GetHealth <= damageToSelf)
-            return;
-        
-        if (Input.GetKey(KeyCode.Mouse0) && shootCooldown <= 0 && !playerActionManager.CheckIfInAction())
+        HandleShooting();
+    }
+
+    void HandleShooting()
+    {
+        if (playerHealth.GetHealth <= damageToSelf) { return; }
+
+        if (Input.GetKeyUp(KeyCode.Mouse0))
         {
-            if(playerActionManager.CheckIfInAction()) { return; }
+            handParticles.Stop();
+            _isShooting = false;
+            anim.SetBool(IsFiring, _isShooting);
+        }
+        if(Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            if (playerActionManager.CheckIfInAction()) { return; }
+            handParticles.Play();
+            _isShooting = true;
+            anim.SetBool(IsFiring, _isShooting);
+        }
+
+        if(_isShooting && shootCooldown <= 0)
+        {            
+            Shoot(Camera.main.ScreenToWorldPoint(Input.mousePosition) - shootSpawn.transform.position, projectileSpeed);
+            shootCooldown = startShootCooldown;
+        }
+
+        if (shootCooldown > 0)
+        {
+            shootCooldown -= Time.deltaTime;
+        }
+        /*
+        if (Input.GetKey(KeyCode.Mouse0) && shootCooldown <= 0)
+        {
+            if (playerActionManager.CheckIfInAction()) { return; }
+
             Shoot(Camera.main.ScreenToWorldPoint(Input.mousePosition) - shootSpawn.transform.position, projectileSpeed);
             shootCooldown = startShootCooldown;
             _isShooting = true;
+            anim.SetBool(IsFiring, _isShooting);            
         }
-        else if(!Input.GetKey(KeyCode.Mouse0))
-        {
-            _isShooting = false;
-            shootCooldown -= Time.deltaTime;
-        }
-        else
-            shootCooldown -= Time.deltaTime;
+        */
 
-        if (playerActionManager.CheckIfAttacking())
-            _isShooting = false;
-
-        anim.SetBool(IsFiring, _isShooting);
     }
 
     public void Shoot(Vector3 direction, float speed)
@@ -64,12 +86,10 @@ public class ShootBlood : MonoBehaviour
         _camera.GetComponent<ScreenShake>().DoScreenShake(0.2f, 0.12f);
 
         var projectileRotationZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg-90;
-
         var projectileRotation =  Quaternion.Euler(0f, 0f, projectileRotationZ);
 
         var newProjectile = Instantiate(projectile, shootSpawn.transform.position, projectileRotation);
         newProjectile.GetComponent<ProjectileFlyStraight>().speed = speed;
         newProjectile.GetComponent<BulletCollider>().damage = projectileDamage;
-        // newProjectile.GetComponent<BulletCollider>().damage = projectileDamage + playerHealth.GetMaxHealth() - playerHealth.GetCurHealth();
     }
 }
