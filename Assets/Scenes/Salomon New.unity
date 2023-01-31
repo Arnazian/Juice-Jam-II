@@ -5716,6 +5716,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!20 &682325283 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 2209785467923771253, guid: b83e932bc879967439eab76ce23930b1, type: 3}
+  m_PrefabInstance: {fileID: 1341112348}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &807885408 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 807885408, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
@@ -5870,14 +5875,30 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 268472774, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 807885407, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 807885408, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1077000749, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
       propertyPath: bloodExplosionParticles
       value: 
       objectReference: {fileID: 4345966386483763780, guid: 51c6e10cd18ff134382c00bdb038722b, type: 3}
+    - target: {fileID: 1388778451, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1746635491, guid: 67ed88e9159185e43babd8950ebdc179, type: 3}
+    - target: {fileID: 1886698388, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 332318632987233901, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -5926,6 +5947,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1535169709515129355, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3105882647621186600, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
       propertyPath: maxHealth
       value: 300
@@ -5934,6 +5959,14 @@ PrefabInstance:
       propertyPath: healthBarFill
       value: 
       objectReference: {fileID: 364170255}
+    - target: {fileID: 7356498817735362785, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
+      propertyPath: m_Intensity
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 9194362438367662042, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
 --- !u!1 &1050070046
@@ -6279,6 +6312,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1341112350, guid: b83e932bc879967439eab76ce23930b1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1341112350, guid: b83e932bc879967439eab76ce23930b1, type: 3}
+      propertyPath: m_CropFrame
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1341112350, guid: b83e932bc879967439eab76ce23930b1, type: 3}
+      propertyPath: m_GridSnapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2209785467923771253, guid: b83e932bc879967439eab76ce23930b1, type: 3}
+      propertyPath: orthographic size
+      value: 5.4166665
+      objectReference: {fileID: 0}
+    - target: {fileID: 2209785467923771253, guid: b83e932bc879967439eab76ce23930b1, type: 3}
+      propertyPath: m_NormalizedViewPortRect.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2209785467923771253, guid: b83e932bc879967439eab76ce23930b1, type: 3}
+      propertyPath: m_NormalizedViewPortRect.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2209785467923771253, guid: b83e932bc879967439eab76ce23930b1, type: 3}
+      propertyPath: m_NormalizedViewPortRect.width
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2209785467923771253, guid: b83e932bc879967439eab76ce23930b1, type: 3}
+      propertyPath: m_NormalizedViewPortRect.height
+      value: 0.9980806
+      objectReference: {fileID: 0}
     - target: {fileID: 2209785467923771255, guid: b83e932bc879967439eab76ce23930b1, type: 3}
       propertyPath: m_Name
       value: Main Camera (1)
@@ -7234,6 +7299,18 @@ PrefabInstance:
     - target: {fileID: 4066002350358335412, guid: ffb5d37d385033348ae9d7934d7ef541, type: 3}
       propertyPath: m_Name
       value: HUD
+      objectReference: {fileID: 0}
+    - target: {fileID: 4066002350358335415, guid: ffb5d37d385033348ae9d7934d7ef541, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 682325283}
+    - target: {fileID: 4066002350358335415, guid: ffb5d37d385033348ae9d7934d7ef541, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4066002350358335415, guid: ffb5d37d385033348ae9d7934d7ef541, type: 3}
+      propertyPath: m_PixelPerfect
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffb5d37d385033348ae9d7934d7ef541, type: 3}
