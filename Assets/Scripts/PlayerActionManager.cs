@@ -31,6 +31,8 @@ public class PlayerActionManager : MonoBehaviour
         isInAction = newValue;
     }
 
+    public bool CheckIfAttacking() { return isAttacking; }
+    public bool CheckIfFinishing() { return isFinishing; }
     public bool CheckIfInAction() { return isInAction; }    
     public void SetInAction(bool newValue) { isInAction = newValue; }
 }

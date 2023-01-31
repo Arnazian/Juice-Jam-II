@@ -11,6 +11,8 @@ public class VampireFinisher : MonoBehaviour
     [SerializeField] private BloodCheckCollider bloodCheckCollider;
     [SerializeField] private float healAmount;
     [SerializeField] private float launchSpeed;
+    [SerializeField] private float suckBloodIntervalMax;
+    private float suckBloodIntervalCur;
     [SerializeField] private float suckBloodDuration;
     [FormerlySerializedAs("rageAmountMax")] [SerializeField] private float MaxRageAmount;
 
@@ -26,6 +28,7 @@ public class VampireFinisher : MonoBehaviour
     private float currentRage;
     void Start()
     {
+        suckBloodIntervalCur = 0;
         playerActionManager = GetComponent<PlayerActionManager>();
         bloodSuckParticles.SetActive(false);
         rageMeterFill = UIManager.Instance.GetRageMeterFill;
@@ -44,41 +47,69 @@ public class VampireFinisher : MonoBehaviour
             StartFinisher();
         }
         MoveToTarget();
+        SuckBloodTimer();
     }
 
     void StartFinisher()
     {
+        if(suckingBlood) {  StopSuckingBlood(); }
         if(playerActionManager.CheckIfInAction()) { return; }
-        if(currentRage < MaxRageAmount || bloodCheckCollider.GetSelectedEnemy() == null)
+        if(/* currentRage < MaxRageAmount || */ bloodCheckCollider.GetSelectedEnemy() == null)
         {
             Debug.Log("Not Enough Rage || Not close enough to enemy");
             return;
         }
 
         GetComponent<MovePlayer>().SetCanMove(false);
-        playerActionManager.SetInAction(true);
+        playerActionManager.SetIsFinishing(true);
         playerHealth.SetImmuneStatus(true);
         playerCollision.enabled = false;
         enableLaunching = true;
     }
 
-    IEnumerator SuckBlood()
+    IEnumerator CoroutineSuckBlood()
     {
         bloodSuckParticles.SetActive(true);
         yield return new WaitForSeconds(suckBloodDuration);        
+        StopSuckingBlood();
+    }
+
+
+    void SuckBloodTimer()
+    {
+        if(!suckingBlood) { return; }
+        if (suckBloodIntervalCur <= 0)
+        {
+            suckBloodIntervalCur = suckBloodIntervalMax;
+            BloodSuckingInterval();
+        }
+        else
+        {
+            suckBloodIntervalCur -= Time.deltaTime;
+        }
+    }
+
+    void BloodSuckingInterval()
+    {
+        
+    }
+
+    void StopSuckingBlood()
+    {
         playerCollision.enabled = true;
         enableLaunching = false;
+        playerActionManager.SetIsFinishing(false);
+
         GetComponent<MovePlayer>().SetCanMove(true);
         playerHealth.SetImmuneStatus(false);
-        playerHealth.Heal(healAmount);
+        //playerHealth.Heal(healAmount);
 
-        GameObject go = bloodCheckCollider.GetSelectedEnemy();
-        go.GetComponent<EnemyMobHealthManager>().RunEnemyDeath();
+        // GameObject go = bloodCheckCollider.GetSelectedEnemy();
+        // go.GetComponent<EnemyMobHealthManager>().RunEnemyDeath();
         suckingBlood = false;
         bloodSuckParticles.SetActive(false);
-        SetRageAmount(0);
-        Instantiate(bloodExplosionParticles, transform.position, Quaternion.identity);
-        playerActionManager.SetInAction(false);
+        // SetRageAmount(0);
+        // Instantiate(bloodExplosionParticles, transform.position, Quaternion.identity);
     }
 
     void MoveToTarget()
@@ -94,20 +125,21 @@ public class VampireFinisher : MonoBehaviour
         {
             if (suckingBlood) { return; }
             suckingBlood = true;
-            StartCoroutine(SuckBlood());
+            //StartCoroutine(CoroutineSuckBlood());
         }
     }
+
     void CheckRageMeter()
     {
         UpdateGraphics();
         if(currentRage >= MaxRageAmount)
         {
-            bloodCheckCollider.SetBloodCheckColliderStatus(true);
+            //bloodCheckCollider.SetBloodCheckColliderStatus(true);
         }
         else
         {
-            bloodCheckCollider.SetBloodCheckColliderStatus(false);
-            bloodCheckCollider.UnselectEnemy(); 
+            //bloodCheckCollider.SetBloodCheckColliderStatus(false);
+            //bloodCheckCollider.UnselectEnemy(); 
         }
     }
 
