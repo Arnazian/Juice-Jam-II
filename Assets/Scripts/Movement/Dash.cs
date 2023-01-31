@@ -46,7 +46,7 @@ public class Dash : MonoBehaviour
             if (dashCooldown <= 0)
             {
                 canPerformADash = true;
-                playerActionManager.SetIsDashing(false);
+                // playerActionManager.SetIsDashing(false);
                 RestartDashCooldown(dashCooldownStart);
             }
         }
@@ -60,7 +60,7 @@ public class Dash : MonoBehaviour
     void DoDash(float force)
     {
         if (playerActionManager.CheckIfFinishing()) { return; }
-        playerActionManager.SetIsDashing(true);
+        // playerActionManager.SetIsDashing(true);
         canPerformADash = false;
 
         StartCoroutine("MakeDashShadow");

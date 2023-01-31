@@ -10,6 +10,7 @@ public class VampireFinisher : MonoBehaviour
     [SerializeField] private GameObject bloodExplosionParticles;
     [SerializeField] private BloodCheckCollider bloodCheckCollider;
     [SerializeField] private float healAmount;
+    [SerializeField] private float damageAmount;
     [SerializeField] private float launchSpeed;
     [SerializeField] private float suckBloodIntervalMax;
     private float suckBloodIntervalCur;
@@ -88,6 +89,12 @@ public class VampireFinisher : MonoBehaviour
     void BloodSuckingInterval()
     {
         playerHealth.Heal(healAmount);
+        if(myTarget == null) 
+        { 
+            StopSuckingBlood();
+            return;
+        }
+        myTarget.GetComponent<EnemyMobHealthManager>().Damage(damageAmount);
         
     }
 
@@ -102,13 +109,13 @@ public class VampireFinisher : MonoBehaviour
         playerActionManager.SetIsFinishing(false);
 
         GetComponent<MovePlayer>().SetCanMove(true);
-        playerHealth.SetImmuneStatus(false);
+        //playerHealth.SetImmuneStatus(false);
     }
 
     void MoveToTarget()
     {
         if (!enableLaunching) { return; }
-
+        if(myTarget == null) { return; }
         if (Vector3.Distance(transform.position, bloodCheckCollider.GetSelectedEnemy().transform.position) > 0.2f)
         {
             transform.position = Vector2.MoveTowards(transform.position,

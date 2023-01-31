@@ -36,7 +36,7 @@ public class ShootBlood : MonoBehaviour
         if(playerHealth.GetHealth <= damageToSelf)
             return;
         
-        if (Input.GetKey(KeyCode.Mouse0) && shootCooldown <= 0 && !playerActionManager.CheckIfAttacking())
+        if (Input.GetKey(KeyCode.Mouse0) && shootCooldown <= 0 && !playerActionManager.CheckIfInAction())
         {
             if(playerActionManager.CheckIfInAction()) { return; }
             Shoot(Camera.main.ScreenToWorldPoint(Input.mousePosition) - shootSpawn.transform.position, projectileSpeed);

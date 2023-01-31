@@ -21,18 +21,21 @@ public class PlayerActionManager : MonoBehaviour
         isInAction = newValue;
     }
     public void SetIsAttacking(bool newValue) 
-    { 
-        isAttacking = newValue; 
+    {
         isInAction = newValue;
+        isAttacking = newValue;         
     }
     public void SetIsFinishing(bool newValue)
     {
-        isFinishing = newValue;
         isInAction = newValue;
+        isFinishing = newValue;        
     }
 
     public bool CheckIfAttacking() { return isAttacking; }
     public bool CheckIfFinishing() { return isFinishing; }
     public bool CheckIfInAction() { return isInAction; }    
-    public void SetInAction(bool newValue) { isInAction = newValue; }
+    public void SetInAction(bool newValue) 
+    {
+        isInAction = newValue; 
+    }
 }
