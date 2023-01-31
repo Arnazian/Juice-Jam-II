@@ -5810,28 +5810,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &950838705 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5706133124468998322, guid: cde76e4b4dd2ba3438403e15593f670b, type: 3}
-  m_PrefabInstance: {fileID: 5706133124346029315}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &950838707
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 950838705}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IsGlobal: 1
-  priority: 0
-  blendDistance: 0
-  weight: 1
-  sharedProfile: {fileID: 11400000, guid: 418ec2fe267a80a42892659e2fae25cf, type: 2}
 --- !u!1001 &1023345379
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6326,7 +6304,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2209785467923771253, guid: b83e932bc879967439eab76ce23930b1, type: 3}
       propertyPath: orthographic size
-      value: 5.4166665
+      value: 5.375
       objectReference: {fileID: 0}
     - target: {fileID: 2209785467923771253, guid: b83e932bc879967439eab76ce23930b1, type: 3}
       propertyPath: m_NormalizedViewPortRect.x
@@ -6342,7 +6320,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2209785467923771253, guid: b83e932bc879967439eab76ce23930b1, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.9980806
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2209785467923771255, guid: b83e932bc879967439eab76ce23930b1, type: 3}
       propertyPath: m_Name
