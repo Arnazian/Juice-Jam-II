@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 
 public class MovePlayer : MonoBehaviour
 {   
+    [SerializeField] private AudioSource footstepSource;
     [SerializeField] private ParticleSystem footsteps;
     [SerializeField] private float speed;
     [SerializeField] private float accelerationTime;
@@ -41,11 +42,15 @@ public class MovePlayer : MonoBehaviour
         {
             if(!footsteps.isPlaying)
                 footsteps.Play(true);
+            if(!footstepSource.isPlaying)
+                footstepSource.Play();
         }
         else
         {
             if(footsteps.isPlaying)
                 footsteps.Stop(true);
+            if(footstepSource.isPlaying)
+                footstepSource.Stop();
         }
     }
 
