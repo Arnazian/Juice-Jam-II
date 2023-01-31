@@ -18,6 +18,7 @@ public class BulletCollider : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             PlayerCollision(other);
+
         }
         else if(other.CompareTag("Enemy"))
         {
@@ -36,24 +37,28 @@ public class BulletCollider : MonoBehaviour
             return;
         }
 
-        Instantiate(collisionParticle, transform.position, Quaternion.identity);
-        Destroy(gameObject);
+       
     }
 
     void EnemyCollision(Collider2D other)
     {
         if(ownerOfBulletType != OwnerOfBulletType.Player) { return; }
         other.transform.GetComponent<IDamageable>().Damage(damage);
+        Instantiate(collisionParticle, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 
     void PlayerCollision(Collider2D other)
     {
         if (ownerOfBulletType != OwnerOfBulletType.Enemy) { return; }
         other.transform.GetComponent<IDamageable>().Damage(damage);
+        Instantiate(collisionParticle, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
     void WallCollision(Collider2D other)
     {
-        
+        Instantiate(collisionParticle, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 
 
