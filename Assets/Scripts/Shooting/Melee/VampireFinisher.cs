@@ -17,7 +17,7 @@ public class VampireFinisher : MonoBehaviour
     [FormerlySerializedAs("rageAmountMax")] [SerializeField] private float MaxRageAmount;
 
     private Collider2D playerCollision;
-
+    private GameObject myTarget;
     private bool suckingBlood = false;
     private bool enableLaunching = false;
     private PlayerActionManager playerActionManager;
@@ -52,29 +52,25 @@ public class VampireFinisher : MonoBehaviour
 
     void StartFinisher()
     {
-        if(suckingBlood) {  StopSuckingBlood(); }
+        if(suckingBlood) 
+        {  
+            StopSuckingBlood();
+            return;
+        }
         if(playerActionManager.CheckIfInAction()) { return; }
-        if(/* currentRage < MaxRageAmount || */ bloodCheckCollider.GetSelectedEnemy() == null)
+        if(bloodCheckCollider.GetSelectedEnemy() == null)
         {
-            Debug.Log("Not Enough Rage || Not close enough to enemy");
+            Debug.Log("Not close enough to enemy");
             return;
         }
 
         GetComponent<MovePlayer>().SetCanMove(false);
         playerActionManager.SetIsFinishing(true);
-        playerHealth.SetImmuneStatus(true);
+        // playerHealth.SetImmuneStatus(true);
         playerCollision.enabled = false;
+        myTarget = bloodCheckCollider.GetSelectedEnemy();
         enableLaunching = true;
     }
-
-    IEnumerator CoroutineSuckBlood()
-    {
-        bloodSuckParticles.SetActive(true);
-        yield return new WaitForSeconds(suckBloodDuration);        
-        StopSuckingBlood();
-    }
-
-
     void SuckBloodTimer()
     {
         if(!suckingBlood) { return; }
@@ -91,25 +87,22 @@ public class VampireFinisher : MonoBehaviour
 
     void BloodSuckingInterval()
     {
+        playerHealth.Heal(healAmount);
         
     }
 
     void StopSuckingBlood()
     {
-        playerCollision.enabled = true;
+        Debug.Log("Stopped sucking blood");
         enableLaunching = false;
+        suckingBlood = false;
+        playerCollision.enabled = true;
+       
+        bloodSuckParticles.SetActive(false);
         playerActionManager.SetIsFinishing(false);
 
         GetComponent<MovePlayer>().SetCanMove(true);
         playerHealth.SetImmuneStatus(false);
-        //playerHealth.Heal(healAmount);
-
-        // GameObject go = bloodCheckCollider.GetSelectedEnemy();
-        // go.GetComponent<EnemyMobHealthManager>().RunEnemyDeath();
-        suckingBlood = false;
-        bloodSuckParticles.SetActive(false);
-        // SetRageAmount(0);
-        // Instantiate(bloodExplosionParticles, transform.position, Quaternion.identity);
     }
 
     void MoveToTarget()
@@ -119,13 +112,12 @@ public class VampireFinisher : MonoBehaviour
         if (Vector3.Distance(transform.position, bloodCheckCollider.GetSelectedEnemy().transform.position) > 0.2f)
         {
             transform.position = Vector2.MoveTowards(transform.position,
-                bloodCheckCollider.GetSelectedEnemy().transform.position, launchSpeed * Time.deltaTime);
+                myTarget.transform.position, launchSpeed * Time.deltaTime);
         }
         else
         {
             if (suckingBlood) { return; }
             suckingBlood = true;
-            //StartCoroutine(CoroutineSuckBlood());
         }
     }
 
@@ -134,12 +126,9 @@ public class VampireFinisher : MonoBehaviour
         UpdateGraphics();
         if(currentRage >= MaxRageAmount)
         {
-            //bloodCheckCollider.SetBloodCheckColliderStatus(true);
         }
         else
         {
-            //bloodCheckCollider.SetBloodCheckColliderStatus(false);
-            //bloodCheckCollider.UnselectEnemy(); 
         }
     }
 
