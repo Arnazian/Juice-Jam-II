@@ -15,10 +15,16 @@ public class ShootBlood : MonoBehaviour
     private PlayerActionManager playerActionManager;
 
     private PlayersHealth playerHealth;
+    
+    private Animator anim;
+
+    private bool _isShooting;
+    private static readonly int IsFiring = Animator.StringToHash("IsFiring");
 
     void Start()
     {
         playerActionManager = GetComponent<PlayerActionManager>();
+        anim = GetComponent<Animator>();
         shootCooldown = startShootCooldown;
         playerHealth = GetComponent<PlayersHealth>();
     }
@@ -30,11 +36,17 @@ public class ShootBlood : MonoBehaviour
             if(playerActionManager.CheckIfInAction()) { return; }
             Shoot(Camera.main.ScreenToWorldPoint(Input.mousePosition) - shootSpawn.transform.position, projectileSpeed);
             shootCooldown = startShootCooldown;
+            _isShooting = true;
+        }
+        else if(!Input.GetKey(KeyCode.Mouse0))
+        {
+            _isShooting = false;
+            shootCooldown -= Time.deltaTime;
         }
         else
-        {
-            shootCooldown-=Time.deltaTime;
-        }
+            shootCooldown -= Time.deltaTime;
+
+        anim.SetBool(IsFiring, _isShooting);
     }
 
     public void Shoot(Vector3 direction, float speed)
