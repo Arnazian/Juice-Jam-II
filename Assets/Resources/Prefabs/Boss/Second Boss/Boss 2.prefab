@@ -98,7 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageThresholds:
   - 2500
-  - 2499
+  - 1250
   - 833
 --- !u!114 &4317016093076274739
 MonoBehaviour:
