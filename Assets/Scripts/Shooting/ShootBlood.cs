@@ -31,7 +31,7 @@ public class ShootBlood : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.Mouse0) && shootCooldown <= 0)
+        if (Input.GetKey(KeyCode.Mouse0) && shootCooldown <= 0 && !playerActionManager.CheckIfAttacking())
         {
             if(playerActionManager.CheckIfInAction()) { return; }
             Shoot(Camera.main.ScreenToWorldPoint(Input.mousePosition) - shootSpawn.transform.position, projectileSpeed);
@@ -45,6 +45,9 @@ public class ShootBlood : MonoBehaviour
         }
         else
             shootCooldown -= Time.deltaTime;
+
+        if (playerActionManager.CheckIfAttacking())
+            _isShooting = false;
 
         anim.SetBool(IsFiring, _isShooting);
     }
