@@ -45,7 +45,7 @@ public class ShootBlood : MonoBehaviour
             return;
         }
 
-        if(Input.GetKeyDown(KeyCode.Mouse0))
+        if(Input.GetKey(KeyCode.Mouse0))
             StartShooting();
         
         if (Input.GetKeyUp(KeyCode.Mouse0))
@@ -62,7 +62,8 @@ public class ShootBlood : MonoBehaviour
 
     private void StartShooting()
     {
-        handParticles.Play();
+        if (!_isShooting) 
+            handParticles.Play();
         _isShooting = true;
         anim.SetBool(IsFiring, _isShooting);
     }
