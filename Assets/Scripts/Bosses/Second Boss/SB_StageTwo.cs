@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 
@@ -11,6 +12,8 @@ public class SB_StageTwo : Stage2Base
     private Vector3 _projectileTarget;
 
     private Transform _player;
+
+    private List<GameObject> _pools = new List<GameObject>();
 
     private void Awake()
     {
@@ -27,7 +30,7 @@ public class SB_StageTwo : Stage2Base
     {
         _projectileTarget = _player.position;
         var marker = Instantiate(poolMarker, _projectileTarget, Quaternion.identity);
-        marker.transform.DOScale(Vector3.zero, timeToLaunch).OnComplete(() =>
+        marker.transform.DOScale(new Vector3(0.25f, 0.25f, 0.25f), timeToLaunch).OnComplete(() =>
         {
             CreatePool();
             Destroy(marker);
@@ -39,5 +42,12 @@ public class SB_StageTwo : Stage2Base
     private void CreatePool()
     {
         var poolObject = Instantiate(pool, _projectileTarget, Quaternion.identity);
+        _pools.Add(poolObject);
+    }
+
+    public void DestroyAllPools()
+    {
+        foreach (var poolObject in _pools)
+            Destroy(poolObject);
     }
 }

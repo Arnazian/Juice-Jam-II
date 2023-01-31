@@ -33,6 +33,7 @@ public class SB_StageOne : Stage1Base
     public override void StartStageOne()
     {
         _stageActive = true;
+        _canTp = true;
         MoveToRandomPosition();
         var randPowerAttack = Random.Range(powerAttackRandomTime.x, powerAttackRandomTime.y);
         Invoke(nameof(StartPowerAttack), randPowerAttack);
