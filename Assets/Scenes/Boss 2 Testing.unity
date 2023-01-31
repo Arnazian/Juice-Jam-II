@@ -5817,6 +5817,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4317016093076274738, guid: 3949b84d130dea2468c5c3a3cd9edbb7, type: 3}
+      propertyPath: timeToLaunch
+      value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 4317016093076274738, guid: 3949b84d130dea2468c5c3a3cd9edbb7, type: 3}
+      propertyPath: poolRandomTime.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4317016093076274738, guid: 3949b84d130dea2468c5c3a3cd9edbb7, type: 3}
+      propertyPath: poolRandomTime.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4317016093076274744, guid: 3949b84d130dea2468c5c3a3cd9edbb7, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -5988,7 +6000,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3105882647621186600, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
       propertyPath: maxHealth
-      value: 300
+      value: 1500
       objectReference: {fileID: 0}
     - target: {fileID: 3105882647621186600, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
       propertyPath: healthBarFill
@@ -6361,7 +6373,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2209785467923771253, guid: b83e932bc879967439eab76ce23930b1, type: 3}
       propertyPath: orthographic size
-      value: 6.45
+      value: 3.84375
       objectReference: {fileID: 0}
     - target: {fileID: 2209785467923771253, guid: b83e932bc879967439eab76ce23930b1, type: 3}
       propertyPath: m_NormalizedViewPortRect.x
@@ -6369,7 +6381,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2209785467923771253, guid: b83e932bc879967439eab76ce23930b1, type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0
+      value: 0.0030303032
       objectReference: {fileID: 0}
     - target: {fileID: 2209785467923771253, guid: b83e932bc879967439eab76ce23930b1, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
@@ -6377,7 +6389,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2209785467923771253, guid: b83e932bc879967439eab76ce23930b1, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 1
+      value: 0.99393946
       objectReference: {fileID: 0}
     - target: {fileID: 2209785467923771255, guid: b83e932bc879967439eab76ce23930b1, type: 3}
       propertyPath: m_Name
