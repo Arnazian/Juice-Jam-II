@@ -14843,14 +14843,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1409232991}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2462591010989622622}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!198 &1409232994
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -15685,7 +15685,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 20
+      scalar: 25
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -15811,12 +15811,12 @@ ParticleSystem:
           outWeight: 0.33333334
         - serializedVersion: 3
           time: 1
-          value: 0.47272682
-          inSlope: 1
-          outSlope: 1
+          value: 0.24324323
+          inSlope: 2.4637592
+          outSlope: 2.4637592
           tangentMode: 0
           weightedMode: 0
-          inWeight: 0.33333334
+          inWeight: 0.115183234
           outWeight: 0.33333334
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -16123,7 +16123,7 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.2830189, g: 0.2830189, b: 0.2830189, a: 1}
+        key0: {r: 0.2264151, g: 0.17739972, b: 0.11000357, a: 1}
         key1: {r: 0.28627452, g: 0.28627452, b: 0.28627452, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
@@ -20112,7 +20112,6 @@ GameObject:
   - component: {fileID: 1388778452}
   - component: {fileID: 1077000749}
   - component: {fileID: 1924373974}
-  - component: {fileID: 1362006515}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -20209,6 +20208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed18787610d456a48ac5908b5893aedc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  footsteps: {fileID: 1409232994}
   speed: 1.5
   accelerationTime: 5
   playerInput:
@@ -20272,7 +20272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c7a0925943d9bd4dac50cc1950598d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileDamage: 34
+  projectileDamage: 12
   projectileSpeed: 12
   projectile: {fileID: 7744099146439851529, guid: 31c36ad2529306b4b80bdb58545ade16, type: 3}
   shootSpawn: {fileID: 8313232032094458876}
@@ -20410,18 +20410,6 @@ MonoBehaviour:
   suckBloodDuration: 1.5
   MaxRageAmount: 500
 --- !u!114 &1924373974
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 332318632987234194}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cb97c42c827d5046ba21f14017ac7d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1362006515
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

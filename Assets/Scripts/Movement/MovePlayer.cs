@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 
 public class MovePlayer : MonoBehaviour
 {   
+    [SerializeField] private ParticleSystem footsteps;
     [SerializeField] private float speed;
     [SerializeField] private float accelerationTime;
 
@@ -29,11 +30,23 @@ public class MovePlayer : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        footsteps.Stop();
     }
 
     void FixedUpdate()
     {
         HandleMovement();
+
+        if (inputH != 0 || inputV != 0)
+        {
+            if(!footsteps.isPlaying)
+                footsteps.Play(true);
+        }
+        else
+        {
+            if(footsteps.isPlaying)
+                footsteps.Stop(true);
+        }
     }
 
     void HandleMovement()
