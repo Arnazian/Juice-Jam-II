@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(EnemyMobHealthManager))]
-public class EnemyMob : MonoBehaviour
+public class EnemyMob : MonoBehaviour, IEnemy
 {
     [SerializeField] private float attackCooldown;
     [SerializeField] private float attackDamage = 10f;
@@ -41,7 +41,12 @@ public class EnemyMob : MonoBehaviour
         }
     }
 
-    private void Attack()
+    public void HandleAttackLogic()
+    {
+
+    }
+
+    public void Attack()
     {
         if(!_isAttacking || PauseMenu.Instance.IsPaused)
             return;
