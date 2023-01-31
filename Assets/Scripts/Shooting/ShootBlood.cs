@@ -20,9 +20,11 @@ public class ShootBlood : MonoBehaviour
 
     private bool _isShooting;
     private static readonly int IsFiring = Animator.StringToHash("IsFiring");
+    private Camera _camera;
 
     void Start()
     {
+        _camera = Camera.main;
         playerActionManager = GetComponent<PlayerActionManager>();
         anim = GetComponent<Animator>();
         shootCooldown = startShootCooldown;
@@ -31,6 +33,9 @@ public class ShootBlood : MonoBehaviour
 
     void FixedUpdate()
     {
+        if(playerHealth.GetHealth <= damageToSelf)
+            return;
+        
         if (Input.GetKey(KeyCode.Mouse0) && shootCooldown <= 0 && !playerActionManager.CheckIfAttacking())
         {
             if(playerActionManager.CheckIfInAction()) { return; }
@@ -56,7 +61,7 @@ public class ShootBlood : MonoBehaviour
     {
         GetComponent<IDamageable>().Damage(damageToSelf);
 
-        Camera.main.GetComponent<ScreenShake>().DoScreenShake(0.15f, 0.12f);
+        _camera.GetComponent<ScreenShake>().DoScreenShake(0.2f, 0.12f);
 
         var projectileRotationZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg-90;
 

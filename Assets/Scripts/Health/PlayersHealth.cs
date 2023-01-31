@@ -29,4 +29,6 @@ public class PlayersHealth : HealthManager
     {
         isImmune = newStatus;
     }
+
+    public float GetHealth => currentHealth;
 }
