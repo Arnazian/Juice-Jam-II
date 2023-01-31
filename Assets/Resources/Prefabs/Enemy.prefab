@@ -888,7 +888,7 @@ MonoBehaviour:
   - {x: 0.25, y: -0.25, z: 0}
   m_ShapePathHash: 1905978637
   m_Mesh: {fileID: 0}
-  m_InstanceId: 553484
+  m_InstanceId: 97166
 --- !u!114 &4850834654107231083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -901,9 +901,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa28765f5300c8946a3eea0c49763a5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  speed: 3
   distanceFromPlayerToStop: 2
-  deaccelerationSpeed: 0
 --- !u!114 &1577723832
 MonoBehaviour:
   m_ObjectHideFlags: 0
