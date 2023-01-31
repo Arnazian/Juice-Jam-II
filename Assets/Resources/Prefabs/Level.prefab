@@ -125,7 +125,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 144231801}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 90bfe16df9d11364e82515e04eda4328, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -141,7 +141,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 4.384091, y: 4.243087}
-  m_EdgeRadius: 0
+  m_EdgeRadius: 0.1
 --- !u!1 &155175157
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,7 +283,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 3, y: 12}
-  m_EdgeRadius: 0
+  m_EdgeRadius: 0.1
 --- !u!1 &746323088
 GameObject:
   m_ObjectHideFlags: 0
@@ -409,7 +409,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 837781309}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 90bfe16df9d11364e82515e04eda4328, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -425,7 +425,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 4.384091, y: 4.243087}
-  m_EdgeRadius: 0
+  m_EdgeRadius: 0.1
 --- !u!1 &839418937
 GameObject:
   m_ObjectHideFlags: 0
@@ -503,7 +503,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1072435501}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 90bfe16df9d11364e82515e04eda4328, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -519,7 +519,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 4.384091, y: 4.243087}
-  m_EdgeRadius: 0
+  m_EdgeRadius: 0.1
 --- !u!1 &1364604396
 GameObject:
   m_ObjectHideFlags: 0
@@ -577,7 +577,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 20, y: 3}
-  m_EdgeRadius: 0
+  m_EdgeRadius: 0.1
 --- !u!1 &1394328495
 GameObject:
   m_ObjectHideFlags: 0
@@ -1158,7 +1158,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 2037455604}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 90bfe16df9d11364e82515e04eda4328, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1174,7 +1174,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 4.384091, y: 4.243087}
-  m_EdgeRadius: 0
+  m_EdgeRadius: 0.1
 --- !u!1 &2044116974
 GameObject:
   m_ObjectHideFlags: 0
@@ -1232,7 +1232,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 20, y: 3}
-  m_EdgeRadius: 0
+  m_EdgeRadius: 0.1
 --- !u!1 &2059698694
 GameObject:
   m_ObjectHideFlags: 0
@@ -1374,7 +1374,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 3, y: 12}
-  m_EdgeRadius: 0
+  m_EdgeRadius: 0.1
 --- !u!1 &3340234291989858526
 GameObject:
   m_ObjectHideFlags: 0
