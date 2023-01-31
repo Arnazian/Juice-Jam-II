@@ -47,10 +47,10 @@ public class ShootBlood : MonoBehaviour
             _isShooting = false;
             anim.SetBool(IsFiring, _isShooting);
         }
-        if(Input.GetKeyDown(KeyCode.Mouse0))
+        if(Input.GetKey(KeyCode.Mouse0))
         {
             if (playerActionManager.CheckIfInAction()) { return; }
-            handParticles.Play();
+            if (!_isShooting) { handParticles.Play(); }
             _isShooting = true;
             anim.SetBool(IsFiring, _isShooting);
         }
