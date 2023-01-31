@@ -1,9 +1,12 @@
-using UnityEngine.UI;
-
 public class PlayersHealth : HealthManager
 {
-    private Slider playerHealthSlider;
     private bool isImmune = false;
+
+    protected override void Awake()
+    {
+        healthBarFill = UIManager.Instance.GetPlayerHealthBarFill;
+        base.Awake();
+    }
 
     public override void Damage(float amount)
     {

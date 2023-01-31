@@ -1104,6 +1104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dontDestroyOnLoad: 0
   bossHealthBar: {fileID: 6913906665194829505}
+  playerHealthBarFill: {fileID: 4066002350993849403}
   rageMeterFill: {fileID: 4066002350233453950}
 --- !u!1 &4066002350383873212
 GameObject:
