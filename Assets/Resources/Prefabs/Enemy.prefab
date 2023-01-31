@@ -858,7 +858,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBarFill: {fileID: 0}
-  maxHealth: 100
+  maxHealth: 30
   deathParticles: {fileID: 6932388814300370661, guid: c463df0fab34daa4c8d7507f2fd1f56c, type: 3}
   deathMarker: {fileID: 831673315}
   myHealthBar: {fileID: 2481700521802852413, guid: bf523edf0adf6264fb4c39e400a70639, type: 3}
@@ -888,7 +888,7 @@ MonoBehaviour:
   - {x: 0.25, y: -0.25, z: 0}
   m_ShapePathHash: 1905978637
   m_Mesh: {fileID: 0}
-  m_InstanceId: -1666
+  m_InstanceId: 553484
 --- !u!114 &4850834654107231083
 MonoBehaviour:
   m_ObjectHideFlags: 0

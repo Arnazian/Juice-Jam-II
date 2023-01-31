@@ -10186,7 +10186,7 @@ MonoBehaviour:
     - weight: 30
       prefab: {fileID: 1358599819545767513, guid: 72d111ca147f8904ab0ac8da50518f54, type: 3}
   amountOfEnemiesPerRound: 0a0000000a0000000a0000000a0000000a0000001e0000001e0000000c0000000c000000
-  startOnAwake: 0
+  startOnAwake: 1
   _enemyCount: 5
 --- !u!1 &4306128401367770556
 GameObject:
