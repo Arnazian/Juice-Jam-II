@@ -7,6 +7,7 @@ public class MovePlayer : BaseMovement
     [SerializeField] private ParticleSystem footsteps;
     [SerializeField] private float accelerationTime;
 
+    public PlayerActionManager _actionManager;
     public InputAction playerInput;
     private float inputH;
     private float inputV;
@@ -18,6 +19,7 @@ public class MovePlayer : BaseMovement
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        _actionManager = GetComponent<PlayerActionManager>();
         footsteps.Stop();
     }
 
@@ -27,15 +29,14 @@ public class MovePlayer : BaseMovement
 
         if (inputH != 0 || inputV != 0)
         {
-            if(!footsteps.isPlaying)
-                footsteps.Play(true);
+            StartFootsteps();
             if(!footstepSource.isPlaying)
                 footstepSource.Play();
         }
         else
         {
-            if(footsteps.isPlaying)
-                footsteps.Stop(true);
+            if(!_actionManager.CheckIfInAction())
+                StopFootsteps();
             if(footstepSource.isPlaying)
                 footstepSource.Stop();
         }
@@ -55,5 +56,17 @@ public class MovePlayer : BaseMovement
         {
             Deaccelerate(rb.velocity, accelerationTime * 1000);
         }
+    }
+
+    public void StartFootsteps()
+    {
+        if(!footsteps.isPlaying)
+            footsteps.Play(true);
+    }
+
+    public void StopFootsteps()
+    {
+        if(footsteps.isPlaying)
+            footsteps.Stop(true);
     }
 }

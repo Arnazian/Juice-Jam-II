@@ -76,6 +76,8 @@ public class PlayerMelee : MonoBehaviour
         else
             rb.AddForce(transform.up * playerForwardForce/2, ForceMode2D.Impulse);
 
+        movePlayer.StartFootsteps();
+        
         recoveryDurationCur = recoveryDurationMax; 
         isAttacking = true;
         anim.SetBool("IsAttacking", true);
@@ -92,6 +94,7 @@ public class PlayerMelee : MonoBehaviour
         isRecovering = false;
         isAttacking = false;
         recoveryDurationCur = recoveryDurationMax;
+        movePlayer.StopFootsteps();
         //rotateTowardsCursor.SetCanRotate(true);
         movePlayer.SetCanMove(true);
         playerActionManager.SetIsAttacking(false);
