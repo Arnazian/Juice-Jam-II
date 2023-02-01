@@ -10108,7 +10108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f88afb47f0d8f146a86d44d98ad00bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dontDestroyOnLoad: 1
+  dontDestroyOnLoad: 0
   firstBoss: {fileID: 4381738000340915999, guid: 47b61f8f94e59ca4f9745158c3d2d857, type: 3}
   spawnPoints:
   - {fileID: 6396388213032576572}
@@ -10118,22 +10118,6 @@ MonoBehaviour:
   bossRoundOne: 5
   bossRoundTwo: 0
   bossRoundThree: 0
-  enemies:
-  - list:
-    - weight: 25
-      prefab: {fileID: 1358599819545767513, guid: 72d111ca147f8904ab0ac8da50518f54, type: 3}
-    - weight: 75
-      prefab: {fileID: 8906093010384807374, guid: 1b277415fb2fecd4a8089594ae4d71c9, type: 3}
-  - list:
-    - weight: 25
-      prefab: {fileID: 1358599819545767513, guid: 72d111ca147f8904ab0ac8da50518f54, type: 3}
-    - weight: 75
-      prefab: {fileID: 8906093010384807374, guid: 1b277415fb2fecd4a8089594ae4d71c9, type: 3}
-  - list:
-    - weight: 25
-      prefab: {fileID: 1358599819545767513, guid: 72d111ca147f8904ab0ac8da50518f54, type: 3}
-    - weight: 75
-      prefab: {fileID: 8906093010384807374, guid: 1b277415fb2fecd4a8089594ae4d71c9, type: 3}
   enemiesByRound:
   - list:
     - weight: 70
@@ -10187,7 +10171,6 @@ MonoBehaviour:
       prefab: {fileID: 1358599819545767513, guid: 72d111ca147f8904ab0ac8da50518f54, type: 3}
   amountOfEnemiesPerRound: 0a0000000a0000000a0000000a0000000a0000001e0000001e0000000c0000000c000000
   startOnAwake: 0
-  _enemyCount: 5
 --- !u!1 &4306128401367770556
 GameObject:
   m_ObjectHideFlags: 0

@@ -19,7 +19,8 @@ public class TransitionManager : Singleton<TransitionManager>
         _anim = GetComponent<Animator>();
         SceneManager.sceneLoaded += (scene, mode) =>
         {
-            _anim.StopPlayback();
+            if(_anim)
+                _anim.StopPlayback();
         };
     }
 
