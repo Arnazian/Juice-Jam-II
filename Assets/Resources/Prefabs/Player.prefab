@@ -20137,7 +20137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageToEnemy: 20
-  meleeRageBuildUp: 0
+  meleeRageBuildUp: 3
   throwEnemyForce: 3
 --- !u!68 &1886698389
 EdgeCollider2D:
@@ -20312,7 +20312,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBarFill: {fileID: 0}
-  maxHealth: 300
+  maxHealth: 200
 --- !u!114 &7794975990393462036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20407,7 +20407,7 @@ MonoBehaviour:
   projectileSpeed: 11
   projectile: {fileID: 7744099146439851529, guid: 31c36ad2529306b4b80bdb58545ade16, type: 3}
   shootSpawn: {fileID: 8313232032094458876}
-  damageToSelf: 5
+  damageToSelf: 4
   startShootCooldown: 0.35
   handParticles: {fileID: 2780279108739426222}
 --- !u!50 &332318632987234192
@@ -20535,11 +20535,11 @@ MonoBehaviour:
   bloodExplosionParticles: {fileID: 4345966386483763780, guid: 51c6e10cd18ff134382c00bdb038722b, type: 3}
   bloodCheckCollider: {fileID: 268472775}
   healAmount: 100
-  damageAmount: 75
+  damageAmount: 25
   launchSpeed: 10
   suckBloodIntervalMax: 0.3
   suckBloodDuration: 3
-  MaxRageAmount: 500
+  MaxRageAmount: 325
 --- !u!114 &1924373974
 MonoBehaviour:
   m_ObjectHideFlags: 0
