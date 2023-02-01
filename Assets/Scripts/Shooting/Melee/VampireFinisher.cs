@@ -37,10 +37,7 @@ public class VampireFinisher : MonoBehaviour
         playerHealth = GetComponent<PlayersHealth>();
         playerCollision = GetComponent<Collider2D>();
     }
-
-
-
-
+    
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.E))
@@ -53,11 +50,8 @@ public class VampireFinisher : MonoBehaviour
 
     void StartFinisher()
     {
-        if(suckingBlood) 
-        {  
-            StopSuckingBlood();
+        if(suckingBlood || currentRage < MaxRageAmount) 
             return;
-        }
         if(playerActionManager.CheckIfInAction()) { return; }
         if(bloodCheckCollider.GetSelectedEnemy() == null)
         {
@@ -65,6 +59,9 @@ public class VampireFinisher : MonoBehaviour
             return;
         }
 
+        currentRage = 0f;
+        CheckRageMeter();
+        
         GetComponent<MovePlayer>().SetCanMove(false);
         playerActionManager.SetIsFinishing(true);
         // playerHealth.SetImmuneStatus(true);
