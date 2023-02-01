@@ -21,7 +21,7 @@ public class EnemyMobHealthManager : HealthManager
     public override void Damage(float amount)
     {
         base.Damage(amount);
-        vampireFinisher.IncreaseRage(amount);
+        vampireFinisher.IncreaseRage(amount * 2);
     }
 
     public void RunEnemyDeath()
