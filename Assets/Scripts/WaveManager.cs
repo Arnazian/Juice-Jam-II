@@ -43,8 +43,9 @@ public class WaveManager : Singleton<WaveManager>
     void StartNewWave()
     {
         _currentRound++;
-        if (CheckIfBossRound()) 
-            return;
+        // if (CheckIfBossRound()) 
+        //     return;
+        CheckIfBossRound();
         _currentRoundEnemyCount = _waves[(int)difficulty].amountOfEnemiesPerRound[_currentRound];
         PopulateSpawnQueue();
         DistributeSpawnQueue();
