@@ -14934,7 +14934,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.45
+      scalar: 0.75
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -15103,7 +15103,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.75
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -15566,7 +15566,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 1.5
+      value: 1.75
       mode: 0
       spread: 0
       speed:
@@ -15685,7 +15685,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 25
+      scalar: 20
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -16123,7 +16123,7 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.2264151, g: 0.17739972, b: 0.11000357, a: 1}
+        key0: {r: 0.26666668, g: 0.18039216, b: 0.12941177, a: 1}
         key1: {r: 0.28627452, g: 0.28627452, b: 0.28627452, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
@@ -19579,7 +19579,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: dd2ed40a7f4b4bb4eb770fe9eb528d3f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -20337,9 +20337,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed18787610d456a48ac5908b5893aedc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 1.5
   footstepSource: {fileID: 1689094227}
   footsteps: {fileID: 1409232994}
-  speed: 1.5
   accelerationTime: 5
   playerInput:
     m_Name: Player Input
