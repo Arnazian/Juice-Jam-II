@@ -66,7 +66,7 @@ public class VampireFinisher : MonoBehaviour
         
         GetComponent<MovePlayer>().SetCanMove(false);
         playerActionManager.SetIsFinishing(true);
-        playerHealth.SetImmuneStatus(true);
+        //playerHealth.SetImmuneStatus(true);
         playerCollision.enabled = false;
         myTarget = bloodCheckCollider.GetSelectedEnemy();
         enableLaunching = true;
@@ -107,7 +107,7 @@ public class VampireFinisher : MonoBehaviour
         playerActionManager.SetIsFinishing(false);
 
         GetComponent<MovePlayer>().SetCanMove(true);
-        playerHealth.SetImmuneStatus(false);
+        //playerHealth.SetImmuneStatus(false);
     }
 
     void MoveToTarget()
