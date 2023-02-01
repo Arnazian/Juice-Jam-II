@@ -47,7 +47,8 @@ public class BloodCheckCollider : MonoBehaviour
                 touchedEnemies.Add(collision.gameObject);
             }
         }
-        SelectEnemyToHighlight();
+        if(player.GetComponent<VampireFinisher>().CanSuckBlood)
+            SelectEnemyToHighlight();
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -56,7 +57,8 @@ public class BloodCheckCollider : MonoBehaviour
         {
             touchedEnemies.Remove(collision.gameObject);
         }
-        SelectEnemyToHighlight();
+        if(player.GetComponent<VampireFinisher>().CanSuckBlood)
+            SelectEnemyToHighlight();
     }
     #endregion
 

@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class VampireFinisher : MonoBehaviour
 {
+    public bool CanSuckBlood => currentRage >= MaxRageAmount;
+    
     [SerializeField] private GameObject bloodSuckParticles;
     [SerializeField] private GameObject bloodExplosionParticles;
     [SerializeField] private BloodCheckCollider bloodCheckCollider;
