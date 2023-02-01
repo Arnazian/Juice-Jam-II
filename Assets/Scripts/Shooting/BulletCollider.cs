@@ -11,7 +11,7 @@ public class BulletCollider : MonoBehaviour
     [SerializeField] private GameObject collisionParticle;
     [SerializeField] private OwnerOfBulletType ownerOfBulletType;
 
-    [HideInInspector] public float damage = 100;
+    public float damage = 100;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
