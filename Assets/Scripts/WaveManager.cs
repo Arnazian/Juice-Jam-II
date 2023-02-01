@@ -1,8 +1,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum Difficulty
+{
+    Easy,
+    Medium,
+    Hard
+}
+
+[System.Serializable]
+public class Wave
+{
+    public List<WeightedGameObjectList> enemiesByRound;
+    public int[] amountOfEnemiesPerRound;
+}
+
 public class WaveManager : Singleton<WaveManager>
 {
+    [SerializeField] private Difficulty difficulty;
+    
     [SerializeField] private GameObject firstBoss;
     [SerializeField] private GameObject secondBoss;
     [SerializeField] private SpawnPoint[] spawnPoints;
@@ -13,9 +29,8 @@ public class WaveManager : Singleton<WaveManager>
     private int _currentRound = 0;
     private int _currentRoundEnemyCount = 0;
     private List<GameObject> spawnQueue = new List<GameObject>();
-    [SerializeField] private List<WeightedGameObjectList> enemiesByRound;
-    [SerializeField] private int[] amountOfEnemiesPerRound;
-    
+    [SerializeField] private List<Wave> _waves;
+
     public bool startOnAwake = true;
 
     protected override void Awake()
@@ -30,7 +45,7 @@ public class WaveManager : Singleton<WaveManager>
         _currentRound++;
         if (CheckIfBossRound()) 
             return;
-        _currentRoundEnemyCount = amountOfEnemiesPerRound[_currentRound];
+        _currentRoundEnemyCount = _waves[(int)difficulty].amountOfEnemiesPerRound[_currentRound];
         PopulateSpawnQueue();
         DistributeSpawnQueue();
     }
@@ -66,7 +81,7 @@ public class WaveManager : Singleton<WaveManager>
     }
     void PopulateSpawnQueue()
     {
-        WeightedGameObjectList curRoundList = enemiesByRound[_currentRound - 1];
+        WeightedGameObjectList curRoundList = _waves[(int)difficulty].enemiesByRound[_currentRound - 1];
         for (int i = _currentRoundEnemyCount; i > 0; i--)
         {
             spawnQueue.Add(curRoundList.GetRandomObject());
