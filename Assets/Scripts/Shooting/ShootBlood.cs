@@ -62,8 +62,12 @@ public class ShootBlood : MonoBehaviour
 
     private void StartShooting()
     {
-        if (!_isShooting) 
+        if (!_isShooting)
+        {
+            handParticles.Clear();
             handParticles.Play();
+        }
+
         _isShooting = true;
         anim.SetBool(IsFiring, _isShooting);
     }
