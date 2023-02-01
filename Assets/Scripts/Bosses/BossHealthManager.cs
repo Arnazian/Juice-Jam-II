@@ -6,18 +6,19 @@ public class BossHealthManager : MonoBehaviour, IDamageable
     private Slider bossHealthSlider;
     [SerializeField] private float bossMaxHealth;
 
-    private float bossCurHealth;    
+    private float bossCurHealth;
     private BossStateController bossStateController;
+
+    private VampireFinisher _vampireFinisher;
     
     private void Start()
     {
         bossHealthSlider = UIManager.Instance.GetBossHealthBar;
+        _vampireFinisher = GameObject.FindWithTag("Player").GetComponent<VampireFinisher>();
         bossHealthSlider.gameObject.SetActive(true);
         bossCurHealth = bossMaxHealth;
         bossHealthSlider.maxValue = bossCurHealth;
         bossHealthSlider.value = bossCurHealth;
-
-        
         bossStateController = GetComponent<BossStateController>();
     }
 
@@ -30,8 +31,9 @@ public class BossHealthManager : MonoBehaviour, IDamageable
     public void Damage(float damageAmount)
     {
         bossCurHealth -= damageAmount;
-       bossStateController.CheckStageThreshold();
-        UpdateHealthValues();
+        bossStateController.CheckStageThreshold();
+        UpdateHealthValues(); 
+        _vampireFinisher.IncreaseRage(damageAmount);
     }
     public void Heal(float healAmount)
     {

@@ -15,12 +15,6 @@ public class FB_SmallBossHealth : MonoBehaviour, IDamageable
         CalculateMyHealth();
     }
 
-    
-    void Update()
-    {
-        
-    }
-
     void CalculateMyHealth()
     {
         float stageTwoThreshold = bossStateController.GetStageThresholds()[1];

@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class VampireFinisher : MonoBehaviour
 {
+    public bool CanSuckBlood => currentRage >= MaxRageAmount;
+    
     [SerializeField] private GameObject bloodSuckParticles;
     [SerializeField] private GameObject bloodExplosionParticles;
     [SerializeField] private BloodCheckCollider bloodCheckCollider;
@@ -37,10 +39,7 @@ public class VampireFinisher : MonoBehaviour
         playerHealth = GetComponent<PlayersHealth>();
         playerCollision = GetComponent<Collider2D>();
     }
-
-
-
-
+    
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.E))
@@ -53,11 +52,8 @@ public class VampireFinisher : MonoBehaviour
 
     void StartFinisher()
     {
-        if(suckingBlood) 
-        {  
-            StopSuckingBlood();
+        if(suckingBlood || currentRage < MaxRageAmount) 
             return;
-        }
         if(playerActionManager.CheckIfInAction()) { return; }
         if(bloodCheckCollider.GetSelectedEnemy() == null)
         {
@@ -65,9 +61,12 @@ public class VampireFinisher : MonoBehaviour
             return;
         }
 
+        currentRage = 0f;
+        CheckRageMeter();
+        
         GetComponent<MovePlayer>().SetCanMove(false);
         playerActionManager.SetIsFinishing(true);
-        // playerHealth.SetImmuneStatus(true);
+        //playerHealth.SetImmuneStatus(true);
         playerCollision.enabled = false;
         myTarget = bloodCheckCollider.GetSelectedEnemy();
         enableLaunching = true;
@@ -100,7 +99,6 @@ public class VampireFinisher : MonoBehaviour
 
     void StopSuckingBlood()
     {
-        Debug.Log("Stopped sucking blood");
         enableLaunching = false;
         suckingBlood = false;
         playerCollision.enabled = true;
