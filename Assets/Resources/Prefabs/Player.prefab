@@ -20403,12 +20403,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c7a0925943d9bd4dac50cc1950598d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileDamage: 15
-  projectileSpeed: 13
+  projectileDamage: 20
+  projectileSpeed: 11
   projectile: {fileID: 7744099146439851529, guid: 31c36ad2529306b4b80bdb58545ade16, type: 3}
   shootSpawn: {fileID: 8313232032094458876}
-  damageToSelf: 3
-  startShootCooldown: 0.25
+  damageToSelf: 5
+  startShootCooldown: 0.35
   handParticles: {fileID: 2780279108739426222}
 --- !u!50 &332318632987234192
 Rigidbody2D:
