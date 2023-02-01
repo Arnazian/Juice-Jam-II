@@ -10110,14 +10110,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dontDestroyOnLoad: 0
   firstBoss: {fileID: 4381738000340915999, guid: 47b61f8f94e59ca4f9745158c3d2d857, type: 3}
+  secondBoss: {fileID: 4317016093076274747, guid: 3949b84d130dea2468c5c3a3cd9edbb7, type: 3}
   spawnPoints:
   - {fileID: 6396388213032576572}
   - {fileID: 8728257236891799657}
   - {fileID: 962251299141611876}
   - {fileID: 3124910048751131768}
   bossRoundOne: 5
-  bossRoundTwo: 0
-  bossRoundThree: 0
+  bossRoundTwo: 10
+  bossRoundThree: 15
   enemiesByRound:
   - list:
     - weight: 70
@@ -10170,7 +10171,7 @@ MonoBehaviour:
     - weight: 30
       prefab: {fileID: 1358599819545767513, guid: 72d111ca147f8904ab0ac8da50518f54, type: 3}
   amountOfEnemiesPerRound: 0a0000000a0000000a0000000a0000000a0000001e0000001e0000000c0000000c000000
-  startOnAwake: 0
+  startOnAwake: 1
 --- !u!1 &4306128401367770556
 GameObject:
   m_ObjectHideFlags: 0

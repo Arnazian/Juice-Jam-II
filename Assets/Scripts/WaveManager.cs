@@ -4,6 +4,7 @@ using UnityEngine;
 public class WaveManager : Singleton<WaveManager>
 {
     [SerializeField] private GameObject firstBoss;
+    [SerializeField] private GameObject secondBoss;
     [SerializeField] private SpawnPoint[] spawnPoints;
     [SerializeField] private int bossRoundOne;
     [SerializeField] private int bossRoundTwo;
@@ -88,7 +89,9 @@ public class WaveManager : Singleton<WaveManager>
     }
     private void StartSecondBoss()
     {
-
+        var bossHealthBar = UIManager.Instance.GetBossHealthBar;
+        bossHealthBar.transform.parent.gameObject.SetActive(true);
+        var boss = Instantiate(secondBoss, Vector3.zero, Quaternion.identity);
     }
 
     private void StartThirdBoss()
