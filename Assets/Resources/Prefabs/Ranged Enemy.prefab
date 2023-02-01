@@ -580,7 +580,7 @@ MonoBehaviour:
   projectileSpeed: 5
   projectile: {fileID: 7744099146439851529, guid: 9e4f24ef2305cf5408a4279352b51bb8, type: 3}
   shootSpawn: {fileID: 4358479786519421599}
-  projectileDamage: 15
+  projectileDamage: 10
   attackCoolDownMin: 1
   attackCoolDownMax: 2
   player: {fileID: 332318632987233901, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
