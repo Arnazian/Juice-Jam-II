@@ -7,25 +7,39 @@ using UnityEngine.UI;
 public class TransitionManager : Singleton<TransitionManager>
 {
     [SerializeField] private float fadeTime;
-    [SerializeField] private Image fadeScreen;
+    private Animator _anim;
 
     private bool _isFading;
+
+    private string _sceneName;
+    
+    protected override void Awake()
+    {
+        base.Awake();
+        _anim = GetComponent<Animator>();
+        SceneManager.sceneLoaded += (scene, mode) =>
+        {
+            _anim.StopPlayback();
+        };
+    }
 
     public void FadeScene(string sceneName)
     {
         if(_isFading)
             return;
         _isFading = true;
-        fadeScreen.DOFade(1f, fadeTime).OnComplete(() =>
-        {
-            SceneManager.LoadScene(sceneName);
-            FadeOut();
-        });
+        _sceneName = sceneName;
+        
+        _anim.Play("Fade In");
+        Invoke(nameof(FadeOut), _anim.GetCurrentAnimatorStateInfo(0).length);
     }
 
     private void FadeOut()
     {
-        fadeScreen.DOFade(0f, fadeTime).OnComplete(() => _isFading = false);
+        _anim.StopPlayback();
+        SceneManager.LoadScene(_sceneName);
+        _anim.Play("Fade Out");
+        _isFading = false;
     }
     
     private void Update()
