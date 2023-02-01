@@ -538,7 +538,6 @@ GameObject:
   - component: {fileID: 2591041230669887369}
   - component: {fileID: 2732398969989874023}
   - component: {fileID: 847406065}
-  - component: {fileID: 1797532514}
   m_Layer: 0
   m_Name: Ranged Enemy
   m_TagString: Enemy
@@ -577,13 +576,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f94ccce9a0e8ad34cacf312eaaec605b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 3
   projectileSpeed: 5
   projectile: {fileID: 7744099146439851529, guid: 9e4f24ef2305cf5408a4279352b51bb8, type: 3}
   shootSpawn: {fileID: 4358479786519421599}
   projectileDamage: 10
   attackCoolDownMin: 1
   attackCoolDownMax: 2.5
-  player: {fileID: 332318632987233901, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
+  preferredDistance: 6
+  preferredDistanceBuffer: 2
 --- !u!58 &7584760229879967712
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -664,7 +665,7 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 98358
+  m_InstanceId: 47082
 --- !u!114 &847406065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -679,21 +680,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToFacePlayer: {fileID: 1358599819545767513}
   rotateSpeed: 5
---- !u!114 &1797532514
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1358599819545767513}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5889325c0b67104bac99d361067a188, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3
-  preferredDistance: 6
-  preferredDistanceBuffer: 2
 --- !u!1 &1358599819730828826
 GameObject:
   m_ObjectHideFlags: 0

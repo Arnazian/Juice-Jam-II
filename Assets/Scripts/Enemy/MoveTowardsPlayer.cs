@@ -5,8 +5,6 @@ using UnityEngine;
 public class MoveTowardsPlayer : BaseMovement
 {
     [SerializeField] private float distanceFromPlayerToStop;
-
-    private Transform playerTransform;
     
   
     

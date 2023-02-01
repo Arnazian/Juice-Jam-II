@@ -12,7 +12,47 @@ public class BaseMovement : MonoBehaviour
     protected Rigidbody2D rb;
 
 
+    #region EnemiesRelatedMethods
 
+        #region PlayerTransform
+        protected Transform playerTransform;
+
+        private void CheckIfPlayerTransformIsAssigned()
+        {
+            if (playerTransform == null)
+            {
+                Debug.LogError("Players transform is not assigned. Use AssignPlayerTransform() in Start() or Awake() method");
+            }
+        }
+
+        public void AssignPlayerTransform()
+        {
+            playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        }
+        #endregion
+
+        #region MoveTowardsPlayer
+        protected void MoveTowardsPlayer(float distanceFromTargetToStop = 0)
+        {
+            CheckIfPlayerTransformIsAssigned();
+            MoveTowards(playerTransform, distanceFromTargetToStop);
+        }
+        #endregion
+
+        #region StayAwayFromPlayer
+        protected void StayAwayFromPlayer(float preferredDistance, float preferredDistanceBuffer)
+        {
+            CheckIfPlayerTransformIsAssigned();
+            StayAway(playerTransform, preferredDistance, preferredDistanceBuffer);
+        }
+        #endregion
+
+        #region FacePlayer
+        //Want to move her FacePlayer and maybe make rotateTowards function
+        #endregion
+    #endregion
+
+    #region OverallMethods
     public void MoveTowards(Transform targetTransform, float distanceFromTargetToStop = 0)
     {
         if (!canMove)
@@ -21,8 +61,6 @@ public class BaseMovement : MonoBehaviour
         //if you leave default parameters this won't 
         if(Vector3.Distance(transform.position, targetTransform.position) <= distanceFromTargetToStop)
         {
-            Debug.Log("not Moved enemy");
-
             isMoving = false;
 
             rb.velocity = Vector3.zero; 
@@ -34,8 +72,6 @@ public class BaseMovement : MonoBehaviour
         isMoving = true;
 
         rb.velocity = ForwardTimesSpeed(speed);
-
-        Debug.Log("Moved enemy");
     }
 
     public void StayAway(Transform targetTransform, float targetDistance = 6, float targetDistanceBuffer = 2)
@@ -88,4 +124,5 @@ public class BaseMovement : MonoBehaviour
     {
         return transform.rotation * Vector2.up * speed;
     }
+    #endregion
 }
