@@ -799,11 +799,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1886698391, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
       propertyPath: damageToEnemy
-      value: 40
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1886698391, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
       propertyPath: meleeRageBuildUp
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 332318632987233901, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
       propertyPath: m_RootOrder

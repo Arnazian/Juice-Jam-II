@@ -806,7 +806,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCooldown: 1
-  attackDamage: 10
+  attackDamage: 15
   player: {fileID: 332318632987233901, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
 --- !u!58 &939353207
 CircleCollider2D:
@@ -858,7 +858,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBarFill: {fileID: 0}
-  maxHealth: 50
+  maxHealth: 40
   deathParticles: {fileID: 6932388814300370661, guid: c463df0fab34daa4c8d7507f2fd1f56c, type: 3}
   deathMarker: {fileID: 831673315}
   myHealthBar: {fileID: 2481700521802852413, guid: bf523edf0adf6264fb4c39e400a70639, type: 3}
@@ -901,7 +901,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa28765f5300c8946a3eea0c49763a5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 3.5
   distanceFromPlayerToStop: 2
 --- !u!114 &1577723832
 MonoBehaviour:

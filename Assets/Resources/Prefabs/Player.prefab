@@ -20403,11 +20403,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c7a0925943d9bd4dac50cc1950598d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileDamage: 10
-  projectileSpeed: 12
+  projectileDamage: 15
+  projectileSpeed: 13
   projectile: {fileID: 7744099146439851529, guid: 31c36ad2529306b4b80bdb58545ade16, type: 3}
   shootSpawn: {fileID: 8313232032094458876}
-  damageToSelf: 4
+  damageToSelf: 3
   startShootCooldown: 0.25
   handParticles: {fileID: 2780279108739426222}
 --- !u!50 &332318632987234192
@@ -20534,11 +20534,11 @@ MonoBehaviour:
   bloodSuckParticles: {fileID: 807885407}
   bloodExplosionParticles: {fileID: 4345966386483763780, guid: 51c6e10cd18ff134382c00bdb038722b, type: 3}
   bloodCheckCollider: {fileID: 268472775}
-  healAmount: 30
-  damageAmount: 10
+  healAmount: 100
+  damageAmount: 75
   launchSpeed: 10
   suckBloodIntervalMax: 0.3
-  suckBloodDuration: 1.5
+  suckBloodDuration: 3
   MaxRageAmount: 500
 --- !u!114 &1924373974
 MonoBehaviour:
