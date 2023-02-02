@@ -10109,7 +10109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dontDestroyOnLoad: 0
-  difficulty: 2
+  difficulty: 0
   firstBoss: {fileID: 4381738000340915999, guid: 47b61f8f94e59ca4f9745158c3d2d857, type: 3}
   secondBoss: {fileID: 4317016093076274747, guid: 3949b84d130dea2468c5c3a3cd9edbb7, type: 3}
   spawnPoints:
