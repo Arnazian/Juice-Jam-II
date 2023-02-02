@@ -766,7 +766,6 @@ GameObject:
   - component: {fileID: -4314241966313782183}
   - component: {fileID: 5383843876199218206}
   - component: {fileID: 794120510271714800}
-  - component: {fileID: 4850834654107231083}
   - component: {fileID: 1577723832}
   m_Layer: 0
   m_Name: Enemy
@@ -889,21 +888,7 @@ MonoBehaviour:
   - {x: 0.25, y: -0.25, z: 0}
   m_ShapePathHash: 1905978637
   m_Mesh: {fileID: 0}
-  m_InstanceId: 47684
---- !u!114 &4850834654107231083
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8906093010384807374}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa28765f5300c8946a3eea0c49763a5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3.5
-  distanceFromPlayerToStop: 2
+  m_InstanceId: 43220
 --- !u!114 &1577723832
 MonoBehaviour:
   m_ObjectHideFlags: 0

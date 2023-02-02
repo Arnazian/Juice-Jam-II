@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class BaseMovement : MonoBehaviour
 {
-    protected bool canMove = true, isMoving;
+    protected bool canMove = true, canRotate = true, isMoving;
+    public void SetCanRotate(bool rotateStatus) { canRotate = rotateStatus; }
     public bool IsMoving => isMoving;
     public void SetCanMove(bool newValue) { canMove = newValue; }
     
@@ -46,13 +47,22 @@ public class BaseMovement : MonoBehaviour
             StayAway(playerTransform, preferredDistance, preferredDistanceBuffer);
         }
         #endregion
-
-        #region FacePlayer
-        //Want to move her FacePlayer and maybe make rotateTowards function
-        #endregion
     #endregion
 
     #region OverallMethods
+
+        #region Rotating
+        public void RotateTowards(Vector2 rotationDirectionTransform)
+        {
+            if (!canRotate) { return; }
+
+            float rotationZ = Mathf.Atan2(rotationDirectionTransform.y, rotationDirectionTransform.x) * Mathf.Rad2Deg - 90;
+
+            transform.rotation = Quaternion.Euler(0f, 0f , rotationZ);
+        }
+        #endregion
+
+
     public void MoveTowards(Transform targetTransform, float distanceFromTargetToStop = 0)
     {
         if (!canMove)

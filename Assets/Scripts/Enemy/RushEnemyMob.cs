@@ -14,14 +14,11 @@ public class RushEnemyMob : MonoBehaviour
 
     public Transform player;
 
-    private MoveTowardsPlayer _movement;
     
-
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
 
-        _movement = GetComponent<MoveTowardsPlayer>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
@@ -66,7 +63,7 @@ public class RushEnemyMob : MonoBehaviour
 
     private void StopMooving()
     {
-        GetComponent<MoveTowardsPlayer>().enabled = false;
+        //GetComponent<MoveTowardsPlayer>().enabled = false;
     }
 
     private void PrepareAttack()
