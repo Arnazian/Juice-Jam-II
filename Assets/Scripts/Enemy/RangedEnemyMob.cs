@@ -36,14 +36,9 @@ public class RangedEnemyMob : BaseMovement, IEnemy
     public void HandleAttackLogic()
     {
         if(attackCooldownCur <= 0)
-        {
             Attack();
-        }
         else
-        {
             attackCooldownCur -= Time.deltaTime;
-        }
-
     }
 
 

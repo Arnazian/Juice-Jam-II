@@ -33,7 +33,7 @@ public class EnemyMob : BaseMovement, IEnemy
             var range = 0.5f;
             var rand = Random.Range(-range, range);
             var attackCooldownRand = attackCooldown + rand;
-            InvokeRepeating(nameof(Attack), attackCooldown / 3, attackCooldownRand);
+            InvokeRepeating(nameof(Attack), attackCooldown, attackCooldownRand);
         }
         else if(IsMoving)
         {
