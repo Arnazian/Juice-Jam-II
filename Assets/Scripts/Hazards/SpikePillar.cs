@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class SpikePillar : MonoBehaviour
@@ -7,17 +6,6 @@ public class SpikePillar : MonoBehaviour
     [SerializeField] private float damageCooldown = 1.5f;
 
     private float _damageTimer;
-
-    private void Awake()
-    {
-        _damageTimer = damageCooldown;
-    }
-
-    private void OnCollisionEnter2D(Collision2D col)
-    {
-        if (col.gameObject.TryGetComponent<IDamageable>(out var damageable))
-            damageable.Damage(damage);
-    }
 
     private void OnCollisionStay2D(Collision2D collision)
     {
@@ -35,6 +23,6 @@ public class SpikePillar : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D other)
     {
-        _damageTimer = damageCooldown;
+        _damageTimer = 0f;
     }
 }
