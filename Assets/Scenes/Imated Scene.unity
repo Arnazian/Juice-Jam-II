@@ -378,11 +378,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b83e932bc879967439eab76ce23930b1, type: 3}
---- !u!20 &80651750 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 2209785467923771253, guid: b83e932bc879967439eab76ce23930b1, type: 3}
-  m_PrefabInstance: {fileID: 80651749}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &156700474
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -834,10 +829,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 3105882647621186600, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
-      propertyPath: healthBarFill
-      value: 
-      objectReference: {fileID: 1987563789}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
 --- !u!1001 &1685167587
@@ -1127,23 +1118,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: HUD
       objectReference: {fileID: 0}
-    - target: {fileID: 4066002350358335415, guid: ffb5d37d385033348ae9d7934d7ef541, type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 80651750}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffb5d37d385033348ae9d7934d7ef541, type: 3}
---- !u!114 &1987563789 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4066002350993849403, guid: ffb5d37d385033348ae9d7934d7ef541, type: 3}
-  m_PrefabInstance: {fileID: 1987563788}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2108773234
 PrefabInstance:
   m_ObjectHideFlags: 0

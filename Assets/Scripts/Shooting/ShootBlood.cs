@@ -39,46 +39,46 @@ public class ShootBlood : MonoBehaviour
 
     void HandleShooting()
     {
-        if (playerHealth.GetHealth <= damageToSelf) { return; }
+        if (playerHealth.GetHealth <= damageToSelf || playerActionManager.CheckIfInAction())
+        {
+            StopShooting();
+            return;
+        }
 
-        if (Input.GetKeyUp(KeyCode.Mouse0))
-        {
-            handParticles.Stop();
-            _isShooting = false;
-            anim.SetBool(IsFiring, _isShooting);
-        }
         if(Input.GetKey(KeyCode.Mouse0))
-        {
-            if (playerActionManager.CheckIfInAction()) { return; }
-            if (!_isShooting) { handParticles.Play(); }
-            _isShooting = true;
-            anim.SetBool(IsFiring, _isShooting);
-        }
+            StartShooting();
+        
+        if (Input.GetKeyUp(KeyCode.Mouse0))
+            StopShooting();
 
         if(_isShooting && shootCooldown <= 0)
         {            
             Shoot(Camera.main.ScreenToWorldPoint(Input.mousePosition) - shootSpawn.transform.position, projectileSpeed);
             shootCooldown = startShootCooldown;
         }
-
-        if (shootCooldown > 0)
-        {
+        else if (shootCooldown > 0)
             shootCooldown -= Time.deltaTime;
-        }
-        /*
-        if (Input.GetKey(KeyCode.Mouse0) && shootCooldown <= 0)
-        {
-            if (playerActionManager.CheckIfInAction()) { return; }
-
-            Shoot(Camera.main.ScreenToWorldPoint(Input.mousePosition) - shootSpawn.transform.position, projectileSpeed);
-            shootCooldown = startShootCooldown;
-            _isShooting = true;
-            anim.SetBool(IsFiring, _isShooting);            
-        }
-        */
-
     }
 
+    private void StartShooting()
+    {
+        if (!_isShooting)
+        {
+            handParticles.Clear();
+            handParticles.Play();
+        }
+
+        _isShooting = true;
+        anim.SetBool(IsFiring, _isShooting);
+    }
+
+    private void StopShooting()
+    {
+        handParticles.Stop();
+        _isShooting = false;
+        anim.SetBool(IsFiring, _isShooting);
+    }
+    
     public void Shoot(Vector3 direction, float speed)
     {
         GetComponent<IDamageable>().Damage(damageToSelf);

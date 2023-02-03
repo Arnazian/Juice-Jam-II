@@ -1,6 +1,4 @@
-using System.Collections;
 using System.Collections.Generic;
-using Pathfinding;
 using UnityEngine;
 
 public class MeleeCollider : MonoBehaviour
@@ -9,18 +7,6 @@ public class MeleeCollider : MonoBehaviour
     [SerializeField] private float meleeRageBuildUp;
     [SerializeField] private float throwEnemyForce;
     private List<GameObject> hitEnemies = new List<GameObject>();
-    
-    
-
-    void Start()
-    {
-
-    }
-
-    void Update()
-    {
-        
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

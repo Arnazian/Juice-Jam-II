@@ -1,51 +1,51 @@
-using Pathfinding;
 using UnityEngine;
 
 [RequireComponent(typeof(EnemyMobHealthManager))]
-public class EnemyMob : MonoBehaviour
+public class EnemyMob : BaseMovement, IEnemy
 {
     [SerializeField] private float attackCooldown;
     [SerializeField] private float attackDamage = 10f;
-    public Transform player;
-    private MoveTowardsPlayer _movement;
     private bool _isAttacking;
+
+    [Header("Movement Variables")]
+    [SerializeField] private float distanceFromPlayerToStop;
 
     private void Awake()
     {
-        _movement = GetComponent<MoveTowardsPlayer>();
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        rb = GetComponent<Rigidbody2D>();
+        AssignPlayerTransform();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if(PauseMenu.Instance.IsPaused)
             return;
-        
-        /*
-        var rotationDirection = player.position - transform.position;
-        var rotationZ = Mathf.Atan2(rotationDirection.y, rotationDirection.x) * Mathf.Rad2Deg - 90;
-        transform.rotation = Quaternion.Euler(0f, 0f , rotationZ);
-        */
 
-        if (!_movement.IsMoving && !_isAttacking)
+        MoveTowardsPlayer(distanceFromPlayerToStop);
+        HandleAttackLogic();
+    }
+
+    public void HandleAttackLogic()
+    {
+        if (!IsMoving && !_isAttacking)
         {
             _isAttacking = true;
             var range = 0.5f;
             var rand = Random.Range(-range, range);
             var attackCooldownRand = attackCooldown + rand;
-            InvokeRepeating(nameof(Attack), attackCooldown / 3, attackCooldownRand);
+            InvokeRepeating(nameof(Attack), attackCooldown, attackCooldownRand);
         }
-        else if(_movement.IsMoving)
+        else if(IsMoving)
         {
             _isAttacking = false;
             CancelInvoke(nameof(Attack));
         }
     }
 
-    private void Attack()
+    public void Attack()
     {
         if(!_isAttacking || PauseMenu.Instance.IsPaused)
             return;
-        player.GetComponent<IDamageable>().Damage(attackDamage);
+        playerTransform.GetComponent<IDamageable>().Damage(attackDamage);
     } 
 }

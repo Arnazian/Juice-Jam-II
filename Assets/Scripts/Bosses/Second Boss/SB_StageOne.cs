@@ -33,6 +33,7 @@ public class SB_StageOne : Stage1Base
     public override void StartStageOne()
     {
         _stageActive = true;
+        _canTp = true;
         MoveToRandomPosition();
         var randPowerAttack = Random.Range(powerAttackRandomTime.x, powerAttackRandomTime.y);
         Invoke(nameof(StartPowerAttack), randPowerAttack);
@@ -67,6 +68,8 @@ public class SB_StageOne : Stage1Base
             _isChargingPowerAttack = false;
             _playerHealth.SetHealth(healthRemaining);
             _canTp = true;
+            var randTp = Random.Range(teleportRandomTime.x, teleportRandomTime.y);
+            Invoke(nameof(MoveToRandomPosition), randTp);
             transform.DOScale(Vector3.one, 0.025f);
         });
         
@@ -84,6 +87,8 @@ public class SB_StageOne : Stage1Base
         transform.DOScale(Vector3.one, 0.5f).OnComplete(() =>
         {
             _canTp = true;
+            var randTp = Random.Range(teleportRandomTime.x, teleportRandomTime.y);
+            Invoke(nameof(MoveToRandomPosition), randTp);
         });
     }
     

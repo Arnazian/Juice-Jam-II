@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
+    [SerializeField] private AudioClip mainMenuMusic;
     [SerializeField] private AudioMixerGroup musicMixerGroup;
     [SerializeField] private AudioMixerGroup sfxMixerGroup;
     [SerializeField] private Slider masterSlider;
@@ -20,6 +21,7 @@ public class MainMenu : MonoBehaviour
         sfxSlider.onValueChanged.AddListener(UpdateVolume);
         UpdateVolume(0f);
         LoadSettings();
+        AudioManager.Instance.PlayMusic(mainMenuMusic, true, 1f, false);
     }
 
     private void OnApplicationQuit()
@@ -30,6 +32,7 @@ public class MainMenu : MonoBehaviour
     public void Play()
     {
         TransitionManager.Instance.FadeScene("Imated Scene");
+        AudioManager.Instance.Stop(mainMenuMusic);
     }
     
     public void Quit()

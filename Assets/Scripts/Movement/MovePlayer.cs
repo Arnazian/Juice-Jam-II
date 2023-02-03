@@ -1,78 +1,72 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class MovePlayer : MonoBehaviour
+public class MovePlayer : BaseMovement
 {   
-    [SerializeField] private float speed;
+    [SerializeField] private AudioSource footstepSource;
+    [SerializeField] private ParticleSystem footsteps;
     [SerializeField] private float accelerationTime;
 
-    private Rigidbody2D rb;
-
+    public PlayerActionManager _actionManager;
     public InputAction playerInput;
     private float inputH;
     private float inputV;
 
-    private bool canMove = true;
 
-
-    private void OnEnable()
-    {
-        playerInput.Enable();
-    }
-
-    private void OnDisable()
-    {
-        playerInput.Disable();
-    }
-
+    private void OnEnable() { playerInput.Enable(); }
+    private void OnDisable() { playerInput.Disable(); }
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        _actionManager = GetComponent<PlayerActionManager>();
+        footsteps.Stop();
     }
 
     void FixedUpdate()
     {
         HandleMovement();
+
+        if (inputH != 0 || inputV != 0)
+        {
+            StartFootsteps();
+            if(!footstepSource.isPlaying)
+                footstepSource.Play();
+        }
+        else
+        {
+            if(!_actionManager.CheckIfInAction())
+                StopFootsteps();
+            if(footstepSource.isPlaying)
+                footstepSource.Stop();
+        }
     }
 
     void HandleMovement()
     {
-        if (!canMove) { return; }
-
         inputH = playerInput.ReadValue<Vector2>().x;
         inputV = playerInput.ReadValue<Vector2>().y;
 
-
         Vector2 direction = new Vector2(inputH, inputV);
 
-        Vector2 movement = Accelerate(rb.velocity, accelerationTime, direction, 10 * speed);
 
-        rb.velocity += movement;
-
+        Accelerate(rb.velocity, accelerationTime, direction, 10 * speed);
 
         if (Mathf.Abs(inputH) <= 0 && Mathf.Abs(inputV) <= 0)
         {
-            Vector2 Deacceleration = Deaccelerate(rb.velocity, accelerationTime * 1000);
-            rb.velocity += Deacceleration;
+            Deaccelerate(rb.velocity, accelerationTime * 1000);
         }
     }
 
-
-    Vector3 Accelerate(Vector3 velocity, float time, Vector3 direction, float maxSpeed)
+    public void StartFootsteps()
     {
-        Vector3 Acceleration = (direction * maxSpeed - velocity) / time;
-        return Acceleration;
+        if(!footsteps.isPlaying)
+            footsteps.Play(true);
     }
 
-    Vector3 Deaccelerate(Vector3 velocity, float time)
+    public void StopFootsteps()
     {
-        Vector3 Deacceleration = (Vector3.zero - velocity) / time;
-        return Deacceleration;
-    }
-
-    public void SetCanMove(bool newCanMove)
-    {
-        canMove = newCanMove;
+        if(footsteps.isPlaying)
+            footsteps.Stop(true);
     }
 }

@@ -11,7 +11,7 @@ public class BulletCollider : MonoBehaviour
     [SerializeField] private GameObject collisionParticle;
     [SerializeField] private OwnerOfBulletType ownerOfBulletType;
 
-    [HideInInspector] public float damage = 100;
+    public float damage = 100;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -28,16 +28,25 @@ public class BulletCollider : MonoBehaviour
         {
             WallCollision(other);
         }
+        else if (other.CompareTag("Bloodpot"))
+        {
+            BloodpotCollision(other);
+        }
         else if (other.GetComponent<BulletCollider>() != null)
         {
             BulletCollision(other);
         }
-        else
-        {
-            return;
-        }
+    }
 
-       
+    private void BloodpotCollision(Collider2D other)
+    {
+        Instantiate(collisionParticle, transform.position, Quaternion.identity);
+        Destroy(gameObject);
+        
+        if(ownerOfBulletType != OwnerOfBulletType.Player)
+            return;
+        // Heal Player
+        Destroy(other.gameObject);
     }
 
     void EnemyCollision(Collider2D other)

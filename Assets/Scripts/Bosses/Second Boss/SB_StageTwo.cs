@@ -1,66 +1,53 @@
-using System;
+using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 public class SB_StageTwo : Stage2Base
 {
-    [SerializeField] private Vector2 projectileRandomTime = new Vector2(0.5f, 2.5f);
-    [SerializeField] private float projectileSpeed = 5f;
-    [SerializeField] private Transform projectileSpawn;
-    [SerializeField] private GameObject projectile;
+    [SerializeField] private Vector2 poolRandomTime = new Vector2(0.5f, 2.5f);
+    [SerializeField] private float timeToLaunch = 2f;
+    [SerializeField] private GameObject poolMarker;
     [SerializeField] private GameObject pool;
 
-    private GameObject _activeProjectile;
     private Vector3 _projectileTarget;
 
     private Transform _player;
 
-    private FacePlayer _facePlayer;
+    private List<GameObject> _pools = new List<GameObject>();
 
     private void Awake()
     {
         _player = GameObject.FindWithTag("Player").transform;
-        _facePlayer = GetComponent<FacePlayer>();
     }
 
     public override void StartStageTwo()
     {
-        var randomProjectileTime = Random.Range(projectileRandomTime.x, projectileRandomTime.y);
+        var randomProjectileTime = Random.Range(poolRandomTime.x, poolRandomTime.y);
         Invoke(nameof(ShootProjectile), randomProjectileTime);
-    }
-
-    private void Update()
-    {
-        if (_activeProjectile != null)
-        {
-            if (Vector3.Distance(_activeProjectile.transform.position, _projectileTarget) <= 2f)
-            {
-                Destroy(_activeProjectile);
-                _activeProjectile = null;
-                CreatePool();
-            }
-        }
     }
 
     private void ShootProjectile()
     {
-        _facePlayer.DisableFacePlayer();
-        var bullet = Instantiate(projectile, projectileSpawn.position, Quaternion.identity);
-        bullet.GetComponent<Rigidbody2D>().velocity = transform.up * projectileSpeed;
         _projectileTarget = _player.position;
-        _activeProjectile = bullet;
-        Invoke(nameof(EnableFacePlayer), 0.15f);
-        var randomProjectileTime = Random.Range(projectileRandomTime.x, projectileRandomTime.y);
-        Invoke(nameof(ShootProjectile), randomProjectileTime);
+        var marker = Instantiate(poolMarker, _projectileTarget, Quaternion.identity);
+        marker.transform.DOScale(new Vector3(0.25f, 0.25f, 0.25f), timeToLaunch).OnComplete(() =>
+        {
+            CreatePool();
+            Destroy(marker);
+            var randomProjectileTime = Random.Range(poolRandomTime.x, poolRandomTime.y);
+            Invoke(nameof(ShootProjectile), randomProjectileTime);
+        });
     }
 
-    private void EnableFacePlayer()
-    {
-        _facePlayer.EnableFacePlayer();
-    }
-    
     private void CreatePool()
     {
-        Debug.Log("created pool");
+        var poolObject = Instantiate(pool, _projectileTarget, Quaternion.identity);
+        _pools.Add(poolObject);
+    }
+
+    public void DestroyAllPools()
+    {
+        foreach (var poolObject in _pools)
+            Destroy(poolObject);
     }
 }
