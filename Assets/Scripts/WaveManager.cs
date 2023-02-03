@@ -1,5 +1,8 @@
+using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public enum Difficulty
 {
@@ -33,6 +36,8 @@ public class WaveManager : Singleton<WaveManager>
 
     public bool startOnAwake = true;
 
+    public Action<int> onRoundStart; 
+
     protected override void Awake()
     {
         base.Awake();
@@ -43,6 +48,7 @@ public class WaveManager : Singleton<WaveManager>
     void StartNewWave()
     {
         _currentRound++;
+        onRoundStart?.Invoke(_currentRound);
         // if (CheckIfBossRound()) 
         //     return;
         CheckIfBossRound();
