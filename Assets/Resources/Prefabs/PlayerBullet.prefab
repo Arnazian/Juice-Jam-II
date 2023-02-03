@@ -9641,7 +9641,7 @@ GameObject:
   - component: {fileID: 2142335711487439899}
   - component: {fileID: 2920867347479774378}
   m_Layer: 6
-  m_Name: BloodBulledTest1
+  m_Name: PlayerBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9691,6 +9691,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collisionParticle: {fileID: 5276824108466267453, guid: 59467ffc01719c74391c24cc163a56a5, type: 3}
   ownerOfBulletType: 1
+  staggerAmount: 2.5
   damage: 100
 --- !u!212 &5216370676393376205
 SpriteRenderer:

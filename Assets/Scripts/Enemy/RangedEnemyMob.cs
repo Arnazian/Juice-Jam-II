@@ -27,23 +27,17 @@ public class RangedEnemyMob : BaseMovement, IEnemy
     {
         if(PauseMenu.Instance.IsPaused)
             return;
-        
 
-        StayAwayFromPlayer(preferredDistance, preferredDistanceBuffer);
+        if (canMove) { StayAwayFromPlayer(preferredDistance, preferredDistanceBuffer); }        
         HandleAttackLogic();
     }
 
     public void HandleAttackLogic()
     {
         if(attackCooldownCur <= 0)
-        {
             Attack();
-        }
         else
-        {
             attackCooldownCur -= Time.deltaTime;
-        }
-
     }
 
 
@@ -60,4 +54,5 @@ public class RangedEnemyMob : BaseMovement, IEnemy
         newProjectile.GetComponent<ProjectileFlyStraight>().speed = projectileSpeed;
         newProjectile.GetComponent<BulletCollider>().damage = projectileDamage;
     }
+
 }

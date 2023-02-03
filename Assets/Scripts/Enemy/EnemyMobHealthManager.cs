@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyMobHealthManager : HealthManager
 {
@@ -6,6 +7,8 @@ public class EnemyMobHealthManager : HealthManager
     [SerializeField] private GameObject deathMarker;
     
     [SerializeField] private GameObject myHealthBar;
+
+    private Image staggerBarFill;
 
     private VampireFinisher vampireFinisher;
 
@@ -15,6 +18,8 @@ public class EnemyMobHealthManager : HealthManager
         var newHealthBar = Instantiate(myHealthBar, transform.position, Quaternion.identity);
         newHealthBar.GetComponent<FollowOtherObject>().SetObjectToFollow(gameObject);
         healthBarFill = newHealthBar.GetComponent<FollowOtherObject>().GetHealthImageFill();
+        staggerBarFill = newHealthBar.GetComponent<FollowOtherObject>().GetStaggerImageFill();
+
         base.Awake();
     }
 
@@ -44,4 +49,7 @@ public class EnemyMobHealthManager : HealthManager
         if(currentHealth <= 0 )
             RunEnemyDeath();
     }
+
+
+    public Image GetStaggerBar() { return staggerBarFill; }
 }

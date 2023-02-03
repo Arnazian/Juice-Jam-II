@@ -10,13 +10,14 @@ public class BaseMovement : MonoBehaviour
 
     public float speed;
 
+
     protected Rigidbody2D rb;
 
 
     #region EnemiesRelatedMethods
 
-        #region PlayerTransform
-        protected Transform playerTransform;
+    #region PlayerTransform
+    protected Transform playerTransform;
 
         private void CheckIfPlayerTransformIsAssigned()
         {
@@ -135,4 +136,11 @@ public class BaseMovement : MonoBehaviour
         return transform.rotation * Vector2.up * speed;
     }
     #endregion
+
+    public void StopMovement()
+    {
+        canMove = false;
+        rb.velocity = Vector3.zero;
+    }
+
 }

@@ -101,6 +101,8 @@ MonoBehaviour:
   spawnPoint: {fileID: 169585194}
   spawnDuration: 3.5
   spawnParticles: {fileID: 8198939805136827852}
+  activeSprite: {fileID: 21300000, guid: 8af496eb8993831489583ef067fae1af, type: 3}
+  deactiveSprite: {fileID: 21300000, guid: 9ca150e6faca5744cada7f11f26c36ff, type: 3}
 --- !u!1 &528585164
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,6 +239,8 @@ MonoBehaviour:
   spawnPoint: {fileID: 652582012}
   spawnDuration: 3.5
   spawnParticles: {fileID: 2005779496434246895}
+  activeSprite: {fileID: 21300000, guid: 8af496eb8993831489583ef067fae1af, type: 3}
+  deactiveSprite: {fileID: 21300000, guid: 9ca150e6faca5744cada7f11f26c36ff, type: 3}
 --- !u!1 &905537178
 GameObject:
   m_ObjectHideFlags: 0
@@ -338,6 +342,8 @@ MonoBehaviour:
   spawnPoint: {fileID: 905537179}
   spawnDuration: 3.5
   spawnParticles: {fileID: 4007442221288836414}
+  activeSprite: {fileID: 21300000, guid: 8af496eb8993831489583ef067fae1af, type: 3}
+  deactiveSprite: {fileID: 21300000, guid: 9ca150e6faca5744cada7f11f26c36ff, type: 3}
 --- !u!1 &1098870523
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,6 +445,8 @@ MonoBehaviour:
   spawnPoint: {fileID: 1098870524}
   spawnDuration: 3.5
   spawnParticles: {fileID: 7186129282652506508}
+  activeSprite: {fileID: 21300000, guid: 8af496eb8993831489583ef067fae1af, type: 3}
+  deactiveSprite: {fileID: 21300000, guid: 9ca150e6faca5744cada7f11f26c36ff, type: 3}
 --- !u!1 &3681070553153298605
 GameObject:
   m_ObjectHideFlags: 0

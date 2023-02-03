@@ -21,7 +21,7 @@ public class EnemyMob : BaseMovement, IEnemy
         if(PauseMenu.Instance.IsPaused)
             return;
 
-        MoveTowardsPlayer(distanceFromPlayerToStop);
+        if (canMove) { MoveTowardsPlayer(distanceFromPlayerToStop); }
         HandleAttackLogic();
     }
 
@@ -33,7 +33,7 @@ public class EnemyMob : BaseMovement, IEnemy
             var range = 0.5f;
             var rand = Random.Range(-range, range);
             var attackCooldownRand = attackCooldown + rand;
-            InvokeRepeating(nameof(Attack), attackCooldown / 3, attackCooldownRand);
+            InvokeRepeating(nameof(Attack), attackCooldown, attackCooldownRand);
         }
         else if(IsMoving)
         {
@@ -42,10 +42,20 @@ public class EnemyMob : BaseMovement, IEnemy
         }
     }
 
+    public void Knockback()
+    {
+
+    }
+
+    public void Stagger()
+    {
+
+    }
     public void Attack()
     {
         if(!_isAttacking || PauseMenu.Instance.IsPaused)
             return;
         playerTransform.GetComponent<IDamageable>().Damage(attackDamage);
     } 
+
 }
