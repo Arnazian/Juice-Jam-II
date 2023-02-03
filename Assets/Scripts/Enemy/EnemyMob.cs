@@ -21,7 +21,7 @@ public class EnemyMob : BaseMovement, IEnemy
         if(PauseMenu.Instance.IsPaused)
             return;
 
-        MoveTowardsPlayer(distanceFromPlayerToStop);
+        if (canMove) { MoveTowardsPlayer(distanceFromPlayerToStop); }
         HandleAttackLogic();
     }
 
@@ -42,10 +42,20 @@ public class EnemyMob : BaseMovement, IEnemy
         }
     }
 
+    public void Knockback()
+    {
+
+    }
+
+    public void Stagger()
+    {
+
+    }
     public void Attack()
     {
         if(!_isAttacking || PauseMenu.Instance.IsPaused)
             return;
         playerTransform.GetComponent<IDamageable>().Damage(attackDamage);
     } 
+
 }

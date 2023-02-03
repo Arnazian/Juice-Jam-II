@@ -20136,6 +20136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00c0f64dfab2c1d48a1d917551aa696b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  staggerToEnemy: 30
   damageToEnemy: 28
   meleeRageBuildUp: 3
   throwEnemyForce: 3
@@ -20403,12 +20404,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c7a0925943d9bd4dac50cc1950598d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileDamage: 20
-  projectileSpeed: 11
+  staggerAmount: 10
+  projectileDamage: 15
+  projectileSpeed: 20
   projectile: {fileID: 7744099146439851529, guid: 31c36ad2529306b4b80bdb58545ade16, type: 3}
   shootSpawn: {fileID: 8313232032094458876}
-  damageToSelf: 4
-  startShootCooldown: 0.35
+  damageToSelf: 1
+  startShootCooldown: 0.1
   handParticles: {fileID: 2780279108739426222}
 --- !u!50 &332318632987234192
 Rigidbody2D:

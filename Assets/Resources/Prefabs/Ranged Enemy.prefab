@@ -183,6 +183,7 @@ GameObject:
   - component: {fileID: 2591041230669887369}
   - component: {fileID: 2732398969989874023}
   - component: {fileID: 847406065}
+  - component: {fileID: 9153279266761473585}
   m_Layer: 0
   m_Name: Ranged Enemy
   m_TagString: Enemy
@@ -279,7 +280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBarFill: {fileID: 0}
-  maxHealth: 30
+  maxHealth: 150
   deathParticles: {fileID: 6932388814300370661, guid: c463df0fab34daa4c8d7507f2fd1f56c, type: 3}
   deathMarker: {fileID: 750730994}
   myHealthBar: {fileID: 2481700521802852413, guid: bf523edf0adf6264fb4c39e400a70639, type: 3}
@@ -309,7 +310,7 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 172504
+  m_InstanceId: -161020
 --- !u!114 &847406065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,6 +325,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToFacePlayer: {fileID: 1358599819545767513}
   rotateSpeed: 5
+--- !u!114 &9153279266761473585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358599819545767513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca1a5bdde643e3146a21913b94d45e29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  staggerBarMax: 75
+  staggerRecoveryMultiplier: 5
+  staggerKnockbackDurationMax: 0.1
+  breakDuration: 3
+  knockStrength: 300
+  knockDurationMax: 0.5
 --- !u!1 &1358599819730828826
 GameObject:
   m_ObjectHideFlags: 0
