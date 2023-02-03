@@ -45,7 +45,7 @@ public class BulletCollider : MonoBehaviour
         
         if(ownerOfBulletType != OwnerOfBulletType.Player)
             return;
-        // Heal Player
+        other.GetComponent<BloodPot>().Heal();
         Destroy(other.gameObject);
     }
 
@@ -73,6 +73,7 @@ public class BulletCollider : MonoBehaviour
 
     void BulletCollision(Collider2D other)
     {
-
+        Instantiate(collisionParticle, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 }
