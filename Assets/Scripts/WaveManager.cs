@@ -16,6 +16,7 @@ public class Wave
 {
     public List<WeightedGameObjectList> enemiesByRound;
     public int[] amountOfEnemiesPerRound;
+    public float[] spawnTime;
 }
 
 public class WaveManager : Singleton<WaveManager>
@@ -79,10 +80,11 @@ public class WaveManager : Singleton<WaveManager>
     }
     void DistributeSpawnQueue()
     {
-        for (int i = spawnQueue.Count; i > 0; i--)
+        for (var i = spawnQueue.Count; i > 0; i--)
         {
-            SpawnPoint curSpawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
-            curSpawnPoint.AddToLocalQueue(spawnQueue[i - 1]);
+            var spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
+            spawnPoint.spawnDuration = _waves[(int) difficulty].spawnTime[_currentRound - 1];
+            spawnPoint.AddToLocalQueue(spawnQueue[i - 1]);
             spawnQueue.RemoveAt(i - 1);
         }
     }

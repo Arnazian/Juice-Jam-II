@@ -6,7 +6,7 @@ using UnityEngine;
 public class SpawnPoint : MonoBehaviour
 {
     [SerializeField] private Transform spawnPoint;
-    [SerializeField] private float spawnDuration;
+    public float spawnDuration;
     private List<GameObject> localQueue = new List<GameObject>();
     private bool isSpawning = false;
     private bool spawnsAvailable = false;
