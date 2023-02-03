@@ -65,14 +65,14 @@ public class BaseMovement : MonoBehaviour
 
     public void MoveTowards(Transform targetTransform, float distanceFromTargetToStop = 0)
     {
+        isMoving = false;
+
         if (!canMove)
             return;
 
         //if you leave default parameters this won't 
         if(Vector3.Distance(transform.position, targetTransform.position) <= distanceFromTargetToStop)
         {
-            isMoving = false;
-
             rb.velocity = Vector3.zero; 
             return;
         }
@@ -86,6 +86,8 @@ public class BaseMovement : MonoBehaviour
 
     public void StayAway(Transform targetTransform, float targetDistance = 6, float targetDistanceBuffer = 2)
     {
+        isMoving = false;
+
         if (!canMove)
             return;
 
@@ -102,8 +104,6 @@ public class BaseMovement : MonoBehaviour
         }
         else
         {
-            isMoving = false;
-
             rb.velocity = Vector3.zero;
             return;
         }

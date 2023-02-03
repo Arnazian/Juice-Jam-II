@@ -538,7 +538,6 @@ GameObject:
   - component: {fileID: 2591041230669887369}
   - component: {fileID: 2732398969989874023}
   - component: {fileID: 847406065}
-  - component: {fileID: 6811786754371599569}
   m_Layer: 0
   m_Name: Rush Enemy
   m_TagString: Enemy
@@ -576,11 +575,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ef4ceea6c71b6e47a5c0e17f50deef2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 3
   rushSpeed: 5
   damage: 10
   attackCoolDownMin: 1
   attackCoolDownMax: 2.5
-  player: {fileID: 332318632987233901, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
+  distanceFromPlayerToStop: 5
 --- !u!58 &7584760229879967712
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -661,7 +661,7 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 70698
+  m_InstanceId: -39438
 --- !u!114 &847406065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -676,21 +676,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToFacePlayer: {fileID: 1358599819545767513}
   rotateSpeed: 5
---- !u!114 &6811786754371599569
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1358599819545767513}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa28765f5300c8946a3eea0c49763a5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 3
-  distanceFromPlayerToStop: 2
-  deaccelerationSpeed: 0
 --- !u!1 &1358599819730828826
 GameObject:
   m_ObjectHideFlags: 0

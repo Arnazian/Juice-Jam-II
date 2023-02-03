@@ -1,10 +1,8 @@
 using UnityEngine;
 
 [RequireComponent(typeof(EnemyMobHealthManager))]
-public class RushEnemyMob : MonoBehaviour
+public class RushEnemyMob : BaseMovement, IEnemy
 {
-    private Rigidbody2D rb;
-
     [SerializeField] private float rushSpeed;
     [SerializeField] private float damage = 10f;
 
@@ -12,14 +10,14 @@ public class RushEnemyMob : MonoBehaviour
     [SerializeField] private float attackCoolDownMax;
     private float attackCooldownCur;
 
-    public Transform player;
+    [Header("Movement Variables")]
+    [SerializeField] private float distanceFromPlayerToStop;
 
     
     private void Awake()
     {
+        AssignPlayerTransform();
         rb = GetComponent<Rigidbody2D>();
-
-        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     private void Update()
@@ -28,14 +26,16 @@ public class RushEnemyMob : MonoBehaviour
             return;
         
 
-        HandleAttacking();
+        MoveTowardsPlayer(distanceFromPlayerToStop);
+
+        HandleAttackLogic();
     }
 
-    void HandleAttacking()
+    public void HandleAttackLogic()
     {
         if(attackCooldownCur <= 0)
         {
-            Attack();
+            PrepareAttack();
         }
         else
         {
@@ -45,25 +45,22 @@ public class RushEnemyMob : MonoBehaviour
     }
 
 
-    private void Attack()
+    public void Attack()
     {
-        Vector3 playerVelocity = player.GetComponent<Rigidbody2D>().velocity;
-        Vector3 targetPosition = player.position + playerVelocity.normalized * 5; 
+        Vector3 playerVelocity = playerTransform.GetComponent<Rigidbody2D>().velocity;
+        Vector3 targetPosition = playerTransform.position + playerVelocity.normalized * 5; 
 
         attackCooldownCur = Random.Range(attackCoolDownMin, attackCoolDownMax);
-        if( PauseMenu.Instance.IsPaused)
-            return;
-        var rotationDirection = targetPosition - transform.position;
-        var projectileRotationZ = Mathf.Atan2(rotationDirection.y, rotationDirection.x) * Mathf.Rad2Deg - 90;
-        var projectileRotation = Quaternion.Euler(0f, 0f, projectileRotationZ);
 
-        rb.AddRelativeForce(Vector2.up*rushSpeed);
+        //RotateTowards(targetPosition);
+
+        rb.AddRelativeForce(Vector2.up*rushSpeed*1500);
         Debug.Log("I'm attacking");
     }
 
     private void StopMooving()
     {
-        //GetComponent<MoveTowardsPlayer>().enabled = false;
+        SetCanMove(false);
     }
 
     private void PrepareAttack()
