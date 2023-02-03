@@ -18,6 +18,8 @@ public class HazardManager : MonoBehaviour
 
     private void SwitchHazards(int currentRound)
     {
+        if(hazardsPerRound.Count <= currentRound - 1)
+            return;
         foreach (var hazard in hazardsPerRound)
             hazard.SetActive(false);
         hazardsPerRound[currentRound - 1].SetActive(true);
