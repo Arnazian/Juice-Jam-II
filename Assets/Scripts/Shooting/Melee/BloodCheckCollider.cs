@@ -21,10 +21,12 @@ public class BloodCheckCollider : MonoBehaviour
     #region CalculateClosestEnemy
     void SelectEnemyToHighlight()
     {
-        if (selectedEnemy != null) { selectedEnemy.GetComponent<EnemyMobHealthManager>().SetDeathMarker(false); }
+        if (selectedEnemy != null)
+            selectedEnemy.GetComponent<EnemyMobHealthManager>().SetDeathMarker(false);
         if (touchedEnemies.Count <= 0) { return; }
         CalculateClosestEnemy();
-        if (touchedEnemies[0].GetComponent<EnemyMobHealthManager>() == null) { return; }        
+        if (touchedEnemies.Count > 0 && touchedEnemies[0] != null && touchedEnemies[0].GetComponent<EnemyMobHealthManager>() == null)
+            return;      
         selectedEnemy = touchedEnemies[0];
         selectedEnemy.GetComponent<EnemyMobHealthManager>().SetDeathMarker(true);
     }

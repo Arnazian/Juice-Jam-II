@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,15 +12,16 @@ public class SpawnPoint : MonoBehaviour
     private bool spawnsAvailable = false;
 
     [SerializeField] private ParticleSystem spawnParticles;
+    [SerializeField] private Sprite activeSprite;
+    [SerializeField] private Sprite deactiveSprite;
 
-    
-    
-    void Start()
+    private SpriteRenderer _spriteRenderer;
+
+    private void Awake()
     {
-        
+        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    
     void Update()
     {
         SpawnLocalQueue();
@@ -42,12 +44,14 @@ public class SpawnPoint : MonoBehaviour
     IEnumerator CoroutineSpawnNextInQueue()
     {
         spawnParticles.Play();
+        _spriteRenderer.sprite = activeSprite;
         yield return new WaitForSeconds(spawnDuration);
 
         GameObject newSpawn = Instantiate(localQueue[0], spawnPoint.position, Quaternion.identity);
         localQueue.RemoveAt(0);
         if(localQueue.Count <= 0) { spawnsAvailable = false; }
         spawnParticles.Stop();
+        _spriteRenderer.sprite = deactiveSprite;
         isSpawning =false;
         
     }
