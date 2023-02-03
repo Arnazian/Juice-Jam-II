@@ -44,8 +44,9 @@ public class BulletCollider : MonoBehaviour
         Instantiate(collisionParticle, transform.position, Quaternion.identity);
         Destroy(gameObject);
         
-        if(ownerOfBulletType != OwnerOfBulletType.Player) { }
+        if(ownerOfBulletType != OwnerOfBulletType.Player)
             return;
+        other.GetComponent<BloodPot>().Heal();
         Destroy(other.gameObject);
     }
 
