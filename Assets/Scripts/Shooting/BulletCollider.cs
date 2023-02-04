@@ -21,7 +21,7 @@ public class BulletCollider : MonoBehaviour
 
     private void Awake()
     {
-        var rand = Random.Range(0, shootSounds.Count);
+        var rand = Random.Range(0, shootSounds.Count - 1);
         AudioManager.Instance.PlaySfx($"playerShootSfx{rand}", shootSounds[rand], 1.75f, 0.15f, false);
     }
 
@@ -73,7 +73,7 @@ public class BulletCollider : MonoBehaviour
             other.gameObject.GetComponent<EnemyStagger>().Stagger(staggerAmount, false);
         }
 
-        var rand = Random.Range(0, hitSounds.Count);
+        var rand = Random.Range(0, hitSounds.Count - 1);
         AudioManager.Instance.PlaySfx($"enemyHitSfx{rand}", hitSounds[rand], 3, 0.5f, false);
         other.transform.GetComponent<IDamageable>().Damage(damage);
         Instantiate(collisionParticle, transform.position, Quaternion.identity);
