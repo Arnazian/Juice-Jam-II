@@ -10,9 +10,13 @@ public class EnemyMob : BaseMovement, IEnemy
     [Header("Movement Variables")]
     [SerializeField] private float distanceFromPlayerToStop;
 
+    private Animator _anim;
+    private static readonly int IsAttacking = Animator.StringToHash("IsAttacking");
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        _anim = GetComponent<Animator>();
         AssignPlayerTransform();
     }
 
@@ -40,6 +44,8 @@ public class EnemyMob : BaseMovement, IEnemy
             _isAttacking = false;
             CancelInvoke(nameof(Attack));
         }
+
+        _anim.SetBool(IsAttacking, _isAttacking);
     }
 
     public void Knockback()
