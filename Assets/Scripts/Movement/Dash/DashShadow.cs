@@ -23,9 +23,9 @@ public class DashShadow : MonoBehaviour
         DestroyDashShadow DDSScript = objToSpawn.AddComponent<DestroyDashShadow>();
 
         DDSScript.howLongShouldShadowLast = howLongShouldShadowLast;
-        spriteRenderer.sortingOrder = -5;
+        spriteRenderer.sortingOrder = 1;
         spriteRenderer.color = new Color(0.5f, 0.25f, 0.25f, howLongShouldShadowLast);
-
+ 
         Instantiate(objToSpawn, position, rotation);
     }
 }
