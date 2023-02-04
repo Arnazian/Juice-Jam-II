@@ -91,7 +91,7 @@ public class FB_StageOne : Stage1Base
         }
         else
         {
-            SpawnMinions();
+            StartCoroutine("SpawnMinions");
         }
     }
 
@@ -116,11 +116,15 @@ public class FB_StageOne : Stage1Base
         StopConstantShooting();
     }
 
-    void SpawnMinions()
+    IEnumerator SpawnMinions()
     {
-        if (!stageActive) { return; }
-        WaveManager.Instance.SpawnMinions(minionsToSpawn, minionSpawnTime);
-        Invoke("DoConstantShoot", bossSpawnRecoveryTime);
+        if (stageActive)
+        {
+            WaveManager.Instance.SpawnMinions(minionsToSpawn, minionSpawnTime);
+            yield return new WaitForSeconds(bossSpawnRecoveryTime);
+            //Invoke("DoConstantShoot", bossSpawnRecoveryTime);
+            StartConstantShooting();
+        }        
     }
 
     
