@@ -289,7 +289,7 @@ PrefabInstance:
       objectReference: {fileID: 1956896197}
     - target: {fileID: 3916624221195258505, guid: 5ff6a989abfd60340bf254c621430fb2, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3916624221195258507, guid: 5ff6a989abfd60340bf254c621430fb2, type: 3}
       propertyPath: bossRoundTwo
@@ -522,11 +522,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1388778451, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
       propertyPath: m_Size.x
-      value: 2.9285715
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 1388778451, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
       propertyPath: m_Size.y
-      value: 2.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1388778451, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
       propertyPath: m_Sprite
