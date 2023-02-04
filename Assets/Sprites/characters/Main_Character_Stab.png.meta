@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 67ed88e9159185e43babd8950ebdc179
+guid: c92f90de73623924baf909d866d3d095
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -106,7 +106,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -118,7 +118,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -129,7 +129,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Main_Char_Attack_Right_0
+      name: Main_Character_Stab_0
       rect:
         serializedVersion: 2
         x: 0
@@ -143,14 +143,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 24062bbbcc1b0624ba4bc5c9174c0eef
-      internalID: 1101310272
+      spriteID: 98512c4cfae7b524896fb1502155384d
+      internalID: 1556489232
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main_Char_Attack_Right_1
+      name: Main_Character_Stab_1
       rect:
         serializedVersion: 2
         x: 96
@@ -164,14 +164,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d670e857afa915e4c9a273c4dc72798c
-      internalID: -957997182
+      spriteID: e3c90341449dfc5479d515b4e62ec105
+      internalID: -604669849
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main_Char_Attack_Right_2
+      name: Main_Character_Stab_2
       rect:
         serializedVersion: 2
         x: 192
@@ -185,14 +185,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8fc0769ed51f4ed458694170cf1141ca
-      internalID: -884517944
+      spriteID: 663de88e52c93ec47a6faa2f0439e798
+      internalID: 649357256
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main_Char_Attack_Right_3
+      name: Main_Character_Stab_3
       rect:
         serializedVersion: 2
         x: 288
@@ -206,14 +206,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 047db05fc8d748444a0eff1c60e93bd8
-      internalID: -1782707810
+      spriteID: db0beac9a4df1574eb120897147a8739
+      internalID: -302824012
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main_Char_Attack_Right_4
+      name: Main_Character_Stab_4
       rect:
         serializedVersion: 2
         x: 384
@@ -227,8 +227,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae9c090b35f774348b2f391a53e5d05c
-      internalID: 1286893492
+      spriteID: b5019618281ceb04b81c934fb5755b67
+      internalID: 1763420689
       vertices: []
       indices: 
       edges: []
@@ -244,11 +244,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Main_Char_Attack_Right_4: 1286893492
-      Main_Char_Attack_Right_2: -884517944
-      Main_Char_Attack_Right_0: 1101310272
-      Main_Char_Attack_Right_3: -1782707810
-      Main_Char_Attack_Right_1: -957997182
+      Main_Character_Stab_4: 1763420689
+      Main_Character_Stab_3: -302824012
+      Main_Character_Stab_1: -604669849
+      Main_Character_Stab_2: 649357256
+      Main_Character_Stab_0: 1556489232
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

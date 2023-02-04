@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 67ed88e9159185e43babd8950ebdc179
+guid: 85df8b13102d4454fa78ccb9defc9cb1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -106,7 +106,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -118,7 +118,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -129,7 +129,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Main_Char_Attack_Right_0
+      name: Main_Character_Blood beam_0
       rect:
         serializedVersion: 2
         x: 0
@@ -143,14 +143,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 24062bbbcc1b0624ba4bc5c9174c0eef
-      internalID: 1101310272
+      spriteID: 5171745790f965f42af0243d4358efac
+      internalID: 1146637670
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main_Char_Attack_Right_1
+      name: Main_Character_Blood beam_1
       rect:
         serializedVersion: 2
         x: 96
@@ -164,14 +164,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d670e857afa915e4c9a273c4dc72798c
-      internalID: -957997182
+      spriteID: dc9e91190d71ec74d94febfed70472ee
+      internalID: 1850526181
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main_Char_Attack_Right_2
+      name: Main_Character_Blood beam_2
       rect:
         serializedVersion: 2
         x: 192
@@ -185,14 +185,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8fc0769ed51f4ed458694170cf1141ca
-      internalID: -884517944
+      spriteID: d5e8f394c6635a742bdda2c7d24c3c3f
+      internalID: 167046058
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main_Char_Attack_Right_3
+      name: Main_Character_Blood beam_3
       rect:
         serializedVersion: 2
         x: 288
@@ -206,29 +206,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 047db05fc8d748444a0eff1c60e93bd8
-      internalID: -1782707810
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Main_Char_Attack_Right_4
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 0
-        width: 96
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ae9c090b35f774348b2f391a53e5d05c
-      internalID: 1286893492
+      spriteID: 5ce22b4e1bf2cd14a99abe5bdd3dcbec
+      internalID: 1365375551
       vertices: []
       indices: 
       edges: []
@@ -244,11 +223,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Main_Char_Attack_Right_4: 1286893492
-      Main_Char_Attack_Right_2: -884517944
-      Main_Char_Attack_Right_0: 1101310272
-      Main_Char_Attack_Right_3: -1782707810
-      Main_Char_Attack_Right_1: -957997182
+      Main_Character_Blood beam_3: 1365375551
+      Main_Character_Blood beam_0: 1146637670
+      Main_Character_Blood beam_2: 167046058
+      Main_Character_Blood beam_1: 1850526181
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

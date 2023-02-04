@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 67ed88e9159185e43babd8950ebdc179
+guid: b2f09641db1d0c1439b2f460181a1330
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -106,7 +106,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -118,7 +118,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -129,13 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Main_Char_Attack_Right_0
+      name: Main_Char_Idle_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 96
-        height: 80
+        width: 80
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 24062bbbcc1b0624ba4bc5c9174c0eef
-      internalID: 1101310272
+      spriteID: 4756eff65b1e1e84c8e750bfe6849512
+      internalID: -826056141
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main_Char_Attack_Right_1
+      name: Main_Char_Idle_1
       rect:
         serializedVersion: 2
-        x: 96
+        x: 80
         y: 0
-        width: 96
-        height: 80
+        width: 80
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,20 +164,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d670e857afa915e4c9a273c4dc72798c
-      internalID: -957997182
+      spriteID: 6bc47a5516c82594ba8115db1f3a5a64
+      internalID: -393438615
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main_Char_Attack_Right_2
+      name: Main_Char_Idle_2
       rect:
         serializedVersion: 2
-        x: 192
+        x: 160
         y: 0
-        width: 96
-        height: 80
+        width: 80
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,20 +185,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8fc0769ed51f4ed458694170cf1141ca
-      internalID: -884517944
+      spriteID: f69c3060cc0a07341a237f48ebccfd98
+      internalID: 1194156196
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main_Char_Attack_Right_3
+      name: Main_Char_Idle_3
       rect:
         serializedVersion: 2
-        x: 288
+        x: 240
         y: 0
-        width: 96
-        height: 80
+        width: 80
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,20 +206,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 047db05fc8d748444a0eff1c60e93bd8
-      internalID: -1782707810
+      spriteID: 2d75ef6008f6e96459ff93afcbd50519
+      internalID: -1794549897
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main_Char_Attack_Right_4
+      name: Main_Char_Idle_4
       rect:
         serializedVersion: 2
-        x: 384
+        x: 320
         y: 0
-        width: 96
-        height: 80
+        width: 80
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,8 +227,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae9c090b35f774348b2f391a53e5d05c
-      internalID: 1286893492
+      spriteID: 1cf7f57dd5f77e44aa3ddf145b9941f7
+      internalID: -1886944633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main_Char_Idle_5
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 80
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b396539c6c72fa44bb612c0c179c40c
+      internalID: -159945958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main_Char_Idle_6
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 80
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 583141107205a0e43a2516d419f530e5
+      internalID: 1063906360
       vertices: []
       indices: 
       edges: []
@@ -244,11 +286,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Main_Char_Attack_Right_4: 1286893492
-      Main_Char_Attack_Right_2: -884517944
-      Main_Char_Attack_Right_0: 1101310272
-      Main_Char_Attack_Right_3: -1782707810
-      Main_Char_Attack_Right_1: -957997182
+      Main_Char_Idle_4: -1886944633
+      Main_Char_Idle_6: 1063906360
+      Main_Char_Idle_2: 1194156196
+      Main_Char_Idle_5: -159945958
+      Main_Char_Idle_3: -1794549897
+      Main_Char_Idle_1: -393438615
+      Main_Char_Idle_0: -826056141
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
