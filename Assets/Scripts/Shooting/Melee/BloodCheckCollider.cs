@@ -32,6 +32,7 @@ public class BloodCheckCollider : MonoBehaviour
     }
     void CalculateClosestEnemy()
     {
+        CleanTouchedEnemies();
         touchedEnemies.Sort(SortByDistance);
     }
 
@@ -51,6 +52,8 @@ public class BloodCheckCollider : MonoBehaviour
         }
         if(player.GetComponent<VampireFinisher>().CanSuckBlood)
             SelectEnemyToHighlight();
+
+        CleanTouchedEnemies();
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -61,6 +64,19 @@ public class BloodCheckCollider : MonoBehaviour
         }
         if(player.GetComponent<VampireFinisher>().CanSuckBlood)
             SelectEnemyToHighlight();
+
+        CleanTouchedEnemies();
+    }
+
+    void CleanTouchedEnemies()
+    {
+        foreach(GameObject go in touchedEnemies)
+        {
+            if(go == null)
+            {
+                touchedEnemies.Remove(go);
+            }
+        }
     }
     #endregion
 

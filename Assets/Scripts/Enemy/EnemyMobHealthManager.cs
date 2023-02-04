@@ -25,8 +25,14 @@ public class EnemyMobHealthManager : HealthManager
 
     public override void Damage(float amount)
     {
+        if(vampireFinisher.GetSuckingBlood()) { return; }
         base.Damage(amount);
         vampireFinisher.IncreaseRage(amount);
+    }
+
+    public void DamageWhileBloodSuck(float amount)
+    {
+        base.Damage(amount);
     }
 
     public void RunEnemyDeath()

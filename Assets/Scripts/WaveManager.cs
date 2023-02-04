@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 public enum Difficulty
@@ -11,7 +11,7 @@ public enum Difficulty
     Hard
 }
 
-[System.Serializable]
+[Serializable]
 public class Wave
 {
     public List<WeightedGameObjectList> enemiesByRound;
@@ -19,9 +19,25 @@ public class Wave
     public float[] spawnTime;
 }
 
+[Serializable]
+public class DifficultySetting
+{
+    public float damageMultiplier;
+    public float damageTakenMultiplier;
+}
+
 public class WaveManager : Singleton<WaveManager>
 {
+    public DifficultySetting GetCurrentDifficultySetting => difficultySettings[(int) difficulty];
+    
     [SerializeField] private Difficulty difficulty;
+    [SerializeField] private List<DifficultySetting> difficultySettings;
+    
+    [SerializeField] private AudioClip arena1Music;
+    [SerializeField] private AudioClip arena2Music;
+    [SerializeField] private AudioClip boss1Music;
+    [SerializeField] private AudioClip boss2Music;
+    [SerializeField] private AudioClip boss2MusicLoop;
     
     [SerializeField] private GameObject firstBoss;
     [SerializeField] private GameObject secondBoss;
@@ -30,14 +46,14 @@ public class WaveManager : Singleton<WaveManager>
     [SerializeField] private int bossRoundTwo;
     [SerializeField] private int bossRoundThree;
     
+    [FormerlySerializedAs("_wave")] [SerializeField] private Wave wave;
+    
+    public bool startOnAwake = true;
+    public Action<int> onRoundStart; 
+    
     private int _currentRound = 0;
     private int _currentRoundEnemyCount = 0;
-    private List<GameObject> spawnQueue = new List<GameObject>();
-    [SerializeField] private List<Wave> _waves;
-
-    public bool startOnAwake = true;
-
-    public Action<int> onRoundStart; 
+    private List<GameObject> _spawnQueue = new List<GameObject>();
 
     protected override void Awake()
     {
@@ -53,9 +69,20 @@ public class WaveManager : Singleton<WaveManager>
         // if (CheckIfBossRound()) 
         //     return;
         CheckIfBossRound();
-        _currentRoundEnemyCount = _waves[(int)difficulty].amountOfEnemiesPerRound[_currentRound];
+        _currentRoundEnemyCount = wave.amountOfEnemiesPerRound[_currentRound];
         PopulateSpawnQueue();
         DistributeSpawnQueue();
+
+        if (_currentRound < 5)
+        {
+            AudioManager.Instance.PlayMusic("a1", arena1Music);
+        }
+        else if (_currentRound > 5)
+        {
+            AudioManager.Instance.Stop("a1");
+            AudioManager.Instance.Stop("boss1");
+            AudioManager.Instance.PlayMusic("a2", arena2Music);
+        }
     }
 
     bool CheckIfBossRound()
@@ -80,20 +107,20 @@ public class WaveManager : Singleton<WaveManager>
     }
     void DistributeSpawnQueue()
     {
-        for (var i = spawnQueue.Count; i > 0; i--)
+        for (var i = _spawnQueue.Count; i > 0; i--)
         {
             var spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
-            spawnPoint.spawnDuration = _waves[(int) difficulty].spawnTime[_currentRound - 1];
-            spawnPoint.AddToLocalQueue(spawnQueue[i - 1]);
-            spawnQueue.RemoveAt(i - 1);
+            spawnPoint.spawnDuration = wave.spawnTime[_currentRound - 1];
+            spawnPoint.AddToLocalQueue(_spawnQueue[i - 1]);
+            _spawnQueue.RemoveAt(i - 1);
         }
     }
     void PopulateSpawnQueue()
     {
-        WeightedGameObjectList curRoundList = _waves[(int)difficulty].enemiesByRound[_currentRound - 1];
+        WeightedGameObjectList curRoundList = wave.enemiesByRound[_currentRound - 1];
         for (int i = _currentRoundEnemyCount; i > 0; i--)
         {
-            spawnQueue.Add(curRoundList.GetRandomObject());
+            _spawnQueue.Add(curRoundList.GetRandomObject());
         }
     }
 
@@ -110,6 +137,10 @@ public class WaveManager : Singleton<WaveManager>
         var bossHealthBar = UIManager.Instance.GetBossHealthBar;
         bossHealthBar.transform.parent.gameObject.SetActive(true);
         var boss = Instantiate(firstBoss, Vector3.zero, Quaternion.identity);
+        
+        AudioManager.Instance.Stop("a1");
+        AudioManager.Instance.Stop("a2");
+        AudioManager.Instance.PlayMusic("boss1", boss1Music);
     }
     private void StartSecondBoss()
     {

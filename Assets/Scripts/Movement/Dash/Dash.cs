@@ -114,7 +114,7 @@ public class Dash : MonoBehaviour
             Vector3 offset = direction * distanceModifier * Vector3.Distance(startPosition, endPosition) * i;
 
             float shadowLiveTime = startI*(float)i/250f;
-            DashShadow.CreateDashShadow(startPosition + offset, transform.Find("Sprite").Find("Image").gameObject, startRotation, shadowLiveTime);
+            DashShadow.CreateDashShadow(startPosition + offset, GetComponent<SpriteRenderer>(), startRotation, shadowLiveTime);
         }
     }
 }

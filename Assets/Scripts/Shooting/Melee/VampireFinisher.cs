@@ -93,7 +93,7 @@ public class VampireFinisher : MonoBehaviour
             StopSuckingBlood();
             return;
         }
-        myTarget.GetComponent<EnemyMobHealthManager>().Damage(damageAmount);
+        myTarget.GetComponent<EnemyMobHealthManager>().DamageWhileBloodSuck(damageAmount);
         
     }
 
@@ -142,6 +142,8 @@ public class VampireFinisher : MonoBehaviour
         var fillAmount = currentRage / MaxRageAmount;
         rageMeterFill.fillAmount = fillAmount;
     }
+
+    public bool GetSuckingBlood() => suckingBlood;
 
     #region Increase Decrease And Set Rage
     public void IncreaseRage(float amount) 
