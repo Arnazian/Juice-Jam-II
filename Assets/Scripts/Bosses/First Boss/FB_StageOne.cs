@@ -26,9 +26,9 @@ public class FB_StageOne : Stage1Base
     private float constantShootIntervalCur;
 
     [Header("SPAWN MINIONS Variables")]
-    //
-    //
-    // 
+    [SerializeField] private List<GameObject> minionsToSpawn = new List<GameObject>();
+    [SerializeField] private float minionSpawnTime;
+    [SerializeField] private float bossSpawnRecoveryTime;
 
     private ProjectileSpawner projectileSpawner;
     private FacePlayer facePlayer;
@@ -84,7 +84,7 @@ public class FB_StageOne : Stage1Base
         isConstantlyShooting = false;
 
         // change random to 0, 2 after minions exist
-        int i = Random.Range(0, 1);
+        int i = Random.Range(0, 2);
         if (i == 0)
         {
             RotatingAttack();
@@ -119,7 +119,11 @@ public class FB_StageOne : Stage1Base
     void SpawnMinions()
     {
         if (!stageActive) { return; }
+        WaveManager.Instance.SpawnMinions(minionsToSpawn, minionSpawnTime);
+        Invoke("DoConstantShoot", bossSpawnRecoveryTime);
     }
+
+    
 
     #region start and stop
     public override void StartStageOne()
