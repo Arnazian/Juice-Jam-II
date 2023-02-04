@@ -12,6 +12,7 @@ public class RushEnemyMob : BaseMovement, IEnemy
     [SerializeField] private float stunLength = 2f;
     [SerializeField] private float distanceFromPlayerToStop = 10f;
 
+    private Animator animator;
     private float attackCooldownCur;
     private float preparingAttackTimer;
     private float chargeTimer;
@@ -21,6 +22,8 @@ public class RushEnemyMob : BaseMovement, IEnemy
     
     private void Awake()
     {
+        animator = GetComponent<Animator>();
+
         attackCooldownCur = Random.Range(attackCoolDownMin, attackCoolDownMax);
         chargeTimer = chargeLength;
         preparingAttackTimer = howLongPreparingAttackTakes;
@@ -80,6 +83,7 @@ public class RushEnemyMob : BaseMovement, IEnemy
 
     public void Attack()
     {
+        //commented code is if you want to make it aim in fornt of player
         //Vector3 playerVelocity = playerTransform.GetComponent<Rigidbody2D>().velocity;
         //Vector3 targetPosition = playerTransform.position + playerVelocity.normalized * 5; 
 
@@ -95,10 +99,12 @@ public class RushEnemyMob : BaseMovement, IEnemy
     {
         if (preparingAttackTimer <= 0)
         {
+            animator.Play("RushEnemyDefault");
             currentState = "Attack";
         }
         else
         {
+            animator.Play("RushEnemyPreparingAttack");
             preparingAttackTimer -= Time.deltaTime;
         }
     }
@@ -120,6 +126,7 @@ public class RushEnemyMob : BaseMovement, IEnemy
     {
         if (stunTimer <= 0)
         {
+            animator.Play("RushEnemyDefault");
             currentState = "Moving";
 
             EnableMovement();
@@ -128,6 +135,7 @@ public class RushEnemyMob : BaseMovement, IEnemy
         }
         else
         {
+            animator.Play("StunAnimation");
             Stun();
             stunTimer -= Time.deltaTime;
         }
