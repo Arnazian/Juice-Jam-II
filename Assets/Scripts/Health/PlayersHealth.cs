@@ -5,6 +5,7 @@ public class PlayersHealth : HealthManager
     protected override void Awake()
     {
         healthBarFill = UIManager.Instance.GetPlayerHealthBarFill;
+        UIManager.Instance.GetGameOverScreen.SetActive(false);
         base.Awake();
     }
 
@@ -25,6 +26,7 @@ public class PlayersHealth : HealthManager
 
     private void RunPlayerDeath()
     {
+        UIManager.Instance.GetGameOverScreen.SetActive(true);
         Destroy(gameObject);
     }
 

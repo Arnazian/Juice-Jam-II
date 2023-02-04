@@ -26,13 +26,17 @@ public class VampireFinisher : MonoBehaviour
     private PlayerActionManager playerActionManager;
 
     private PlayersHealth playerHealth;
+    private Animator _anim;
     
     private Image rageMeterFill;
     private float currentRage;
+    private static readonly int IsBloodSucking = Animator.StringToHash("IsBloodSucking");
+
     void Start()
     {
         suckBloodIntervalCur = 0;
         playerActionManager = GetComponent<PlayerActionManager>();
+        _anim = GetComponent<Animator>();
         bloodSuckParticles.SetActive(false);
         rageMeterFill = UIManager.Instance.GetRageMeterFill;
         UpdateGraphics();
@@ -54,6 +58,8 @@ public class VampireFinisher : MonoBehaviour
     {
         if(suckingBlood || currentRage < MaxRageAmount) 
             return;
+        
+        _anim.SetBool(IsBloodSucking, true);
         if(playerActionManager.CheckIfInAction()) { return; }
         if(bloodCheckCollider.GetSelectedEnemy() == null)
         {
@@ -105,6 +111,7 @@ public class VampireFinisher : MonoBehaviour
        
         bloodSuckParticles.SetActive(false);
         playerActionManager.SetIsFinishing(false);
+        _anim.SetBool(IsBloodSucking, false);
 
         GetComponent<MovePlayer>().SetCanMove(true);
         //playerHealth.SetImmuneStatus(false);
