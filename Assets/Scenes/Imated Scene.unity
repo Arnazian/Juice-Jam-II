@@ -731,5 +731,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: HUD
       objectReference: {fileID: 0}
+    - target: {fileID: 4066002350678733964, guid: ffb5d37d385033348ae9d7934d7ef541, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 0a9c9e481ea8836458dc7c2e4f8f88f0, type: 2}
+    - target: {fileID: 4066002350678733964, guid: ffb5d37d385033348ae9d7934d7ef541, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4066002350715141073, guid: ffb5d37d385033348ae9d7934d7ef541, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 0a9c9e481ea8836458dc7c2e4f8f88f0, type: 2}
+    - target: {fileID: 4066002350715141073, guid: ffb5d37d385033348ae9d7934d7ef541, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4066002350908776851, guid: ffb5d37d385033348ae9d7934d7ef541, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 0a9c9e481ea8836458dc7c2e4f8f88f0, type: 2}
+    - target: {fileID: 4066002350908776851, guid: ffb5d37d385033348ae9d7934d7ef541, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffb5d37d385033348ae9d7934d7ef541, type: 3}
