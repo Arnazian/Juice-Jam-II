@@ -52,7 +52,8 @@ public class BulletCollider : MonoBehaviour
 
     void EnemyCollision(Collider2D other)
     {
-        if(ownerOfBulletType != OwnerOfBulletType.Player) { return; }
+        if(ownerOfBulletType != OwnerOfBulletType.Player) 
+            return;
         if(other.gameObject.GetComponent<EnemyStagger>() != null) 
         {
             other.gameObject.GetComponent<EnemyStagger>().Stagger(staggerAmount, false);
@@ -64,8 +65,9 @@ public class BulletCollider : MonoBehaviour
 
     void PlayerCollision(Collider2D other)
     {
-        if (ownerOfBulletType != OwnerOfBulletType.Enemy) { return; }
-        other.transform.GetComponent<IDamageable>().Damage(damage);
+        if (ownerOfBulletType != OwnerOfBulletType.Enemy)
+            return;
+        other.transform.GetComponent<IDamageable>().Damage(damage * WaveManager.Instance.GetCurrentDifficultySetting.damageMultiplier);
         Instantiate(collisionParticle, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }

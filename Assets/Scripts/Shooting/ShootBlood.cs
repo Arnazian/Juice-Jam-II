@@ -89,7 +89,7 @@ public class ShootBlood : MonoBehaviour
 
         var projectileRotationZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg-90;
         var projectileRotation =  Quaternion.Euler(0f, 0f, projectileRotationZ);
-
+        
         var newProjectile = Instantiate(projectile, shootSpawn.transform.position, projectileRotation);
         newProjectile.GetComponent<ProjectileFlyStraight>().speed = speed;
         newProjectile.GetComponent<BulletCollider>().damage = projectileDamage;
