@@ -15,7 +15,7 @@ public class LaunchCollider : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-
+        if(!enemyStagger.GetIsKnocked()) { return; }
         if (other.CompareTag("Enemy"))
         {
             EnemyCollision(other);

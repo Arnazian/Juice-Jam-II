@@ -127,5 +127,7 @@ public class EnemyStagger : MonoBehaviour
     {
         baseMovement.StopMovement();
     }
+
+    public bool GetIsKnocked() { return isKnocked; }
     public bool GetIsStaggered() { return isStaggered; }
 }
