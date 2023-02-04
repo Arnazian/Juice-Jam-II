@@ -3,6 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(EnemyMobHealthManager))]
 public class RangedEnemyMob : BaseMovement, IEnemy
 {
+    [SerializeField] private ParticleSystem _attackParticles;
     [SerializeField] private float projectileSpeed;
     [SerializeField] private GameObject projectile;
     [SerializeField] private GameObject shootSpawn;
@@ -42,15 +43,16 @@ public class RangedEnemyMob : BaseMovement, IEnemy
         {
             attackCooldownCur = Random.Range(attackCoolDownMin, attackCoolDownMax);
             _anim.SetBool(IsAttacking, true);
+            _attackParticles.Play(true);
         }
         else
         {
             attackCooldownCur -= Time.deltaTime;
             _anim.SetBool(IsAttacking, false);
+            _attackParticles.Stop(true);
         }
     }
-
-
+    
     public void Attack()
     {
         if(PauseMenu.Instance.IsPaused)
@@ -63,5 +65,4 @@ public class RangedEnemyMob : BaseMovement, IEnemy
         newProjectile.GetComponent<ProjectileFlyStraight>().speed = projectileSpeed;
         newProjectile.GetComponent<BulletCollider>().damage = projectileDamage;
     }
-
 }
