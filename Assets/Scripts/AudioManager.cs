@@ -5,7 +5,7 @@ public class AudioManager : Singleton<AudioManager>
 {
     private Dictionary<string, AudioSource> _currentlyPlayingClips = new Dictionary<string, AudioSource>();
 
-    public void PlaySfx(string id, AudioClip clip, float pitch = 1, bool loop = true, bool randomizePitch = true)
+    public void PlaySfx(string id, AudioClip clip, float pitch = 1, float volume = 1, bool loop = true, bool randomizePitch = true)
     {
         if(_currentlyPlayingClips.ContainsKey(id))
             return;
@@ -14,8 +14,9 @@ public class AudioManager : Singleton<AudioManager>
         var source = sourceGameObject.AddComponent<AudioSource>();
         source.clip = clip;
         source.loop = loop;
+        source.volume = volume;
         if (randomizePitch)
-            source.pitch = Random.Range(-pitch + 0.5f, pitch + 0.5f);
+            source.pitch = Random.Range(1, pitch + 0.15f);
 
         if (loop)
             _currentlyPlayingClips.Add(id, source);

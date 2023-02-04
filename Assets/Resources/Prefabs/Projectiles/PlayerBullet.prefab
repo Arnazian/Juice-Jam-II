@@ -9689,6 +9689,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf80fb272a672a04ba8a1133c9448eb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shootSounds:
+  - {fileID: 8300000, guid: 8d050e70c4f9fda4e800b6e244ddb7eb, type: 3}
+  hitSounds:
+  - {fileID: 8300000, guid: 2e41dc075c53f6a4c88e24af46b8e294, type: 3}
   collisionParticle: {fileID: 5276824108466267453, guid: 59467ffc01719c74391c24cc163a56a5, type: 3}
   ownerOfBulletType: 1
   staggerAmount: 2.5
