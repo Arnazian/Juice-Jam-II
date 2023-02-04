@@ -21,6 +21,8 @@ public class BulletCollider : MonoBehaviour
 
     private void Awake()
     {
+        if(ownerOfBulletType != OwnerOfBulletType.Player)
+            return;
         var rand = Random.Range(0, shootSounds.Count - 1);
         AudioManager.Instance.PlaySfx($"playerShootSfx{rand}", shootSounds[rand], 1.75f, 0.075f, false);
     }
