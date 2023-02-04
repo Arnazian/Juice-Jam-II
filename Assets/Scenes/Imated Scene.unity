@@ -565,14 +565,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1886698391, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
-      propertyPath: meleeSounds.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1886698391, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
-      propertyPath: meleeSounds.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: 0b0df8bb03fb0d04d840efddbc74aa67, type: 3}
     - target: {fileID: 332318632987233901, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
       propertyPath: m_RootOrder
       value: 4

@@ -71,7 +71,8 @@ public class ShootBlood : MonoBehaviour
         }
 
         _isShooting = true;
-        anim.SetBool(IsFiring, _isShooting);
+        if(!anim.GetBool("IsFiring")) { anim.SetBool(IsFiring, _isShooting); }
+        
     }
 
     private void StopShooting()
