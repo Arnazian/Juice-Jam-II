@@ -1,12 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Audio;
 
 public class AudioManager : Singleton<AudioManager>
 {
-    [SerializeField] private AudioMixerGroup musicMixerGroup;
-    [SerializeField] private AudioMixerGroup sfxMixerGroup;
-
     private Dictionary<string, AudioSource> _currentlyPlayingClips = new Dictionary<string, AudioSource>();
 
     public void PlaySfx(string id, AudioClip clip, float pitch = 1, bool loop = true, bool randomizePitch = true)
@@ -17,7 +13,6 @@ public class AudioManager : Singleton<AudioManager>
         sourceGameObject.transform.SetParent(transform);
         var source = sourceGameObject.AddComponent<AudioSource>();
         source.clip = clip;
-        source.outputAudioMixerGroup = sfxMixerGroup;
         source.loop = loop;
         if (randomizePitch)
             source.pitch = Random.Range(-pitch + 0.5f, pitch + 0.5f);
@@ -36,7 +31,6 @@ public class AudioManager : Singleton<AudioManager>
         sourceGameObject.transform.SetParent(transform);
         var source = sourceGameObject.AddComponent<AudioSource>();
         source.clip = clip;
-        source.outputAudioMixerGroup = musicMixerGroup;
         source.loop = loop;
         source.volume = volume;
         source.pitch = pitch;
