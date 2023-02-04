@@ -6,7 +6,10 @@ public class DashShadow : MonoBehaviour
 {
     public static void CreateDashShadow(Vector3 position, SpriteRenderer spriteObject, Quaternion rotation, float howLongShouldShadowLast = 1)
     {
-        GameObject objToSpawn = Instantiate(new GameObject("DashShadow"), position, rotation);;
+        GameObject objToSpawn = new GameObject("DashShadow");
+
+        objToSpawn.transform.position = position;
+        objToSpawn.transform.rotation = rotation;
 
         SpriteRenderer spriteRenderer = objToSpawn.AddComponent<SpriteRenderer>();
         spriteRenderer.sprite = spriteObject.sprite;
