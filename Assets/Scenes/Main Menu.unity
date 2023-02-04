@@ -1796,8 +1796,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dontDestroyOnLoad: 1
-  musicMixerGroup: {fileID: 24300002, guid: 14f5f94bc7f010b49beecc3fadb85eef, type: 2}
-  sfxMixerGroup: {fileID: 24300002, guid: 67ba4c6c0a576f042b93420f407f3b78, type: 2}
 --- !u!1 &512527062
 GameObject:
   m_ObjectHideFlags: 0
