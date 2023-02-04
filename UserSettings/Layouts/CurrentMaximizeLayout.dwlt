@@ -86,7 +86,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
+    m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -224,9 +224,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 18820000
-      m_LastClickedID: 0
-      m_ExpandedIDs: c0fefbff540cfcff561efcffc01efcfff444fcfff848fcffde4efcfff04efcff7254fcfff859fcff3a5bfcff3eaefcff50aefcff2cb5fcffa8c8fcffb2ccfcffc4ccfcff04d4fcff6ed4fcff16f9fcfffe50fdff1051fdfff0aafdfff6aafdff34abfdff46abfdff5e6efeffdcfafffff4ffffff94020100ba0201001a030100e20301006004010080710100c2780100fc850100
+      m_SelectedIDs: 7a2efbff
+      m_LastClickedID: -315782
+      m_ExpandedIDs: 742efbff565afbff0a5bfbff7c72fbff8272fbff8e72fbffd874fbffea74fbffc0fefbff540cfcff561efcffc01efcfff444fcfff848fcffde4efcfff04efcff7254fcfff859fcff3a5bfcff3eaefcff50aefcff2cb5fcffa8c8fcffb2ccfcffc4ccfcff04d4fcff6ed4fcff16f9fcfffe50fdff1051fdfff0aafdfff6aafdff34abfdff46abfdff5e6efeffdcfafffff4ffffff94020100ba0201001a030100e20301006004010080710100c2780100fc850100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -269,8 +269,8 @@ MonoBehaviour:
     y: 0
     width: 1102
     height: 556
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 2}
   m_Panes:
   - {fileID: 8}
@@ -749,21 +749,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Sprites
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Sprites
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Dev\Github Repos\Juice Jam II
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 3a7b0000
-    m_LastClickedID: 31546
+    m_SelectedIDs: 3e7b0000
+    m_LastClickedID: 31550
     m_ExpandedIDs: 0000000040790000427900004479000046790000487900004a7900004c7900004e7900005079000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -817,10 +817,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 18820000
-    m_LastClickedInstanceID: 33304
+    m_SelectedInstanceIDs: 7a2efbff
+    m_LastClickedInstanceID: -315782
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c623000000000000
+    m_ExpandedInstanceIDs: c62300000000000020780000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -870,7 +870,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 629
-    width: 1465
+    width: 1464
     height: 362
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:

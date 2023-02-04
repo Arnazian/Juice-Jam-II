@@ -11,4 +11,7 @@ public class UIManager : Singleton<UIManager>
 
     [SerializeField] private Image rageMeterFill;
     public Image GetRageMeterFill => rageMeterFill;
+
+    public GameObject gameOverScreen;
+    public GameObject GetGameOverScreen => gameOverScreen;
 }
