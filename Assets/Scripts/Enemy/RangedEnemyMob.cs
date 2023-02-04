@@ -16,10 +16,14 @@ public class RangedEnemyMob : BaseMovement, IEnemy
     [SerializeField] private float preferredDistance;
     [SerializeField] private float preferredDistanceBuffer;
 
+    private Animator _anim;
+    private static readonly int IsAttacking = Animator.StringToHash("IsAttacking");
+
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        _anim = GetComponent<Animator>();
         AssignPlayerTransform();
     }
 
@@ -34,17 +38,22 @@ public class RangedEnemyMob : BaseMovement, IEnemy
 
     public void HandleAttackLogic()
     {
-        if(attackCooldownCur <= 0)
-            Attack();
+        if (attackCooldownCur <= 0)
+        {
+            attackCooldownCur = Random.Range(attackCoolDownMin, attackCoolDownMax);
+            _anim.SetBool(IsAttacking, true);
+        }
         else
+        {
             attackCooldownCur -= Time.deltaTime;
+            _anim.SetBool(IsAttacking, false);
+        }
     }
 
 
     public void Attack()
     {
-        attackCooldownCur = Random.Range(attackCoolDownMin, attackCoolDownMax);
-        if( PauseMenu.Instance.IsPaused)
+        if(PauseMenu.Instance.IsPaused)
             return;
         var rotationDirection = playerTransform.position - transform.position;
         var projectileRotationZ = Mathf.Atan2(rotationDirection.y, rotationDirection.x) * Mathf.Rad2Deg - 90;

@@ -79,21 +79,21 @@ public class WaveManager : Singleton<WaveManager>
 
         if (_currentRound < 5 && !_startedArena1)
         {
-            AudioManager.Instance.PlayMusic("a1", arena1Music);
+            AudioManager.Instance.PlayMusic("a1", arena1Music, volume: 0.2f);
             _startedArena1 = true;
         }
         else if (_currentRound > 5 && !_startedArena2)
         {
             AudioManager.Instance.Stop("a1");
             AudioManager.Instance.Stop("boss1");
-            AudioManager.Instance.PlayMusic("a2", arena2Music);
+            AudioManager.Instance.PlayMusic("a2", arena2Music, volume: 0.2f);
             _startedArena2 = true;
         }
 
         if (!AudioManager.Instance.GetAudioSource("boss2Intro").isPlaying && !_startedBoss2Loop)
         {
             AudioManager.Instance.Stop("boss2Intro");
-            AudioManager.Instance.PlayMusic("boss2Loop", boss2MusicLoop);
+            AudioManager.Instance.PlayMusic("boss2Loop", boss2MusicLoop, volume: 0.2f);
             _startedBoss2Loop = true;
         }
     }
@@ -147,7 +147,7 @@ public class WaveManager : Singleton<WaveManager>
         
         AudioManager.Instance.Stop("a1");
         AudioManager.Instance.Stop("a2");
-        AudioManager.Instance.PlayMusic("boss1", boss1Music);
+        AudioManager.Instance.PlayMusic("boss1", boss1Music, volume: 0.2f);
     }
     private void StartSecondBoss()
     {
@@ -158,7 +158,7 @@ public class WaveManager : Singleton<WaveManager>
         AudioManager.Instance.Stop("a1");
         AudioManager.Instance.Stop("a2");
         AudioManager.Instance.Stop("boss1");
-        AudioManager.Instance.PlayMusic("boss2Intro", boss2Music, false);
+        AudioManager.Instance.PlayMusic("boss2Intro", boss2Music, false, volume: 0.2f);
     }
     #endregion
 }

@@ -58,6 +58,6 @@ public class MeleeCollider : MonoBehaviour
     public void PlaySfx()
     {
         var rand = Random.Range(0, meleeSounds.Count);
-        AudioManager.Instance.PlaySfx($"playerMeleeSfx{rand}", meleeSounds[rand], 1f, 0.75f, false);
+        AudioManager.Instance.PlaySfx($"playerMeleeSfx{rand}", meleeSounds[rand], 1f, 0.375f, false);
     }
 }
