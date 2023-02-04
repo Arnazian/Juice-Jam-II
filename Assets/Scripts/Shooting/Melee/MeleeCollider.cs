@@ -4,6 +4,7 @@ using UnityEngine;
 public class MeleeCollider : MonoBehaviour
 {
     [SerializeField] private List<AudioClip> meleeSounds;
+    [SerializeField] private List<AudioClip> meleeHitSounds;
     [SerializeField] private float staggerToEnemy;
     [SerializeField] private float damageToEnemy;
     [SerializeField] private float meleeRageBuildUp;
@@ -14,7 +15,6 @@ public class MeleeCollider : MonoBehaviour
     {
         if(collision.CompareTag("Enemy"))
         {
-            Debug.Log("Added enemy to hitnemies list");
             if(!hitEnemies.Contains(collision.gameObject))
                 hitEnemies.Add(collision.gameObject);
             // transform.GetComponent<IDamageable>().Damage(damage);
@@ -27,6 +27,8 @@ public class MeleeCollider : MonoBehaviour
         {
             //Camera.main.GetComponent<ScreenShake>().DoScreenShake(0.15f, 0.6f);
             go.GetComponent<IDamageable>().Damage(damageToEnemy);
+            var rand = Random.Range(0, meleeHitSounds.Count);
+            AudioManager.Instance.PlaySfx($"playerMeleeHitSfx{rand}", meleeHitSounds[rand], -1f, 0.5f, false);
             if (go.GetComponent<Rigidbody2D>() != null)
                 go.GetComponent<Rigidbody2D>().velocity = -transform.up * throwEnemyForce;
             if(go.GetComponent<EnemyStagger>() != null)
