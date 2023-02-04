@@ -1478,7 +1478,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Quit
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ff3a14d0e75509849b6a6847c3504d80, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0a9c9e481ea8836458dc7c2e4f8f88f0, type: 2}
   m_sharedMaterial: {fileID: -8314772157338105095, guid: ff3a14d0e75509849b6a6847c3504d80, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1542,7 +1542,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &4066002350715141079
@@ -1613,7 +1613,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Menu
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ff3a14d0e75509849b6a6847c3504d80, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0a9c9e481ea8836458dc7c2e4f8f88f0, type: 2}
   m_sharedMaterial: {fileID: -8314772157338105095, guid: ff3a14d0e75509849b6a6847c3504d80, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1677,7 +1677,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &4066002350908776849
@@ -1748,7 +1748,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Resume
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ff3a14d0e75509849b6a6847c3504d80, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0a9c9e481ea8836458dc7c2e4f8f88f0, type: 2}
   m_sharedMaterial: {fileID: -8314772157338105095, guid: ff3a14d0e75509849b6a6847c3504d80, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1812,7 +1812,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &4066002350993849401
