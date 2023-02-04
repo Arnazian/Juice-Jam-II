@@ -25,6 +25,7 @@ public class MeleeCollider : MonoBehaviour
     {
         foreach(GameObject go in hitEnemies)
         {
+            //Camera.main.GetComponent<ScreenShake>().DoScreenShake(0.15f, 0.6f);
             go.GetComponent<IDamageable>().Damage(damageToEnemy);
             if (go.GetComponent<Rigidbody2D>() != null)
                 go.GetComponent<Rigidbody2D>().velocity = -transform.up * throwEnemyForce;
@@ -56,7 +57,7 @@ public class MeleeCollider : MonoBehaviour
 
     public void PlaySfx()
     {
-        var rand = Random.Range(0, meleeSounds.Count - 1);
-        AudioManager.Instance.PlaySfx($"playerMeleeSfx{rand}", meleeSounds[rand], 1f, 0.75f, false);
+        var rand = Random.Range(0, meleeSounds.Count);
+        AudioManager.Instance.PlaySfx($"playerMeleeSfx{rand}", meleeSounds[rand], 1f, 0.375f, false);
     }
 }

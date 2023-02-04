@@ -971,10 +971,26 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
+    - e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: 219fa8dd5ba9cf141b2d63d6ff673036, type: 2}
+  m_AnimatorController: {fileID: 9100000, guid: c1ebebfd1adbd2e4c8d8b72b35d04d63, type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: -2369679959251635552, guid: 219fa8dd5ba9cf141b2d63d6ff673036, type: 2}
+  - m_Target: {fileID: 7998523617887001178, guid: c1ebebfd1adbd2e4c8d8b72b35d04d63, type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
@@ -1028,13 +1044,13 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scenes
+    - Assets/Resources/Materials
     m_Globs: []
     m_OriginalText: vampire
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Resources/Materials
   m_LastFoldersGridSize: -1
   m_LastProjectPath: "C:\\Users\\Arnaz\\OneDrive\\Ty\xF6p\xF6yt\xE4\\UNITY\\Juice-Jam-III"
   m_LockTracker:

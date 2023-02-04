@@ -279,6 +279,7 @@ MonoBehaviour:
   deathParticles: {fileID: 6932388814300370661, guid: c463df0fab34daa4c8d7507f2fd1f56c, type: 3}
   deathMarker: {fileID: 347646665862953251}
   myHealthBar: {fileID: 2481700521802852413, guid: bf523edf0adf6264fb4c39e400a70639, type: 3}
+  whiteColorMaterial: {fileID: 2100000, guid: 552839f6b07a0a94182f4d1d13c783e1, type: 2}
 --- !u!114 &1141203636602707760
 MonoBehaviour:
   m_ObjectHideFlags: 0

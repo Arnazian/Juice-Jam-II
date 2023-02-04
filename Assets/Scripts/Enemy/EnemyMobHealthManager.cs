@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using UnityEngine.UI;
 
 public class EnemyMobHealthManager : HealthManager
@@ -11,9 +12,12 @@ public class EnemyMobHealthManager : HealthManager
     private Image staggerBarFill;
 
     private VampireFinisher vampireFinisher;
+    private Material startMaterial;
+
 
     protected override void Awake()
     {
+        startMaterial = transform.Find("Sprite").GetComponent<SpriteRenderer>().material;
         vampireFinisher = FindObjectOfType<VampireFinisher>();
         var newHealthBar = Instantiate(myHealthBar, transform.position, Quaternion.identity);
         newHealthBar.GetComponent<FollowOtherObject>().SetObjectToFollow(gameObject);
@@ -25,9 +29,21 @@ public class EnemyMobHealthManager : HealthManager
 
     public override void Damage(float amount)
     {
+        StartCoroutine("FlashWhite", 0.05f);
+
         if(vampireFinisher.GetSuckingBlood()) { return; }
         base.Damage(amount);
         vampireFinisher.IncreaseRage(amount);
+    }
+
+    [SerializeField] private Material whiteColorMaterial;
+    IEnumerator FlashWhite(float time)
+    {
+        transform.Find("Sprite").GetComponent<SpriteRenderer>().material = whiteColorMaterial;
+
+        yield return new WaitForSeconds(time);
+
+        transform.Find("Sprite").GetComponent<SpriteRenderer>().material = startMaterial;
     }
 
     public void DamageWhileBloodSuck(float amount)
