@@ -22,7 +22,7 @@ public class BulletCollider : MonoBehaviour
     private void Awake()
     {
         var rand = Random.Range(0, shootSounds.Count - 1);
-        AudioManager.Instance.PlaySfx($"playerShootSfx{rand}", shootSounds[rand], 1.75f, 0.15f, false);
+        AudioManager.Instance.PlaySfx($"playerShootSfx{rand}", shootSounds[rand], 1.75f, 0.075f, false);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -74,7 +74,7 @@ public class BulletCollider : MonoBehaviour
         }
 
         var rand = Random.Range(0, hitSounds.Count - 1);
-        AudioManager.Instance.PlaySfx($"enemyHitSfx{rand}", hitSounds[rand], 3, 0.5f, false);
+        AudioManager.Instance.PlaySfx($"enemyHitSfx{rand}", hitSounds[rand], 3, 0.125f, false);
         other.transform.GetComponent<IDamageable>().Damage(damage);
         Instantiate(collisionParticle, transform.position, Quaternion.identity);
         Destroy(gameObject);
