@@ -11,7 +11,7 @@ public class PlayersHealth : HealthManager
     public override void Damage(float amount)
     {
         if(!isImmune)
-            base.Damage(amount);
+            base.Damage(amount * WaveManager.Instance.GetCurrentDifficultySetting.damageTakenMultiplier);
     }
 
     protected override void UpdateHealth()

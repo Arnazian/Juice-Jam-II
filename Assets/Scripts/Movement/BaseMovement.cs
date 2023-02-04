@@ -141,6 +141,11 @@ public class BaseMovement : MonoBehaviour
     {
         canMove = false;
         rb.velocity = Vector3.zero;
+        //rb.constraints = RigidbodyConstraints2D.FreezePosition;
     }
-
+    public void EnableMovement()
+    {
+        canMove = true;
+        //rb.constraints = RigidbodyConstraints2D.None;
+    }
 }
