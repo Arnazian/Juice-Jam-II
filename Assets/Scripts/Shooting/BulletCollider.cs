@@ -54,6 +54,9 @@ public class BulletCollider : MonoBehaviour
     {
         if(ownerOfBulletType != OwnerOfBulletType.Player) 
             return;
+
+        Camera.main.GetComponent<ScreenShake>().DoScreenShake(0.1f, 0.225f);
+
         if(other.gameObject.GetComponent<EnemyStagger>() != null) 
         {
             other.gameObject.GetComponent<EnemyStagger>().Stagger(staggerAmount, false);

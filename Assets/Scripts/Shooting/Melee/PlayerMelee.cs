@@ -66,6 +66,8 @@ public class PlayerMelee : MonoBehaviour
 
     void StartAttack()
     {
+        Camera.main.GetComponent<ScreenShake>().DoScreenShake(0.15f, 0.4f);
+
         // rotateTowardsCursor.SetCanRotate(false);
         movePlayer.SetCanMove(false);
         playerActionManager.SetIsAttacking(true);

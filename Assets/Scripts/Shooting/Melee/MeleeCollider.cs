@@ -25,6 +25,7 @@ public class MeleeCollider : MonoBehaviour
         Debug.Log("Damaged enemiess");
         foreach(GameObject go in hitEnemies)
         {
+            //Camera.main.GetComponent<ScreenShake>().DoScreenShake(0.15f, 0.6f);
             go.GetComponent<IDamageable>().Damage(damageToEnemy);
             if (go.GetComponent<Rigidbody2D>() != null)
                 go.GetComponent<Rigidbody2D>().velocity = -transform.up * throwEnemyForce;
