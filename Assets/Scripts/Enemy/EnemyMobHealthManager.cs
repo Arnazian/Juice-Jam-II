@@ -52,7 +52,7 @@ public class EnemyMobHealthManager : HealthManager
 
     public void DamageWhileBloodSuck(float amount)
     {
-        base.Damage(amount);
+        base.Damage(amount * WaveManager.Instance.GetCurrentDifficultySetting.damageMultiplier);
     }
 
     public void RunEnemyDeath()

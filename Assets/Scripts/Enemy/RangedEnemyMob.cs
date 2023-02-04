@@ -49,7 +49,6 @@ public class RangedEnemyMob : BaseMovement, IEnemy
         {
             attackCooldownCur -= Time.deltaTime;
             _anim.SetBool(IsAttacking, false);
-            _attackParticles.Stop(true);
         }
     }
     
