@@ -1009,7 +1009,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dontDestroyOnLoad: 1
-  fadeTime: 0.5
+  fadeTime: 0
 --- !u!95 &198430718
 Animator:
   serializedVersion: 4
