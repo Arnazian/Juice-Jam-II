@@ -43,6 +43,7 @@ public class BossHealthManager : MonoBehaviour, IDamageable
 
     void RunBossDeath()
     {
+        WaveManager.Instance.EndBossFight();
         bossHealthSlider.transform.parent.gameObject.SetActive(false);
         Destroy(gameObject);
     }

@@ -86,7 +86,7 @@ public class BulletCollider : MonoBehaviour
     {
         if (ownerOfBulletType != OwnerOfBulletType.Enemy)
             return;
-        other.transform.GetComponent<IDamageable>().Damage(damage * WaveManager.Instance.GetCurrentDifficultySetting.damageMultiplier);
+        other.transform.GetComponent<IDamageable>().Damage(damage);
         Instantiate(collisionParticle, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
