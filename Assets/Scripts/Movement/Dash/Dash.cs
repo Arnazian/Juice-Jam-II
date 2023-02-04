@@ -105,7 +105,7 @@ public class Dash : MonoBehaviour
         //I found out this is good distance formula
         float distanceModifier = 1f / (float)startI;
 
-        for(int i = 0; i <= startI; i++)
+        for(int i = 1; i <= startI; i++)
         {
             yield return new WaitForSeconds(0.005f);
             endPosition = transform.position;
@@ -113,8 +113,8 @@ public class Dash : MonoBehaviour
             Vector3 direction = Vector3.Normalize(endPosition - startPosition);
             Vector3 offset = direction * distanceModifier * Vector3.Distance(startPosition, endPosition) * i;
 
-            float shadowLiveTime = startI*(float)i/250f;
-            DashShadow.CreateDashShadow(startPosition + offset, GetComponent<SpriteRenderer>(), startRotation, shadowLiveTime);
+            float shadowLifeTime = startI*(float)i/250f;
+            DashShadow.CreateDashShadow(startPosition + offset, GetComponent<SpriteRenderer>(), startRotation, shadowLifeTime);
         }
     }
 }

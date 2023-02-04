@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b2f09641db1d0c1439b2f460181a1330
+guid: 85df8b13102d4454fa78ccb9defc9cb1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -129,34 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Main_Char_Idle_6
-      rect:
-        serializedVersion: 2
-        x: 480
-        y: 0
-        width: 80
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9abb58f21bca45a47ba0f79c43ba2346
-      internalID: -393438615
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Main_Char_Idle_0
+      name: Main_Character_Blood beam_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 80
-        height: 64
+        width: 96
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3107d8ae5a6f92e48bae43b7e01166c7
-      internalID: -1157949691
+      spriteID: 5171745790f965f42af0243d4358efac
+      internalID: 1146637670
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main_Char_Idle_1
+      name: Main_Character_Blood beam_1
       rect:
         serializedVersion: 2
-        x: 80
+        x: 96
         y: 0
-        width: 80
-        height: 64
+        width: 96
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,20 +164,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fbd671e6c2ec53342a9287de090a319a
-      internalID: -159945958
+      spriteID: dc9e91190d71ec74d94febfed70472ee
+      internalID: 1850526181
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main_Char_Idle_2
+      name: Main_Character_Blood beam_2
       rect:
         serializedVersion: 2
-        x: 160
+        x: 192
         y: 0
-        width: 80
-        height: 64
+        width: 96
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,20 +185,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 813030dec9d60a343b31d5a59ea27373
-      internalID: 1194156196
+      spriteID: d5e8f394c6635a742bdda2c7d24c3c3f
+      internalID: 167046058
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main_Char_Idle_3
+      name: Main_Character_Blood beam_3
       rect:
         serializedVersion: 2
-        x: 240
+        x: 288
         y: 0
-        width: 80
-        height: 64
+        width: 96
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,50 +206,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 682f607f671fb374b890f7ecf2e7c85a
-      internalID: -1886944633
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Main_Char_Idle_4
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 0
-        width: 80
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 10f6416bab44f5040b0d4c1e8446f194
-      internalID: -826056141
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Main_Char_Idle_5
-      rect:
-        serializedVersion: 2
-        x: 400
-        y: 0
-        width: 80
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5d83b61599966864ea0303c7dbdf2a69
-      internalID: -1794549897
+      spriteID: 5ce22b4e1bf2cd14a99abe5bdd3dcbec
+      internalID: 1365375551
       vertices: []
       indices: 
       edges: []
@@ -286,13 +223,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Main_Char_Idle_4: -826056141
-      Main_Char_Idle_6: -393438615
-      Main_Char_Idle_2: 1194156196
-      Main_Char_Idle_5: -1794549897
-      Main_Char_Idle_3: -1886944633
-      Main_Char_Idle_1: -159945958
-      Main_Char_Idle_0: -1157949691
+      Main_Character_Blood beam_3: 1365375551
+      Main_Character_Blood beam_0: 1146637670
+      Main_Character_Blood beam_2: 167046058
+      Main_Character_Blood beam_1: 1850526181
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
