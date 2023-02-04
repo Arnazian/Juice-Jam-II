@@ -35,7 +35,8 @@ public class ShootBlood : MonoBehaviour
 
     void Update()
     {
-        HandleShooting();
+        if(!PauseMenu.Instance.IsPaused)
+            HandleShooting();
     }
 
     void HandleShooting()
