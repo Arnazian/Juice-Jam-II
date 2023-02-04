@@ -307,6 +307,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
+  _attackParticles: {fileID: 0}
   projectileSpeed: 7
   projectile: {fileID: 7744099146439851529, guid: 9e4f24ef2305cf5408a4279352b51bb8, type: 3}
   shootSpawn: {fileID: 8983201567691589079}
@@ -366,6 +367,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBarFill: {fileID: 0}
   maxHealth: 350
+  hitParticles: {fileID: 2899988130206668644, guid: e676410044bdfbd44a69c5ad1e577c8e, type: 3}
   deathParticles: {fileID: 6932388814300370661, guid: c463df0fab34daa4c8d7507f2fd1f56c, type: 3}
   deathMarker: {fileID: 4672150899596433850}
   myHealthBar: {fileID: 2481700521802852413, guid: bf523edf0adf6264fb4c39e400a70639, type: 3}
@@ -396,7 +398,7 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: -624314
+  m_InstanceId: 339414
 --- !u!114 &4672150899492832441
 MonoBehaviour:
   m_ObjectHideFlags: 0

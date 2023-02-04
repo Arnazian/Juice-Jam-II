@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class EnemyMobHealthManager : HealthManager
 {
+    [SerializeField] private ParticleSystem hitParticles;
     [SerializeField] private ParticleSystem deathParticles;
     [SerializeField] private GameObject deathMarker;
     
@@ -31,8 +32,11 @@ public class EnemyMobHealthManager : HealthManager
     {
         StartCoroutine("FlashWhite", 0.05f);
 
-        if(vampireFinisher.GetSuckingBlood()) { return; }
+        if(vampireFinisher.GetSuckingBlood())
+            return;
         base.Damage(amount);
+        var particles = Instantiate(hitParticles, transform.position, Quaternion.identity);
+        particles.Play();
         vampireFinisher.IncreaseRage(amount);
     }
 
@@ -53,7 +57,6 @@ public class EnemyMobHealthManager : HealthManager
 
     public void RunEnemyDeath()
     {
-        Debug.Log("ONe enemy killed");
         Destroy(gameObject);
         var particles = Instantiate(deathParticles, transform.position, Quaternion.identity);
         particles.Play();
