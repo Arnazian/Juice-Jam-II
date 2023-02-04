@@ -20136,6 +20136,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00c0f64dfab2c1d48a1d917551aa696b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  meleeSounds:
+  - {fileID: 8300000, guid: 0b0df8bb03fb0d04d840efddbc74aa67, type: 3}
   staggerToEnemy: 30
   damageToEnemy: 28
   meleeRageBuildUp: 3

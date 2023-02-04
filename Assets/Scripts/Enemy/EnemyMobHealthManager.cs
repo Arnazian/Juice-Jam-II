@@ -29,7 +29,7 @@ public class EnemyMobHealthManager : HealthManager
 
     public override void Damage(float amount)
     {
-        StartCoroutine("FlashWhite", 0.1f);
+        StartCoroutine("FlashWhite", 0.05f);
 
         if(vampireFinisher.GetSuckingBlood()) { return; }
         base.Damage(amount);
@@ -39,8 +39,6 @@ public class EnemyMobHealthManager : HealthManager
     [SerializeField] private Material whiteColorMaterial;
     IEnumerator FlashWhite(float time)
     {
-        if (transform.Find("Sprite").GetComponent<SpriteRenderer>().material == whiteColorMaterial) yield return null;
-
         transform.Find("Sprite").GetComponent<SpriteRenderer>().material = whiteColorMaterial;
 
         yield return new WaitForSeconds(time);
