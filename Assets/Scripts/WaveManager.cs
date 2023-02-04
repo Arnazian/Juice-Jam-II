@@ -55,6 +55,10 @@ public class WaveManager : Singleton<WaveManager>
     private int _currentRoundEnemyCount = 0;
     private List<GameObject> _spawnQueue = new List<GameObject>();
 
+    private bool _startedArena1;
+    private bool _startedArena2;
+    private bool _startedBoss2Loop;
+    
     protected override void Awake()
     {
         base.Awake();
@@ -73,37 +77,40 @@ public class WaveManager : Singleton<WaveManager>
         PopulateSpawnQueue();
         DistributeSpawnQueue();
 
-        if (_currentRound < 5)
+        if (_currentRound < 5 && !_startedArena1)
         {
             AudioManager.Instance.PlayMusic("a1", arena1Music);
+            _startedArena1 = true;
         }
-        else if (_currentRound > 5)
+        else if (_currentRound > 5 && !_startedArena2)
         {
             AudioManager.Instance.Stop("a1");
             AudioManager.Instance.Stop("boss1");
             AudioManager.Instance.PlayMusic("a2", arena2Music);
+            _startedArena2 = true;
+        }
+
+        if (!AudioManager.Instance.GetAudioSource("boss2Intro").isPlaying && !_startedBoss2Loop)
+        {
+            AudioManager.Instance.Stop("boss2Intro");
+            AudioManager.Instance.PlayMusic("boss2Loop", boss2MusicLoop);
+            _startedBoss2Loop = true;
         }
     }
 
-    bool CheckIfBossRound()
+    private bool CheckIfBossRound()
     {
         if(_currentRound == bossRoundOne) 
         {
             StartFirstBoss();
             return true;
         }
-        else if (_currentRound == bossRoundTwo)
+        if (_currentRound == bossRoundTwo)
         {
             StartSecondBoss();
             return true;
         }
-        else if (_currentRound == bossRoundThree)
-        {
-            StartThirdBoss();
-            return true;
-        }
-        else 
-            return false;
+        return false;
     }
     void DistributeSpawnQueue()
     {
@@ -147,11 +154,11 @@ public class WaveManager : Singleton<WaveManager>
         var bossHealthBar = UIManager.Instance.GetBossHealthBar;
         bossHealthBar.transform.parent.gameObject.SetActive(true);
         var boss = Instantiate(secondBoss, Vector3.zero, Quaternion.identity);
-    }
-
-    private void StartThirdBoss()
-    {
-
+        
+        AudioManager.Instance.Stop("a1");
+        AudioManager.Instance.Stop("a2");
+        AudioManager.Instance.Stop("boss1");
+        AudioManager.Instance.PlayMusic("boss2Intro", boss2Music, false);
     }
     #endregion
 }

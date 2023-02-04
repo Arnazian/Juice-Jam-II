@@ -54,4 +54,11 @@ public class AudioManager : Singleton<AudioManager>
             Destroy(source.gameObject);
         }
     }
+
+    public AudioSource GetAudioSource(string id)
+    {
+        if (_currentlyPlayingClips.TryGetValue(id, out var source))
+            return source;
+        return null;
+    }
 }

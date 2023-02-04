@@ -1614,7 +1614,6 @@ GameObject:
   m_Component:
   - component: {fileID: 396341267}
   - component: {fileID: 396341268}
-  - component: {fileID: 396341269}
   m_Layer: 0
   m_Name: Audio Manager
   m_TagString: Untagged
@@ -1652,22 +1651,6 @@ MonoBehaviour:
   dontDestroyOnLoad: 1
   musicMixerGroup: {fileID: 24300002, guid: 14f5f94bc7f010b49beecc3fadb85eef, type: 2}
   sfxMixerGroup: {fileID: 24300002, guid: 67ba4c6c0a576f042b93420f407f3b78, type: 2}
---- !u!114 &396341269
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 396341266}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e475f0e7419b1d04f90e40ba81bfe93a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  music1: {fileID: 8300000, guid: 65a1b17c33bf4a349993216e0bdc0a49, type: 3}
-  music2: {fileID: 8300000, guid: 5e2c671e66f32aa4f9c9ea2ac6d81a50, type: 3}
-  sfx1: {fileID: 0}
-  sfx2: {fileID: 0}
 --- !u!1 &512527062
 GameObject:
   m_ObjectHideFlags: 0
