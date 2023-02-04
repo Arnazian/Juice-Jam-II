@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public enum OwnerOfBulletType
@@ -8,6 +9,7 @@ public enum OwnerOfBulletType
 
 public class BulletCollider : MonoBehaviour
 {
+    [SerializeField] private List<AudioClip> hitSounds;
     [SerializeField] private GameObject collisionParticle;
     [SerializeField] private OwnerOfBulletType ownerOfBulletType;
 
@@ -58,6 +60,9 @@ public class BulletCollider : MonoBehaviour
         {
             other.gameObject.GetComponent<EnemyStagger>().Stagger(staggerAmount, false);
         }
+
+        var rand = Random.Range(0, hitSounds.Count);
+        AudioManager.Instance.PlaySfx($"enemyHitSfx{rand}", hitSounds[rand], 3, 0.5f, false);
         other.transform.GetComponent<IDamageable>().Damage(damage);
         Instantiate(collisionParticle, transform.position, Quaternion.identity);
         Destroy(gameObject);
