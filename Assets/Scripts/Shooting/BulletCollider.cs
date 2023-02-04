@@ -77,7 +77,7 @@ public class BulletCollider : MonoBehaviour
 
         var rand = Random.Range(0, hitSounds.Count - 1);
         AudioManager.Instance.PlaySfx($"enemyHitSfx{rand}", hitSounds[rand], 3, 0.125f, false);
-        other.transform.GetComponent<IDamageable>().Damage(damage);
+        other.transform.GetComponent<IDamageable>().Damage(damage * WaveManager.Instance.GetCurrentDifficultySetting.damageMultiplier);
         Instantiate(collisionParticle, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
@@ -86,7 +86,7 @@ public class BulletCollider : MonoBehaviour
     {
         if (ownerOfBulletType != OwnerOfBulletType.Enemy)
             return;
-        other.transform.GetComponent<IDamageable>().Damage(damage * WaveManager.Instance.GetCurrentDifficultySetting.damageMultiplier);
+        other.transform.GetComponent<IDamageable>().Damage(damage);
         Instantiate(collisionParticle, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
