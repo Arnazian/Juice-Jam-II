@@ -9,7 +9,7 @@ public class UiButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public void OnPointerEnter(PointerEventData eventData)
     {
         var rand = Random.Range(0, 1);
-        AudioManager.Instance.PlaySfx("uiHover", hovers[rand], -1, false, false);
+        AudioManager.Instance.PlaySfx("uiHover", hovers[rand], -1, 1, false, false);
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -20,6 +20,6 @@ public class UiButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         var rand = Random.Range(0, 1);
-        AudioManager.Instance.PlaySfx("uiClick", clicks[rand], -1, false, false);
+        //AudioManager.Instance.PlaySfx("uiClick", clicks[rand], -1, false, false);
     }
 }

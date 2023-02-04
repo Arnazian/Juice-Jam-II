@@ -184,6 +184,7 @@ GameObject:
   - component: {fileID: 794120510271714800}
   - component: {fileID: 1577723832}
   - component: {fileID: 151908176}
+  - component: {fileID: 4467135839236729916}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -305,7 +306,7 @@ MonoBehaviour:
   - {x: 0.25, y: -0.25, z: 0}
   m_ShapePathHash: 1905978637
   m_Mesh: {fileID: 0}
-  m_InstanceId: 164298
+  m_InstanceId: -413246
 --- !u!114 &1577723832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -338,3 +339,18 @@ MonoBehaviour:
   breakDuration: 3
   knockStrength: 300
   knockDurationMax: 0.5
+--- !u!114 &4467135839236729916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8906093010384807374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a92e189b6ee5b045886ae9de9f64ca6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionParticle: {fileID: 5276824108466267453, guid: 59467ffc01719c74391c24cc163a56a5, type: 3}
+  collisionDamage: 0
+  staggerAmount: 0

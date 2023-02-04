@@ -283,18 +283,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1661449367, guid: 5ff6a989abfd60340bf254c621430fb2, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1847450500, guid: 5ff6a989abfd60340bf254c621430fb2, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 1956896197}
-    - target: {fileID: 3916624221195258507, guid: 5ff6a989abfd60340bf254c621430fb2, type: 3}
-      propertyPath: startOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4436093653429939216, guid: 5ff6a989abfd60340bf254c621430fb2, type: 3}
       propertyPath: m_Name
       value: Level
@@ -522,11 +514,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1388778451, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
       propertyPath: m_Size.x
-      value: 2.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1388778451, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
       propertyPath: m_Size.y
-      value: 2
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 1388778451, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
       propertyPath: m_Sprite
