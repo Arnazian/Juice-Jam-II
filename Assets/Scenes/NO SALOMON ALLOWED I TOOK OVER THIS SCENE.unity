@@ -2167,21 +2167,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4397416274777094486, guid: 8352dd0ee1f12ef498113c7ba4c43614, type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4397416274777094486, guid: 8352dd0ee1f12ef498113c7ba4c43614, type: 3}
-      propertyPath: m_Color.g
-      value: 0.87058824
-      objectReference: {fileID: 0}
     - target: {fileID: 5912213847026419985, guid: 8352dd0ee1f12ef498113c7ba4c43614, type: 3}
       propertyPath: m_Name
       value: Big Strong Ranged Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 5912213847026419985, guid: 8352dd0ee1f12ef498113c7ba4c43614, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5912213847026419994, guid: 8352dd0ee1f12ef498113c7ba4c43614, type: 3}
       propertyPath: m_RootOrder
@@ -2231,10 +2223,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1335137467}
-    - target: {fileID: 7295196015943706159, guid: 8352dd0ee1f12ef498113c7ba4c43614, type: 3}
-      propertyPath: m_InstanceId
-      value: -624314
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8352dd0ee1f12ef498113c7ba4c43614, type: 3}
 --- !u!1001 &1987563788
