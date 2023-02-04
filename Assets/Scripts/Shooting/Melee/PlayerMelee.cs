@@ -66,6 +66,7 @@ public class PlayerMelee : MonoBehaviour
 
     void StartAttack()
     {
+        meleeCollider.PlaySfx();
         // rotateTowardsCursor.SetCanRotate(false);
         movePlayer.SetCanMove(false);
         playerActionManager.SetIsAttacking(true);

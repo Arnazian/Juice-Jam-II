@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class MeleeCollider : MonoBehaviour
 {
+    [SerializeField] private List<AudioClip> meleeSounds;
     [SerializeField] private float staggerToEnemy;
     [SerializeField] private float damageToEnemy;
     [SerializeField] private float meleeRageBuildUp;
@@ -22,7 +23,6 @@ public class MeleeCollider : MonoBehaviour
 
     public void DamageEnemies()
     {
-        Debug.Log("Damaged enemiess");
         foreach(GameObject go in hitEnemies)
         {
             go.GetComponent<IDamageable>().Damage(damageToEnemy);
@@ -33,7 +33,7 @@ public class MeleeCollider : MonoBehaviour
                StaggerKnockback(go.GetComponent<EnemyStagger>());
             }
         }
-        
+
         hitEnemies.Clear();
     }
     
@@ -52,5 +52,11 @@ public class MeleeCollider : MonoBehaviour
     public void Clear()
     {
         hitEnemies.Clear();
+    }
+
+    public void PlaySfx()
+    {
+        var rand = Random.Range(0, meleeSounds.Count - 1);
+        AudioManager.Instance.PlaySfx($"playerMeleeSfx{rand}", meleeSounds[rand], 1f, 0.75f, false);
     }
 }
