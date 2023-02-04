@@ -184,6 +184,7 @@ GameObject:
   - component: {fileID: 2732398969989874023}
   - component: {fileID: 847406065}
   - component: {fileID: 9153279266761473585}
+  - component: {fileID: 6756215179806885911}
   m_Layer: 0
   m_Name: Ranged Enemy
   m_TagString: Enemy
@@ -310,7 +311,7 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: -161020
+  m_InstanceId: -413462
 --- !u!114 &847406065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -343,6 +344,21 @@ MonoBehaviour:
   breakDuration: 3
   knockStrength: 300
   knockDurationMax: 0.5
+--- !u!114 &6756215179806885911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358599819545767513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a92e189b6ee5b045886ae9de9f64ca6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionParticle: {fileID: 5276824108466267453, guid: 59467ffc01719c74391c24cc163a56a5, type: 3}
+  collisionDamage: 0
+  staggerAmount: 0
 --- !u!1 &1358599819730828826
 GameObject:
   m_ObjectHideFlags: 0

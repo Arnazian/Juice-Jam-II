@@ -123,6 +123,9 @@ public class EnemyStagger : MonoBehaviour
         staggerBarFill.fillAmount = newAmount;
     }
 
-
+    public void HitSomethingWhileFlying()
+    {
+        baseMovement.StopMovement();
+    }
     public bool GetIsStaggered() { return isStaggered; }
 }
