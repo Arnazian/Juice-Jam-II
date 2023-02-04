@@ -30,7 +30,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.2
+        time: 0.26666668
         value: 1
         inSlope: Infinity
         outSlope: Infinity
@@ -91,11 +91,11 @@ AnimationClip:
       value: {fileID: 309516505, guid: 239c6ba51bc1efc4db5373d3117600e1, type: 3}
     - time: 0.13333334
       value: {fileID: 640501510, guid: 239c6ba51bc1efc4db5373d3117600e1, type: 3}
-    - time: 0.2
-      value: {fileID: 1984177608, guid: 239c6ba51bc1efc4db5373d3117600e1, type: 3}
     - time: 0.26666668
-      value: {fileID: 1426765062, guid: 239c6ba51bc1efc4db5373d3117600e1, type: 3}
+      value: {fileID: 1984177608, guid: 239c6ba51bc1efc4db5373d3117600e1, type: 3}
     - time: 0.33333334
+      value: {fileID: 1426765062, guid: 239c6ba51bc1efc4db5373d3117600e1, type: 3}
+    - time: 0.4
       value: {fileID: -2131165714, guid: 239c6ba51bc1efc4db5373d3117600e1, type: 3}
     attribute: m_Sprite
     path: 
@@ -148,7 +148,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.34666666
+    m_StopTime: 0.41333333
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -177,7 +177,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.2
+        time: 0.26666668
         value: 1
         inSlope: Infinity
         outSlope: Infinity
@@ -248,7 +248,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.26666668
+  - time: 0.33333334
     functionName: SetRecoveringTrue
     data: 
     objectReferenceParameter: {fileID: 0}
