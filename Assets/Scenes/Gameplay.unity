@@ -271,22 +271,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 169585195, guid: 17887ae7529b27b44a4ee0ec75c4834c, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 9ca150e6faca5744cada7f11f26c36ff, type: 3}
-    - target: {fileID: 652582013, guid: 17887ae7529b27b44a4ee0ec75c4834c, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 9ca150e6faca5744cada7f11f26c36ff, type: 3}
-    - target: {fileID: 905537180, guid: 17887ae7529b27b44a4ee0ec75c4834c, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 9ca150e6faca5744cada7f11f26c36ff, type: 3}
-    - target: {fileID: 1098870525, guid: 17887ae7529b27b44a4ee0ec75c4834c, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 9ca150e6faca5744cada7f11f26c36ff, type: 3}
     - target: {fileID: 3916624221039071084, guid: 17887ae7529b27b44a4ee0ec75c4834c, type: 3}
       propertyPath: m_Name
       value: Wave Manager
@@ -344,18 +328,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2209785467923771253, guid: b83e932bc879967439eab76ce23930b1, type: 3}
-      propertyPath: m_NormalizedViewPortRect.y
-      value: 0.0019455253
-      objectReference: {fileID: 0}
-    - target: {fileID: 2209785467923771253, guid: b83e932bc879967439eab76ce23930b1, type: 3}
-      propertyPath: m_NormalizedViewPortRect.width
-      value: 0.99909174
-      objectReference: {fileID: 0}
-    - target: {fileID: 2209785467923771253, guid: b83e932bc879967439eab76ce23930b1, type: 3}
-      propertyPath: m_NormalizedViewPortRect.height
-      value: 0.99610895
-      objectReference: {fileID: 0}
     - target: {fileID: 2209785467923771255, guid: b83e932bc879967439eab76ce23930b1, type: 3}
       propertyPath: m_Name
       value: Main Camera

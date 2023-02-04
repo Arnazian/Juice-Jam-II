@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class ShootBlood : MonoBehaviour
 {
+    [SerializeField] private float staggerAmount;
     [SerializeField] private float projectileDamage = 5f;
     [SerializeField] private float projectileSpeed;
     [SerializeField] private GameObject projectile;
@@ -34,7 +35,8 @@ public class ShootBlood : MonoBehaviour
 
     void Update()
     {
-        HandleShooting();
+        if(!PauseMenu.Instance.IsPaused)
+            HandleShooting();
     }
 
     void HandleShooting()
@@ -91,5 +93,6 @@ public class ShootBlood : MonoBehaviour
         var newProjectile = Instantiate(projectile, shootSpawn.transform.position, projectileRotation);
         newProjectile.GetComponent<ProjectileFlyStraight>().speed = speed;
         newProjectile.GetComponent<BulletCollider>().damage = projectileDamage;
+        newProjectile.GetComponent<BulletCollider>().staggerAmount = staggerAmount;
     }
 }

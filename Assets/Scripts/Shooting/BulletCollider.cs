@@ -11,7 +11,8 @@ public class BulletCollider : MonoBehaviour
     [SerializeField] private GameObject collisionParticle;
     [SerializeField] private OwnerOfBulletType ownerOfBulletType;
 
-    public float damage = 100;
+    public float staggerAmount;
+    public float damage;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -52,6 +53,10 @@ public class BulletCollider : MonoBehaviour
     void EnemyCollision(Collider2D other)
     {
         if(ownerOfBulletType != OwnerOfBulletType.Player) { return; }
+        if(other.gameObject.GetComponent<EnemyStagger>() != null) 
+        {
+            other.gameObject.GetComponent<EnemyStagger>().Stagger(staggerAmount, false);
+        }
         other.transform.GetComponent<IDamageable>().Damage(damage);
         Instantiate(collisionParticle, transform.position, Quaternion.identity);
         Destroy(gameObject);
@@ -73,7 +78,6 @@ public class BulletCollider : MonoBehaviour
 
     void BulletCollision(Collider2D other)
     {
-        Instantiate(collisionParticle, transform.position, Quaternion.identity);
-        Destroy(gameObject);
+
     }
 }

@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class MeleeCollider : MonoBehaviour
 {
+    [SerializeField] private float staggerToEnemy;
     [SerializeField] private float damageToEnemy;
     [SerializeField] private float meleeRageBuildUp;
     [SerializeField] private float throwEnemyForce;
@@ -27,11 +28,27 @@ public class MeleeCollider : MonoBehaviour
             go.GetComponent<IDamageable>().Damage(damageToEnemy);
             if (go.GetComponent<Rigidbody2D>() != null)
                 go.GetComponent<Rigidbody2D>().velocity = -transform.up * throwEnemyForce;
+            if(go.GetComponent<EnemyStagger>() != null)
+            {
+               StaggerKnockback(go.GetComponent<EnemyStagger>());
+            }
         }
         
         hitEnemies.Clear();
     }
-
+    
+    private void StaggerKnockback(EnemyStagger es)
+    {
+        if (es.GetIsStaggered())
+        {
+            //es.Knockback();
+        }
+        else
+        {
+            es.Stagger(staggerToEnemy, true);
+        }
+    }
+    
     public void Clear()
     {
         hitEnemies.Clear();

@@ -21,7 +21,7 @@ public class MainMenu : MonoBehaviour
         sfxSlider.onValueChanged.AddListener(UpdateVolume);
         UpdateVolume(0f);
         LoadSettings();
-        AudioManager.Instance.PlayMusic(mainMenuMusic, true, 1f, false);
+        AudioManager.Instance.PlayMusic("menu", mainMenuMusic);
     }
 
     private void OnApplicationQuit()
@@ -32,7 +32,7 @@ public class MainMenu : MonoBehaviour
     public void Play()
     {
         TransitionManager.Instance.FadeScene("Imated Scene");
-        AudioManager.Instance.Stop(mainMenuMusic);
+        AudioManager.Instance.Stop("menu");
     }
     
     public void Quit()
