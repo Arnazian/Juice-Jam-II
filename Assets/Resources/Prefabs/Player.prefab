@@ -20409,7 +20409,7 @@ MonoBehaviour:
   projectileSpeed: 20
   projectile: {fileID: 7744099146439851529, guid: 31c36ad2529306b4b80bdb58545ade16, type: 3}
   shootSpawn: {fileID: 8313232032094458876}
-  damageToSelf: 1
+  damageToSelf: 2.5
   startShootCooldown: 0.1
   handParticles: {fileID: 2780279108739426222}
 --- !u!50 &332318632987234192
