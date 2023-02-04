@@ -134,7 +134,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 96
+        width: 99
         height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -143,7 +143,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 24062bbbcc1b0624ba4bc5c9174c0eef
+      spriteID: d2ff78b73022f454c9c08ff83e607338
       internalID: 1101310272
       vertices: []
       indices: 
@@ -153,9 +153,9 @@ TextureImporter:
       name: Main_Char_Attack_Right_1
       rect:
         serializedVersion: 2
-        x: 96
+        x: 99
         y: 0
-        width: 96
+        width: 118
         height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -164,7 +164,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d670e857afa915e4c9a273c4dc72798c
+      spriteID: 27419064651481c4c801863f8c8a2fa3
       internalID: -957997182
       vertices: []
       indices: 
@@ -174,9 +174,9 @@ TextureImporter:
       name: Main_Char_Attack_Right_2
       rect:
         serializedVersion: 2
-        x: 192
+        x: 217
         y: 0
-        width: 96
+        width: 80
         height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -185,7 +185,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8fc0769ed51f4ed458694170cf1141ca
+      spriteID: 9e368dd28135a0445b33ca26ae586fd5
       internalID: -884517944
       vertices: []
       indices: 
@@ -195,9 +195,9 @@ TextureImporter:
       name: Main_Char_Attack_Right_3
       rect:
         serializedVersion: 2
-        x: 288
+        x: 297
         y: 0
-        width: 96
+        width: 99
         height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -206,7 +206,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 047db05fc8d748444a0eff1c60e93bd8
+      spriteID: 706b19c5b6c253647bfcdce859388ebf
       internalID: -1782707810
       vertices: []
       indices: 
@@ -216,9 +216,9 @@ TextureImporter:
       name: Main_Char_Attack_Right_4
       rect:
         serializedVersion: 2
-        x: 384
+        x: 396
         y: 0
-        width: 96
+        width: 99
         height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -227,7 +227,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae9c090b35f774348b2f391a53e5d05c
+      spriteID: faa3b4f9f9a4c2c41a5f3f970700330e
       internalID: 1286893492
       vertices: []
       indices: 
