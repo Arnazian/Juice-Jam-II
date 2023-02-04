@@ -277,7 +277,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3916624221039071084, guid: 17887ae7529b27b44a4ee0ec75c4834c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3916624221039071085, guid: 17887ae7529b27b44a4ee0ec75c4834c, type: 3}
       propertyPath: m_RootOrder
@@ -402,29 +402,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b83e932bc879967439eab76ce23930b1, type: 3}
---- !u!1 &151908168 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8906093010384807374, guid: 1b277415fb2fecd4a8089594ae4d71c9, type: 3}
-  m_PrefabInstance: {fileID: 551273659}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &151908176
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 151908168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca1a5bdde643e3146a21913b94d45e29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  staggerBarMax: 50
-  staggerRecoveryMultiplier: 3
-  staggerKnockbackDurationMax: 0.1
-  breakDuration: 3
-  knockStrength: 10
-  knockDurationMax: 0.5
 --- !u!1001 &156700474
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -710,18 +687,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -4314241966313782183, guid: 1b277415fb2fecd4a8089594ae4d71c9, type: 3}
-      propertyPath: m_Mass
-      value: 15
-      objectReference: {fileID: 0}
     - target: {fileID: 794120510271714800, guid: 1b277415fb2fecd4a8089594ae4d71c9, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 317964036}
-    - target: {fileID: 5383843876199218206, guid: 1b277415fb2fecd4a8089594ae4d71c9, type: 3}
-      propertyPath: maxHealth
-      value: 5000
-      objectReference: {fileID: 0}
     - target: {fileID: 8906093010384807365, guid: 1b277415fb2fecd4a8089594ae4d71c9, type: 3}
       propertyPath: m_RootOrder
       value: 18
@@ -769,6 +738,10 @@ PrefabInstance:
     - target: {fileID: 8906093010384807374, guid: 1b277415fb2fecd4a8089594ae4d71c9, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8906093010384807374, guid: 1b277415fb2fecd4a8089594ae4d71c9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b277415fb2fecd4a8089594ae4d71c9, type: 3}
@@ -1061,10 +1034,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1886698391, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
-      propertyPath: staggerToEnemy
-      value: 15
-      objectReference: {fileID: 0}
     - target: {fileID: 332318632987233901, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -1112,18 +1081,6 @@ PrefabInstance:
     - target: {fileID: 332318632987234194, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 4098626456807953694, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
-      propertyPath: damageToSelf
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4098626456807953694, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
-      propertyPath: projectileSpeed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 4098626456807953694, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
-      propertyPath: startShootCooldown
-      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
