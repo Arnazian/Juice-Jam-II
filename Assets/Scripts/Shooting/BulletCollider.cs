@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public enum OwnerOfBulletType
 {
@@ -9,12 +11,19 @@ public enum OwnerOfBulletType
 
 public class BulletCollider : MonoBehaviour
 {
+    [SerializeField] private List<AudioClip> shootSounds;
     [SerializeField] private List<AudioClip> hitSounds;
     [SerializeField] private GameObject collisionParticle;
     [SerializeField] private OwnerOfBulletType ownerOfBulletType;
 
     public float staggerAmount;
     public float damage;
+
+    private void Awake()
+    {
+        var rand = Random.Range(0, shootSounds.Count);
+        AudioManager.Instance.PlaySfx($"playerShootSfx{rand}", shootSounds[rand], 1.75f, 0.15f, false);
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
