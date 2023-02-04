@@ -35,6 +35,11 @@ public class PauseMenu : Singleton<PauseMenu>
     {
         Play();
         TransitionManager.Instance.FadeScene("Main Menu");
+        AudioManager.Instance.Stop("a1");
+        AudioManager.Instance.Stop("a2");
+        AudioManager.Instance.Stop("boss1");
+        AudioManager.Instance.Stop("boss2Intro");
+        AudioManager.Instance.Stop("boss2Loop");
     }
     
     public void Quit()
