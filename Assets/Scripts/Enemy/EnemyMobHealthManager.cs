@@ -10,7 +10,7 @@ public class EnemyMobHealthManager : HealthManager
     
     [SerializeField] private GameObject myHealthBar;
 
-    private Image staggerBarFill;
+    private Slider staggerBarFill;
 
     private VampireFinisher vampireFinisher;
     private Material startMaterial;
@@ -23,7 +23,10 @@ public class EnemyMobHealthManager : HealthManager
         var newHealthBar = Instantiate(myHealthBar, transform.position, Quaternion.identity);
         newHealthBar.GetComponent<FollowOtherObject>().SetObjectToFollow(gameObject);
         healthBarFill = newHealthBar.GetComponent<FollowOtherObject>().GetHealthImageFill();
+        healthBarFill.maxValue = maxHealth;
+        healthBarFill.value = currentHealth;
         staggerBarFill = newHealthBar.GetComponent<FollowOtherObject>().GetStaggerImageFill();
+        
 
         base.Awake();
     }
@@ -79,5 +82,5 @@ public class EnemyMobHealthManager : HealthManager
     }
 
 
-    public Image GetStaggerBar() { return staggerBarFill; }
+    public Slider GetStaggerBar() { return staggerBarFill; }
 }

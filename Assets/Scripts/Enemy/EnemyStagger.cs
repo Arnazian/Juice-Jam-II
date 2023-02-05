@@ -11,7 +11,7 @@ public class EnemyStagger : MonoBehaviour
 
     private EnemyMobHealthManager healthManager;
     private BaseMovement baseMovement;
-    private Image staggerBarFill;
+    private Slider staggerBarFill;
 
     [SerializeField] private float staggerKnockbackDurationMax;
     private float staggerKnockbackDurationCur;
@@ -30,6 +30,8 @@ public class EnemyStagger : MonoBehaviour
         healthManager = GetComponent<EnemyMobHealthManager>();
         baseMovement = GetComponent<BaseMovement>();
         staggerBarFill = healthManager.GetStaggerBar();
+        staggerBarFill.maxValue = staggerBarMax;
+        staggerBarFill.value = staggerBarCur;
         UpdateStaggerBar(); 
     }
 
@@ -119,8 +121,8 @@ public class EnemyStagger : MonoBehaviour
     }    
     void UpdateStaggerBar()
     {
-        float newAmount = staggerBarCur / staggerBarMax;
-        staggerBarFill.fillAmount = newAmount;
+        // float newAmount = staggerBarCur / staggerBarMax;
+        staggerBarFill.value = staggerBarCur;
     }
 
     public void HitSomethingWhileFlying()

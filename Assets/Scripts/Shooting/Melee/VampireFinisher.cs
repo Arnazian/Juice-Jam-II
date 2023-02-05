@@ -32,8 +32,9 @@ public class VampireFinisher : MonoBehaviour
 
     private PlayersHealth playerHealth;
     private Animator _anim;
-    
-    private Image rageMeterFill;
+
+    private Slider rageMeter;
+    //private Image rageMeterFill;
     private float currentRage;
     private static readonly int IsBloodSucking = Animator.StringToHash("IsBloodSucking");
 
@@ -43,7 +44,9 @@ public class VampireFinisher : MonoBehaviour
         playerActionManager = GetComponent<PlayerActionManager>();
         _anim = GetComponent<Animator>();
         bloodSuckParticles.SetActive(false);
-        rageMeterFill = UIManager.Instance.GetRageMeterFill;
+        rageMeter = UIManager.Instance.GetRageMeterFill;
+        rageMeter.maxValue = maxRageAmount;
+        rageMeter.value = currentRage;
         UpdateGraphics();
         playerHealth = GetComponent<PlayersHealth>();
         playerCollision = GetComponent<Collider2D>();
@@ -158,8 +161,7 @@ public class VampireFinisher : MonoBehaviour
 
     private void UpdateGraphics()
     {
-        var fillAmount = currentRage / maxRageAmount;
-        rageMeterFill.fillAmount = fillAmount;
+        rageMeter.value = currentRage;
     }
 
     public bool GetSuckingBlood() => suckingBlood;
