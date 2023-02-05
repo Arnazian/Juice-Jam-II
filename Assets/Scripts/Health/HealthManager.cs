@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class HealthManager : MonoBehaviour, IDamageable
 {
-    public Image healthBarFill;
+    public Slider healthBarFill;
     public float maxHealth;
 
     protected float currentHealth;
@@ -34,7 +34,6 @@ public class HealthManager : MonoBehaviour, IDamageable
 
     protected virtual void UpdateHealth()
     {
-        var fillAmount = currentHealth / maxHealth;
-        healthBarFill.fillAmount = fillAmount;
+        healthBarFill.value = currentHealth;
     }
 }
