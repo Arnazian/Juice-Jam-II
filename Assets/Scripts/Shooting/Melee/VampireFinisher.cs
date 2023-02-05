@@ -157,7 +157,7 @@ public class VampireFinisher : MonoBehaviour
         UpdateGraphics();
         if(currentRage >= maxRageAmount)
         {
-            if(!pressEPrompt.activeSelf) { AudioManager.Instance.PlaySfx($"rageFullClip", rageFullClip, 1, 0.4f, false, false); }
+            if(!pressEPrompt.activeSelf) { AudioManager.Instance.PlaySfx($"rageFullClip", rageFullClip, 1, 0.15f, false, false); }
             rageFullParticles.SetActive(true);
             pressEPrompt.SetActive(true);
             
