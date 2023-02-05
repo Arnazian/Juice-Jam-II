@@ -293,7 +293,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 4944652152957873950}
   m_HandleRect: {fileID: 0}
@@ -709,8 +709,8 @@ MonoBehaviour:
   isShooting: 1
   shootPoint: {fileID: 4786455698886668334}
   bulletPrefab: {fileID: 6557699443393811041, guid: d9a9cbd9836d7bc4aa0e02c1b4f61e5c, type: 3}
-  shootIntervalMin: 1
-  shootIntervalMax: 1.5
+  shootIntervalMin: 2
+  shootIntervalMax: 3
 --- !u!114 &39600389714286919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -738,9 +738,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.5}
+  m_Offset: {x: 0, y: -0.1696876}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.6569891
 --- !u!1 &4020613891600068839
 GameObject:
   m_ObjectHideFlags: 0
@@ -819,7 +819,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 6884312794480324806}
   m_HandleRect: {fileID: 0}
@@ -973,8 +973,8 @@ MonoBehaviour:
   isShooting: 1
   shootPoint: {fileID: 1644639812515998909}
   bulletPrefab: {fileID: 6557699443393811041, guid: d9a9cbd9836d7bc4aa0e02c1b4f61e5c, type: 3}
-  shootIntervalMin: 1
-  shootIntervalMax: 1.5
+  shootIntervalMin: 2
+  shootIntervalMax: 3
 --- !u!114 &707922010971969636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1002,9 +1002,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.5}
+  m_Offset: {x: 0, y: -0.1696876}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.6569891
 --- !u!1 &4460114571099361643
 GameObject:
   m_ObjectHideFlags: 0
@@ -1217,7 +1217,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 7854262011829895501}
   m_HandleRect: {fileID: 0}
@@ -1502,8 +1502,8 @@ MonoBehaviour:
   isShooting: 1
   shootPoint: {fileID: 7931460809144047321}
   bulletPrefab: {fileID: 6557699443393811041, guid: d9a9cbd9836d7bc4aa0e02c1b4f61e5c, type: 3}
-  shootIntervalMin: 1
-  shootIntervalMax: 1.5
+  shootIntervalMin: 2
+  shootIntervalMax: 3
 --- !u!114 &7931460807838625650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1531,9 +1531,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.5}
+  m_Offset: {x: 0, y: -0.1696876}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.6569891
 --- !u!1 &7931460809144047320
 GameObject:
   m_ObjectHideFlags: 0
