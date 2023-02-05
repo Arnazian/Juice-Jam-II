@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -35,5 +36,6 @@ public class HealthManager : MonoBehaviour, IDamageable
     protected virtual void UpdateHealth()
     {
         healthBarFill.value = currentHealth;
+        healthBarFill.GetComponentInChildren<TMP_Text>().text = $"{currentHealth}/{maxHealth}";
     }
 }
