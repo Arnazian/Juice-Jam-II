@@ -11,7 +11,6 @@ public class SawMill : MonoBehaviour
     [SerializeField] private float damageCooldown = 1.5f;
 
     private float _damageTimer;
-
     private bool _isAtPointOne = false;
     
     private void Update()

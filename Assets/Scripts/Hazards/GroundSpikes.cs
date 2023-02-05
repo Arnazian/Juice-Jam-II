@@ -10,9 +10,19 @@ public class GroundSpikes : MonoBehaviour
     private float _damageTimer;
     private float _activeTimer;
 
+    private Animator _anim;
+    private static readonly int Active = Animator.StringToHash("Active");
+
     private void Awake()
     {
         _activeTimer = timeUntilActive;
+        _anim = GetComponent<Animator>();
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        _anim.SetBool(Active, true);
+        Invoke(nameof(ResetSpikes), _anim.GetCurrentAnimatorClipInfo(0).Length);
     }
 
     private void OnTriggerStay2D(Collider2D col)
@@ -34,9 +44,10 @@ public class GroundSpikes : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    private void ResetSpikes()
     {
         _damageTimer = damageCooldown;
         _activeTimer = timeUntilActive;
+        _anim.SetBool(Active, false);
     }
 }
