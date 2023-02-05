@@ -23,6 +23,7 @@ public class FB_StageOne : Stage1Base
 
     [SerializeField] private float constantShootIntervalMin;
     [SerializeField] private float constantShootIntervalMax;
+    [SerializeField] private ParticleSystem spawnParticles;
     private float constantShootIntervalCur;
 
     [Header("SPAWN MINIONS Variables")]
@@ -102,6 +103,7 @@ public class FB_StageOne : Stage1Base
         if(constantShootIntervalCur <= 0)
         {
             Instantiate(constantShootProjectile, constantShootPoint.position, constantShootPoint.rotation);
+            spawnParticles.Play();
             float newInterval = Random.Range(constantShootIntervalMin, constantShootIntervalMax);
             constantShootIntervalCur = newInterval;
         }
