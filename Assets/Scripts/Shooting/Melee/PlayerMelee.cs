@@ -66,6 +66,8 @@ public class PlayerMelee : MonoBehaviour
 
     void StartAttack()
     {
+        if(PauseMenu.Instance.IsPaused)
+            return;
         Camera.main.GetComponent<ScreenShake>().DoScreenShake(0.15f, 0.4f);
 
         meleeCollider.PlaySfx();
