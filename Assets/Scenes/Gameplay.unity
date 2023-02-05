@@ -130,14 +130,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1341112350, guid: b83e932bc879967439eab76ce23930b1, type: 3}
-      propertyPath: m_AssetsPPU
-      value: 24
-      objectReference: {fileID: 0}
-    - target: {fileID: 2209785467923771253, guid: b83e932bc879967439eab76ce23930b1, type: 3}
-      propertyPath: orthographic size
-      value: 5.3333335
-      objectReference: {fileID: 0}
     - target: {fileID: 2209785467923771253, guid: b83e932bc879967439eab76ce23930b1, type: 3}
       propertyPath: m_NormalizedViewPortRect.y
       value: 0.0019455253
@@ -270,10 +262,6 @@ PrefabInstance:
     - target: {fileID: 4436093653429939219, guid: 5ff6a989abfd60340bf254c621430fb2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6542936214063456479, guid: 5ff6a989abfd60340bf254c621430fb2, type: 3}
-      propertyPath: startOnAwake
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ff6a989abfd60340bf254c621430fb2, type: 3}
@@ -1526,18 +1514,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 324968713591981289, guid: ffb5d37d385033348ae9d7934d7ef541, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4066002349015931645, guid: ffb5d37d385033348ae9d7934d7ef541, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4066002349015931645, guid: ffb5d37d385033348ae9d7934d7ef541, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4066002349460321896, guid: ffb5d37d385033348ae9d7934d7ef541, type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4066002350358335408, guid: ffb5d37d385033348ae9d7934d7ef541, type: 3}
