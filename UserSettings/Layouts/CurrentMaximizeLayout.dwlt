@@ -537,9 +537,15 @@ MonoBehaviour:
   m_Position:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: {x: 157.0479, y: 75.73769, z: 0.19235891}
     speed: 2
     m_Value: {x: 157.0479, y: 75.73769, z: 0.19235891}
+=======
+    m_Target: {x: -0.68658394, y: -1.6397316, z: -0.06746894}
+    speed: 2
+    m_Value: {x: -0.68658394, y: -1.6397316, z: -0.06746894}
+>>>>>>> parent of 5551280 (changes)
 =======
     m_Target: {x: -0.68658394, y: -1.6397316, z: -0.06746894}
     speed: 2
@@ -602,9 +608,15 @@ MonoBehaviour:
   m_Size:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: 47.35195
     speed: 2
     m_Value: 47.35195
+=======
+    m_Target: 9.049308
+    speed: 2
+    m_Value: 9.049308
+>>>>>>> parent of 5551280 (changes)
 =======
     m_Target: 9.049308
     speed: 2
@@ -810,6 +822,7 @@ MonoBehaviour:
   m_FolderTreeState:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 64790000
     m_LastClickedID: 31076
@@ -817,11 +830,16 @@ MonoBehaviour:
 =======
 =======
 >>>>>>> parent of 5551280 (changes)
+=======
+>>>>>>> parent of 5551280 (changes)
     scrollPos: {x: 0, y: 105}
     m_SelectedIDs: 3a7d0000
     m_LastClickedID: 32058
     m_ExpandedIDs: 00000000207d0000227d0000247d0000267d0000387d000068810000f09a0000d29e000000ca9a3b
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 5551280 (changes)
+=======
 >>>>>>> parent of 5551280 (changes)
 =======
 >>>>>>> parent of 5551280 (changes)
@@ -888,6 +906,9 @@ MonoBehaviour:
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c623000006560100a68a00006099040000000000ea860000e2fa0600eefa0600
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 5551280 (changes)
+=======
 >>>>>>> parent of 5551280 (changes)
 =======
 >>>>>>> parent of 5551280 (changes)
@@ -978,9 +999,12 @@ MonoBehaviour:
     m_IsLocked: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LastSelectedObjectID: 120040
 --- !u!114 &13
 =======
+=======
+>>>>>>> parent of 5551280 (changes)
 =======
 >>>>>>> parent of 5551280 (changes)
   m_LastSelectedObjectID: -3458970
