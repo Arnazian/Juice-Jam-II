@@ -7,7 +7,10 @@ using UnityEngine.UI;
 public class VampireFinisher : MonoBehaviour
 {
     public bool CanSuckBlood => currentRage >= maxRageAmount;
-    
+
+    [SerializeField] private AudioClip rageFullClip;
+    [SerializeField] private GameObject rageFullParticles;
+    [SerializeField] private GameObject pressEPrompt;
     [SerializeField] private GameObject bloodSuckParticles;
     [SerializeField] private GameObject bloodExplosionParticles;
     [SerializeField] private BloodCheckCollider bloodCheckCollider;
@@ -84,7 +87,7 @@ public class VampireFinisher : MonoBehaviour
 
         currentRage = 0f;
         CheckRageMeter();
-        
+        bloodSuckParticles.SetActive(true);
         GetComponent<MovePlayer>().SetCanMove(false);
         playerActionManager.SetIsFinishing(true);
         //playerHealth.SetImmuneStatus(true);
@@ -129,6 +132,7 @@ public class VampireFinisher : MonoBehaviour
         _anim.SetBool(IsBloodSucking, false);
 
         GetComponent<MovePlayer>().SetCanMove(true);
+        bloodSuckParticles.SetActive(false);
         //playerHealth.SetImmuneStatus(false);
     }
 
@@ -153,9 +157,16 @@ public class VampireFinisher : MonoBehaviour
         UpdateGraphics();
         if(currentRage >= maxRageAmount)
         {
+            if(!pressEPrompt.activeSelf) { AudioManager.Instance.PlaySfx($"rageFullClip", rageFullClip, 1, 0.15f, false, false); }
+            rageFullParticles.SetActive(true);
+            pressEPrompt.SetActive(true);
+            
+            
         }
         else
         {
+            rageFullParticles.SetActive(false);
+            pressEPrompt.SetActive(false);
         }
     }
 
@@ -191,7 +202,8 @@ public class VampireFinisher : MonoBehaviour
         { 
             currentRage = maxRageAmount;
             rageDiminishCur = rageDiminishMax * 3;
-            
+
+
             CheckRageMeter();
             return;
         }

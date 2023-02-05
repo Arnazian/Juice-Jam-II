@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,7 +9,7 @@ public class HealthManager : MonoBehaviour, IDamageable
 
     protected float currentHealth;
 
-    protected virtual void Awake()
+    protected virtual void Start()
     {
         currentHealth = maxHealth;
         UpdateHealth();
@@ -35,5 +36,7 @@ public class HealthManager : MonoBehaviour, IDamageable
     protected virtual void UpdateHealth()
     {
         healthBarFill.value = currentHealth;
+        if(healthBarFill.transform.parent.GetComponentInChildren<TMP_Text>() != null)
+            healthBarFill.transform.parent.GetComponentInChildren<TMP_Text>().text = $"{currentHealth}/{maxHealth}";
     }
 }

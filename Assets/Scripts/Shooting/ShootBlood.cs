@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Rendering.Universal;
+// using UnityEngine.Rendering.Universal;
 
 public class ShootBlood : MonoBehaviour
 {
@@ -15,7 +15,7 @@ public class ShootBlood : MonoBehaviour
     [SerializeField] private float damageToSelf;
     [SerializeField] private float startShootCooldown = 1;
     [SerializeField] private ParticleSystem handParticles;
-    [SerializeField] private Light2D handLight;
+    [SerializeField] private UnityEngine.Rendering.Universal.Light2D handLight;
     private float shootCooldown;
     private PlayerActionManager playerActionManager;
 

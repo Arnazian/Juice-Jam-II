@@ -7,7 +7,9 @@ public class EnemyMobHealthManager : HealthManager
     [SerializeField] private ParticleSystem hitParticles;
     [SerializeField] private ParticleSystem deathParticles;
     [SerializeField] private GameObject deathMarker;
-    
+    [SerializeField] private GameObject[] deathSplatter;
+    [SerializeField] private GameObject getHitSplatter;
+
     [SerializeField] private GameObject myHealthBar;
 
     private Slider staggerBarFill;
@@ -16,7 +18,7 @@ public class EnemyMobHealthManager : HealthManager
     private Material startMaterial;
 
 
-    protected override void Awake()
+    protected override void Start()
     {
         startMaterial = transform.Find("Sprite").GetComponent<SpriteRenderer>().material;
         vampireFinisher = FindObjectOfType<VampireFinisher>();
@@ -28,7 +30,7 @@ public class EnemyMobHealthManager : HealthManager
         staggerBarFill = newHealthBar.GetComponent<FollowOtherObject>().GetStaggerImageFill();
         
 
-        base.Awake();
+        base.Start();
     }
 
     public override void Damage(float amount)
@@ -42,6 +44,7 @@ public class EnemyMobHealthManager : HealthManager
         float difficultyAdjustedDamage = rageAdjustedDamage * WaveManager.Instance.GetCurrentDifficultySetting.damageMultiplier;
 
         base.Damage(difficultyAdjustedDamage);
+        Instantiate(getHitSplatter, transform.position, Quaternion.Euler(0, 0, Random.Range(0, 360)));
         var particles = Instantiate(hitParticles, transform.position, Quaternion.identity);
         particles.Play();
     }
@@ -63,10 +66,14 @@ public class EnemyMobHealthManager : HealthManager
 
     public void RunEnemyDeath()
     {
-        Destroy(gameObject);
+        Camera _camera = Camera.main;
+        _camera.GetComponent<ScreenShake>().DoScreenShake(0.4f, 0.75f);
+        int i = Random.Range(0, deathSplatter.Length - 1);
+        Instantiate(deathSplatter[i], transform.position, Quaternion.Euler(0, 0, Random.Range(0, 360)));        
         var particles = Instantiate(deathParticles, transform.position, Quaternion.identity);
         particles.Play();
         WaveManager.Instance.EnemyMobDeath();
+        Destroy(gameObject);
     }
     
     public void SetDeathMarker(bool newStatus)

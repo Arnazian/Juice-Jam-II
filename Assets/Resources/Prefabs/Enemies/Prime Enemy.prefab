@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &347646664628413898
 Transform:
   m_ObjectHideFlags: 0
@@ -184,6 +184,7 @@ GameObject:
   - component: {fileID: 1141203636602707760}
   - component: {fileID: 347646664175275384}
   - component: {fileID: 347646664930198928}
+  - component: {fileID: 7406511698380889465}
   m_Layer: 0
   m_Name: Prime Enemy
   m_TagString: Enemy
@@ -277,8 +278,12 @@ MonoBehaviour:
   healthBarFill: {fileID: 0}
   maxHealth: 500
   hitParticles: {fileID: 2899988130206668644, guid: e676410044bdfbd44a69c5ad1e577c8e, type: 3}
-  deathParticles: {fileID: 6932388814300370661, guid: c463df0fab34daa4c8d7507f2fd1f56c, type: 3}
+  deathParticles: {fileID: 7905387449251605651, guid: 202f9af397d62f14a9ee52cc0225c84b, type: 3}
   deathMarker: {fileID: 347646665862953251}
+  deathSplatter:
+  - {fileID: 1084013972447625923, guid: 7ee3c1079c02fdc4db1ad389c9f89c59, type: 3}
+  - {fileID: 3621585101358978076, guid: 29d056f091e0a794da8feb1f9980232e, type: 3}
+  getHitSplatter: {fileID: 4948504458264106411, guid: b2fe1559e756b5649a7f694fba7e67ca, type: 3}
   myHealthBar: {fileID: 2481700521802852413, guid: bf523edf0adf6264fb4c39e400a70639, type: 3}
   whiteColorMaterial: {fileID: 2100000, guid: 552839f6b07a0a94182f4d1d13c783e1, type: 2}
 --- !u!114 &1141203636602707760
@@ -307,7 +312,7 @@ MonoBehaviour:
   - {x: 0.25, y: -0.25, z: 0}
   m_ShapePathHash: 1905978637
   m_Mesh: {fileID: 0}
-  m_InstanceId: 339326
+  m_InstanceId: -4405234
 --- !u!114 &347646664175275384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -340,6 +345,26 @@ MonoBehaviour:
   breakDuration: 3
   knockStrength: 300
   knockDurationMax: 0.5
+--- !u!95 &7406511698380889465
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9172665467320209166}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0825d444e4fe3344ba5aabffc361f127, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &9172665467368988493
 GameObject:
   m_ObjectHideFlags: 0
@@ -366,7 +391,7 @@ Transform:
   m_GameObject: {fileID: 9172665467368988493}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9172665467320209157}
@@ -413,8 +438,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 0d5fb5f75feeb8d40935095344e9c831, type: 3}
-  m_Color: {r: 1, g: 0.8703704, b: 0, a: 1}
+  m_Sprite: {fileID: 958641286, guid: 7dfc22473e8992643a51c4ae0e78a3dc, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
