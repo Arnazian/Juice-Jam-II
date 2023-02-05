@@ -29907,8 +29907,7 @@ MonoBehaviour:
   meleeSounds:
   - {fileID: 8300000, guid: 0b0df8bb03fb0d04d840efddbc74aa67, type: 3}
   meleeHitSounds:
-  - {fileID: 8300000, guid: 1a3d5bc178bd1a14a9fae2a0ef5eaaad, type: 3}
-  - {fileID: 8300000, guid: 7a2bded878bd02a44983fb099059e296, type: 3}
+  - {fileID: 8300000, guid: 0974610252a557d408abff62e195f782, type: 3}
   staggerToEnemy: 60
   damageToEnemy: 15
   rageAmount: 40
