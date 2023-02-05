@@ -84,7 +84,7 @@ public class VampireFinisher : MonoBehaviour
 
         currentRage = 0f;
         CheckRageMeter();
-        
+        bloodSuckParticles.SetActive(true);
         GetComponent<MovePlayer>().SetCanMove(false);
         playerActionManager.SetIsFinishing(true);
         //playerHealth.SetImmuneStatus(true);
@@ -129,6 +129,7 @@ public class VampireFinisher : MonoBehaviour
         _anim.SetBool(IsBloodSucking, false);
 
         GetComponent<MovePlayer>().SetCanMove(true);
+        bloodSuckParticles.SetActive(false);
         //playerHealth.SetImmuneStatus(false);
     }
 
