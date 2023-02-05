@@ -34,7 +34,7 @@ public class MeleeCollider : MonoBehaviour
             }
             FindObjectOfType<VampireFinisher>().IncreaseRage(rageAmount);
             var rand = Random.Range(0, meleeHitSounds.Count);
-            AudioManager.Instance.PlaySfx($"playerMeleeHitSfx{rand}", meleeHitSounds[rand], -1f, 0.5f, false);
+            AudioManager.Instance.PlaySfx($"playerMeleeHitSfx{rand}", meleeHitSounds[rand], 0, 0.2f, false, false);
             if (go.GetComponent<Rigidbody2D>() != null)
                 go.GetComponent<Rigidbody2D>().velocity = -transform.up * throwEnemyForce;
       

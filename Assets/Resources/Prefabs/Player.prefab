@@ -20250,11 +20250,10 @@ MonoBehaviour:
   meleeSounds:
   - {fileID: 8300000, guid: 0b0df8bb03fb0d04d840efddbc74aa67, type: 3}
   meleeHitSounds:
-  - {fileID: 8300000, guid: 2c695ab2d445c0441b6315cce21aac3e, type: 3}
-  - {fileID: 8300000, guid: c2f46a3869c6ed14aa9b12d7027c1096, type: 3}
+  - {fileID: 8300000, guid: 0974610252a557d408abff62e195f782, type: 3}
   staggerToEnemy: 30
   damageToEnemy: 15
-  rageAmount: 30
+  rageAmount: 40
   meleeRageBuildUp: 3
   throwEnemyForce: 3
 --- !u!68 &1886698389
@@ -20522,7 +20521,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c7a0925943d9bd4dac50cc1950598d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rageAmount: 30
+  rageAmount: 10
   staggerAmount: 10
   projectileDamage: 5
   projectileSpeed: 20
@@ -20662,8 +20661,8 @@ MonoBehaviour:
   suckBloodIntervalMax: 0.3
   suckBloodDuration: 2.5
   maxRageAmount: 500
-  rageDiminishMax: 0
-  rageDiminishMultiplier: 0
+  rageDiminishMax: 1
+  rageDiminishMultiplier: 10
 --- !u!114 &1924373974
 MonoBehaviour:
   m_ObjectHideFlags: 0
