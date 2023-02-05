@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering.Universal;
 
 public class ShootBlood : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class ShootBlood : MonoBehaviour
     [SerializeField] private float damageToSelf;
     [SerializeField] private float startShootCooldown = 1;
     [SerializeField] private ParticleSystem handParticles;
+    [SerializeField] private Light2D handLight;
     private float shootCooldown;
     private PlayerActionManager playerActionManager;
 
@@ -68,6 +70,7 @@ public class ShootBlood : MonoBehaviour
         {
             handParticles.Clear();
             handParticles.Play();
+            handLight.intensity = 5;
         }
 
         _isShooting = true;
@@ -78,6 +81,7 @@ public class ShootBlood : MonoBehaviour
     private void StopShooting()
     {
         handParticles.Stop();
+        handLight.intensity = 0;
         _isShooting = false;
         anim.SetBool(IsFiring, _isShooting);
     }
