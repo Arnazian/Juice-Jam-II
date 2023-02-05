@@ -185,6 +185,7 @@ public class VampireFinisher : MonoBehaviour
         if (currentRage >= maxRageAmount) 
         { 
             currentRage = maxRageAmount;
+            StopCoroutine(CoroutineContinueRageDiminish(timeForRageDiminish));
             StartCoroutine(CoroutineContinueRageDiminish(10f));
             CheckRageMeter();
             return;
