@@ -2677,14 +2677,11 @@ MonoBehaviour:
   - {fileID: 8543847778492868407}
   - {fileID: 1132218910949727343}
   - {fileID: 4451889495254779595}
-  bossRoundOne: 5
-  bossRoundTwo: 10
-  bossRoundThree: 15
+  bossRoundOne: 10
+  bossRoundTwo: 50
+  bossRoundThree: 60
   wave:
     enemiesByRound:
-    - list:
-      - weight: 100
-        prefab: {fileID: 8906093010384807374, guid: 1b277415fb2fecd4a8089594ae4d71c9, type: 3}
     - list:
       - weight: 100
         prefab: {fileID: 8906093010384807374, guid: 1b277415fb2fecd4a8089594ae4d71c9, type: 3}
@@ -2694,21 +2691,23 @@ MonoBehaviour:
       - weight: 30
         prefab: {fileID: 1358599819545767513, guid: 72d111ca147f8904ab0ac8da50518f54, type: 3}
     - list:
-      - weight: 60
+      - weight: 100
+        prefab: {fileID: 1358599819545767513, guid: 7e31fca000165614184b5e6c16ea1102, type: 3}
+    - list:
+      - weight: 30
         prefab: {fileID: 8906093010384807374, guid: 1b277415fb2fecd4a8089594ae4d71c9, type: 3}
       - weight: 40
         prefab: {fileID: 1358599819545767513, guid: 72d111ca147f8904ab0ac8da50518f54, type: 3}
-    - list: []
+      - weight: 30
+        prefab: {fileID: 1358599819545767513, guid: 7e31fca000165614184b5e6c16ea1102, type: 3}
     - list:
-      - weight: 60
+      - weight: 100
         prefab: {fileID: 9172665467320209166, guid: ed3edc198b7d4fb46a2135e65ecb1937, type: 3}
     - list:
       - weight: 40
-        prefab: {fileID: 8906093010384807374, guid: 1b277415fb2fecd4a8089594ae4d71c9, type: 3}
-      - weight: 30
-        prefab: {fileID: 1358599819545767513, guid: 72d111ca147f8904ab0ac8da50518f54, type: 3}
-      - weight: 30
         prefab: {fileID: 9172665467320209166, guid: ed3edc198b7d4fb46a2135e65ecb1937, type: 3}
+      - weight: 60
+        prefab: {fileID: 1358599819545767513, guid: 7e31fca000165614184b5e6c16ea1102, type: 3}
     - list:
       - weight: 100
         prefab: {fileID: 5912213847026419985, guid: 8352dd0ee1f12ef498113c7ba4c43614, type: 3}
@@ -2718,16 +2717,17 @@ MonoBehaviour:
       - weight: 50
         prefab: {fileID: 9172665467320209166, guid: ed3edc198b7d4fb46a2135e65ecb1937, type: 3}
     - list:
-      - weight: 60
-        prefab: {fileID: 8906093010384807374, guid: 1b277415fb2fecd4a8089594ae4d71c9, type: 3}
-      - weight: 18
-        prefab: {fileID: 1358599819545767513, guid: 72d111ca147f8904ab0ac8da50518f54, type: 3}
-      - weight: 2
-        prefab: {fileID: 9172665467320209166, guid: ed3edc198b7d4fb46a2135e65ecb1937, type: 3}
-      - weight: 2
+      - weight: 20
         prefab: {fileID: 5912213847026419985, guid: 8352dd0ee1f12ef498113c7ba4c43614, type: 3}
-      - weight: 0
-        prefab: {fileID: 0}
+      - weight: 20
+        prefab: {fileID: 9172665467320209166, guid: ed3edc198b7d4fb46a2135e65ecb1937, type: 3}
+      - weight: 20
+        prefab: {fileID: 8906093010384807374, guid: 1b277415fb2fecd4a8089594ae4d71c9, type: 3}
+      - weight: 20
+        prefab: {fileID: 1358599819545767513, guid: 72d111ca147f8904ab0ac8da50518f54, type: 3}
+      - weight: 20
+        prefab: {fileID: 1358599819545767513, guid: 7e31fca000165614184b5e6c16ea1102, type: 3}
+    - list: []
     - list:
       - weight: 60
         prefab: {fileID: 8906093010384807374, guid: 1b277415fb2fecd4a8089594ae4d71c9, type: 3}
@@ -2827,39 +2827,28 @@ MonoBehaviour:
         prefab: {fileID: 5912213847026419985, guid: 8352dd0ee1f12ef498113c7ba4c43614, type: 3}
       - weight: 1
         prefab: {fileID: 1358599819545767513, guid: 6bf4489b07af94b4ba88e57bcbad760b, type: 3}
-    - list:
-      - weight: 60
-        prefab: {fileID: 8906093010384807374, guid: 1b277415fb2fecd4a8089594ae4d71c9, type: 3}
-      - weight: 18
-        prefab: {fileID: 1358599819545767513, guid: 72d111ca147f8904ab0ac8da50518f54, type: 3}
-      - weight: 2
-        prefab: {fileID: 9172665467320209166, guid: ed3edc198b7d4fb46a2135e65ecb1937, type: 3}
-      - weight: 2
-        prefab: {fileID: 5912213847026419985, guid: 8352dd0ee1f12ef498113c7ba4c43614, type: 3}
-      - weight: 1
-        prefab: {fileID: 1358599819545767513, guid: 6bf4489b07af94b4ba88e57bcbad760b, type: 3}
-    amountOfEnemiesPerRound: 0200000005000000050000000a0000000000000001000000080000000100000004000000120000000d00000009000000050000000200000002000000080000000b0000000c0000001400000019000000
+    amountOfEnemiesPerRound: 040000000400000003000000050000000100000004000000060000000400000008000000000000000d00000009000000050000000200000002000000080000000b0000000c0000001400000019000000
     spawnTime:
+    - 3
+    - 3
     - 3.5
     - 3.5
     - 3.5
-    - 3.25
-    - 3.25
-    - 3.25
-    - 3
-    - 3
-    - 3
-    - 2.5
-    - 2.5
-    - 2.5
-    - 2
-    - 2
-    - 2
-    - 1
-    - 1
-    - 1
-    - 0.25
-    - 0.25
+    - 3.5
+    - 4
+    - 4
+    - 5
+    - 4
+    - 4
+    - 4
+    - 4
+    - 4
+    - 4
+    - 4
+    - 4
+    - 4
+    - 4
+    - 33
   startOnAwake: 1
   firstBossActive: 0
 --- !u!1 &3259873805180279850

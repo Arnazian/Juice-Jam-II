@@ -5149,7 +5149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 776ebf40df3219742b8651529bfa6464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bossMaxHealth: 7500
+  bossMaxHealth: 6000
 --- !u!114 &797589253577617314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5163,9 +5163,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageThresholds:
-  - 7500
-  - 5000
-  - 2500
+  - 6000
+  - 4000
+  - 2000
 --- !u!114 &3408038805476487934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5220,15 +5220,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b14a0c6852e559147865794252d0978c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fullTurnDuration: 1.5
+  fullTurnDuration: 1.8
   rotator: {fileID: 6989197382369365977}
-  rotatingShootInterval: 0.1
+  rotatingShootInterval: 0.15
   constantShootProjectile: {fileID: 6557699443393811041, guid: d9a9cbd9836d7bc4aa0e02c1b4f61e5c, type: 3}
   constantShootPoint: {fileID: 5935600822227555751}
   constantShootDurationMin: 3
   constantShootDurationMax: 5
   constantShootIntervalMin: 0.3
-  constantShootIntervalMax: 0.1
+  constantShootIntervalMax: 0.6
 --- !u!114 &2424280378785409
 MonoBehaviour:
   m_ObjectHideFlags: 0
