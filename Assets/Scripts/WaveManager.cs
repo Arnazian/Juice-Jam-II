@@ -65,7 +65,8 @@ public class WaveManager : Singleton<WaveManager>
     {
         base.Awake();
         if (startOnAwake) 
-            StartNewWave();          
+            StartNewWave();
+        difficulty = DifficultyManager.Instance.GetCurrentDifficulty;
     }
 
     void StartNewWave()
