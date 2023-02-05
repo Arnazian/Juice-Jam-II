@@ -25244,7 +25244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBarFill: {fileID: 0}
-  maxHealth: 250
+  maxHealth: 300
 --- !u!114 &7794975990393462036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25342,7 +25342,7 @@ MonoBehaviour:
   projectileSpeed: 20
   projectile: {fileID: 7744099146439851529, guid: 31c36ad2529306b4b80bdb58545ade16, type: 3}
   shootSpawn: {fileID: 8313232032094458876}
-  damageToSelf: 2.5
+  damageToSelf: 2
   startShootCooldown: 0.1
   handParticles: {fileID: 2780279108739426222}
   handLight: {fileID: 1794818559}
@@ -25475,9 +25475,9 @@ MonoBehaviour:
   launchSpeed: 25
   suckBloodIntervalMax: 0.3
   suckBloodDuration: 2.5
-  maxRageAmount: 1000
+  maxRageAmount: 750
   rageDiminishMax: 1
-  rageDiminishMultiplier: 25
+  rageDiminishMultiplier: 15
 --- !u!114 &1924373974
 MonoBehaviour:
   m_ObjectHideFlags: 0
