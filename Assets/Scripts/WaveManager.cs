@@ -156,6 +156,11 @@ public class WaveManager : Singleton<WaveManager>
         var bossHealthBar = UIManager.Instance.GetBossHealthBar;
         bossHealthBar.transform.parent.gameObject.SetActive(true);
         var boss = Instantiate(firstBoss, Vector3.zero, Quaternion.identity);
+
+        Camera.main.GetComponent<LookAtBoss>().howLongStayAtBoss = 2f;
+        Camera.main.GetComponent<ScreenShake>().DoScreenShake(2f, 1.5f);
+        StartCoroutine(Camera.main.GetComponent<LookAtBoss>().DoLookAtBoss(boss.transform.position));
+
         roundNumberText.gameObject.SetActive(false);
         AudioManager.Instance.Stop("a1");
         AudioManager.Instance.Stop("a2");
