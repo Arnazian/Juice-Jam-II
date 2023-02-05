@@ -91,13 +91,16 @@ public class WaveManager : Singleton<WaveManager>
             AudioManager.Instance.PlayMusic("a2", arena2Music, volume: 0.2f);
             _startedArena2 = true;
         }
-
-        if (!AudioManager.Instance.GetAudioSource("boss2Intro").isPlaying && !_startedBoss2Loop)
+        if(AudioManager.Instance.GetAudioSource("boss2Intro") != null)
         {
-            AudioManager.Instance.Stop("boss2Intro");
-            AudioManager.Instance.PlayMusic("boss2Loop", boss2MusicLoop, volume: 0.2f);
-            _startedBoss2Loop = true;
+            if (!AudioManager.Instance.GetAudioSource("boss2Intro").isPlaying && !_startedBoss2Loop)
+            {
+                AudioManager.Instance.Stop("boss2Intro");
+                AudioManager.Instance.PlayMusic("boss2Loop", boss2MusicLoop, volume: 0.2f);
+                _startedBoss2Loop = true;
+            }
         }
+ 
     }
 
     private bool CheckIfBossRound()

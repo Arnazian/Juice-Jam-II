@@ -30,10 +30,14 @@ public class BossHealthManager : MonoBehaviour, IDamageable
     }
     public void Damage(float damageAmount)
     {
-        bossCurHealth -= damageAmount;
+
+        float rageAdjustedDamage = _vampireFinisher.GetRageAdjustedDamage(damageAmount);
+        float difficultyAdjustedDamage = rageAdjustedDamage * WaveManager.Instance.GetCurrentDifficultySetting.damageMultiplier;
+
+        bossCurHealth -= difficultyAdjustedDamage;
+
         bossStateController.CheckStageThreshold();
         UpdateHealthValues(); 
-        _vampireFinisher.IncreaseRage(damageAmount);
     }
     public void Heal(float healAmount)
     {

@@ -34,10 +34,13 @@ public class EnemyMobHealthManager : HealthManager
 
         if(vampireFinisher.GetSuckingBlood())
             return;
-        base.Damage(amount);
+
+        float rageAdjustedDamage = vampireFinisher.GetRageAdjustedDamage(amount);
+        float difficultyAdjustedDamage = rageAdjustedDamage * WaveManager.Instance.GetCurrentDifficultySetting.damageMultiplier;
+
+        base.Damage(difficultyAdjustedDamage);
         var particles = Instantiate(hitParticles, transform.position, Quaternion.identity);
         particles.Play();
-        vampireFinisher.IncreaseRage(amount);
     }
 
     [SerializeField] private Material whiteColorMaterial;
