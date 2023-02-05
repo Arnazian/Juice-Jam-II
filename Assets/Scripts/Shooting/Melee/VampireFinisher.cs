@@ -18,9 +18,11 @@ public class VampireFinisher : MonoBehaviour
     private float suckBloodIntervalCur;
     [SerializeField] private float suckBloodDuration;
     [FormerlySerializedAs("rageAmountMax")] [SerializeField] private float maxRageAmount;
-    [SerializeField] private float timeForRageDiminish;
+    [SerializeField] private float rageDiminishMax;
+    private float rageDiminishCur;  
     [SerializeField] private float rageDiminishMultiplier;
     private bool isRageDiminishing = true;
+    private bool canRageDiminish = true;
 
     private Collider2D playerCollision;
     private GameObject myTarget;
@@ -55,6 +57,7 @@ public class VampireFinisher : MonoBehaviour
         }
         MoveToTarget();
         SuckBloodTimer();
+        RageDiminishing();
 
         if(isRageDiminishing && currentRage > 0)
         {
@@ -172,10 +175,10 @@ public class VampireFinisher : MonoBehaviour
 
     IEnumerator CoroutineContinueRageDiminish(float timeToWait)
     {
-        Debug.Log("Started coroutine");
+        canRageDiminish = false;
         yield return new WaitForSeconds(timeToWait);
         isRageDiminishing = true;
-        Debug.Log("Ended Coroutine");
+        canRageDiminish = true;
     }
     #region Increase Decrease And Set Rage
     public void IncreaseRage(float amount) 
@@ -185,16 +188,30 @@ public class VampireFinisher : MonoBehaviour
         if (currentRage >= maxRageAmount) 
         { 
             currentRage = maxRageAmount;
-            StopCoroutine(CoroutineContinueRageDiminish(timeForRageDiminish));
-            StartCoroutine(CoroutineContinueRageDiminish(10f));
+            rageDiminishCur = rageDiminishMax * 3;
+            
             CheckRageMeter();
             return;
         }
         else
         {
-            StartCoroutine(CoroutineContinueRageDiminish(timeForRageDiminish));
+            rageDiminishCur = rageDiminishMax;
             CheckRageMeter();
         }       
+    }
+
+    void RageDiminishing()
+    {
+        if(isRageDiminishing) { return; }
+
+        if(rageDiminishCur >= 0)
+        {
+            rageDiminishCur -= Time.deltaTime;
+        }
+        else
+        {
+            isRageDiminishing = true;
+        }
     }
     public void DecreaseRage(float amount) 
     { 
