@@ -1,3 +1,5 @@
+using UnityEngine.UI;
+
 public class PlayersHealth : HealthManager
 {
     private bool isImmune = false;
@@ -5,6 +7,8 @@ public class PlayersHealth : HealthManager
     protected override void Awake()
     {
         healthBarFill = UIManager.Instance.GetPlayerHealthBarFill;
+        healthBarFill.maxValue = maxHealth;
+        healthBarFill.value = currentHealth;
         UIManager.Instance.GetGameOverScreen.SetActive(false);
         base.Awake();
     }

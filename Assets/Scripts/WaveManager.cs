@@ -55,6 +55,8 @@ public class WaveManager : Singleton<WaveManager>
     private int _currentRoundEnemyCount = 0;
     private List<GameObject> _spawnQueue = new List<GameObject>();
 
+    public bool firstBossActive = false;
+
     private bool _startedArena1;
     private bool _startedArena2;
     private bool _startedBoss2Loop;
@@ -73,7 +75,7 @@ public class WaveManager : Singleton<WaveManager>
         // if (CheckIfBossRound()) 
         //     return;
         CheckIfBossRound();
-        _currentRoundEnemyCount = wave.amountOfEnemiesPerRound[_currentRound];
+        _currentRoundEnemyCount = wave.amountOfEnemiesPerRound[_currentRound - 1];
         PopulateSpawnQueue();
         DistributeSpawnQueue();
 
@@ -89,13 +91,16 @@ public class WaveManager : Singleton<WaveManager>
             AudioManager.Instance.PlayMusic("a2", arena2Music, volume: 0.2f);
             _startedArena2 = true;
         }
-
-        if (!AudioManager.Instance.GetAudioSource("boss2Intro").isPlaying && !_startedBoss2Loop)
+        if(AudioManager.Instance.GetAudioSource("boss2Intro") != null)
         {
-            AudioManager.Instance.Stop("boss2Intro");
-            AudioManager.Instance.PlayMusic("boss2Loop", boss2MusicLoop, volume: 0.2f);
-            _startedBoss2Loop = true;
+            if (!AudioManager.Instance.GetAudioSource("boss2Intro").isPlaying && !_startedBoss2Loop)
+            {
+                AudioManager.Instance.Stop("boss2Intro");
+                AudioManager.Instance.PlayMusic("boss2Loop", boss2MusicLoop, volume: 0.2f);
+                _startedBoss2Loop = true;
+            }
         }
+ 
     }
 
     private bool CheckIfBossRound()
@@ -133,6 +138,7 @@ public class WaveManager : Singleton<WaveManager>
 
     public void EnemyMobDeath()
     {
+        if(firstBossActive) { return; }
         _currentRoundEnemyCount--;
         if (_currentRoundEnemyCount <= 0)
             StartNewWave();
@@ -141,6 +147,7 @@ public class WaveManager : Singleton<WaveManager>
     #region BossFights
     private void StartFirstBoss()
     {
+        firstBossActive = true;
         var bossHealthBar = UIManager.Instance.GetBossHealthBar;
         bossHealthBar.transform.parent.gameObject.SetActive(true);
         var boss = Instantiate(firstBoss, Vector3.zero, Quaternion.identity);
@@ -149,6 +156,26 @@ public class WaveManager : Singleton<WaveManager>
         AudioManager.Instance.Stop("a2");
         AudioManager.Instance.PlayMusic("boss1", boss1Music, volume: 0.2f);
     }
+
+    public void EndBossFight()
+    {
+        firstBossActive=false;
+        StartNewWave();
+    }
+
+    
+    public void SpawnMinions(List<GameObject> minionsToSpawn, float spawnTime)
+    {
+        List<GameObject> currentSpawns = new List<GameObject>(minionsToSpawn);
+        for (var i = minionsToSpawn.Count; i > 0; i--)
+        {
+            var spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
+            spawnPoint.spawnDuration = spawnTime;
+            spawnPoint.AddToLocalQueue(minionsToSpawn[i - 1]);
+            minionsToSpawn.RemoveAt(i - 1);
+        }
+    }
+    
     private void StartSecondBoss()
     {
         var bossHealthBar = UIManager.Instance.GetBossHealthBar;

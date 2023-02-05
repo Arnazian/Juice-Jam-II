@@ -48,7 +48,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1993371455
 Transform:
   m_ObjectHideFlags: 0
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 776ebf40df3219742b8651529bfa6464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bossMaxHealth: 1000
+  bossMaxHealth: 7500
 --- !u!114 &799679125596091432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,9 +237,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageThresholds:
-  - 1000
-  - 666
-  - 333
+  - 7500
+  - 5000
+  - 2500
 --- !u!114 &3405660174025140596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,15 +252,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58ab9ea0567afad4d8a5aa9f565de104, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fullTurnDuration: 3
+  fullTurnDuration: 2
   rotator: {fileID: 6986773125613343827}
-  rotatingShootInterval: 0.2
+  rotatingShootInterval: 0.15
   constantShootProjectile: {fileID: 6557699443393811041, guid: d9a9cbd9836d7bc4aa0e02c1b4f61e5c, type: 3}
   constantShootPoint: {fileID: 5933459116331191853}
   constantShootDurationMin: 5
   constantShootDurationMax: 9
   constantShootIntervalMin: 0.3
   constantShootIntervalMax: 1
+  minionsToSpawn:
+  - {fileID: 8906093010384807374, guid: 1b277415fb2fecd4a8089594ae4d71c9, type: 3}
+  - {fileID: 8906093010384807374, guid: 1b277415fb2fecd4a8089594ae4d71c9, type: 3}
+  - {fileID: 8906093010384807374, guid: 1b277415fb2fecd4a8089594ae4d71c9, type: 3}
+  - {fileID: 8906093010384807374, guid: 1b277415fb2fecd4a8089594ae4d71c9, type: 3}
+  minionSpawnTime: 1
+  bossSpawnRecoveryTime: 1
 --- !u!114 &4488889115670653507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,7 +315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToFacePlayer: {fileID: 4381738000340915999}
-  rotateSpeed: 0.5
+  rotateSpeed: 2
 --- !u!114 &227190028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -339,9 +346,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.5}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.25
+  m_Radius: 1.8
 --- !u!1 &6332829803339144053
 GameObject:
   m_ObjectHideFlags: 0

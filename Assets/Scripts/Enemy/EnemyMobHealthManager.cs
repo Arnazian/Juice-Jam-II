@@ -10,7 +10,7 @@ public class EnemyMobHealthManager : HealthManager
     
     [SerializeField] private GameObject myHealthBar;
 
-    private Image staggerBarFill;
+    private Slider staggerBarFill;
 
     private VampireFinisher vampireFinisher;
     private Material startMaterial;
@@ -23,7 +23,10 @@ public class EnemyMobHealthManager : HealthManager
         var newHealthBar = Instantiate(myHealthBar, transform.position, Quaternion.identity);
         newHealthBar.GetComponent<FollowOtherObject>().SetObjectToFollow(gameObject);
         healthBarFill = newHealthBar.GetComponent<FollowOtherObject>().GetHealthImageFill();
+        healthBarFill.maxValue = maxHealth;
+        healthBarFill.value = currentHealth;
         staggerBarFill = newHealthBar.GetComponent<FollowOtherObject>().GetStaggerImageFill();
+        
 
         base.Awake();
     }
@@ -34,10 +37,13 @@ public class EnemyMobHealthManager : HealthManager
 
         if(vampireFinisher.GetSuckingBlood())
             return;
-        base.Damage(amount);
+
+        float rageAdjustedDamage = vampireFinisher.GetRageAdjustedDamage(amount);
+        float difficultyAdjustedDamage = rageAdjustedDamage * WaveManager.Instance.GetCurrentDifficultySetting.damageMultiplier;
+
+        base.Damage(difficultyAdjustedDamage);
         var particles = Instantiate(hitParticles, transform.position, Quaternion.identity);
         particles.Play();
-        vampireFinisher.IncreaseRage(amount);
     }
 
     [SerializeField] private Material whiteColorMaterial;
@@ -76,5 +82,5 @@ public class EnemyMobHealthManager : HealthManager
     }
 
 
-    public Image GetStaggerBar() { return staggerBarFill; }
+    public Slider GetStaggerBar() { return staggerBarFill; }
 }

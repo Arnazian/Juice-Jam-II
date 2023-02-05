@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering.Universal;
 
 public class ShootBlood : MonoBehaviour
 {
+    [SerializeField] private float rageAmount;
     [SerializeField] private float staggerAmount;
     [SerializeField] private float projectileDamage = 5f;
     [SerializeField] private float projectileSpeed;
@@ -13,6 +15,7 @@ public class ShootBlood : MonoBehaviour
     [SerializeField] private float damageToSelf;
     [SerializeField] private float startShootCooldown = 1;
     [SerializeField] private ParticleSystem handParticles;
+    [SerializeField] private Light2D handLight;
     private float shootCooldown;
     private PlayerActionManager playerActionManager;
 
@@ -68,6 +71,7 @@ public class ShootBlood : MonoBehaviour
         {
             handParticles.Clear();
             handParticles.Play();
+            handLight.intensity = 5;
         }
 
         _isShooting = true;
@@ -78,6 +82,7 @@ public class ShootBlood : MonoBehaviour
     private void StopShooting()
     {
         handParticles.Stop();
+        handLight.intensity = 0;
         _isShooting = false;
         anim.SetBool(IsFiring, _isShooting);
     }
@@ -91,8 +96,9 @@ public class ShootBlood : MonoBehaviour
         var projectileRotationZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg-90;
         var projectileRotation =  Quaternion.Euler(0f, 0f, projectileRotationZ);
         
-        var newProjectile = Instantiate(projectile, shootSpawn.transform.position, projectileRotation);
+        var newProjectile = Instantiate(projectile, shootSpawn.transform.position, projectileRotation);       
         newProjectile.GetComponent<ProjectileFlyStraight>().speed = speed;
+        newProjectile.GetComponent<BulletCollider>().rageAmount = rageAmount;
         newProjectile.GetComponent<BulletCollider>().damage = projectileDamage;
         newProjectile.GetComponent<BulletCollider>().staggerAmount = staggerAmount;
     }

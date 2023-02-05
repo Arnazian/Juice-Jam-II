@@ -5,11 +5,11 @@ using UnityEngine.UI;
 public class FollowOtherObject : MonoBehaviour
 {
     [SerializeField] private GameObject objectToFollow;
-    [SerializeField] private Image h_Fill;
-    [SerializeField] private Image s_Fill;
+    [SerializeField] private Slider h_Fill;
+    [SerializeField] private Slider s_Fill;
 
     [Range(0.0f, 1.0f)]
-    public float distanceFromObject;
+    public float distanceFromObject; 
 
     void LateUpdate()
     {
@@ -18,7 +18,7 @@ public class FollowOtherObject : MonoBehaviour
         
     }
 
-    public Image GetHealthImageFill() => h_Fill;
-    public Image GetStaggerImageFill() => s_Fill;
+    public Slider GetHealthImageFill() => h_Fill;
+    public Slider GetStaggerImageFill() => s_Fill;
     public void SetObjectToFollow(GameObject newObject) { objectToFollow = newObject; }
 }

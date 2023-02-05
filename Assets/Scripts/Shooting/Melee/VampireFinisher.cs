@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class VampireFinisher : MonoBehaviour
 {
-    public bool CanSuckBlood => currentRage >= MaxRageAmount;
+    public bool CanSuckBlood => currentRage >= maxRageAmount;
     
     [SerializeField] private GameObject bloodSuckParticles;
     [SerializeField] private GameObject bloodExplosionParticles;
@@ -17,7 +17,12 @@ public class VampireFinisher : MonoBehaviour
     [SerializeField] private float suckBloodIntervalMax;
     private float suckBloodIntervalCur;
     [SerializeField] private float suckBloodDuration;
-    [FormerlySerializedAs("rageAmountMax")] [SerializeField] private float MaxRageAmount;
+    [FormerlySerializedAs("rageAmountMax")] [SerializeField] private float maxRageAmount;
+    [SerializeField] private float rageDiminishMax;
+    private float rageDiminishCur;  
+    [SerializeField] private float rageDiminishMultiplier;
+    private bool isRageDiminishing = true;
+    private bool canRageDiminish = true;
 
     private Collider2D playerCollision;
     private GameObject myTarget;
@@ -27,8 +32,9 @@ public class VampireFinisher : MonoBehaviour
 
     private PlayersHealth playerHealth;
     private Animator _anim;
-    
-    private Image rageMeterFill;
+
+    private Slider rageMeter;
+    //private Image rageMeterFill;
     private float currentRage;
     private static readonly int IsBloodSucking = Animator.StringToHash("IsBloodSucking");
 
@@ -38,7 +44,9 @@ public class VampireFinisher : MonoBehaviour
         playerActionManager = GetComponent<PlayerActionManager>();
         _anim = GetComponent<Animator>();
         bloodSuckParticles.SetActive(false);
-        rageMeterFill = UIManager.Instance.GetRageMeterFill;
+        rageMeter = UIManager.Instance.GetRageMeterFill;
+        rageMeter.maxValue = maxRageAmount;
+        rageMeter.value = currentRage;
         UpdateGraphics();
         playerHealth = GetComponent<PlayersHealth>();
         playerCollision = GetComponent<Collider2D>();
@@ -52,11 +60,18 @@ public class VampireFinisher : MonoBehaviour
         }
         MoveToTarget();
         SuckBloodTimer();
+        RageDiminishing();
+
+        if(isRageDiminishing && currentRage > 0)
+        {
+            currentRage -= Time.deltaTime * rageDiminishMultiplier;
+            CheckRageMeter();
+        }
     }
 
     void StartFinisher()
     {
-        if(suckingBlood || currentRage < MaxRageAmount) 
+        if(suckingBlood || currentRage < maxRageAmount) 
             return;
         
         _anim.SetBool(IsBloodSucking, true);
@@ -136,7 +151,7 @@ public class VampireFinisher : MonoBehaviour
     void CheckRageMeter()
     {
         UpdateGraphics();
-        if(currentRage >= MaxRageAmount)
+        if(currentRage >= maxRageAmount)
         {
         }
         else
@@ -146,17 +161,59 @@ public class VampireFinisher : MonoBehaviour
 
     private void UpdateGraphics()
     {
-        var fillAmount = currentRage / MaxRageAmount;
-        rageMeterFill.fillAmount = fillAmount;
+        rageMeter.value = currentRage;
     }
 
     public bool GetSuckingBlood() => suckingBlood;
 
+
+    public float GetRageAdjustedDamage(float damageToAdjust)
+    {
+        float rageMod = (currentRage / maxRageAmount) * 2.5f;
+        float adjustedDamage = damageToAdjust + damageToAdjust * rageMod;
+
+        return adjustedDamage;
+    }
+
+    IEnumerator CoroutineContinueRageDiminish(float timeToWait)
+    {
+        canRageDiminish = false;
+        yield return new WaitForSeconds(timeToWait);
+        isRageDiminishing = true;
+        canRageDiminish = true;
+    }
     #region Increase Decrease And Set Rage
     public void IncreaseRage(float amount) 
     { 
         currentRage += amount;
-        CheckRageMeter();
+        isRageDiminishing = false;
+        if (currentRage >= maxRageAmount) 
+        { 
+            currentRage = maxRageAmount;
+            rageDiminishCur = rageDiminishMax * 3;
+            
+            CheckRageMeter();
+            return;
+        }
+        else
+        {
+            rageDiminishCur = rageDiminishMax;
+            CheckRageMeter();
+        }       
+    }
+
+    void RageDiminishing()
+    {
+        if(isRageDiminishing) { return; }
+
+        if(rageDiminishCur >= 0)
+        {
+            rageDiminishCur -= Time.deltaTime;
+        }
+        else
+        {
+            isRageDiminishing = true;
+        }
     }
     public void DecreaseRage(float amount) 
     { 
@@ -167,6 +224,7 @@ public class VampireFinisher : MonoBehaviour
     public void SetRageAmount(float amount)
     {
         currentRage = amount;
+        if (currentRage > maxRageAmount) { currentRage = maxRageAmount; }
         CheckRageMeter();
     }
     #endregion
