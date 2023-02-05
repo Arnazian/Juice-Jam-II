@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 2080467241}
   - component: {fileID: 2080467240}
   m_Layer: 0
-  m_Name: SpawnProjectile
+  m_Name: SpawnProjectileParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -159,7 +159,7 @@ ParticleSystem:
   serializedVersion: 8
   lengthInSec: 1
   simulationSpeed: 10
-  stopAction: 2
+  stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
@@ -339,7 +339,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.043137256, g: 0.14117648, b: 0.33333334, a: 1}
+      maxColor: {r: 1, g: 1, b: 1, a: 0.25882354}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -1421,8 +1421,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 1, g: 1, b: 1, a: 1}
+        key0: {r: 0.6084906, g: 0.76852363, b: 1, a: 1}
+        key1: {r: 0.6117647, g: 0.76862746, b: 1, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -1438,7 +1438,7 @@ ParticleSystem:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 20624
+        atime1: 36623
         atime2: 65535
         atime3: 0
         atime4: 0
@@ -1450,8 +1450,8 @@ ParticleSystem:
         m_NumAlphaKeys: 3
       minGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 1, g: 1, b: 1, a: 1}
+        key0: {r: 0.14431292, g: 0.35023373, b: 0.6509434, a: 1}
+        key1: {r: 0.6497864, g: 0.763172, b: 0.9245283, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -1467,8 +1467,8 @@ ParticleSystem:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 65535
-        atime2: 0
+        atime1: 37201
+        atime2: 65535
         atime3: 0
         atime4: 0
         atime5: 0
@@ -1476,10 +1476,10 @@ ParticleSystem:
         atime7: 0
         m_Mode: 0
         m_NumColorKeys: 2
-        m_NumAlphaKeys: 2
+        m_NumAlphaKeys: 3
   UVModule:
     serializedVersion: 2
-    enabled: 1
+    enabled: 0
     mode: 1
     timeMode: 0
     fps: 30
@@ -4877,7 +4877,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5074,6 +5074,7 @@ MonoBehaviour:
   constantShootDurationMax: 9
   constantShootIntervalMin: 0.3
   constantShootIntervalMax: 1
+  spawnParticles: {fileID: 2080467241}
   minionsToSpawn:
   - {fileID: 8906093010384807374, guid: 1b277415fb2fecd4a8089594ae4d71c9, type: 3}
   - {fileID: 8906093010384807374, guid: 1b277415fb2fecd4a8089594ae4d71c9, type: 3}
@@ -5187,7 +5188,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6332829803339144053}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 1.85, z: 0}
   m_LocalScale: {x: 0.099999994, y: 0.099999994, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
