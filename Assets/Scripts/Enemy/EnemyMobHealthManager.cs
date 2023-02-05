@@ -66,6 +66,8 @@ public class EnemyMobHealthManager : HealthManager
 
     public void RunEnemyDeath()
     {
+        Camera _camera = Camera.main;
+        _camera.GetComponent<ScreenShake>().DoScreenShake(0.4f, 0.75f);
         int i = Random.Range(0, deathSplatter.Length - 1);
         Instantiate(deathSplatter[i], transform.position, Quaternion.Euler(0, 0, Random.Range(0, 360)));        
         var particles = Instantiate(deathParticles, transform.position, Quaternion.identity);

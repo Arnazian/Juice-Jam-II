@@ -11,9 +11,10 @@ public class MeleeCollider : MonoBehaviour
     [SerializeField] private float meleeRageBuildUp;
     [SerializeField] private float throwEnemyForce;
     private List<GameObject> hitEnemies = new List<GameObject>();
-
+    Camera _camera;
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        _camera = Camera.main;
         if(collision.CompareTag("Enemy"))
         {
             if(!hitEnemies.Contains(collision.gameObject))
@@ -37,7 +38,8 @@ public class MeleeCollider : MonoBehaviour
             AudioManager.Instance.PlaySfx($"playerMeleeHitSfx{rand}", meleeHitSounds[rand], 0, 0.2f, false, false);
             if (go.GetComponent<Rigidbody2D>() != null)
                 go.GetComponent<Rigidbody2D>().velocity = -transform.up * throwEnemyForce;
-      
+           
+            _camera.GetComponent<ScreenShake>().DoScreenShake(0.25f, 0.5f);
         }
 
         hitEnemies.Clear();
