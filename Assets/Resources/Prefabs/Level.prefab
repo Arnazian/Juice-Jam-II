@@ -1517,7 +1517,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1847450501}
   - component: {fileID: 1847450500}
-  - component: {fileID: 1847450499}
+  - component: {fileID: 156700476}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -1592,7 +1592,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1847450499
+--- !u!114 &156700476
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2851,6 +2851,7 @@ MonoBehaviour:
     - 33
   startOnAwake: 1
   firstBossActive: 0
+  winScreen: {fileID: 0}
 --- !u!1 &3259873805180279850
 GameObject:
   m_ObjectHideFlags: 0

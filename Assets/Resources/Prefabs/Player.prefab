@@ -34780,7 +34780,7 @@ MonoBehaviour:
   meleeHitSounds:
   - {fileID: 8300000, guid: 0974610252a557d408abff62e195f782, type: 3}
   staggerToEnemy: 60
-  damageToEnemy: 15
+  damageToEnemy: 30
   rageAmount: 40
   meleeRageBuildUp: 3
   throwEnemyForce: 3
@@ -39865,7 +39865,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rageAmount: 10
   staggerAmount: 20
-  projectileDamage: 5
+  projectileDamage: 10
   projectileSpeed: 20
   projectile: {fileID: 7744099146439851529, guid: 31c36ad2529306b4b80bdb58545ade16, type: 3}
   shootSpawn: {fileID: 8313232032094458876}
