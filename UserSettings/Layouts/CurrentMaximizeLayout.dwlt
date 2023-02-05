@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 101443
+  controlID: 102124
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 101444
+  controlID: 102125
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 101445
+  controlID: 102126
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -224,9 +224,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 00d5e5ff5823e8ffb023e8ffd824e8ffde24e8ff1c25e8ff2e25e8ff1aa3eaffd2a5eafffea5eaff04a6eaff70a7eaff82a7eaffccedebffe4edebffeaedebff56efebff68efebffa602ecffb802ecffa608ecff0a66ecffde58edffe26bedffa8a5edff3eb0edff5ef5edff3ed7eeff4cd7eeff68b2f0ff06b3f0ffa8b7f0ffbec1f1ffb0c8f1ffdccaf1ff3af0f1ffd240f5ffd640f5ffdc40f5ff1a41f5ff2c41f5ff6458f5ff6ac0f7ff7cc0f7ff74c7f7ffa6e3f9ff66a1faffbac6fbffec2dfcffa433fcffbca3fcff68b3fcff88b3fcffdcf7fcffd80dfdffea7ffdffbc81fdff8c83fdff9e83fdff788bfdffa2aafdffd4b3fdffd2b6fdffdeb9fdffb49bfeff10a0feff0ab3feff906effffcafaffffdcfaffff42fbffff04d900001ad900002ed9000090d90000b6d9000082c8020098c80200acc802000ec9020034c90200fe050300c05d03004c5e0300
+      m_SelectedIDs: ac47e5ff
+      m_LastClickedID: -1751124
+      m_ExpandedIDs: 8491e5ff82d3e5ffeed4e5ff00d5e5ff5823e8ffb023e8ffd824e8ffde24e8ff1c25e8ff2e25e8ff1aa3eaffd2a5eafffea5eaff04a6eaff70a7eaff82a7eaffccedebffe4edebffeaedebff56efebff68efebffa602ecffb802ecffa608ecff0a66ecffde58edffe26bedffa8a5edff3eb0edff5ef5edff3ed7eeff4cd7eeff68b2f0ff06b3f0ffa8b7f0ffbec1f1ffb0c8f1ffdccaf1ff3af0f1ffd240f5ffd640f5ffdc40f5ff1a41f5ff2c41f5ff6458f5ff6ac0f7ff7cc0f7ff74c7f7ffa6e3f9ff66a1faffbac6fbffec2dfcffa433fcffbca3fcff68b3fcff88b3fcffdcf7fcffd80dfdffea7ffdffbc81fdff8c83fdff9e83fdff788bfdffa2aafdffd4b3fdffd2b6fdffdeb9fdffb49bfeff10a0feff0ab3feff906effffcafaffffdcfaffff42fbffff04d900001ad900002ed9000090d90000b6d9000082c8020098c80200acc802000ec9020034c90200fe050300c05d03004c5e0300
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -536,9 +536,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1.9735651, y: -2.0599, z: 0.096735135}
+    m_Target: {x: 2.157086, y: 9.143074, z: 0.034944464}
     speed: 2
-    m_Value: {x: 8.0858965, y: -0.33230245, z: 0.0014774161}
+    m_Value: {x: 2.157086, y: 9.143074, z: 0.034944464}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -589,9 +589,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 7.9500666
+    m_Target: 5.233198
     speed: 2
-    m_Value: 2.1083872
+    m_Value: 5.233198
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -834,21 +834,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Sprites/props
+    - Assets/Resources/Prefabs/Hazards
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Sprites/props
+  - Assets/Resources/Prefabs/Hazards
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Dev\Github Repos\Juice Jam II
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 190}
-    m_SelectedIDs: 3aab0000
-    m_LastClickedID: 43834
+    scrollPos: {x: 0, y: 46}
+    m_SelectedIDs: 46a10000
+    m_LastClickedID: 41286
     m_ExpandedIDs: 00000000827d0000847d0000867d0000887d00008a7d00008c7d00008e7d0000907d0000927d0000587f00005e7f0000749d000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -902,8 +902,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs: ac47e5ff
+    m_LastClickedInstanceID: -1751124
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
