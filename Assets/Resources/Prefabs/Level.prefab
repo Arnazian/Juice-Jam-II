@@ -2663,6 +2663,7 @@ MonoBehaviour:
     damageTakenMultiplier: 1
   - damageMultiplier: 0.5
     damageTakenMultiplier: 1.5
+  roundNumberText: {fileID: 0}
   arena1Music: {fileID: 8300000, guid: bb6fc97721783d444a9b6ae72c58dfb0, type: 3}
   arena2Music: {fileID: 8300000, guid: 5d2d4ff540ec0f84d98fb0e97649c6b0, type: 3}
   boss1Music: {fileID: 8300000, guid: f93ce4376b9be874787023d8af208872, type: 3}
