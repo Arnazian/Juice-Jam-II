@@ -42,7 +42,7 @@ public class ScreenShake : MonoBehaviour
             elapsedTime += Time.deltaTime;
 
             transform.position += Random.insideUnitSphere * 0.1f * strengthModifier;
-            yield return null;
         }
+        yield return null;
     }
 }

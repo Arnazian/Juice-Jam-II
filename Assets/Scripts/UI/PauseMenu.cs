@@ -8,7 +8,7 @@ public class PauseMenu : Singleton<PauseMenu>
 {
     [SerializeField] private GameObject container;
     
-    public bool IsPaused { get; private set; }
+    public bool IsPaused;
     private PlayersHealth _playerHealth;
     
 
