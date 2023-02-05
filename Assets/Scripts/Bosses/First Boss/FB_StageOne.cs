@@ -128,7 +128,7 @@ public class FB_StageOne : Stage1Base
             StartConstantShooting();
         }        
     }
-    IEnumerator 
+   //  IEnumerator 
 
     
 
