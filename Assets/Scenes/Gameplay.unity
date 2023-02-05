@@ -272,6 +272,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6542936214063456479, guid: 5ff6a989abfd60340bf254c621430fb2, type: 3}
+      propertyPath: bossHint
+      value: 
+      objectReference: {fileID: 591976682}
+    - target: {fileID: 6542936214063456479, guid: 5ff6a989abfd60340bf254c621430fb2, type: 3}
       propertyPath: wave.amountOfEnemiesPerRound.Array.data[10]
       value: 0
       objectReference: {fileID: 0}
