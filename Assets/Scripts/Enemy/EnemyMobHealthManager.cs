@@ -18,7 +18,7 @@ public class EnemyMobHealthManager : HealthManager
     private Material startMaterial;
 
 
-    protected override void Awake()
+    protected override void Start()
     {
         startMaterial = transform.Find("Sprite").GetComponent<SpriteRenderer>().material;
         vampireFinisher = FindObjectOfType<VampireFinisher>();
@@ -30,7 +30,7 @@ public class EnemyMobHealthManager : HealthManager
         staggerBarFill = newHealthBar.GetComponent<FollowOtherObject>().GetStaggerImageFill();
         
 
-        base.Awake();
+        base.Start();
     }
 
     public override void Damage(float amount)

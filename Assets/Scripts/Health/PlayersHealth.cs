@@ -7,14 +7,14 @@ public class PlayersHealth : HealthManager
     private bool _isDead = false;
     public bool IsDead => _isDead;
     
-    protected override void Awake()
+    protected override void Start()
     {
         healthBarFill = UIManager.Instance.GetPlayerHealthBarFill;
         healthBarFill.maxValue = maxHealth;
         healthBarFill.value = currentHealth;
         UIManager.Instance.GetGameOverScreen.SetActive(false);
         _isDead = false;
-        base.Awake();
+        base.Start();
     }
 
     public override void Damage(float amount)

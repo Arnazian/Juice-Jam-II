@@ -9,7 +9,7 @@ public class HealthManager : MonoBehaviour, IDamageable
 
     protected float currentHealth;
 
-    protected virtual void Awake()
+    protected virtual void Start()
     {
         currentHealth = maxHealth;
         UpdateHealth();
