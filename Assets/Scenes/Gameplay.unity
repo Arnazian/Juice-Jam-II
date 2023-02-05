@@ -276,10 +276,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 591976682}
     - target: {fileID: 6542936214063456479, guid: 5ff6a989abfd60340bf254c621430fb2, type: 3}
-      propertyPath: bossRoundOne
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6542936214063456479, guid: 5ff6a989abfd60340bf254c621430fb2, type: 3}
       propertyPath: roundNumberText
       value: 
       objectReference: {fileID: 524092796}
