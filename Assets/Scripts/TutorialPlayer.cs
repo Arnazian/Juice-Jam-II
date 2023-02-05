@@ -14,11 +14,11 @@ public class TutorialPlayer : MonoBehaviour
     {
         if (other.gameObject.name == "Go to game Collider")
         {
-            SceneManager.LoadScene("Gameplay");
+            TransitionManager.Instance.FadeScene("Gameplay");
         }
         if (other.gameObject.name == "Replay tutorial Collider")
         {
-            SceneManager.LoadScene("Tutorial");
+            TransitionManager.Instance.FadeScene("Tutorial");
         }
 
         if (other.gameObject.name == "KeyPoint2")

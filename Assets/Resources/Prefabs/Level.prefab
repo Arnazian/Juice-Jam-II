@@ -2735,8 +2735,8 @@ MonoBehaviour:
         prefab: {fileID: 9172665467320209166, guid: ed3edc198b7d4fb46a2135e65ecb1937, type: 3}
       - weight: 2
         prefab: {fileID: 5912213847026419985, guid: 8352dd0ee1f12ef498113c7ba4c43614, type: 3}
-      - weight: 0
-        prefab: {fileID: 0}
+      - weight: 1
+        prefab: {fileID: 1358599819545767513, guid: 6bf4489b07af94b4ba88e57bcbad760b, type: 3}
     - list:
       - weight: 60
         prefab: {fileID: 8906093010384807374, guid: 1b277415fb2fecd4a8089594ae4d71c9, type: 3}
@@ -2746,8 +2746,8 @@ MonoBehaviour:
         prefab: {fileID: 9172665467320209166, guid: ed3edc198b7d4fb46a2135e65ecb1937, type: 3}
       - weight: 2
         prefab: {fileID: 5912213847026419985, guid: 8352dd0ee1f12ef498113c7ba4c43614, type: 3}
-      - weight: 0
-        prefab: {fileID: 0}
+      - weight: 1
+        prefab: {fileID: 1358599819545767513, guid: 6bf4489b07af94b4ba88e57bcbad760b, type: 3}
     - list:
       - weight: 60
         prefab: {fileID: 8906093010384807374, guid: 1b277415fb2fecd4a8089594ae4d71c9, type: 3}
@@ -2757,8 +2757,8 @@ MonoBehaviour:
         prefab: {fileID: 9172665467320209166, guid: ed3edc198b7d4fb46a2135e65ecb1937, type: 3}
       - weight: 2
         prefab: {fileID: 5912213847026419985, guid: 8352dd0ee1f12ef498113c7ba4c43614, type: 3}
-      - weight: 0
-        prefab: {fileID: 0}
+      - weight: 1
+        prefab: {fileID: 1358599819545767513, guid: 6bf4489b07af94b4ba88e57bcbad760b, type: 3}
     - list:
       - weight: 60
         prefab: {fileID: 8906093010384807374, guid: 1b277415fb2fecd4a8089594ae4d71c9, type: 3}
@@ -2768,8 +2768,8 @@ MonoBehaviour:
         prefab: {fileID: 9172665467320209166, guid: ed3edc198b7d4fb46a2135e65ecb1937, type: 3}
       - weight: 2
         prefab: {fileID: 5912213847026419985, guid: 8352dd0ee1f12ef498113c7ba4c43614, type: 3}
-      - weight: 0
-        prefab: {fileID: 0}
+      - weight: 1
+        prefab: {fileID: 1358599819545767513, guid: 6bf4489b07af94b4ba88e57bcbad760b, type: 3}
     - list:
       - weight: 60
         prefab: {fileID: 8906093010384807374, guid: 1b277415fb2fecd4a8089594ae4d71c9, type: 3}
@@ -2779,8 +2779,8 @@ MonoBehaviour:
         prefab: {fileID: 9172665467320209166, guid: ed3edc198b7d4fb46a2135e65ecb1937, type: 3}
       - weight: 2
         prefab: {fileID: 5912213847026419985, guid: 8352dd0ee1f12ef498113c7ba4c43614, type: 3}
-      - weight: 0
-        prefab: {fileID: 0}
+      - weight: 1
+        prefab: {fileID: 1358599819545767513, guid: 6bf4489b07af94b4ba88e57bcbad760b, type: 3}
     - list:
       - weight: 60
         prefab: {fileID: 8906093010384807374, guid: 1b277415fb2fecd4a8089594ae4d71c9, type: 3}
@@ -2790,8 +2790,8 @@ MonoBehaviour:
         prefab: {fileID: 9172665467320209166, guid: ed3edc198b7d4fb46a2135e65ecb1937, type: 3}
       - weight: 2
         prefab: {fileID: 5912213847026419985, guid: 8352dd0ee1f12ef498113c7ba4c43614, type: 3}
-      - weight: 0
-        prefab: {fileID: 0}
+      - weight: 1
+        prefab: {fileID: 1358599819545767513, guid: 6bf4489b07af94b4ba88e57bcbad760b, type: 3}
     - list:
       - weight: 60
         prefab: {fileID: 8906093010384807374, guid: 1b277415fb2fecd4a8089594ae4d71c9, type: 3}
@@ -2801,8 +2801,8 @@ MonoBehaviour:
         prefab: {fileID: 9172665467320209166, guid: ed3edc198b7d4fb46a2135e65ecb1937, type: 3}
       - weight: 2
         prefab: {fileID: 5912213847026419985, guid: 8352dd0ee1f12ef498113c7ba4c43614, type: 3}
-      - weight: 0
-        prefab: {fileID: 0}
+      - weight: 1
+        prefab: {fileID: 1358599819545767513, guid: 6bf4489b07af94b4ba88e57bcbad760b, type: 3}
     - list:
       - weight: 60
         prefab: {fileID: 8906093010384807374, guid: 1b277415fb2fecd4a8089594ae4d71c9, type: 3}
@@ -2812,8 +2812,8 @@ MonoBehaviour:
         prefab: {fileID: 9172665467320209166, guid: ed3edc198b7d4fb46a2135e65ecb1937, type: 3}
       - weight: 2
         prefab: {fileID: 5912213847026419985, guid: 8352dd0ee1f12ef498113c7ba4c43614, type: 3}
-      - weight: 0
-        prefab: {fileID: 0}
+      - weight: 1
+        prefab: {fileID: 1358599819545767513, guid: 6bf4489b07af94b4ba88e57bcbad760b, type: 3}
     - list:
       - weight: 60
         prefab: {fileID: 8906093010384807374, guid: 1b277415fb2fecd4a8089594ae4d71c9, type: 3}
@@ -2823,8 +2823,8 @@ MonoBehaviour:
         prefab: {fileID: 9172665467320209166, guid: ed3edc198b7d4fb46a2135e65ecb1937, type: 3}
       - weight: 2
         prefab: {fileID: 5912213847026419985, guid: 8352dd0ee1f12ef498113c7ba4c43614, type: 3}
-      - weight: 0
-        prefab: {fileID: 0}
+      - weight: 1
+        prefab: {fileID: 1358599819545767513, guid: 6bf4489b07af94b4ba88e57bcbad760b, type: 3}
     - list:
       - weight: 60
         prefab: {fileID: 8906093010384807374, guid: 1b277415fb2fecd4a8089594ae4d71c9, type: 3}
@@ -2834,8 +2834,8 @@ MonoBehaviour:
         prefab: {fileID: 9172665467320209166, guid: ed3edc198b7d4fb46a2135e65ecb1937, type: 3}
       - weight: 2
         prefab: {fileID: 5912213847026419985, guid: 8352dd0ee1f12ef498113c7ba4c43614, type: 3}
-      - weight: 0
-        prefab: {fileID: 0}
+      - weight: 1
+        prefab: {fileID: 1358599819545767513, guid: 6bf4489b07af94b4ba88e57bcbad760b, type: 3}
     amountOfEnemiesPerRound: 0200000005000000050000000a0000000000000001000000080000000100000004000000120000000d00000009000000050000000200000002000000080000000b0000000c0000001400000019000000
     spawnTime:
     - 3.5
