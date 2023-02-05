@@ -1537,14 +1537,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 650124240, guid: ffb5d37d385033348ae9d7934d7ef541, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -0.00024414062
-      objectReference: {fileID: 0}
-    - target: {fileID: 2025291740, guid: ffb5d37d385033348ae9d7934d7ef541, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0.00024414062
-      objectReference: {fileID: 0}
     - target: {fileID: 4066002350358335408, guid: ffb5d37d385033348ae9d7934d7ef541, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1632,6 +1624,18 @@ PrefabInstance:
     - target: {fileID: 4066002350358335412, guid: ffb5d37d385033348ae9d7934d7ef541, type: 3}
       propertyPath: m_Name
       value: HUD
+      objectReference: {fileID: 0}
+    - target: {fileID: 4066002350678733964, guid: ffb5d37d385033348ae9d7934d7ef541, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4066002350715141073, guid: ffb5d37d385033348ae9d7934d7ef541, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4066002350908776851, guid: ffb5d37d385033348ae9d7934d7ef541, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffb5d37d385033348ae9d7934d7ef541, type: 3}
