@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
@@ -32,6 +33,8 @@ public class WaveManager : Singleton<WaveManager>
     
     [SerializeField] private Difficulty difficulty;
     [SerializeField] private List<DifficultySetting> difficultySettings;
+
+    [SerializeField] private TMP_Text roundNumberText;
     
     [SerializeField] private AudioClip arena1Music;
     [SerializeField] private AudioClip arena2Music;
@@ -101,7 +104,8 @@ public class WaveManager : Singleton<WaveManager>
                 _startedBoss2Loop = true;
             }
         }
- 
+
+        roundNumberText.text = $"Round {_currentRound}";
     }
 
     private bool CheckIfBossRound()
