@@ -2415,7 +2415,7 @@ MonoBehaviour:
     - 0.25
     - 0.25
   startOnAwake: 1
-  firstBossActive: 1
+  firstBossActive: 0
 --- !u!1 &3259873805180279850
 GameObject:
   m_ObjectHideFlags: 0
