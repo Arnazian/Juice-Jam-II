@@ -24,8 +24,11 @@ public class EnemyStagger : MonoBehaviour
     private float knockDurationCur;
     private bool isKnocked = false;
 
+    private Rigidbody2D rb;
+
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         staggerBarCur = 0; 
         healthManager = GetComponent<EnemyMobHealthManager>();
         baseMovement = GetComponent<BaseMovement>();
@@ -106,6 +109,8 @@ public class EnemyStagger : MonoBehaviour
 
     IEnumerator CoroutineDoKnockBack()
     {
+
+        Debug.Log("Knockbac");
         Vector3 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
         Vector3 knockbackDirection = (transform.position - playerPos).normalized;
 
@@ -113,11 +118,13 @@ public class EnemyStagger : MonoBehaviour
         StopBreak();
         baseMovement.StopMovement();
         isKnocked = true;
-        GetComponent<Rigidbody2D>().AddForce(knockbackDirection * knockStrength, ForceMode2D.Impulse);
-        // GetComponent<Rigidbody2D>().velocity = knockbackDirection * knockStrength;
-        isKnocked = false;
+        rb.AddForce(knockbackDirection * knockStrength, ForceMode2D.Impulse);
+        //rb.velocity = knockbackDirection * knockStrength;;
+        
         yield return new WaitForSeconds(knockDurationMax);
+        isKnocked = false;
         baseMovement.SetCanMove(true);
+        Debug.Log("Finished knockback");
     }    
     void UpdateStaggerBar()
     {
