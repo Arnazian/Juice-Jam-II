@@ -20,13 +20,13 @@ public class UiButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         var rand = Random.Range(0, 1);
         AudioManager.Instance.PlaySfx("uiHover", hovers[rand], -1, 1, false, false);
-        transform.DOMoveY(_defaultY + 10, 0.5f);
+        transform.DOMoveY(_defaultY + 10, 0.5f).SetUpdate(true);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         AudioManager.Instance.Stop("uiHover");
-        transform.DOMoveY(_defaultY - 10, 0.5f);
+        transform.DOMoveY(_defaultY - 10, 0.5f).SetUpdate(true);
     }
     
     public void OnPointerClick(PointerEventData eventData)
