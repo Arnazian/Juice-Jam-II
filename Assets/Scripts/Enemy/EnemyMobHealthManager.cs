@@ -7,7 +7,9 @@ public class EnemyMobHealthManager : HealthManager
     [SerializeField] private ParticleSystem hitParticles;
     [SerializeField] private ParticleSystem deathParticles;
     [SerializeField] private GameObject deathMarker;
-    
+    [SerializeField] private GameObject[] deathSplatter;
+    [SerializeField] private GameObject getHitSplatter;
+
     [SerializeField] private GameObject myHealthBar;
 
     private Slider staggerBarFill;
@@ -42,6 +44,7 @@ public class EnemyMobHealthManager : HealthManager
         float difficultyAdjustedDamage = rageAdjustedDamage * WaveManager.Instance.GetCurrentDifficultySetting.damageMultiplier;
 
         base.Damage(difficultyAdjustedDamage);
+        Instantiate(getHitSplatter, transform.position, Quaternion.Euler(0, 0, Random.Range(0, 360)));
         var particles = Instantiate(hitParticles, transform.position, Quaternion.identity);
         particles.Play();
     }
@@ -63,10 +66,12 @@ public class EnemyMobHealthManager : HealthManager
 
     public void RunEnemyDeath()
     {
-        Destroy(gameObject);
+        int i = Random.Range(0, deathSplatter.Length - 1);
+        Instantiate(deathSplatter[i], transform.position, Quaternion.Euler(0, 0, Random.Range(0, 360)));        
         var particles = Instantiate(deathParticles, transform.position, Quaternion.identity);
         particles.Play();
         WaveManager.Instance.EnemyMobDeath();
+        Destroy(gameObject);
     }
     
     public void SetDeathMarker(bool newStatus)
