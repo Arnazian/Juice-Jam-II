@@ -12,6 +12,8 @@ public class FB_SmallBossHealth : MonoBehaviour, IDamageable
     [SerializeField] private Slider healthBar;
     [SerializeField] private GameObject deathParticles;
 
+    bool isDying = false;
+
     void Start()
     {
      
@@ -33,7 +35,7 @@ public class FB_SmallBossHealth : MonoBehaviour, IDamageable
     }
     public void Damage(float damage)
     {
-        myHealthCur -= damage;
+        myHealthCur -= damage * 2;
         healthBar.value = myHealthCur;
 
         if(myHealthCur <= 0)
@@ -44,8 +46,12 @@ public class FB_SmallBossHealth : MonoBehaviour, IDamageable
 
     void Die()
     {
+        if(isDying) { return; }
+        isDying = true;
+        FindObjectOfType<FB_StageTwo>().KillOneBoss();
+        // FindObjectOfTypeGetComponent<FB_StageTwo>().KillOneBoss();
         Instantiate(deathParticles, transform.position, Quaternion.identity);
-        bossHealthManager.Damage(myHealthMax);
+        //bossHealthManager.Damage(myHealthMax);
         Destroy(gameObject);
     }
 }

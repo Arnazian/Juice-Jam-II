@@ -7,6 +7,7 @@ public class FB_StageTwo : Stage2Base
 
     private SpriteRenderer mainBossSprite;
     private Collider2D mainBossCollider;
+    private int bossesAlive = 3;
 
     private void Start()
     {
@@ -27,6 +28,16 @@ public class FB_StageTwo : Stage2Base
         mainBossSprite.enabled = true;
         mainBossCollider.enabled = true;
         stageActive = false;
+    }
+
+    public void KillOneBoss()
+    {
+        bossesAlive--;
+        Debug.Log(bossesAlive);
+        if(bossesAlive <= 0)
+        {
+            GetComponent<BossStateController>().StartStageThree();
+        }
     }
     #endregion
 }

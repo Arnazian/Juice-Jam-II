@@ -187,6 +187,13 @@ public class WaveManager : Singleton<WaveManager>
             minionsToSpawn.RemoveAt(i - 1);
         }
     }
+
+    public void SpawnSingleMinion(GameObject minionToSpawn, float spawnTime)
+    {
+        var spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
+        spawnPoint.spawnDuration = spawnTime;
+        spawnPoint.AddToLocalQueue(minionToSpawn);
+    }
     
     private void StartSecondBoss()
     {

@@ -31,6 +31,8 @@ public class FB_StageOne : Stage1Base
     [SerializeField] private float minionSpawnTime;
     [SerializeField] private float bossSpawnRecoveryTime;
 
+
+
     private ProjectileSpawner projectileSpawner;
     private FacePlayer facePlayer;
 
@@ -50,6 +52,7 @@ public class FB_StageOne : Stage1Base
         {
             DoConstantShoot();
         }
+
     }
 
     void StageLogic()
@@ -128,7 +131,7 @@ public class FB_StageOne : Stage1Base
             StartConstantShooting();
         }        
     }
-   //  IEnumerator 
+
 
     
 

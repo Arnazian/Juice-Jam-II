@@ -2669,7 +2669,7 @@ MonoBehaviour:
   boss1Music: {fileID: 8300000, guid: f93ce4376b9be874787023d8af208872, type: 3}
   boss2Music: {fileID: 8300000, guid: 7d85713938cab8645afa6aabcbc01209, type: 3}
   boss2MusicLoop: {fileID: 8300000, guid: f6c5228504137d94f83a3d2459edb249, type: 3}
-  firstBoss: {fileID: 4381738000340915999, guid: 47b61f8f94e59ca4f9745158c3d2d857, type: 3}
+  firstBoss: {fileID: 4379631479093464213, guid: b2f98eabd75be3749b98da83392743e4, type: 3}
   secondBoss: {fileID: 4317016093076274747, guid: 3949b84d130dea2468c5c3a3cd9edbb7, type: 3}
   spawnPoints:
   - {fileID: 2000880030590937512}
