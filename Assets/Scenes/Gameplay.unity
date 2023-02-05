@@ -132,23 +132,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2209785467923771253, guid: b83e932bc879967439eab76ce23930b1, type: 3}
       propertyPath: orthographic size
-      value: 5.625
+      value: 5.3333335
       objectReference: {fileID: 0}
     - target: {fileID: 2209785467923771253, guid: b83e932bc879967439eab76ce23930b1, type: 3}
       propertyPath: m_NormalizedViewPortRect.x
-      value: 0
+      value: 0.0010940919
       objectReference: {fileID: 0}
     - target: {fileID: 2209785467923771253, guid: b83e932bc879967439eab76ce23930b1, type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0
+      value: 0.0019455253
       objectReference: {fileID: 0}
     - target: {fileID: 2209785467923771253, guid: b83e932bc879967439eab76ce23930b1, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 1
+      value: 0.99781185
       objectReference: {fileID: 0}
     - target: {fileID: 2209785467923771253, guid: b83e932bc879967439eab76ce23930b1, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 1
+      value: 0.99610895
       objectReference: {fileID: 0}
     - target: {fileID: 2209785467923771255, guid: b83e932bc879967439eab76ce23930b1, type: 3}
       propertyPath: m_Name
@@ -463,10 +463,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1077000749, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
-      propertyPath: pressEPrompt
-      value: 
-      objectReference: {fileID: 1287872430}
     - target: {fileID: 332318632987233901, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -634,11 +630,6 @@ PrefabInstance:
       objectReference: {fileID: 1565750665}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed7a60d3083b02d48a6bd9031b71ffd4, type: 3}
---- !u!1 &1287872430 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 583639310377197260, guid: ed7a60d3083b02d48a6bd9031b71ffd4, type: 3}
-  m_PrefabInstance: {fileID: 1287872429}
-  m_PrefabAsset: {fileID: 0}
 --- !u!21 &1565750665
 Material:
   serializedVersion: 8
@@ -1208,8 +1199,8 @@ Material:
     - _Contrast: 1
     - _CullingOption: 0
     - _DistortAmount: 0.5
-    - _DistortTexXSpeed: 5
-    - _DistortTexYSpeed: 5
+    - _DistortTexXSpeed: 0
+    - _DistortTexYSpeed: 2
     - _EditorDrawers: 6
     - _FadeAmount: -0.1
     - _FadeBurnGlow: 2
@@ -1246,7 +1237,7 @@ Material:
     - _HologramMaxAlpha: 0.75
     - _HologramMinAlpha: 0.1
     - _HologramStripesAmount: 0.01
-    - _HologramStripesSpeed: 4.5
+    - _HologramStripesSpeed: 1
     - _HologramUnmodAmount: 0
     - _HsvBright: 1
     - _HsvSaturation: 1
@@ -1442,8 +1433,8 @@ Material:
     - _Contrast: 1
     - _CullingOption: 0
     - _DistortAmount: 0.5
-    - _DistortTexXSpeed: 5
-    - _DistortTexYSpeed: 5
+    - _DistortTexXSpeed: 0
+    - _DistortTexYSpeed: 2
     - _EditorDrawers: 6
     - _FadeAmount: -0.1
     - _FadeBurnGlow: 2
@@ -1480,7 +1471,7 @@ Material:
     - _HologramMaxAlpha: 0.75
     - _HologramMinAlpha: 0.1
     - _HologramStripesAmount: 0.01
-    - _HologramStripesSpeed: 4.5
+    - _HologramStripesSpeed: 1
     - _HologramUnmodAmount: 0
     - _HsvBright: 1
     - _HsvSaturation: 1
@@ -1754,8 +1745,8 @@ Material:
     - _Contrast: 1
     - _CullingOption: 0
     - _DistortAmount: 0.5
-    - _DistortTexXSpeed: 5
-    - _DistortTexYSpeed: 5
+    - _DistortTexXSpeed: 0
+    - _DistortTexYSpeed: 2
     - _EditorDrawers: 6
     - _FadeAmount: -0.1
     - _FadeBurnGlow: 2
@@ -1792,7 +1783,7 @@ Material:
     - _HologramMaxAlpha: 0.75
     - _HologramMinAlpha: 0.1
     - _HologramStripesAmount: 0.01
-    - _HologramStripesSpeed: 4.5
+    - _HologramStripesSpeed: 1
     - _HologramUnmodAmount: 0
     - _HsvBright: 1
     - _HsvSaturation: 1
