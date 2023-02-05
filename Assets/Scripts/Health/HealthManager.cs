@@ -36,6 +36,7 @@ public class HealthManager : MonoBehaviour, IDamageable
     protected virtual void UpdateHealth()
     {
         healthBarFill.value = currentHealth;
-        healthBarFill.transform.parent.GetComponentInChildren<TMP_Text>().text = $"{currentHealth}/{maxHealth}";
+        if(healthBarFill.transform.parent.GetComponentInChildren<TMP_Text>() != null)
+            healthBarFill.transform.parent.GetComponentInChildren<TMP_Text>().text = $"{currentHealth}/{maxHealth}";
     }
 }
