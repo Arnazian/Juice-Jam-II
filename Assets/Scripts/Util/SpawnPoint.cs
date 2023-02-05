@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class SpawnPoint : MonoBehaviour
 {
@@ -16,10 +17,12 @@ public class SpawnPoint : MonoBehaviour
     [SerializeField] private Sprite deactiveSprite;
 
     private SpriteRenderer _spriteRenderer;
+    private Light2D _light;
 
     private void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _light = GetComponentInChildren<Light2D>();
     }
 
     void Update()
@@ -31,7 +34,7 @@ public class SpawnPoint : MonoBehaviour
         localQueue.Add(go);
         spawnsAvailable = true;
     }
-
+    
     public void SpawnLocalQueue()
     {
         if (!spawnsAvailable) { return; }
@@ -44,6 +47,7 @@ public class SpawnPoint : MonoBehaviour
     IEnumerator CoroutineSpawnNextInQueue()
     {
         spawnParticles.Play();
+        _light.intensity = 1;
         _spriteRenderer.sprite = activeSprite;
         yield return new WaitForSeconds(spawnDuration);
 
@@ -51,8 +55,10 @@ public class SpawnPoint : MonoBehaviour
         localQueue.RemoveAt(0);
         if(localQueue.Count <= 0) { spawnsAvailable = false; }
         spawnParticles.Stop();
+        _light.gameObject.SetActive(false);
+        _light.intensity = 0;
         _spriteRenderer.sprite = deactiveSprite;
-        isSpawning =false;
+        isSpawning = false;
         
     }
 }
