@@ -3977,10 +3977,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 101176927, guid: 983c19d822cd24240886509062ae65a4, type: 3}
-      propertyPath: difficultyButtons.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 101176927, guid: 983c19d822cd24240886509062ae65a4, type: 3}
       propertyPath: difficultyButtons.Array.data[0]
       value: 
       objectReference: {fileID: 688978118}
