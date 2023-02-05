@@ -168,8 +168,11 @@ public class WaveManager : Singleton<WaveManager>
         AudioManager.Instance.PlayMusic("boss1", boss1Music, volume: 0.2f);
     }
 
+    [SerializeField] private GameObject winScreen;
     public void EndBossFight()
     {
+        winScreen.SetActive(true);
+        Time.timeScale=0;
         firstBossActive=false;
         roundNumberText.gameObject.SetActive(true);
         StartNewWave();
