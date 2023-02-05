@@ -42,6 +42,7 @@ public class WaveManager : Singleton<WaveManager>
     [SerializeField] private AudioClip boss2Music;
     [SerializeField] private AudioClip boss2MusicLoop;
     
+    [SerializeField] private GameObject bossHint;
     [SerializeField] private GameObject firstBoss;
     [SerializeField] private GameObject secondBoss;
     [SerializeField] private SpawnPoint[] spawnPoints;
@@ -159,7 +160,7 @@ public class WaveManager : Singleton<WaveManager>
 
         Camera.main.GetComponent<LookAtBoss>().howLongStayAtBoss = 2f;
         Camera.main.GetComponent<ScreenShake>().DoScreenShake(2f, 1.5f);
-        StartCoroutine(Camera.main.GetComponent<LookAtBoss>().DoLookAtBoss(boss.transform.position));
+        StartCoroutine(Camera.main.GetComponent<LookAtBoss>().DoLookAtBoss(boss.transform.position, bossHint));
 
         roundNumberText.gameObject.SetActive(false);
         AudioManager.Instance.Stop("a1");
