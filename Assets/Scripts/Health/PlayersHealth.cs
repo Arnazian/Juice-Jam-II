@@ -4,13 +4,17 @@ public class PlayersHealth : HealthManager
 {
     private bool isImmune = false;
 
-    protected override void Awake()
+    private bool _isDead = false;
+    public bool IsDead => _isDead;
+    
+    protected override void Start()
     {
         healthBarFill = UIManager.Instance.GetPlayerHealthBarFill;
         healthBarFill.maxValue = maxHealth;
         healthBarFill.value = currentHealth;
         UIManager.Instance.GetGameOverScreen.SetActive(false);
-        base.Awake();
+        _isDead = false;
+        base.Start();
     }
 
     public override void Damage(float amount)
@@ -31,6 +35,7 @@ public class PlayersHealth : HealthManager
     private void RunPlayerDeath()
     {
         UIManager.Instance.GetGameOverScreen.SetActive(true);
+        _isDead = true;
         Destroy(gameObject);
     }
 

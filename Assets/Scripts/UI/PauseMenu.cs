@@ -9,10 +9,13 @@ public class PauseMenu : Singleton<PauseMenu>
     [SerializeField] private GameObject container;
     
     public bool IsPaused { get; private set; }
+    private PlayersHealth _playerHealth;
+    
 
     private void Start()
     {
         Play();
+        _playerHealth = GameObject.FindWithTag("Player").GetComponent<PlayersHealth>();
     }
 
     public void Pause()
@@ -53,7 +56,7 @@ public class PauseMenu : Singleton<PauseMenu>
     
     private void Update()
     {
-        if (Keyboard.current.escapeKey.wasPressedThisFrame)
+        if (Keyboard.current.escapeKey.wasPressedThisFrame && !_playerHealth.IsDead)
         {
             if(IsPaused)
                 Play();
