@@ -868,7 +868,7 @@ Material:
     - _HologramBlend: 0.4
     - _HologramMaxAlpha: 0.75
     - _HologramMinAlpha: 0.1
-    - _HologramStripesAmount: 0.1
+    - _HologramStripesAmount: 0.01
     - _HologramStripesSpeed: 4.5
     - _HologramUnmodAmount: 0
     - _HsvBright: 1
@@ -1102,7 +1102,7 @@ Material:
     - _HologramBlend: 0.4
     - _HologramMaxAlpha: 0.75
     - _HologramMinAlpha: 0.1
-    - _HologramStripesAmount: 0.1
+    - _HologramStripesAmount: 0.01
     - _HologramStripesSpeed: 4.5
     - _HologramUnmodAmount: 0
     - _HsvBright: 1
@@ -1414,7 +1414,7 @@ Material:
     - _HologramBlend: 0.4
     - _HologramMaxAlpha: 0.75
     - _HologramMinAlpha: 0.1
-    - _HologramStripesAmount: 0.1
+    - _HologramStripesAmount: 0.01
     - _HologramStripesSpeed: 4.5
     - _HologramUnmodAmount: 0
     - _HsvBright: 1
