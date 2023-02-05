@@ -8,6 +8,7 @@ public class VampireFinisher : MonoBehaviour
 {
     public bool CanSuckBlood => currentRage >= maxRageAmount;
 
+    [SerializeField] private AudioClip rageFullClip;
     [SerializeField] private GameObject rageFullParticles;
     [SerializeField] private GameObject pressEPrompt;
     [SerializeField] private GameObject bloodSuckParticles;
@@ -156,8 +157,11 @@ public class VampireFinisher : MonoBehaviour
         UpdateGraphics();
         if(currentRage >= maxRageAmount)
         {
+            if(!pressEPrompt.activeSelf) { AudioManager.Instance.PlaySfx($"rageFullClip", rageFullClip, 1, 0.4f, false, false); }
             rageFullParticles.SetActive(true);
             pressEPrompt.SetActive(true);
+            
+            
         }
         else
         {

@@ -35123,6 +35123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 016bc93d42a3cd3409ad27cf764e332c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rageFullClip: {fileID: 8300000, guid: 7a8649e6731231e40a4dec0c7bad31d6, type: 3}
   rageFullParticles: {fileID: 1081514473}
   pressEPrompt: {fileID: 0}
   bloodSuckParticles: {fileID: 7789652829996721084}

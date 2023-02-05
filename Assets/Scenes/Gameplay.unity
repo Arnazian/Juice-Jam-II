@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2209785467923771253, guid: b83e932bc879967439eab76ce23930b1, type: 3}
       propertyPath: orthographic size
-      value: 5.375
+      value: 5.625
       objectReference: {fileID: 0}
     - target: {fileID: 2209785467923771253, guid: b83e932bc879967439eab76ce23930b1, type: 3}
       propertyPath: m_NormalizedViewPortRect.x
@@ -144,7 +144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2209785467923771253, guid: b83e932bc879967439eab76ce23930b1, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 0.9989095
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2209785467923771253, guid: b83e932bc879967439eab76ce23930b1, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
@@ -463,6 +463,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1077000749, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
+      propertyPath: pressEPrompt
+      value: 
+      objectReference: {fileID: 1287872430}
     - target: {fileID: 332318632987233901, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -510,10 +514,6 @@ PrefabInstance:
     - target: {fileID: 332318632987234194, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 4098626456807953694, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
-      propertyPath: damageToSelf
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6187c37e09baeb4e92d764f0cfd8f6f, type: 3}
@@ -634,6 +634,11 @@ PrefabInstance:
       objectReference: {fileID: 1565750665}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed7a60d3083b02d48a6bd9031b71ffd4, type: 3}
+--- !u!1 &1287872430 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 583639310377197260, guid: ed7a60d3083b02d48a6bd9031b71ffd4, type: 3}
+  m_PrefabInstance: {fileID: 1287872429}
+  m_PrefabAsset: {fileID: 0}
 --- !u!21 &1565750665
 Material:
   serializedVersion: 8
