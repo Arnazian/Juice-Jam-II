@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FB_SmallBossHealth : MonoBehaviour, IDamageable
 {
@@ -8,11 +9,18 @@ public class FB_SmallBossHealth : MonoBehaviour, IDamageable
     private float myHealthMax;
     private BossStateController bossStateController;
     private BossHealthManager bossHealthManager;
+    [SerializeField] private Slider healthBar;
+    [SerializeField] private GameObject deathParticles;
+
     void Start()
     {
+     
         bossHealthManager = FindObjectOfType<BossHealthManager>();
         bossStateController = FindObjectOfType<BossStateController>();
         CalculateMyHealth();
+        myHealthCur = myHealthMax;
+        healthBar.maxValue = myHealthMax;
+        healthBar.value = myHealthCur;
     }
 
     void CalculateMyHealth()
@@ -26,6 +34,8 @@ public class FB_SmallBossHealth : MonoBehaviour, IDamageable
     public void Damage(float damage)
     {
         myHealthCur -= damage;
+        healthBar.value = myHealthCur;
+
         if(myHealthCur <= 0)
         {
             Die();
@@ -34,6 +44,7 @@ public class FB_SmallBossHealth : MonoBehaviour, IDamageable
 
     void Die()
     {
+        Instantiate(deathParticles, transform.position, Quaternion.identity);
         bossHealthManager.Damage(myHealthMax);
         Destroy(gameObject);
     }
