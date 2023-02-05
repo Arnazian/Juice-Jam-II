@@ -172,8 +172,10 @@ public class VampireFinisher : MonoBehaviour
 
     IEnumerator CoroutineContinueRageDiminish(float timeToWait)
     {
+        Debug.Log("Started coroutine");
         yield return new WaitForSeconds(timeToWait);
         isRageDiminishing = true;
+        Debug.Log("Ended Coroutine");
     }
     #region Increase Decrease And Set Rage
     public void IncreaseRage(float amount) 
