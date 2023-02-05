@@ -2663,6 +2663,7 @@ MonoBehaviour:
     damageTakenMultiplier: 1
   - damageMultiplier: 0.5
     damageTakenMultiplier: 1.5
+  roundNumberText: {fileID: 0}
   arena1Music: {fileID: 8300000, guid: bb6fc97721783d444a9b6ae72c58dfb0, type: 3}
   arena2Music: {fileID: 8300000, guid: 5d2d4ff540ec0f84d98fb0e97649c6b0, type: 3}
   boss1Music: {fileID: 8300000, guid: f93ce4376b9be874787023d8af208872, type: 3}
@@ -23206,6 +23207,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1638381780}
     m_Modifications:
+    - target: {fileID: 4835228085591195236, guid: dbfdec23e0a37dc4fab06d8184070666, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7788731958484499281, guid: dbfdec23e0a37dc4fab06d8184070666, type: 3}
       propertyPath: m_Name
       value: Torch (9)
@@ -23281,6 +23286,10 @@ PrefabInstance:
     - target: {fileID: 7788731959713893158, guid: dbfdec23e0a37dc4fab06d8184070666, type: 3}
       propertyPath: m_PointLightOuterRadius
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8058653706026476379, guid: dbfdec23e0a37dc4fab06d8184070666, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbfdec23e0a37dc4fab06d8184070666, type: 3}
@@ -25106,6 +25115,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1638381780}
     m_Modifications:
+    - target: {fileID: 4835228085591195236, guid: dbfdec23e0a37dc4fab06d8184070666, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7788731958484499281, guid: dbfdec23e0a37dc4fab06d8184070666, type: 3}
       propertyPath: m_Name
       value: Torch (10)
@@ -25181,6 +25194,10 @@ PrefabInstance:
     - target: {fileID: 7788731959713893158, guid: dbfdec23e0a37dc4fab06d8184070666, type: 3}
       propertyPath: m_PointLightOuterRadius
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8058653706026476379, guid: dbfdec23e0a37dc4fab06d8184070666, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbfdec23e0a37dc4fab06d8184070666, type: 3}
@@ -28194,6 +28211,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1638381780}
     m_Modifications:
+    - target: {fileID: 4835228085591195236, guid: dbfdec23e0a37dc4fab06d8184070666, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7788731958484499281, guid: dbfdec23e0a37dc4fab06d8184070666, type: 3}
       propertyPath: m_Name
       value: Torch (1)
@@ -28269,6 +28290,10 @@ PrefabInstance:
     - target: {fileID: 7788731959713893158, guid: dbfdec23e0a37dc4fab06d8184070666, type: 3}
       propertyPath: m_PointLightOuterRadius
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8058653706026476379, guid: dbfdec23e0a37dc4fab06d8184070666, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbfdec23e0a37dc4fab06d8184070666, type: 3}
@@ -28750,6 +28775,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1638381780}
     m_Modifications:
+    - target: {fileID: 4835228085591195236, guid: dbfdec23e0a37dc4fab06d8184070666, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7788731958484499281, guid: dbfdec23e0a37dc4fab06d8184070666, type: 3}
       propertyPath: m_Name
       value: Torch (8)
@@ -28825,6 +28854,10 @@ PrefabInstance:
     - target: {fileID: 7788731959713893158, guid: dbfdec23e0a37dc4fab06d8184070666, type: 3}
       propertyPath: m_PointLightOuterRadius
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8058653706026476379, guid: dbfdec23e0a37dc4fab06d8184070666, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbfdec23e0a37dc4fab06d8184070666, type: 3}
