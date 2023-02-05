@@ -7,7 +7,9 @@ using UnityEngine.UI;
 public class VampireFinisher : MonoBehaviour
 {
     public bool CanSuckBlood => currentRage >= maxRageAmount;
-    
+
+    [SerializeField] private GameObject rageFullParticles;
+    [SerializeField] private GameObject pressEPrompt;
     [SerializeField] private GameObject bloodSuckParticles;
     [SerializeField] private GameObject bloodExplosionParticles;
     [SerializeField] private BloodCheckCollider bloodCheckCollider;
@@ -154,9 +156,13 @@ public class VampireFinisher : MonoBehaviour
         UpdateGraphics();
         if(currentRage >= maxRageAmount)
         {
+            rageFullParticles.SetActive(true);
+            pressEPrompt.SetActive(true);
         }
         else
         {
+            rageFullParticles.SetActive(false);
+            pressEPrompt.SetActive(false);
         }
     }
 
@@ -192,7 +198,8 @@ public class VampireFinisher : MonoBehaviour
         { 
             currentRage = maxRageAmount;
             rageDiminishCur = rageDiminishMax * 3;
-            
+
+
             CheckRageMeter();
             return;
         }
