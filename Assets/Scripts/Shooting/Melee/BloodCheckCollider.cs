@@ -8,10 +8,20 @@ public class BloodCheckCollider : MonoBehaviour
     private List<GameObject> touchedEnemies = new List<GameObject>();
     private static Transform player;
     private GameObject selectedEnemy;
+    private VampireFinisher vampireFinisher;
 
     private void Start()
     {
+        vampireFinisher = FindObjectOfType<VampireFinisher>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
+
+    private void Update()
+    {
+        if(vampireFinisher.CanSuckBlood)
+        {
+            SelectEnemyToHighlight();
+        }
     }
 
     public GameObject GetSelectedEnemy() { return selectedEnemy; }

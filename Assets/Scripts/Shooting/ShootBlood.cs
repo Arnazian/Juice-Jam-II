@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class ShootBlood : MonoBehaviour
 {
+    [SerializeField] private float rageAmount;
     [SerializeField] private float staggerAmount;
     [SerializeField] private float projectileDamage = 5f;
     [SerializeField] private float projectileSpeed;
@@ -91,8 +92,9 @@ public class ShootBlood : MonoBehaviour
         var projectileRotationZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg-90;
         var projectileRotation =  Quaternion.Euler(0f, 0f, projectileRotationZ);
         
-        var newProjectile = Instantiate(projectile, shootSpawn.transform.position, projectileRotation);
+        var newProjectile = Instantiate(projectile, shootSpawn.transform.position, projectileRotation);       
         newProjectile.GetComponent<ProjectileFlyStraight>().speed = speed;
+        newProjectile.GetComponent<BulletCollider>().rageAmount = rageAmount;
         newProjectile.GetComponent<BulletCollider>().damage = projectileDamage;
         newProjectile.GetComponent<BulletCollider>().staggerAmount = staggerAmount;
     }

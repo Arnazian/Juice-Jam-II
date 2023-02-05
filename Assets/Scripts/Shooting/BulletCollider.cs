@@ -11,11 +11,13 @@ public enum OwnerOfBulletType
 
 public class BulletCollider : MonoBehaviour
 {
+    
     [SerializeField] private List<AudioClip> shootSounds;
     [SerializeField] private List<AudioClip> hitSounds;
     [SerializeField] private GameObject collisionParticle;
     [SerializeField] private OwnerOfBulletType ownerOfBulletType;
 
+    public float rageAmount;
     public float staggerAmount;
     public float damage;
 
@@ -78,6 +80,7 @@ public class BulletCollider : MonoBehaviour
         var rand = Random.Range(0, hitSounds.Count - 1);
         AudioManager.Instance.PlaySfx($"enemyHitSfx{rand}", hitSounds[rand], 3, 0.125f, false);
         other.transform.GetComponent<IDamageable>().Damage(damage);
+        FindObjectOfType<VampireFinisher>().IncreaseRage(rageAmount);
         Instantiate(collisionParticle, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }

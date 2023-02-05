@@ -7,6 +7,7 @@ public class MeleeCollider : MonoBehaviour
     [SerializeField] private List<AudioClip> meleeHitSounds;
     [SerializeField] private float staggerToEnemy;
     [SerializeField] private float damageToEnemy;
+    [SerializeField] private float rageAmount;
     [SerializeField] private float meleeRageBuildUp;
     [SerializeField] private float throwEnemyForce;
     private List<GameObject> hitEnemies = new List<GameObject>();
@@ -27,14 +28,16 @@ public class MeleeCollider : MonoBehaviour
         {
             //Camera.main.GetComponent<ScreenShake>().DoScreenShake(0.15f, 0.6f);
             go.GetComponent<IDamageable>().Damage(damageToEnemy);
+            if (go.GetComponent<EnemyStagger>() != null)
+            {
+                StaggerKnockback(go.GetComponent<EnemyStagger>());
+            }
+            FindObjectOfType<VampireFinisher>().IncreaseRage(rageAmount);
             var rand = Random.Range(0, meleeHitSounds.Count);
             AudioManager.Instance.PlaySfx($"playerMeleeHitSfx{rand}", meleeHitSounds[rand], -1f, 0.5f, false);
             if (go.GetComponent<Rigidbody2D>() != null)
                 go.GetComponent<Rigidbody2D>().velocity = -transform.up * throwEnemyForce;
-            if(go.GetComponent<EnemyStagger>() != null)
-            {
-               StaggerKnockback(go.GetComponent<EnemyStagger>());
-            }
+      
         }
 
         hitEnemies.Clear();
