@@ -156,7 +156,7 @@ public class WaveManager : Singleton<WaveManager>
         var bossHealthBar = UIManager.Instance.GetBossHealthBar;
         bossHealthBar.transform.parent.gameObject.SetActive(true);
         var boss = Instantiate(firstBoss, Vector3.zero, Quaternion.identity);
-        
+        roundNumberText.gameObject.SetActive(false);
         AudioManager.Instance.Stop("a1");
         AudioManager.Instance.Stop("a2");
         AudioManager.Instance.PlayMusic("boss1", boss1Music, volume: 0.2f);
@@ -165,6 +165,7 @@ public class WaveManager : Singleton<WaveManager>
     public void EndBossFight()
     {
         firstBossActive=false;
+        roundNumberText.gameObject.SetActive(true);
         StartNewWave();
     }
 
