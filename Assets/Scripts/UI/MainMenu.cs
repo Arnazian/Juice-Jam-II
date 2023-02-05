@@ -31,7 +31,7 @@ public class MainMenu : MonoBehaviour
 
     public void Play()
     {
-        TransitionManager.Instance.FadeScene("Imated Scene");
+        TransitionManager.Instance.FadeScene("Tutorial");
         AudioManager.Instance.Stop("menu");
     }
     
