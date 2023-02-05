@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 24115
+  controlID: 34525
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 24116
+  controlID: 34526
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 24117
+  controlID: 34527
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -223,10 +223,10 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 388e0200
-      m_LastClickedID: 167480
-      m_ExpandedIDs: 18f1faff58fafaffd8fafaffd604fbffc211fbff7e13fbfffc73fcff9487fcff04a7fcff0cb9fcffeec4fcff74f0fcff9ef0fcff0cfcfcffe20dfdff4c20fdff3835fdffce4ffdff4465fdff68d0fdff92d0fdff00dcfdff7cf8fdff8ef8fdff6e53feff8053feff3e7afeff507afeff1e92feffc0a1feff40a2feff34acfeff16b9feffd0bafeffd4faffffdcfaffff42fbffff48730000
+      scrollPos: {x: 0, y: 120}
+      m_SelectedIDs: 7c9b0200
+      m_LastClickedID: 170876
+      m_ExpandedIDs: f080faff3e86faff68b5faff7ab5faff18f1faff58fafaffd8fafaffd604fbffc211fbff7e13fbfffc73fcff9487fcff04a7fcff0cb9fcffeec4fcff74f0fcff9ef0fcff0cfcfcffe20dfdff4c20fdff3835fdffce4ffdff4465fdff68d0fdff92d0fdff00dcfdff7cf8fdff8ef8fdff6e53feff8053feff3e7afeff507afeff1e92feffc0a1feff40a2feff34acfeff16b9feffd0bafeffd4faffffdcfaffff42fbffff48730000589a0200e29b0200e69b0200
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -535,9 +535,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -21.636612, y: 27.394493, z: -0.066091485}
+    m_Target: {x: -25.754929, y: 51.88449, z: 0.30448198}
     speed: 2
-    m_Value: {x: -21.636612, y: 27.394493, z: -0.066091485}
+    m_Value: {x: -25.811333, y: 51.946312, z: 0.3021852}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -588,9 +588,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 3.411471
+    m_Target: 4.874326
     speed: 2
-    m_Value: 3.411471
+    m_Value: 5.1040063
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -684,21 +684,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Scripts
     m_Globs: []
-    m_OriginalText: ' '
+    m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Dev\Github Repos\Juice Jam II
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 64790000
-    m_LastClickedID: 31076
+    m_SelectedIDs: 66790000
+    m_LastClickedID: 31078
     m_ExpandedIDs: 00000000487700004a7700004c7700004e770000507700005277000054770000567700005877000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -752,9 +752,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 388e0200
-    m_LastClickedInstanceID: 167480
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: 7c9b0200
+    m_LastClickedInstanceID: 170876
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -841,7 +841,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -200606
+  m_LastSelectedObjectID: 170684
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52

@@ -36,5 +36,10 @@ public class TutorialPlayer : MonoBehaviour
                 enemy.SetActive(true);
             }
         }
+        
+        if (other.gameObject.name == "KeyPoint4")
+        {
+            GetComponent<VampireFinisher>().IncreaseRage(99999);
+        }
     }
 }
